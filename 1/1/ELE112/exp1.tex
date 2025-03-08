@@ -1,0 +1,434 @@
+% Student Number: 2240357068
+% Student Name: Baturay KAFKAS
+% EEE @ Hacettepe University
+
+% Last update: 18:23 08/03/25
+
+% Circuits were set up in LTspice.
+
+%use \frac instead of \over
+
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage[top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{moresize}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+
+\pagestyle{fancy}
+\fancyhf{} 
+
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+
+\setcounter{page}{3}
+
+\begin{document}
+
+{\large \textit{This part of the experiment is prepared with Online LaTeX Editor Overleaf and the circuits are drawn in LTspice. Visit the website for the code here:}}
+
+{\large \textbf{https://www.overleaf.com/read/xqffqxgzqdrq\#0f7ad1}}
+\vspace{4mm}
+\hrule
+\vspace{4mm}
+{\textbf{\Large 3. PRELIMINARY WORK}}
+
+\vspace{4mm}
+
+{\Large \textbf{3.1} Calculate the values of the currents $I$, $I_{1}$, $I_{2}$, $I_{3}$ and $I_{4}$ and the voltages $V_{1}$, $V_{2}$, $V_{3}$, $V_{4}$ and $V_{5}$ in \textit{Figure 6}. Show the meter connections for these measurements.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{msedge_LXrLMdWouf.png}
+    \label{figure6}
+\end{figure}
+
+{\Large \textbf{Answer}: The connections of meters should be as follows.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Draft7.png}
+\end{figure}
+
+\vspace{4mm}
+
+{\Large The ammeters are connected properly so the current enters from the positive side. As for the type of connection, the ammeters are connected in series. Meanwhile, the voltmeters are connected in parallel to the resistors. This will help us accurately measure the desired values.}
+
+{\Large  Let's calculate \textit{I}. Since the main current has not yet been distributed, \textit{I} is equal to the current provided by the source.}
+
+\vspace{4mm}
+
+{\Large $\boxed{I = 12 \text{A}}$}
+
+\vspace{4mm}
+
+{\Large From Kirchhoff's Current Law, one may obtain these equations:}
+
+\vspace{4mm}
+
+{\Large $-I + I_1 + I_2 = 0 \ \rightarrow \ I = I_1 + I_2 $}
+
+{\Large $-I_2 + I_3 + I_4 = 0 \ \rightarrow \ I_2 = I_3 + I_4 $}
+
+{\Large $I - I_1 - I_3 - I_4 = 0 \ \rightarrow \ I = I_1 + I_3 + I_4 $}
+
+\vspace{4mm}
+
+{\Large We may benefit from Kirchhoff's Voltage Law but first, name several points for ease.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fTaszi97Hb.png}
+\end{figure}
+
+{\Large b-c-g-f-b $ \rightarrow \ V_2 + V_3 - V_1 = 0 \ \rightarrow \  V_1 = V_2 + V_3 $}
+
+{\Large c-d-h-g-c $\ \rightarrow \ V_4 + V_5 - V_3 = 0 \ \rightarrow \ V_3 = V_4 + V_5 $}
+
+{\Large b-c-d-h-g-f-b $\ \rightarrow \ V_2 + V_4 + V_5 - V_1 = 0 \ \rightarrow \ V_1 = V_2 + V_4 + V_5 $}
+
+\vspace{4mm}
+
+{\Large Eventually, we may use Ohm's Law. Note that $V_4$ and $V_5$ have the same current, which is $I_4$. Let $R_1$, $R_2$, $R_3$, $R_4$, $R_5$ be the corresponding resistance of $V_1$, $V_2$, $V_3$, $V_4$, $V_5$, respectively.}
+
+\vspace{4mm}
+
+{\Large $V_1 = I_2\cdot R_2 + I_3\cdot R_3 = I_2 + 2I_3$}
+
+{\Large $V_1 = I_2\cdot R_2 + I_4 \cdot R_4 + I_4 \cdot R_5 = I_2 + 3I_4$}
+
+\vspace{4mm}
+
+{\Large From these two equations, we get:}
+
+\vspace{4mm}
+
+{\Large $\displaystyle I_2 + 2I_3 = I_2 + 3I_4 \ \rightarrow \ I_3 = \frac{3}{2}I_4$ (1)}
+
+\vspace{4mm}
+
+{\Large We need to find another equation to solve the problem.}
+
+\vspace{4mm}
+
+{\Large $V_3 = I_4\cdot R_4 + I_4\cdot R_5 = 3I_4$}
+
+{\Large $V_3 = I_1\cdot R_1 - I_2\cdot R_2 = 2I_1 - I_2$}
+
+\vspace{4mm}
+
+{\Large From these two equations, we get:}
+
+\vspace{4mm}
+
+{\Large $2I_1 - I_2 = 3I_4$}
+
+{\Large $2I_1 - I_3 - I_4 = 3I_4 \ [I_2 = I_3 + I_4]$}
+
+{\Large $2I_1 - I_3 = 4I_4$ \ [Substitute (1)]}
+
+{\Large $\displaystyle I_1 = \frac{11}{4}I_4$ (2)}
+
+\vspace{4mm}
+
+{\Large As earlier, we found the equations $I = I_1 + I_3 + I_4$ and $I_2 = I_3 + I_4$. We now have the relation between all variables.}
+
+\vspace{4mm}
+
+{\Large $\displaystyle I = \frac{21}{11}I_1 = \frac{21}{10}I_2 = \frac{21}{6}I_3 = \frac{21}{4}I_4$}
+
+\vspace{4mm}
+
+{\Large $\displaystyle \boxed{I_1 = \frac{11}{21}I = \frac{11\cdot 12}{21} = \frac{44}{7} \approx 6.29 \text{A}}$}
+
+{\Large $\displaystyle \boxed{I_2 = \frac{10}{21}I = \frac{10\cdot 12}{21} = \frac{40}{7}  \approx 5.71 \text{A}}$}
+
+{\Large $\displaystyle \boxed{I_3 = \frac{6}{21}I = \frac{6\cdot 12}{21} = \frac{24}{7}  \approx 3.43 \text{A}}$}
+
+{\Large $\displaystyle \boxed{I_4 = \frac{4}{21}I = \frac{4\cdot 12}{21} = \frac{16}{7}  \approx 2.29 \text{A}}$}
+
+\vspace{4mm}
+
+{\Large Apply Ohm's Law again with numerical values.}
+
+\vspace{4mm}
+
+{\Large $\displaystyle \boxed{V_1 = I_1\cdot R_1 = \frac{44}{7} \cdot 2 = \frac{88}{7} \approx 12.57 \text{V}}$}
+
+{\Large $\displaystyle \boxed{V_2 = I_2\cdot R_2 = \frac{40}{7} \cdot 1 = \frac{40}{7} \approx 5.71 \text{V}}$}
+
+{\Large $\displaystyle \boxed{V_3 = I_3\cdot R_3 = \frac{24}{7} \cdot 2 = \frac{48}{7} \approx 6.86 \text{V}}$}
+
+{\Large $\displaystyle \boxed{V_4 = I_4\cdot R_4 = \frac{16}{7} \cdot 1 = \frac{16}{7} \approx 2.29 \text{V}}$}
+
+{\Large $\displaystyle \boxed{V_5 = I_4\cdot R_5 = \frac{16}{7} \cdot 2 = \frac{32}{7} \approx 4.58 \text{V}}$}
+
+\vspace{8mm}
+
+{\Large \textbf{3.2} For the circuit given in \textit{Figure 7}, the values of $R_{1}$ and $V_{1}$ are given. Find out the values of $R_{2}$ and $I$.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{msedge_daH5wzyIQw.png}
+\end{figure}
+
+{\Large \textbf{Answer}: First off, we can determine the sign of each terminal of $R_{2}$. Let it be plus (+) sign upper side and minus (-) sign on the other side of the resistor.}
+
+{\Large The Ohm's Law states that the resistance can be found if the voltage across and the current through the circuit element are known.}
+
+{\vspace{4mm}}
+
+{\Large $\displaystyle I = \frac{V_{1}}{R_{1}} = \frac{6V}{3\Omega} = 2A \ \rightarrow \ \boxed{I = 2\text{A}} $}
+
+{\vspace{4mm}}
+
+{\Large We use Kirchhoff's Voltage Law in order to find the voltage across $R_{2}$. Let us choose the node at the top left corner and traverse the circuit in the clockwise direction. We get such an equation:}
+
+{\vspace{4mm}}
+
+{\Large $V_{1} + I\cdot R_{2} - 6V = 0 \ \rightarrow \ 6V + I\cdot R_{2} - 6V = 0 \ \rightarrow \ I\cdot R_{2} = 0$}
+
+{\vspace{4mm}}
+
+{\Large Since we know the value of the current, which is different from zero, the resistance $R_{2}$ equals zero.}
+
+{\vspace{4mm}}
+
+{\Large $\boxed{R_{2} = 0}$}
+
+{\vspace{8mm}}
+
+\newpage
+
+{\Large \textbf{3.3} Find the equivalent resistance $R_{ab}$ between points a and b for the circuit in \textit{Figure 8}.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{msedge_Lb39u9VtuS.png}
+\end{figure}
+
+{\Large \textbf{Answer}: Recall that $R_{eq}$ is equal to the sum of the resistance of the resistors connected in series. $R_{eq}$ is equal to the sum of the reciprocal of the reciprocal of each resistance of the resistors connected in parallel. In mathematical notation:}
+
+{\vspace{4mm}}
+
+\begin{center}
+{\Large $\displaystyle R_{eq, s} = \sum_{i=1}^{n} R_{i} = R_1 + R_2 + {...} + R_n \quad  \frac{1}{R_{eq, p}} = \sum_{i=1}^{n} \frac{1}{R_{i}} = \frac{1}{R_{1}} + \frac{1}{R_{2}} + {...} + \frac{1}{R_{n}} $}
+\end{center}
+
+{\vspace{4mm}}
+
+{\Large We approach this question by resolving the resistors in their simplest connectedness.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{msedge_Lb39u9VtuS_3.png}
+\end{figure}
+
+\begin{center}
+{\Large $R_{eq, left} = 1 + 2 = 3 \quad R_{eq, right} = 1 + 2 + 1 = 4$}
+\end{center}
+
+{\vspace{8mm}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{yn3Ua6R4B5.png}
+\end{figure}
+
+\begin{center}
+{ \Large $\displaystyle \frac{1}{R_{eq}} = \frac{1}{6} + \frac{1}{3} \ \rightarrow \ R_{eq} = 2$}
+\end{center}
+
+{\vspace{8mm}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{IE5BzPI4P7.png}
+\end{figure}
+
+\begin{center}
+{\Large $\displaystyle R_{eq} = 1 + 2 + 1 = 4$}
+\end{center}
+
+{\vspace{8mm}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{NZoVakjMbM.png}
+\end{figure}
+
+\begin{center}
+{\Large $\displaystyle \frac1{R_{eq}} = \frac{1}{4} + \frac{1}{4} \ \rightarrow \ R_{eq} = 2$}
+\end{center}
+
+{\vspace{8mm}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{J5E4VKKIEB.png}
+\end{figure}
+
+\begin{center}
+{\Large $\displaystyle R_{eq} = 5 + 2 + 5 = 12$}
+\end{center}
+
+{\vspace{8mm}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{mEitjTe87Z.png}
+\end{figure}
+
+\begin{center}
+{\Large $\displaystyle \frac1{R_{eq}} = \frac{1}{12} + \frac{1}{12} \ \rightarrow \ R_{eq} = 6$}
+\end{center}
+
+{\vspace{8mm}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\linewidth]{Draft6.png}
+\end{figure}
+
+{\vspace{4mm}}
+
+{\Large Therefore, we conclude that $\boxed{R_{ab} = 6}$.}
+
+{\vspace{8mm}}
+
+\newpage
+
+{\Large \textbf{3.4} For the circuit shown in \textit{Figure 9}, the value of $R_{2}$ is to be measured using the ohmmeter. However, the connection in \textit{Figure 9} does not give the correct value of the resistor. Why? Redraw the circuit showing the true connections.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{msedge_giBEmNQsH1.png}
+\end{figure}
+
+{\Large \textbf{Answer}: When using an ohmmeter, one must check whether the circuit is live. If so, the measurement of the ohmmeter would deflect because there would be another power source in conjunction with the ohmmeter's. To handle this, we may add switches to the circuit so $R_1$ and $V$ get disconnected from the other components.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Draft8.png}
+\end{figure}
+
+{\Large The ohmmeter is now connected to the terminals of $R_2$, and we expect it measures the resistance correctly.}
+
+\vspace{8mm}
+
+\newpage
+
+{\Large \textbf{3.5} \textit{Figure 10} shows a carbon resistor. For each of the resistance values given, write down the correct color bands.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{msedge_u1cstyvk4D.png}
+\end{figure}
+
+{\Large \text{a) 100 $\pm$ 10\% \quad b) 120 $\pm$ 5\% \quad c) 220 $\pm$ 20\% \quad d) 330 $\pm$ 10\%}}
+
+{\vspace{4mm}}
+
+{\Large \textbf{Answer}: Use the formula $R = AB \times 10^{C} \pm D\% \  \Omega$.}
+
+{\vspace{4mm}}
+
+{\Large a) $D\% = 10\% \ \rightarrow \ \boxed{\text{D = 10}}$ \\\\ $AB \times 10^{C} = 100$ \\\\ There are two cases for the other color bands.}
+
+{\vspace{4mm}}
+
+{\Large \textit{Case 1} \\\\ $\boxed{A = 0, B = 1, C = 2} \ \rightarrow \ 1 \times 10^{2} = 100$}
+
+{\vspace{4mm}}
+
+{\Large \textit{Case 2} \\\\ $\boxed{A = 1, B = 0, C = 1} \ \rightarrow \ 10 \times 10^{1} = 100$}
+
+{\vspace{8mm}}
+
+{\Large b) $D\% = 5\% \ \rightarrow \ \boxed{\text{D = 5}}$ \\\\ $AB \times 10^{C} = 120$}
+
+{\vspace{4mm}}
+
+{\Large $\boxed{A = 1, B = 2, C = 1} \ \rightarrow \ 12 \times 10^{1} = 120$}
+
+{\vspace{8mm}}
+
+{\Large c) $D\% = 20\% \ \rightarrow \ \boxed{\text{D = 20}}$ \\\\ $AB \times 10^{C} = 220$}
+
+{\vspace{4mm}}
+
+{\Large $\boxed{A = 2, B = 2, C = 1} \ \rightarrow \ 22 \times 10^{1} = 220$}
+
+{\vspace{8mm}}
+
+{\Large d) $D\% = 10\% \ \rightarrow \ \boxed{\text{D = 10}}$ \\\\ $AB \times 10^{C} = 330$}
+
+{\vspace{4mm}}
+
+{\Large $\boxed{A = 3, B = 3, C = 1} \ \rightarrow \ 33 \times 10^{1} = 330$}
+
+{\vspace{8mm}}
+
+{\Large Looking up the color chart, the color bands are given below.}
+
+\begin{center}
+    \Large
+    \begin{tabular}{ |c|c c c c| }
+    \hline
+        Option\textbackslash Band& A & B & C & D \\
+        \hline
+        a)& Black & Brown & Red & Silver\\
+          & Brown & Black & Brown & Silver\\
+        \hline
+        b)& Brown & Red & Brown & Gold\\
+        \hline
+        c)& Red &Red & Brown & None\\ 
+        \hline
+        d)& Orange & Orange & Brown & Silver\\ 
+        \hline
+    \end{tabular}
+\end{center}
+
+{\vspace{8mm}}
+
+{\Large \textbf{3.6} For the resistor shown in \textit{Figure 10}, the color bands of A, B, C and D are given below. Write down the values of the resistors and their tolerances.}
+
+\begin{center}
+    \Large
+    \begin{tabular}{ |c|c c c c| } 
+    \hline
+        & A & B & C & D \\
+        \hline
+        a)& Red & Black & Red & Silver\\
+        \hline
+        b)& Red & Red & Brown & Gold \\
+        \hline
+        c)& Green & Blue & Gold & Gold \\ 
+        \hline
+        d)& Violet & Gray & Orange & Silver \\ 
+        \hline
+        e)& Red & White & Orange & Gold \\ 
+        \hline
+    \end{tabular}
+\end{center}
+
+\vspace{4mm}
+
+{\Large \textbf{Answer}: We use the formula $R = AB \times 10^{C} \pm D\% \ \Omega$}
+
+{\Large a) $R = 20 \times 10^{2} \pm10\% \ \rightarrow \ \boxed{R = 2.0 \times 10^{3} \pm 10\% \ \Omega}$}
+
+{\Large b) $R = 22 \times 10^{1} \pm5\% \ \rightarrow \ \boxed{R = 2.2 \times 10^{2} \pm 5\% \ \Omega}$ }
+
+{\Large c) $R = 56 \times 10^{-1} \pm5\% \ \rightarrow \ \boxed{R = 5.6 \pm 5\% \ \Omega}$}
+
+{\Large d) $R = 78 \times 10^{3} \pm10\% \ \rightarrow \ \boxed{R = 7.8 \times 10^{4} \pm 10\% \ \Omega}$}
+
+{\Large e) $R = 29 \times 10^{3} \pm5\% \ \rightarrow \ \boxed{R = 2.9 \times 10^{4} \pm 5\% \ \Omega}$}
+
+\end{document}
