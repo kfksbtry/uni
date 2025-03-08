@@ -2,12 +2,10 @@
 % Student Name: Baturay KAFKAS
 % EEE @ Hacettepe University
 
-% Last update: 18:32 08/03/25
+% Last update: 19:28 08/03/25
 
 % My resource collection: https://github.com/ProBaturay/uni
 % Circuits were set up in LTspice.
-
-%use \frac instead of \over
 
 \documentclass{article}
 
@@ -41,6 +39,10 @@
 
 \vspace{4mm}
 
+{\Large The units of the resistance values are not given in figures. In the answer sections, the resistance values are assumed to have ohm units.}
+
+\vspace{4mm}
+
 {\Large \textbf{3.1} Calculate the values of the currents $I$, $I_{1}$, $I_{2}$, $I_{3}$ and $I_{4}$ and the voltages $V_{1}$, $V_{2}$, $V_{3}$, $V_{4}$ and $V_{5}$ in \textit{Figure 6}. Show the meter connections for these measurements.}
 
 \begin{figure}[H]
@@ -52,7 +54,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{Draft7.png}
+    \includegraphics[width=0.8\linewidth]{Draft7.png}
 \end{figure}
 
 \vspace{4mm}
@@ -94,7 +96,7 @@
 
 \vspace{4mm}
 
-{\Large Eventually, we may use Ohm's Law. Note that $V_4$ and $V_5$ have the same current, which is $I_4$. Let $R_1$, $R_2$, $R_3$, $R_4$, $R_5$ be the corresponding resistance of $V_1$, $V_2$, $V_3$, $V_4$, $V_5$, respectively.}
+{\Large Eventually, we may use Ohm's Law. Note that $V_4$ and $V_5$ have the same current, which is $I_4$. Let $R_1$, $R_2$, $R_3$, $R_4$, $R_5$ be the corresponding resistance of $V_1$, $V_2$, $V_3$, $V_4$, $V_5$, respectively.
 
 \vspace{4mm}
 
@@ -130,13 +132,13 @@
 
 {\Large $2I_1 - I_3 - I_4 = 3I_4 \ [I_2 = I_3 + I_4]$}
 
-{\Large $2I_1 - I_3 = 4I_4$ \ [Substitute (1)]}
+{\Large $2I_1 - I_3 = 4I_4$ \ [\textit{Substitute} (1)]}
 
 {\Large $\displaystyle I_1 = \frac{11}{4}I_4$ (2)}
 
 \vspace{4mm}
 
-{\Large As earlier, we found the equations $I = I_1 + I_3 + I_4$ and $I_2 = I_3 + I_4$. We now have the relation between all variables.}
+{\Large As earlier, we found the equations $I = I_1 + I_3 + I_4$ and $I_2 = I_3 + I_4$. We now have the relation between all variables. Using (1) and (2),}
 
 \vspace{4mm}
 
@@ -144,13 +146,9 @@
 
 \vspace{4mm}
 
-{\Large $\displaystyle \boxed{I_1 = \frac{11}{21}I = \frac{11\cdot 12}{21} = \frac{44}{7} \approx 6.29 \text{A}}$}
+{\Large $\displaystyle \boxed{I_1 = \frac{11}{21}I = \frac{11\cdot 12}{21} = \frac{44}{7} \approx 6.29 \text{A}}$} \ {\Large $\displaystyle \boxed{I_2 = \frac{10}{21}I = \frac{10\cdot 12}{21} = \frac{40}{7}  \approx 5.71 \text{A}}$}
 
-{\Large $\displaystyle \boxed{I_2 = \frac{10}{21}I = \frac{10\cdot 12}{21} = \frac{40}{7}  \approx 5.71 \text{A}}$}
-
-{\Large $\displaystyle \boxed{I_3 = \frac{6}{21}I = \frac{6\cdot 12}{21} = \frac{24}{7}  \approx 3.43 \text{A}}$}
-
-{\Large $\displaystyle \boxed{I_4 = \frac{4}{21}I = \frac{4\cdot 12}{21} = \frac{16}{7}  \approx 2.29 \text{A}}$}
+{\Large $\displaystyle \boxed{I_3 = \frac{6}{21}I = \frac{6\cdot 12}{21} = \frac{24}{7}  \approx 3.43 \text{A}}$} \ {\Large $\displaystyle \boxed{I_4 = \frac{4}{21}I = \frac{4\cdot 12}{21} = \frac{16}{7}  \approx 2.29 \text{A}}$}
 
 \vspace{4mm}
 
@@ -158,13 +156,9 @@
 
 \vspace{4mm}
 
-{\Large $\displaystyle \boxed{V_1 = I_1\cdot R_1 = \frac{44}{7} \cdot 2 = \frac{88}{7} \approx 12.57 \text{V}}$}
+{\Large $\displaystyle \boxed{V_1 = I_1\cdot R_1 = \frac{44}{7} \cdot 2 = \frac{88}{7} \approx 12.57 \text{V}}$} \ {\Large $\displaystyle \boxed{V_2 = I_2\cdot R_2 = \frac{40}{7} \cdot 1 = \frac{40}{7} \approx 5.71 \text{V}}$}
 
-{\Large $\displaystyle \boxed{V_2 = I_2\cdot R_2 = \frac{40}{7} \cdot 1 = \frac{40}{7} \approx 5.71 \text{V}}$}
-
-{\Large $\displaystyle \boxed{V_3 = I_3\cdot R_3 = \frac{24}{7} \cdot 2 = \frac{48}{7} \approx 6.86 \text{V}}$}
-
-{\Large $\displaystyle \boxed{V_4 = I_4\cdot R_4 = \frac{16}{7} \cdot 1 = \frac{16}{7} \approx 2.29 \text{V}}$}
+{\Large $\displaystyle \boxed{V_3 = I_3\cdot R_3 = \frac{24}{7} \cdot 2 = \frac{48}{7} \approx 6.86 \text{V}}$} \ {\Large $\displaystyle \boxed{V_4 = I_4\cdot R_4 = \frac{16}{7} \cdot 1 = \frac{16}{7} \approx 2.29 \text{V}}$}
 
 {\Large $\displaystyle \boxed{V_5 = I_4\cdot R_5 = \frac{16}{7} \cdot 2 = \frac{32}{7} \approx 4.58 \text{V}}$}
 
@@ -212,7 +206,7 @@
     \includegraphics[width=0.6\linewidth]{msedge_Lb39u9VtuS.png}
 \end{figure}
 
-{\Large \textbf{Answer}: Recall that $R_{eq}$ is equal to the sum of the resistance of the resistors connected in series. $R_{eq}$ is equal to the sum of the reciprocal of the reciprocal of each resistance of the resistors connected in parallel. In mathematical notation:}
+{\Large \textbf{Answer}: Recall that $R_{eq}$ is equal to the sum of the resistance of the resistors connected in series. $R_{eq}$ is equal to the reciprocal of the sum of the reciprocal of each resistance of the resistors connected in parallel. In mathematical notation:}
 
 {\vspace{4mm}}
 
@@ -230,7 +224,7 @@
 \end{figure}
 
 \begin{center}
-{\Large $R_{eq, left} = 1 + 2 = 3 \quad R_{eq, right} = 1 + 2 + 1 = 4$}
+{\Large $R_{eq, left} = 1 + 2 = 3 \Omega \quad R_{eq, right} = 1 + 2 + 1 = 4 \Omega$}
 \end{center}
 
 {\vspace{8mm}}
@@ -241,7 +235,7 @@
 \end{figure}
 
 \begin{center}
-{ \Large $\displaystyle \frac{1}{R_{eq}} = \frac{1}{6} + \frac{1}{3} \ \rightarrow \ R_{eq} = 2$}
+{ \Large $\displaystyle \frac{1}{R_{eq}} = \frac{1}{6} + \frac{1}{3} \ \rightarrow \ R_{eq} = 2 \Omega$}
 \end{center}
 
 {\vspace{8mm}}
@@ -252,7 +246,7 @@
 \end{figure}
 
 \begin{center}
-{\Large $\displaystyle R_{eq} = 1 + 2 + 1 = 4$}
+{\Large $\displaystyle R_{eq} = 1 + 2 + 1 = 4 \Omega$}
 \end{center}
 
 {\vspace{8mm}}
@@ -263,7 +257,7 @@
 \end{figure}
 
 \begin{center}
-{\Large $\displaystyle \frac1{R_{eq}} = \frac{1}{4} + \frac{1}{4} \ \rightarrow \ R_{eq} = 2$}
+{\Large $\displaystyle \frac1{R_{eq}} = \frac{1}{4} + \frac{1}{4} \ \rightarrow \ R_{eq} = 2 \Omega$}
 \end{center}
 
 {\vspace{8mm}}
@@ -274,7 +268,7 @@
 \end{figure}
 
 \begin{center}
-{\Large $\displaystyle R_{eq} = 5 + 2 + 5 = 12$}
+{\Large $\displaystyle R_{eq} = 5 + 2 + 5 = 12 \Omega$}
 \end{center}
 
 {\vspace{8mm}}
@@ -285,7 +279,7 @@
 \end{figure}
 
 \begin{center}
-{\Large $\displaystyle \frac1{R_{eq}} = \frac{1}{12} + \frac{1}{12} \ \rightarrow \ R_{eq} = 6$}
+{\Large $\displaystyle \frac1{R_{eq}} = \frac{1}{12} + \frac{1}{12} \ \rightarrow \ R_{eq} = 6 \Omega$}
 \end{center}
 
 {\vspace{8mm}}
@@ -297,7 +291,7 @@
 
 {\vspace{4mm}}
 
-{\Large Therefore, we conclude that $\boxed{R_{ab} = 6}$.}
+{\Large Therefore, we conclude that $\boxed{R_{ab} = 6 \Omega}$.}
 
 {\vspace{8mm}}
 
@@ -314,7 +308,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{Draft8.png}
+    \includegraphics[width=0.8\linewidth]{Draft8.png}
 \end{figure}
 
 {\Large The ohmmeter is now connected to the terminals of $R_2$, and we expect it measures the resistance correctly.}
