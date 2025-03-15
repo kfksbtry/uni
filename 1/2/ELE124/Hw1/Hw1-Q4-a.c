@@ -7,7 +7,7 @@ a)	int computeHomeValue (int popularity, int size)*/
 int computeHomeValue(int popularity, int size);
 
 int main(void) {
-	int popularity, size, homeValue; // Define variables without initializing
+	int popularity, size; // Define variables without initializing
 	
 	printf("Enter the popularity: "); // Prompt 1
 	scanf("%d", &popularity); // Enter 1
