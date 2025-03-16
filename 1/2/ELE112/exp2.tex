@@ -17,15 +17,17 @@
 \usepackage{float}
 \usepackage{fancyhdr}
 \usepackage{booktabs}
+\usepackage{fancyhdr}
 
 \pagestyle{fancy}
 \fancyhf{}
+\fancyhead[R]{Baturay KAFKAS 2240357068 Electrical \& Electronics Engineering}
 
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0pt} 
 \renewcommand{\footrulewidth}{0pt}
 
-%%\setcounter{page}{}
+\setcounter{page}{16}
 
 \begin{document}
 \large
@@ -44,7 +46,67 @@
 
 \vspace{4mm}
 
-{\textbf{Answer}: TBD.}
+{\textbf{Answer}: When the switch is open, the current is that the ammeter measures when it deflects full-scale. After the switch is closed, the current splits equally and the ammeter deflects half-scale. From Kirchhoff's Voltage Law, the voltage across the ammeter and R$_2$ must be equal. Since they have the same magnitude of current, from Ohm's Law, they have equal magnitudes of resistance. Therefore, the resistance of the ammeter equals the resistor's.}
+
+%\vspace{8mm}
+
+%{\textbf{Answer}: When the switch is open, the magnitude of the current, let it be I$_\text{1}$, is the current that the ammeter measures when it deflects full-scale. We find:}
+
+%\vspace{8mm}
+
+%{V$_\text{sup} = \text{I}_\text{1}\cdot (\text{R}_\text{1} + \text{R}_\text{m})$}
+
+%\vspace{8mm}
+
+%{When the switch is closed, the magnitude of the current, let it be I$_\text{2}$, is half I$_\text{1}$ because the ammeter deflects half-scale. Now that R$_2$ and R$_\text{m}$ are parallel as well.}
+
+%\vspace{8mm}
+
+%{I$\displaystyle_2 = \frac{\text{I}_1}{2}$}
+
+%\vspace{4mm}
+
+%{$\displaystyle\text{R}_\text{p} = \text{R}_2 \ // \ \text{R}_\text{m} = \frac{\text{R}_2 \cdot \text{R}_\text{m}}{\text{R}_2 + \text{R}_\text{m}}$}
+
+%\vspace{4mm}
+
+%{V$\displaystyle_\text{sup} = \text{I}_\text{2}\cdot \Big(\text{R}_\text{1} + \frac{\text{R}_2 \cdot\text{R}_\text{m}}{\text{R}_2 + \text{R}_\text{m}} \Big) = \text{I}_\text{2} \cdot \Big[\frac{\text{R}_1(\text{R}_2 + \text{R}_\text{m}) + \text{R}_2 \cdot \text{R}_\text{m}}{\text{R}_2 + \text{R}_\text{m}}\Big]$}
+
+%\vspace{8mm}
+
+%{Since the source provides constant voltage,}
+
+%\vspace{8mm}
+
+%{V$\displaystyle_\text{sup} = \text{I}_\text{1}\cdot (\text{R}_\text{1} + \text{R}_\text{m}) = \text{I}_\text{2} \cdot \Big[\frac{\text{R}_1(\text{R}_2 + \text{R}_\text{m}) + \text{R}_2 \cdot \text{R}_\text{m}}{\text{R}_2 + \text{R}_\text{m}}\Big]$}
+
+%\vspace{4mm}
+
+%{$\displaystyle2(\text{R}_\text{1} + \text{R}_\text{m}) = \Big[\frac{\text{R}_1(\text{R}_2 + \text{R}_\text{m}) + \text{R}_2 \cdot \text{R}_\text{m}}{\text{R}_2 + \text{R}_\text{m}}\Big]$}
+
+%\vspace{4mm}
+
+%{$\displaystyle \text{R}_\text{m}\text{R}_\text{1}\text{R}_\text{2} + 2\text{R}_\text{2}\text{R}_\text{m}^2 = \text{R}_\text{2} + \text{R}_\text{m}$}
+
+%\vspace{4mm}
+
+%{$\displaystyle \text{R}_\text{m}\text{R}_\text{2}(\text{R}_\text{1} + 2\text{R}_\text{m}) = \text{R}_\text{2} + \text{R}_\text{m}$}
+
+%\vspace{4mm}
+
+%{$\displaystyle \text{R}_\text{1} + 2\text{R}_\text{m} = \frac{\text{R}_\text{2} + \text{R}_\text{m}}{\text{R}_\text{2} \cdot \text{R}_\text{m}}$}
+
+%\vspace{8mm}
+
+%{Let's use the equations we found for V$\displaystyle_\text{sup}$.}
+
+%\vspace{8mm}
+
+%{$\displaystyle \text{I}_\text{1}\cdot (\text{R}_\text{1} + \text{R}_\text{m}) = \text{I}_\text{2}\cdot \Big(\text{R}_\text{1} + \frac{\text{R}_2+\text{R}_\text{m}}{\text{R}_2 \cdot \text{R}_\text{m}} \Big) $}
+
+%\vspace{4mm}
+
+%{$\displaystyle \text{I}_\text{1}\cdot (\text{R}_\text{1} + \text{R}_\text{m}) = \text{I}_\text{2}\cdot(2\text{R}_\text{1} + \text{I}_\text{2}) $}
 
 \vspace{8mm}
 
@@ -56,7 +118,47 @@
 
 \vspace{4mm}
 
-{\textbf{Answer}: TBD.}
+{\textbf{Answer}:}
+
+\vspace{4mm}
+
+{a)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Draft1.png}
+\end{figure}
+
+\vspace{4mm}
+
+{$\text{I}_1 = 20\text{ mA} - \text{I}_1 = 20\text{ mA} - 2\text{ mA} = 18\text{ mA}$}
+
+\vspace{4mm}
+
+{$\displaystyle\text{I}_1\cdot\text{R}_1 = \text{I}_2\cdot\text{R}_2 \ \rightarrow \ \text{R}_1 = \frac{\text{I}_2\cdot\text{R}_2}{\text{I}_1} = \frac{2\text{ mA}\cdot\text{50 }\Omega}{18\text{ mA}} = \frac{50}{9}\ \Omega \approx 5.56 \ \Omega$}
+
+\vspace{4mm}
+
+{$\displaystyle \boxed{\text{I}_1 = 18 \text{ mA}, \ \text{R}_1 = 5.56\ \Omega}$}
+
+\vspace{4mm}
+
+\newpage
+
+{b)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Draft2.png}
+\end{figure}
+
+{$\displaystyle \text{V}_\text{max} = \text{I}_3\cdot {\text{R}_3} + \text{I}_3\cdot{\text{R}_4} = \text{I}_3\cdot ({\text{R}_3} + {\text{R}_4})$}
+
+\vspace{4mm}
+
+{$\displaystyle \text{R}_\text{4} = \frac{\text{V}_\text{max}}{\text{I}_3} - {\text{R}_3} = \frac{20 \ \text{V}}{2\text{ mA}} - {50 \ \Omega} = 9950 \ \Omega \ \rightarrow \ \boxed{\text{R}_\text{4} =  9950 \ \Omega}$}
+
+\vspace{4mm}
 
 \vspace{8mm}
 
@@ -68,7 +170,15 @@
 
 \vspace{4mm}
 
-{\textbf{Answer}: TBD.}
+{\textbf{Answer}:}
+
+\vspace{4mm}
+
+{a) $\displaystyle \text{R}_\text{v} = \text{R}_\text{T} - \text{R}_\text{m} = \frac{3 \ \text{V}}{1\text{ mA}} - 100 \ \Omega = 2900 \ \Omega\ \rightarrow \ \boxed{\text{R}_\text{v} =  2900 \ \Omega}$}
+
+\vspace{4mm}
+
+{b) $\displaystyle \text{R}_\text{x} = \text{R}_\text{T}-  \text{R}_\text{v} - \text{R}_\text{m} = \frac{3 \ \text{V}}{0.33\text{ mA}} - 2900 \ \Omega - 100 \ \Omega = 6000 \ \Omega \ \rightarrow \ \boxed{\text{R}_\text{x} =  6000 \ \Omega}$}
 
 \vspace{8mm}
 
@@ -86,7 +196,43 @@ measured using two voltmeters whose internal resistances are 300 k$\Omega$ and 6
 
 \vspace{4mm}
 
-{\textbf{Answer}: TBD.}
+{\textbf{Answer}:}
+
+\vspace{4mm}
+
+{a) $\displaystyle \text{V}_{\text{R}_\text{L}} = \frac{75}{75 + 150}\cdot 300 = 100\text{ V} \ \rightarrow \ \boxed{\text{V}_{\text{R}_\text{L}} = 100\text{ V}}$}
+
+\vspace{8mm}
+
+{b) With 300 k$\Omega$,}
+
+\vspace{4mm}
+
+{$\displaystyle \text{R}_{\text{ab}} = 75 \text{ k}\Omega\ //\ 300\text{ k}\Omega = 60\text{ k}\Omega\ $}
+
+\vspace{4mm}
+
+{$\displaystyle \text{V}_{\text{ab}} = \frac{60 \text{ k}\Omega}{60 \text{ k}\Omega + 150 \text{ k}\Omega} \cdot 300 \text{ V} = \frac{600}{7} \text{ V} \approx 85.71 \text{ V} $}
+
+\vspace{4mm}
+
+{Error: $\displaystyle \text{V}_{\text{R}_\text{L}} - \text{V}_{\text{ab}} \approx 14.29 \text{ V} $}
+
+\vspace{16mm}
+
+{With 6 M$\Omega$,}
+
+\vspace{4mm}
+
+{$\displaystyle \text{R}_{\text{ab}} = 75 \text{ k}\Omega\ //\ 6\text{ M}\Omega \approx 74.07\text{ k}\Omega\ $}
+
+\vspace{4mm}
+
+{$\displaystyle \text{V}_{\text{ab}} = \frac{74.07 \text{ k}\Omega}{74.07 \text{ k}\Omega + 150 \text{ k}\Omega} \cdot 300 \text{ V} \approx 99.17 \text{ V} $}
+
+\vspace{4mm}
+
+{Error: $\displaystyle \text{V}_{\text{R}_\text{L}} - \text{V}_{\text{ab}} \approx 0.83 \text{ V} $}
 
 \vspace{8mm}
 
