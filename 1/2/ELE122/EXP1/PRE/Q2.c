@@ -21,6 +21,8 @@ int main(void) {
 	
 	int c = GCD(a, b);
 	printf("GCD of %d and %d: %d", a, b, c);
+	
+	return 0;
 }
 
 // Remember: a = bq+r
