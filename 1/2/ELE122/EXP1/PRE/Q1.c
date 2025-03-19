@@ -12,9 +12,10 @@
 	Electrical & Electronics Engineering
 */
 
-#define SIGNIFICANT_DIGITS 15 // The number of digits to be calculated due to limitations.
+#define SIGNIFICANT_DIGITS 20 // The number of digits at most to be calculated due to limitations.
 
 #include <stdio.h>
+#include <stdbool.h>
 
 unsigned long long int mySqrt(unsigned long long int);
 
@@ -38,37 +39,42 @@ unsigned long long int mySqrt(unsigned long long int num) {
 	int location = 1;           // Indicate which digit is being checked, ones: 1, tens: 2, tenths: -1, hundredths, -2, dot: 0 ...
 	int leftToDot = 1;          // The number of digits left to the dot.
 	
-	double compareNum = 1.0;    // The amount we will increment or decrement for the value of _sqrt
-	double _sqrt = 0.0;         // The number we want to find, in double.
+	double compareNum = 1.0;    // The amount we will increment or decrement for the value of sqrtVal
+	double sqrtVal = 0.0;       // The number we want to find, in double.
+	double last = -1.0;         // If arithmetic errors occur, use this to terminate the while loop.
 	
-	while (location >= (leftToDot - SIGNIFICANT_DIGITS + 1)) {
+	bool debounce = false;
+	
+	while (location >= (leftToDot - SIGNIFICANT_DIGITS)) {
 		if (location == 0) { // If location = 0, it is the dot.
 			location--;
-			
-			continue;
 		}
-				
+					
 		for (int i = 0; i <= 9; i++) {
-			_sqrt += compareNum;
+			sqrtVal += compareNum;
 
-			if (_sqrt * _sqrt > num) {
-				_sqrt -= compareNum;
+			if (sqrtVal * sqrtVal > num) {
+				debounce = true;
+				sqrtVal -= compareNum;
 				location--;
 				compareNum /= 10.0;
 
 				break;
-			} else if (_sqrt * _sqrt == num) {
-				return _sqrt;
+			} else if (sqrtVal * sqrtVal == num) {
+				return sqrtVal;
 			}
 			
-			if (i == 9) { // Once the number of digits left the dot found in the root, the value of location will always decrement.
+			if (i == 9 && !debounce) { // Once the number of digits left the dot found in the root, the value of location will always decrement.
 				compareNum *= 10.0;
-				_sqrt = compareNum;
+				sqrtVal = compareNum;
 				location++;
 				leftToDot++;
 			}
+			
+			if (last == sqrtVal) location--;
+			else last = sqrtVal;
 		}
-	}	
+	}
 	
-	return _sqrt;
+	return (unsigned long long int) sqrtVal; // Explicitly convert
 }
