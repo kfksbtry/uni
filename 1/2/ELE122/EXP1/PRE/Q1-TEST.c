@@ -1,21 +1,30 @@
 // Only works in Windows.
+// Insert this code in Q1.c file.
 
 #include <windows.h>
 
 // startCounter: the square root of the number you want to start the test with.
-// endCounter: the square root of the number, number that will terminate the test.
+// endCounter: the square root of the number, the number that will terminate the test.
 // num: The number whose square root is to be found.
 
-void test(unsigned long long int startCounter, unsigned long long int endCounter, unsigned long long int num) {
-	unsigned long long int c = startCounter;
-	unsigned long long int e = endCounter;
+void test(unsigned long long int counter, unsigned long long int endFor, unsigned long long int num) {
+	unsigned long long int c = counter;  // Enter the square root of the number you want to start the test with.
+	unsigned long long int e = endFor;  // Enter the square root of the number whose square will terminate the test.
 
 	unsigned long long int index = c * c;	
-	unsigned long long int n_endFor = e * e;
+    unsigned long long int n_endFor = e * e;  // Enter the number whose square root will terminate the test.
 
-	unsigned long long int last = c - 1;
+    unsigned long long int last = c - 1;
+	
+    LARGE_INTEGER F;
+    LARGE_INTEGER T1, T2;
+    double ETime;
 
-	printf("%s\n", "Range test start!");
+    QueryPerformanceFrequency(&F);
+    
+    printf("Range test start! First number: %llu\n", index);
+
+    QueryPerformanceCounter(&T1);
 	
 	for (unsigned long long int i = index; i < n_endFor; i++) {
 		unsigned long long int temp = mySqrt(i);
@@ -32,20 +41,24 @@ void test(unsigned long long int startCounter, unsigned long long int endCounter
 		}
 		
 		last = temp;
-	}
+    }
+	
+    QueryPerformanceCounter(&T2);
 
-	printf("%s\n\n", "Range test end!");
+    ETime = (T2.QuadPart - T1.QuadPart) * 1000.0 / F.QuadPart;
+    
+    printf("Range test end! Last number: %llu\n", n_endFor);
+    printf("Time elapsed: %f ms.\n\n", ETime);
 
     LARGE_INTEGER f;
     LARGE_INTEGER t1, t2;
     double eTime;
-	unsigned long long int n = num;
 
     QueryPerformanceFrequency(&f);
     
     printf("%s\n", "One-time calculation test start!");
     QueryPerformanceCounter(&t1);
-	unsigned long long int a = mySqrt(n);
+    unsigned long long int a = mySqrt(num);
     QueryPerformanceCounter(&t2);
     printf("Square root: %llu\n", a);
     printf("%s\n", "One-time calculation test end!");
