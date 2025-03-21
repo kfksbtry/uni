@@ -3,7 +3,7 @@
 | Goal:         Return the integer part of the square root of an integer.
 | Description:  This program will ask the user to input an integer, and the user will see the integer part of the square root they input.
                 The input will be processed by a function. A function attempts to find the square root of the given integer with double-type numbers.
-                It may produce incorrect results above 2^63.
+                It may produce incorrect results above 2^53 because of precision loss.
                 Due to the limitation of double-type numbers, the function will halt the process of finding the subsequent digits.
                 Then the function will only return the integer part. The integer will be output in the main function.
 | Student info
