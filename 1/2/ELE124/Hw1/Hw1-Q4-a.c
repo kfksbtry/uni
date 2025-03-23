@@ -2,12 +2,11 @@
 a)	int computeHomeValue (int popularity, int size)*/
 
 #include <stdio.h>
-#include <math.h>
 
-int computeHomeValue(int popularity, int size);
+int computeHomeValue(int popularity, int size); // Function to compute the value of the home.
 
 int main(void) {
-	int popularity, size; // Define variables without initializing
+	int popularity, size; // Declare variables without initializing
 	
 	printf("Enter the popularity: "); // Prompt 1
 	scanf("%d", &popularity); // Enter 1
@@ -21,7 +20,7 @@ int main(void) {
 }
 
 int computeHomeValue(int popularity, int size) {
-	return (pow(popularity, 3) + pow(size, 2)) * 10000; // Calculate the value
+	return (popularity * popularity * popularity + size * size) * 10000; // Calculate the value
 }
 
 /* PROGRAM STARTED

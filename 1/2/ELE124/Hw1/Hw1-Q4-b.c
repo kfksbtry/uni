@@ -3,9 +3,8 @@ b)	void computeHomeValue (void)
 Notice that for part b, all printf/scanf should take place within the function.*/
 
 #include <stdio.h>
-#include <math.h>
 
-void computeHomeValue(void);
+void computeHomeValue(void); // Function to compute the value of the home.
 
 int main(void) {
 	computeHomeValue();
@@ -13,15 +12,15 @@ int main(void) {
 }
 
 void computeHomeValue(void) {
-	int popularity, size, homeValue; // Define variables without initializing
+	int popularity, size, homeValue; // Declare variables without initializing
 	
 	printf("Enter the popularity: "); // Prompt 1
 	scanf("%d", &popularity); // Enter 1
 
 	printf("Enter the size: "); // Prompt 2
 	scanf("%d", &size); // Enter 2
-	
-	homeValue = (pow(popularity, 3) + pow(size, 2)) * 10000; // Calculate the value
+
+	homeValue = (popularity * popularity * popularity + size * size) * 10000; // Calculate the value
 
 	printf("The home value is %d", homeValue); // Inform the user
 }
