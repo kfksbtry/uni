@@ -1,6 +1,6 @@
 /*
 | C Program
-| Last updated:   13/04/2025 17:11 +3
+| Last updated:   14/04/2025 18:22 +3
 
 | Question:
             Write a C program that asks the user to enter a number n between 1 and 20. The program 
@@ -23,26 +23,14 @@ int main(void) {
 	printf("Enter an integer between 1 and 20, including both: ");
 	scanf("%d", &num);
 	
-	printf("\n");
-
 	if (num >= 1 && num <= 20) {
 		for (short i = 1; i <= num; i++) {
-			for (short j = 1; j <= i; j++) {
-				if (num % 2 == 0) {
-					printf("%d ", j);
-				}
-				else {
-					printf("%d ", num - j + 1);
-				}
-			
-			}
-		
 			printf("\n");
+
+			for (short j = 1; j <= i; j++) printf("%d ", num % 2 == 0 ? j : num - j + 1);
 		}
 	}
-	else {
-		printf("The number's not in the interval.");
-	}
+	else printf("The number's not in the interval.");
 
     return 0;
 }
