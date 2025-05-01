@@ -6,7 +6,7 @@
 
 % Last update: HH:MM DD/MM/YY
 
-% My resource collection: https://github.com/ProBaturay/uni
+% My resource collection: https://github.com/kfksbtry/uni
 % Circuits were set up in LTspice.
 
 \documentclass{article}
@@ -19,6 +19,11 @@
 \usepackage{float}
 \usepackage{fancyhdr}
 \usepackage{booktabs}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
 
 \usepackage{lipsum} %% Delete this line later.
 
@@ -86,5 +91,34 @@
         \hline
     \end{tabular}
 \end{center} %% Rearrange the table.
+
+%% Example graph
+
+\begin{tikzpicture}
+    \begin{axis}[
+        title={Graph 3: The relation between I$_\text{in}$ and I$_\text{2}$},
+        width = 8cm,
+        xlabel={I$_\text{in}$ (mA)},
+        ylabel={I$_\text{2}$ (mA)},
+        xmin=4, xmax=28,
+        ymin=2, ymax=12,
+        xtick={2, 7, 12, 17, 22, 27},
+        ytick={2, 4, 6, 8, 10, 12},
+        legend pos=north west,
+        ymajorgrids=true,
+        xmajorgrids=true,
+        grid style=dashed,
+    ]
+    
+    \addplot[
+        color=blue,
+        mark=square,
+        ]
+        coordinates {
+        (5,2)(10,4)(15,6)(25,10)(27.6, 11.1)
+        };
+    
+    \end{axis}
+\end{tikzpicture}
 
 \end{document}
