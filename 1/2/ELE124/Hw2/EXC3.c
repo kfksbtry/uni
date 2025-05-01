@@ -16,6 +16,7 @@ int main(void) {
   }
   
   fprintf(outf, "Donation is %.2f\nProfit is %.2f\n", donationTotal, profitTotal);
+  fclose(outf);
 
   system("pause");
 }
