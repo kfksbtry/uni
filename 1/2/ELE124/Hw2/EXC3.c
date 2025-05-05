@@ -11,7 +11,7 @@ int main(void) {
   FILE* outf = fopen("donations.txt", "w");
   
   for (int i = 0; i < 50; i++) {
-  	float price = (float) (rand() % 2000) / 100;
+  	float price = (float) (rand() % 2001) / 100;
   	
   	Hunerler(price, &donationTotal, &profitTotal);
   	
