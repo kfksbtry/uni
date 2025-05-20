@@ -1,0 +1,36 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage[top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{moresize}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Baturay KAFKAS 2240357068 Electrical \& Electronics Engineering}
+
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%\setcounter{page}{[NUM]} Enter the next integer after the last page number used.
+
+\begin{document}
+\begin{center}
+\begin{tikzpicture}[scale = 0.8]
+
+\draw[step=1cm,gray,very thin] (0,0) grid (20,28);
+\draw[thick] (0,0) rectangle (20,28);
+
+\end{tikzpicture}
+\end{center}
+\end{document}

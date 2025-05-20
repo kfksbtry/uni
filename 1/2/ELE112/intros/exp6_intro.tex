@@ -1,0 +1,102 @@
+% Student Number: 2240357068
+% Student Name: Baturay KAFKAS
+% EEE @ Hacettepe University
+
+% Last update: 01:32 05/18/25
+
+% My resource collection: https://github.com/kfksbtry/uni
+
+\documentclass{article}
+
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage[top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{moresize}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Baturay KAFKAS 2240357068 Electrical \& Electronics Engineering}
+
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+
+\setcounter{page}{47}
+
+\begin{document}
+
+\large
+
+{\small \textbf{HACETTEPE UNIVERSITY}}
+
+{\small \textbf{DEPARTMENT OF ELECTRICAL \& ELECTRONICS ENGINEERING}} 
+
+{\small \textbf{ELE 112 INTRODUCTION TO ELECTRICAL ENGINEERING LABORATORY}} 
+
+\vspace{4mm}
+
+{\small \textbf{EXPERIMENT \#6}}
+
+\vspace{4mm}
+
+{\small \textbf{EXAMINING BASIC CHARACTERISTICS OF A TRANSISTOR IN DC CIRCUITS}}
+
+\vspace{4mm}
+
+{\textbf{Objective:}}
+{To examine DC analysis of bipolar junction transistors (BJT).}
+
+\vspace{4mm}
+
+{\textbf{Theory:} If we join together two individual diodes back-to-back, this will give us two PN-junctions connected together in series that share a common P or N terminal. The fusion of these two diodes produces a three layer, two junction, three terminal device forming the basis of a Bipolar Junction Transistor, or BJT for short.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\linewidth]{msedge_27kfW02rhX.png}
+    \includegraphics[width=0.35\linewidth]{msedge_5CRo0bHtQW.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\linewidth]{msedge_aoyQrMuHYu.png}
+    \includegraphics[width=0.25\linewidth]{msedge_Y5Ut5MLC57.png}
+\end{figure}
+
+{The BJT physical construction block diagrams are shown on Figure 1-a). The three terminals of the BJT are called Base (B), Collector (C) and Emitter (E). The BJT is fabricated with three separately doped regions. The npn device has one p region between two n regions and the pnp device has one n region between two p regions. The BJT has two junctions (boundaries between the n and the p regions). These junctions are similar to the junctions we saw in the diodes and thus they may be forward biased or reverse biased. By relating these junctions to a diode model the pnp and npn BJTs may be modeled as shown on Figure 1-b). As a result of different possible states of each junction (forward or reverse bias) the BJT will have different modes of operation which are given below:}
+
+\begin{center}
+    \large
+    \begin{tabular}{ |c| c |c| } 
+    \hline
+        \textbf{Mode of Operation} & \textbf{Emitter-Base Junction} & \textbf{Collector Base Junction} \\
+        \hline
+        \textbf{Cut-Off}& Reverse & Reverse \\
+        \hline
+        \textbf{Active}& Forward & Reverse \\
+        \hline
+        \textbf{Saturation}& Forward & Forward \\
+        \hline
+    \end{tabular}
+\end{center}
+
+{The transistor’s ability to change between these states enables it to have two basic 
+functions: “switching” (digital electronics) or “amplification” (analogue electronics). 
+Then bipolar transistors have the ability to operate within three different regions:}
+
+\vspace{4mm}
+
+{Active Region – the transistor operates as an amplifier and I$_\text{C}$ = $\beta$ ×I$_\text{B}$.}
+
+{Saturation – the transistor is operating as a switch and V$_\text{CE}$ = V$_\text{CE, SAT}$.}
+
+{Cut-off – the transistor is “Fully-OFF” operating as a switch and I$_\text{B}$ = I$_\text{C}$ = 0.}
+
+\vspace{4mm}
+
+{For a detailed background please refer to the \textbf{ELE110 Introduction to Electrical 
+Engineering} course notes.}
+
+\end{document}
