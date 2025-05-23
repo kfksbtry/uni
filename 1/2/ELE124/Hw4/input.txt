@@ -2,4 +2,4 @@ The program will read every line from the file.
 The following words are intentionally left next to the comma, to verify
 they are two different words: hello,world!
 
-The lecturer's will inspect the text.
+The lecturer's notes will be quite useful.
