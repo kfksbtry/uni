@@ -46,7 +46,7 @@ b. $\displaystyle \lim_{x\to 3} \frac{x^2-\floor{x^2}}{x-3}$
 \newpage
 
 \begin{center}
-Solutions (Last update: 7/11/25 (11th of July) 4:59 AM)
+Solutions (Last update: 7/11/25 (11th of July) 5:09 AM)
 \end{center}
 
 \noindent 1) Take the first derivative and set to 0.
@@ -106,17 +106,17 @@ Solutions (Last update: 7/11/25 (11th of July) 4:59 AM)
     ylabel = {$f(x) = \frac{1}{x} + \frac{1}{x^2}$},
     domain=-3:-0.1, % left branch
     samples=200,
-    ymin=-30, ymax=30,
-    xmin=-3, xmax=3,
-    restrict y to domain=-20:20,
-    restrict x to domain=-2.5:2.5,
+    ymin=-0.3, ymax=10,
+    xmin=-5, xmax=5,
+    restrict y to domain=-1:8,
+    restrict x to domain=-5:5,
     legend pos=outer north east,
     clip=true
   ]
-    \addplot[blue, thick, domain=-3:-0.1] {1/x + 1/(x^2)};
-    \addplot[blue, thick, domain=0.1:3] {1/x + 1/(x^2)};
+    \addplot[blue, thick, domain=-5:-0.1] {1/x + 1/(x^2)};
+    \addplot[blue, thick, domain=0.1:4.4] {1/x + 1/(x^2)};
 
-    \draw[dashed, red] (axis cs:-3,0.2) -- (axis cs:3,0.2);
+    \draw[dashed, red] (axis cs:-5,0.05) -- (axis cs:5,0.05);
     \draw[dashed, red] (axis cs:0.05,-30) -- (axis cs:0.05,30);
   \end{axis}
 \end{tikzpicture}
