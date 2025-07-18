@@ -70,7 +70,7 @@ f(x) = \frac{\mathrm{e}^x}{x}
 
 \hfill
 
-\noindent (d) $\displaystyle \int\mathrm{e}^{2x}\sin e^x\,dx$
+\noindent (d) $\displaystyle \int\mathrm{e}^{2x}\sin \mathrm{e}^x\,dx$
 
 \hfill
 
@@ -78,7 +78,7 @@ f(x) = \frac{\mathrm{e}^x}{x}
 
 \hfill
 
-\noindent 7) Let us consider the area $A$ of the region bounded by the curves $x=e^y, \, x=y^2-2$ and the straight lines $y=1, \, y=-1$. Write an integral (but don't evaluate) corresponding to the area $A$
+\noindent 7) Let us consider the area $A$ of the region bounded by the curves $x=\mathrm{e}^y, \, x=y^2-2$ and the straight lines $y=1, \, y=-1$. Write an integral (but don't evaluate) corresponding to the area $A$
 
 \hfill
 
@@ -89,7 +89,7 @@ f(x) = \frac{\mathrm{e}^x}{x}
 \newpage
 
 \begin{center}
-Solutions (Last update: 7/15/25 (15th of July) 2:36 AM)
+Solutions (Last update: 7/18/25 (18th of July) 1:56 PM)
 \end{center}
 
 \noindent 1) Let $L$ be the value of the limit.
@@ -136,7 +136,7 @@ Solutions (Last update: 7/15/25 (15th of July) 2:36 AM)
 \noindent Hence, $b=4$. To calculate from the left, we need another technique.
 
 \begin{align*}
-\lim_{x\to0^-} \frac{\tan ax}{\tan bx} &= \lim_{x\to0^-} \left(\frac{\sin ax}{\cos ax} \cdot \frac{\cos bx}{\sin bx} \cdot \frac{bx}{bx}\cdot \frac{ax}{ax}\right)\\\\&=\lim_{x\to0^-} \left(\frac{\sin ax}{ax} \right)\cdot \lim_{x\to0^-} \left(\frac1{ \frac{\sin bx}{bx}}\right)\ \cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot ax}{\cos(ax) \cdot bx}\right)\\\\&=1\cdot  \frac1{\displaystyle \lim_{x\to0^-} \frac1{ \frac{\sin bx}{bx}} }\cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot a}{\cos(ax) \cdot b}\right)= 1\cdot 1\cdot\left(\frac{\cos(0) \cdot a}{\cos(0) \cdot b}\right)\\&=\frac ab
+\lim_{x\to0^-} \frac{\tan ax}{\tan bx} &= \lim_{x\to0^-} \left(\frac{\sin ax}{\cos ax} \cdot \frac{\cos bx}{\sin bx} \cdot \frac{bx}{bx}\cdot \frac{ax}{ax}\right)\\\\&=\lim_{x\to0^-} \left(\frac{\sin ax}{ax} \right)\cdot \lim_{x\to0^-} \left(\frac1{ \frac{\sin bx}{bx}}\right)\ \cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot ax}{\cos(ax) \cdot bx}\right)\\\\&=1\cdot  \frac1{\displaystyle \lim_{x\to0^-}\frac{\sin bx}{bx}}\cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot a}{\cos(ax) \cdot b}\right)= 1\cdot 1\cdot\left(\frac{\cos(0) \cdot a}{\cos(0) \cdot b}\right)\\&=\frac ab
 \end{align*}
 
 \hfill
@@ -247,7 +247,7 @@ D^2(t) = f^2(t) + g^2(t)
     \hline
         $x$ & $(-\infty, 0)$ & $(0, 1]$ & $[1, \infty)$  \\
         \hline
-        $y$ & $(-\infty, 0)$ & $(\infty, \mathrm{e}]$ & $[e, \infty)$\\
+        $y$ & $(-\infty, 0)$ & $(\infty, \mathrm{e}]$ & $[\mathrm{e}, \infty)$\\
         \hline
         $y'$ sign & - & - & + \\
         \hline
@@ -357,13 +357,17 @@ D^2(t) = f^2(t) + g^2(t)
 
 \hfill
 
-\noindent Recall that $x=3\tan u$, then $\displaystyle x^2 = 9\tan^2u = 9\sec^2u-9\,\rightarrow\, \sec u =\frac{\sqrt{x^2+9}}3$. The result is then
+\noindent Recall that $x=3\tan u$, then $\displaystyle x^2 = 9\tan^2u = 9\sec^2u-9\,\rightarrow\, \sec u =\frac{\sqrt{x^2+9}}3$. The result is then as follows. Furthermore, we can omit the constant part to simplify.
+
+\begin{equation*}
+\mathrm{I}=\frac{x\sqrt{x^2+9}}8\left(2x^2+9\right)-\frac{81}8\ln\left|\frac{x+\sqrt{x^2+9}}3\right| + c,\,c\in\mathbb{R}
+\end{equation*}
 
 \begin{equation*}
 \boxed{\mathrm{I}=\frac{x\sqrt{x^2+9}}8\left(2x^2+9\right)-\frac{81}8\ln\left|x+\sqrt{x^2+9}\right| + c,\,c\in\mathbb{R}}
 \end{equation*}
 
-\hfill
+\newpage
 
 \noindent (b) Rewrite the expression. Then, let $u =\tan^2x + 1$. So, $du=2\tan x \sec^2 x\,dx$
 
@@ -386,7 +390,7 @@ D^2(t) = f^2(t) + g^2(t)
 \noindent (d) We'll use integration by parts.
 
 \begin{align*}u=e^x\,&\rightarrow\,du=\mathrm{e}^x\,dx \\dv=\mathrm{e}^x\sin \mathrm{e}^x \,dx \,&\rightarrow\,v=-\cos\mathrm{e}^x\end{align*}
-\begin{align*}\int\mathrm{e}^{2x}\sin\mathrm{e}^x\,dx&=(-\cos\mathrm{e}^x)\cdot\mathrm{e}^x-\int\mathrm{e}^x\cdot(-\cos\mathrm{e}^x)\,dx\\\\&=\boxed{-e^x\cos e^x +\sin e^x + c, \,c \in \mathbb{R}} \end{align*}
+\begin{align*}\int\mathrm{e}^{2x}\sin\mathrm{e}^x\,dx&=(-\cos\mathrm{e}^x)\cdot\mathrm{e}^x-\int\mathrm{e}^x\cdot(-\cos\mathrm{e}^x)\,dx\\\\&=\boxed{-\mathrm{e}^x\cos \mathrm{e}^x +\sin \mathrm{e}^x + c, \,c \in \mathbb{R}} \end{align*}
 
 \hfill
 
@@ -398,10 +402,10 @@ D^2(t) = f^2(t) + g^2(t)
 
 \hfill
 
-\noindent Rewrite the integral.
+\noindent Rewrite the integral and apply partial fraction decomposition.
 
 \begin{align}
-\mathrm{I} &= \int\frac{dx}{\sin x - \cos x} = \int\frac{\frac2{1+t^2}}{\frac{2t}{1+t^2} -\frac{1-t^2}{1+t^2}}\,dt=\int\frac2{t^2+2t-1}\,dt=2\int\frac1{(t+1)^2-(\sqrt2)^2}\,dt\nonumber\\\nonumber\\&=2\int\left( \frac A{t+1+\sqrt2} + \frac B{t+1-\sqrt2}\right)\,dt\quad[\text{partial fraction decomposition}]
+\mathrm{I} &= \int\frac{dx}{\sin x - \cos x} = \int\frac{\frac2{1+t^2}}{\frac{2t}{1+t^2} -\frac{1-t^2}{1+t^2}}\,dt=\int\frac2{t^2+2t-1}\,dt=2\int\frac1{(t+1)^2-(\sqrt2)^2}\,dt\nonumber\\\nonumber\\&=2\int\frac 1{\left(t+1-\sqrt2\right)\left(t+1+\sqrt2\right)}\,dt=2\int\left( \frac A{t+1+\sqrt2} + \frac B{t+1-\sqrt2}\right)\,dt
 \end{align}
 
 \begin{align*}
@@ -425,7 +429,7 @@ A+B=0  \\
 \noindent Plug the values of $A$ and $B$ into $(4)$.
 
 \begin{equation*}
-\mathrm{I} =\frac{\sqrt2}2\int\left(\frac 1{t+1+\sqrt2} - \frac 1{t+1-\sqrt2}\right) \,dx = \frac{\sqrt2}2 \ln\left(\frac{|t+1+\sqrt2|}{|t+1-\sqrt2|}\right) +c,\,c\in\mathbb{R}\end{equation*}
+\mathrm{I} =\frac{\sqrt2}2\int\left(\frac 1{t+1+\sqrt2} - \frac 1{t+1-\sqrt2}\right) \,dt = \frac{\sqrt2}2 \ln\left(\frac{|t+1+\sqrt2|}{|t+1-\sqrt2|}\right) +c,\,c\in\mathbb{R}\end{equation*}
 
 \begin{equation*}
 \boxed{\mathrm{I} = \frac{\sqrt2}2 \ln\left(\frac{\displaystyle\left|\tan\left(\frac x2\right)+1+\sqrt2\right|}{\displaystyle\left|\tan\left(\frac x2\right)+1-\sqrt2\right|}\right) +c,\,c\in\mathbb{R}}
@@ -502,7 +506,7 @@ A+B=0  \\
 \noindent (i) The variable is $y$. Hence, the limits are $-1, 1$, respectively.
 
 \begin{equation*}
-A = \int_{-1}^1\left[ e^y - (y^2-2) \right] \,dy
+A = \int_{-1}^1\left[ \mathrm{e}^y - (y^2-2) \right] \,dy
 \end{equation*}
 
 \hfill
@@ -510,7 +514,7 @@ A = \int_{-1}^1\left[ e^y - (y^2-2) \right] \,dy
 \noindent (ii) We have three different regions. This leads us to take three different integrals.
 
 \begin{equation*}
-A = \int_{-2}^{-1}\left[ \sqrt{x+2} - (-\sqrt{x+2}) \right] \,dx +\int_{-1}^{1/e}\left[1-(-1) \right] \,dx + \int_{1/e}^{e}\left(1 -\ln x \right) \,dx
+A = \int_{-2}^{-1}\left[ \sqrt{x+2} - (-\sqrt{x+2}) \right] \,dx +\int_{-1}^{1/\mathrm{e}}\left[1-(-1) \right] \,dx + \int_{1/\mathrm{e}}^{\mathrm{e}}\left(1 -\ln x \right) \,dx
 \end{equation*}
 
 \end{document}
