@@ -70,7 +70,7 @@ ax+b, & \text{if}\ x >0 \\
 \newpage
 
 \begin{center}
-Solutions (Last update: 7/17/25 (17th of July) 3:20 PM)
+Solutions (Last update: 7/18/25 (18th of July) 2:59 AM)
 \end{center}
 
 \noindent 1) To ensure continuity at $x=0$, the one-sided limit values must be equal to the value of the function at that point.
@@ -92,7 +92,7 @@ Solutions (Last update: 7/17/25 (17th of July) 3:20 PM)
 \noindent Hence, $b=4$. To calculate from the left, we need another technique.
 
 \begin{align*}
-\lim_{x\to0^-} \frac{\tan ax}{\tan bx} &= \lim_{x\to0^-} \left(\frac{\sin ax}{\cos ax} \cdot \frac{\cos bx}{\sin bx} \cdot \frac{bx}{bx}\cdot \frac{ax}{ax}\right)\\\\&=\lim_{x\to0^-} \left(\frac{\sin ax}{ax} \right)\cdot \lim_{x\to0^-} \left(\frac1{ \frac{\sin bx}{bx}}\right)\ \cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot ax}{\cos(ax) \cdot bx}\right)\\\\&=1\cdot  \frac1{\displaystyle \lim_{x\to0^-} \frac1{ \frac{\sin bx}{bx}} }\cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot a}{\cos(ax) \cdot b}\right)= 1\cdot 1\cdot\left(\frac{\cos(0) \cdot a}{\cos(0) \cdot b}\right)\\&=\frac ab
+\lim_{x\to0^-} \frac{\tan ax}{\tan bx} &= \lim_{x\to0^-} \left(\frac{\sin ax}{\cos ax} \cdot \frac{\cos bx}{\sin bx} \cdot \frac{bx}{bx}\cdot \frac{ax}{ax}\right)\\\\&=\lim_{x\to0^-} \left(\frac{\sin ax}{ax} \right)\cdot \lim_{x\to0^-} \left(\frac1{ \frac{\sin bx}{bx}}\right)\ \cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot ax}{\cos(ax) \cdot bx}\right)\\\\&=1\cdot  \frac1{\displaystyle \lim_{x\to0^-} \frac{\sin bx}{bx} }\cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot a}{\cos(ax) \cdot b}\right)= 1\cdot 1\cdot\left(\frac{\cos(0) \cdot a}{\cos(0) \cdot b}\right)\\&=\frac ab
 \end{align*}
 
 \hfill
@@ -112,7 +112,7 @@ g(x+\Delta x)\approx g(x) + g'(x)\Delta x&=x^{1/2}+\frac12x^{-1/2}\Delta x
 
 \noindent Set $x = 64$ and $\Delta x = 2$.
 
-\begin{align*}3\sqrt[3]{66}+2\sqrt{66}&\approx3\left(64^{1/3}+\frac13 64^{-2/3}\cdot2\right)+2\left(64^{1/2}+\frac{1}2 64^{-1/2}\cdot2\right)\\&=3\left(4 +\frac1{24}\right) + 2\left(8+\frac18\right)=\boxed{28.375}\end{align*}
+\begin{align*}3\sqrt[3]{66}+2\sqrt{66}&\approx3\left(64^{1/3}+\frac13\cdot64^{-2/3}\cdot2\right)+2\left(64^{1/2}+\frac{1}2\cdot64^{-1/2}\cdot2\right)\\&=3\left(4+\frac1{24}\right)+2\left(8+\frac18\right)=\boxed{28.375}\end{align*}
 
 \newpage
 
@@ -132,7 +132,7 @@ g(x+\Delta x)\approx g(x) + g'(x)\Delta x&=x^{1/2}+\frac12x^{-1/2}\Delta x
 \begin{equation*}0<\left|x+3\right| < \delta\implies\left|f(x) - 1\right| < \epsilon\end{equation*}
 
 \begin{align*}
-\left|f(x) - 1\right|&=\left|\sqrt{-x-2}-1\right| = \left|\sqrt{-x-2}-1\cdot\frac{\sqrt{-x-2}+1}{\sqrt{-x-2}+1}\right|\\\\&=\left|\frac{-x-3}{\sqrt{-x-2}+1}\right|\leq \left|-x-3\right|\quad\left[\sqrt{-x-2}\geq0\right]\\\\&=\left|x+3\right|<\delta=\epsilon
+\left|f(x) - 1\right|&=\left|\sqrt{-x-2}-1\right| = \left|\sqrt{-x-2}-1\cdot\frac{\sqrt{-x-2}+1}{\sqrt{-x-2}+1}\right|\\\\&=\left|\frac{-x-3}{\sqrt{-x-2}+1}\right|\leq \left|-x-3\right|\quad\left[\sqrt{-x-2} + 1\geq0+1=1\right]\\\\&=\left|x+3\right|<\delta=\epsilon
 \end{align*}
 
 \hfill
