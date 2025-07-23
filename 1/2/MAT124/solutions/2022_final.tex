@@ -64,7 +64,7 @@
 \newpage
 
 \begin{center}
-Solutions (Last update: 7/22/25 (22nd of July) 11:41 PM)
+Solutions (Last update: 7/23/25 (23rd of July) 10:58 PM)
 \end{center}
 
 \noindent 1) Let $g(x,y)=x+y-1$ and then, solve the system of equations below using the method of Lagrange multipliers.
@@ -320,11 +320,7 @@ A&=\iint_D\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2 +\left(\frac{\par
 
 \noindent If we switch to polar coordinates, we can easily evaluate the integral.
 
-\begin{equation*}A=\sqrt2\int_0^{2\pi}\int_1^2\,r\,dr\,d\theta=\sqrt2\int_0^{2\pi}\left[\frac{r^2}2\right]_{r=1}^{r=2}\,d\theta=\sqrt2\int_0^{2\pi}\frac32\,d\theta=3\pi\sqrt2\end{equation*}
-
-\hfill
-
-\noindent The radii of the top and bottom surface are $r=2$ and $r=1$, respectively. The total surface area is $3\pi\sqrt2 + \pi\left(2^2+1^2\right)=\boxed{3\pi\sqrt2+5\pi}$
+\begin{equation*}A=\sqrt2\int_0^{2\pi}\int_1^2\,r\,dr\,d\theta=\sqrt2\int_0^{2\pi}\left[\frac{r^2}2\right]_{r=1}^{r=2}\,d\theta=\sqrt2\int_0^{2\pi}\frac32\,d\theta=\boxed{3\pi\sqrt2}\end{equation*}
 
 \hfill
 
@@ -380,7 +376,7 @@ z=1-x^2-y^2\,\rightarrow\,\rho\cos\phi=1-\rho^2\sin^2\phi
 
 \hfill
 
-\noindent For $\displaystyle\phi<\arctan\frac16$, the upper bound is $\displaystyle \frac6{\cos\theta}$. Meanwhile, for $\displaystyle\phi>\arctan\frac16$, it is $\displaystyle \frac1{\sin\theta}$.
+\noindent For $\displaystyle\phi<\arctan\frac16$, the upper bound is $\displaystyle \frac6{\cos\phi}$. Meanwhile, for $\displaystyle\phi>\arctan\frac16$, it is $\displaystyle \frac1{\sin\phi}$.
 
 \hfill
 
@@ -395,7 +391,7 @@ V=&\displaystyle\int_0^{2\pi}\int_0^{\arctan{\textstyle\frac16}}\int_{\textstyle
 
 \hfill
 
-\noindent In fact, we are looking for the minimum value of the upper bound for $\rho$ between $\displaystyle\frac1{\sin\theta}$ and $\displaystyle\frac6{\cos\theta}$. Hence, we can write the equivalent expression as follows.
+\noindent In fact, we are looking for the minimum value of the upper bound for $\rho$ between $\displaystyle\frac1{\sin\phi}$ and $\displaystyle\frac6{\cos\phi}$. Hence, we can write the equivalent expression as follows.
 
 \begin{equation*}
 \boxed{V=\displaystyle\int_0^{2\pi}\int_0^{\pi/2}\int_{\textstyle\frac{-\cos\phi +\sqrt{\cos^2\phi+4\sin^2\phi}}{2\sin^2\phi}}^{\min\left(\textstyle\frac6{\cos\phi},\frac1{\sin\phi}\right)}\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta}
