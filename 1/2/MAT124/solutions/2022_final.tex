@@ -64,7 +64,7 @@
 \newpage
 
 \begin{center}
-Solutions (Last update: 7/24/25 (24th of July) 11:47 AM)
+Solutions (Last update: 7/27/25 (27th of July) 6:34 PM)
 \end{center}
 
 \noindent 1) Let $g(x,y)=x+y-1$ and then, solve the system of equations below using the method of Lagrange multipliers.
@@ -224,9 +224,8 @@ Solutions (Last update: 7/24/25 (24th of July) 11:47 AM)
   \end{polaraxis}
 \end{tikzpicture}
 \end{center}
-
 \begin{align*}
-\text{Area}&=\frac12\int_\pi^{2\pi}\left[1^2-(1+\sin\theta)^2\right]\,d\theta=\frac12\int_\pi^{2\pi}\left[-2\sin\theta-\sin^2\theta\right]\,d\theta\,\,\left[\sin^2x+\cos^2x=1\right]\\\\&=-\int_\pi^{2\pi}\sin\theta\,d\theta-\frac12\int_\pi^{2\pi}(1-\cos^2\theta)\,d\theta\quad[2\cos^2\theta-1=\cos(2\theta)] \\\\&=-\int_\pi^{2\pi}\sin\theta\,d\theta+\int_\pi^{2\pi}\frac{\cos(2\theta)-1}{4}\,d\theta=\int_\pi^{2\pi}\left[-\frac14+\frac14\cos(2\theta)-\sin\theta\right]\,d\theta\\\\&=\left[-\frac\theta4+\frac18\sin(2\theta)+\cos\theta\right]_{\pi}^{2\pi}=\left[\left(-\frac{\pi}2+0+1\right)-\left(-\frac{\pi}4+0-1\right)\right]={\boxed{2-\frac{\pi}4}}
+\text{Area}&=\int_{\pi}^{2\pi}\int_{1+\sin\theta}^1\,r\,dr\,d\theta=\frac12\int_\pi^{2\pi}\left[1^2-(1+\sin\theta)^2\right]\,d\theta\\\\&=\frac12\int_\pi^{2\pi}\left[-2\sin\theta-\sin^2\theta\right]\,d\theta\quad\left[\sin^2\theta+\cos^2\theta=1\right]\\\\&=-\int_\pi^{2\pi}\sin\theta\,d\theta-\frac12\int_\pi^{2\pi}(1-\cos^2\theta)\,d\theta\quad[2\cos^2\theta-1=\cos(2\theta)] \\\\&=-\int_\pi^{2\pi}\sin\theta\,d\theta+\int_\pi^{2\pi}\frac{\cos(2\theta)-1}{4}\,d\theta=\int_\pi^{2\pi}\left[-\frac14+\frac14\cos(2\theta)-\sin\theta\right]\,d\theta\\\\&=\left[-\frac\theta4+\frac18\sin(2\theta)+\cos\theta\right]_{\pi}^{2\pi}=\left[\left(-\frac{\pi}2+0+1\right)-\left(-\frac{\pi}4+0-1\right)\right]={\boxed{2-\frac{\pi}4}}
 \end{align*}
 
 \hfill
