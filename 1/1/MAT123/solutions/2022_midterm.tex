@@ -55,7 +55,7 @@
 \newpage
 
 \begin{center}
-Solutions (Last update: 7/18/25 (18th of July) 2:26 AM)
+Solutions (Last update: 7/29/25 (29th of July) 12:57 AM)
 \end{center}
 
 \noindent 1)
@@ -71,11 +71,7 @@ Solutions (Last update: 7/18/25 (18th of July) 2:26 AM)
 \hfill
 
 \noindent (b)
-\begin{equation*}-1\leq \cos(1/x)\leq1\end{equation*}
-\begin{equation*}\mathrm{e}^{-1}\leq\mathrm{e}^{\cos(1/x)}\leq\mathrm{e}^1\end{equation*}
-\begin{equation*}x\mathrm{e}^{-1}\leq x\mathrm{e}^{\cos(1/x)}\leq x\mathrm{e}\end{equation*}
-\begin{equation*}\lim_{x\to 0^+} x\mathrm{e}^{-1}\leq\lim_{x\to 0^+}  x\mathrm{e}^{\cos(1/x)}\leq\lim_{x\to 0^+} x\mathrm{e}\end{equation*}
-\begin{equation*}0\leq\lim_{x\to 0^+} x\mathrm{e}^{\cos(1/x)}\leq0\end{equation*}
+\begin{align*}-1\leq \cos(1/x)\leq1&\implies\mathrm{e}^{-1}\leq\mathrm{e}^{\cos(1/x)}\leq\mathrm{e}^1\implies x\mathrm{e}^{-1}\leq x\mathrm{e}^{\cos(1/x)}\leq x\mathrm{e}\\\\&\implies\lim_{x\to 0^+} x\mathrm{e}^{-1}\leq\lim_{x\to 0^+}  x\mathrm{e}^{\cos(1/x)}\leq\lim_{x\to 0^+} x\mathrm{e}\implies\lim_{x\to 0^+} x\mathrm{e}^{\cos(1/x)}=0\end{align*}
 
 \hfill
 
@@ -152,7 +148,7 @@ Solutions (Last update: 7/18/25 (18th of July) 2:26 AM)
 
 \begin{equation*}\boxed{y=\sqrt\pi(1-2x)}\end{equation*}
 
-\newpage
+\hfill
 
 \noindent 5) Let $L$ be the value of the limit.
 
@@ -221,7 +217,7 @@ Solutions (Last update: 7/18/25 (18th of July) 2:26 AM)
     \hline
         $x$ & $\left(-\infty, -\sqrt2\right]$ & $\left(-\sqrt2, 0\right]$&$\left[0, 1\right)$ & $\left(1,\sqrt2\right]$ & $\left[\sqrt2, 2\right]$ & $\left[2, \frac52\right]$ & $\left[\frac52, \infty\right)$  \\
         \hline
-        $y$ & $(1, 0]$ &$[-2,0)$ & $(-\infty, -2]$& $(-\infty, 0]$& $[0, 2]$& $\left[2, \frac{17}9\right]$& $\left[\frac{17}9,1\right]$\\
+        $y$ & $[0, 1)$ &$[-2,0)$ & $(-\infty, -2]$& $(-\infty, 0]$& $[0, 2]$& $\left[\frac{17}9, 2\right]$& $\left(1, \frac{17}9\right]$\\
         \hline
         $y'$ sign & - & - & - &+&+&-&- \\
         \hline
@@ -244,7 +240,7 @@ Solutions (Last update: 7/18/25 (18th of July) 2:26 AM)
     restrict y to domain=-5:5,
     enlargelimits=true,
     axis line style={->},
-    scale=2,
+    scale=1.6,
     ]
     \addplot[blue, thick] {(x^2-2)/(x-1)^2};
 
