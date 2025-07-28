@@ -78,7 +78,7 @@
 \newpage
 
 \begin{center}
-Solutions (Last update: 7/29/25 (29th of July) 12:26 AM)
+Solutions (Last update: 7/29/25 (29th of July) 12:37 AM)
 \end{center}
 
 \noindent 1) Let $g(x,y,z)=x+y+z-10$ and then, solve the system of equations below using the method of Lagrange multipliers.
@@ -144,7 +144,7 @@ Solutions (Last update: 7/29/25 (29th of July) 12:26 AM)
 
 \[\frac{\partial r}{\partial x}=\frac{x}{\sqrt{x^2+y^2}}=\cos\theta,\quad\quad\frac{\partial r}{\partial y}=\frac{y}{\sqrt{x^2+y^2}}=\sin\theta\]
 
-\hfill
+\newpage
 
 \[\quad\frac{\partial\theta}{\partial x}=\frac{1}{\displaystyle 1+\frac{y^2}{x^2}}\cdot \left(-\frac{y}{x^2}\right)=\frac{-y}{x^2+y^2}=\frac{-\sin\theta}{r},\quad\quad\frac{\partial\theta}{\partial y}=\frac{1}{\displaystyle1+\frac{y^2}{x^2}}\cdot\frac{1}{x}=\frac{x}{x^2+y^2}=\frac{\cos\theta}{r}\]
 
@@ -170,7 +170,7 @@ Solutions (Last update: 7/29/25 (29th of July) 12:26 AM)
 
 \hfill
 
-\noindent Add the second-order partial derivatives and set the equation to $0$. The last terms eliminate each other. Write $x$ and $y$ in terms of $r$ and $\theta$.
+\noindent Add the second-order partial derivatives and set to $0$. The last terms eliminate each other. Write $x$ and $y$ in terms of $r$ and $\theta$.
 
 \begin{align*}\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}=&\left[\left(\frac{\partial^2z}{\partial r^2}\cdot\cos\theta +\frac{\partial^2z}{\partial\theta\,\partial r}\cdot\frac{-\sin\theta}{r}\right)\cdot\cos\theta+\frac{\partial z}{\partial r}\cdot\frac{\sin^2\theta}{r}\right]\\\\&+\left[\left(\frac{\partial^2z}{\partial\theta^2}\cdot\frac{-\sin\theta}{r} + \frac{\partial^2z}{\partial r\,\partial\theta}\cdot\cos\theta\right)\cdot\frac{-\sin\theta}{r}\right]\\\\&+\left[\left(\frac{\partial^2z}{\partial r^2}\cdot\sin\theta +\frac{\partial^2z}{\partial\theta\,\partial r}\cdot\frac{\cos\theta}{r}\right)\cdot\sin\theta+\frac{\partial z}{\partial r}\cdot\frac{\cos^2\theta}{r}\right]\\\\&+\left[\left(\frac{\partial^2z}{\partial\theta^2}\cdot\frac{\cos\theta}{r} + \frac{\partial^2z}{\partial r\,\partial\theta}\cdot\sin\theta\right)\cdot\frac{\cos\theta}{r}\right]=0\end{align*}
 
@@ -384,7 +384,7 @@ x^2+y^2=1\,\implies\,r^2=1\implies r=1\\x^2+y^2=4\,\implies\,r^2=4\implies r=2\\
 \newpage
 
 \begin{align*}
-\int_0^{\pi/6}\int_1^2\sin(r^2)\,r\,dr\,d\theta&=\int_1^{\pi/6}\left[-\frac12\cos{r^2}\right]_0^2\,d\theta=-\frac12\int_0^{\pi/6}\left(\cos4-\cos1\right)\,d\theta\\\\&=\frac12(\cos1-\cos4)\cdot\theta\bigg|_0^{\pi/6}=\boxed{\frac\pi{12}(\cos1-\cos4)}
+\int_0^{\pi/6}\int_1^2\sin(r^2)\,r\,dr\,d\theta&=\int_0^{\pi/6}\left[-\frac12\cos{r^2}\right]_1^2\,d\theta=-\frac12\int_0^{\pi/6}\left(\cos4-\cos1\right)\,d\theta\\\\&=\frac12(\cos1-\cos4)\cdot\theta\,\bigg|_0^{\pi/6}=\boxed{\frac\pi{12}(\cos1-\cos4)}
 \end{align*}
 
 \hfill
@@ -474,7 +474,7 @@ x^2+y^2+z^2=8\,\rightarrow\,z=\sqrt{8-r^2}\\
 \[-\frac{T\cdot\pi}2\leq T\cdot\arctan\left(\frac{\sqrt{8-T^2}}T\right)\leq\frac{T\cdot\pi}2\]
 \[\lim_{T\to0^+}\frac{-T\cdot\pi}2=\lim_{T\to0^+}\frac{T\cdot\pi}2=0\implies\lim_{T\to0^+}\left(T\cdot\arctan\frac{\sqrt{8-T^2}}T\right)=0\]
 
-\hfill
+\newpage
 
 \noindent The limit on the left side in $(4)$ is simply equal to $2\sqrt2$. The value of the integral is then
 
