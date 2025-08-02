@@ -1,5 +1,4 @@
 \documentclass{article}
-\usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
@@ -10,6 +9,7 @@
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \begin{document}
+\pagestyle{empty}
 \large
 
 \begin{center}
@@ -46,7 +46,8 @@ b. $\displaystyle \lim_{x\to 3} \frac{x^2-\floor{x^2}}{x-3}$
 \newpage
 
 \begin{center}
-Solutions (Last update: 7/12/25 (12th of July) 5:35 PM)
+2015-2016 Fall Midterm (10/12/2015) Solutions\\
+(Last update: 7/12/25 (12th of July) 5:35 PM)
 \end{center}
 
 \noindent 1) Take the first derivative and set to 0.
@@ -111,7 +112,8 @@ Solutions (Last update: 7/12/25 (12th of July) 5:35 PM)
     restrict y to domain=-1:8,
     restrict x to domain=-5:5,
     legend pos=outer north east,
-    clip=true
+    clip=true,
+    scale=1.2
   ]
     \addplot[blue, thick, domain=-5:-0.1] {1/x + 1/(x^2)};
     \addplot[blue, thick, domain=0.1:4.4] {1/x + 1/(x^2)};
