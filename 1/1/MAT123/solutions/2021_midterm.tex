@@ -1,0 +1,350 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathtools}
+
+\begin{document}
+\usepgfplotslibrary{fillbetween}
+\large
+
+\begin{center}
+2021-2022 Fall\\MAT123-02,05 Midterm\\(08/12/2021)
+\end{center}
+
+\noindent 1. Evaluate the following limits or show they do not exist without using L'Hôpital's rule.
+
+\hfill
+
+(a) $\displaystyle \lim_{x\to-2}\frac{\left|x+2\right|}{\left|x\right|-2}$ \ \ \ (b) $\displaystyle\lim_{x\to0}\frac{x^2\sin(1/x)}{\sin\left(x^2\right)}$ \ \ \ (c) $\displaystyle \lim_{x\to\frac12}\frac{\arccos x- \frac\pi3}{x-\frac12}$ \ \ \ $\displaystyle\lim_{x\to-\infty}x+\sqrt{x^2-x-4}$
+
+\hfill
+
+\noindent 2. Find the dimensions of the cylinder of largest volume that can be inscribed in the hemisphere of radius $3$ if
+
+\hfill
+
+(a) the cylinder is in the vertical position.
+
+\hfill
+
+(b) the cylinder is in the horizontal position.
+
+\hfill
+
+\noindent 3. A piston is compressing a gas contained in a right circular cylinder. Given the piston is moving into the cylinder at $7 $ cm/s and the diameter of the cylinder is $10$ cm, at what rate is the volume of the gas changing?
+
+\hfill
+
+\noindent 4.
+
+(a) Find the limit $\displaystyle\lim_{x\to0}\left(\frac{\sin x}x\right)^{1/x^2}$.
+
+\hfill
+
+(b) Find an equation of the tangent line to the curve given implicitly by $\displaystyle \frac xy=\cos\left(\pi xy\right)$ at the point $(-1,1)$.
+
+\hfill
+
+\noindent 5. Sketch the graph of the function $\displaystyle f(x)=\frac{2x^2}{\left(x+1\right)^2}$.
+
+\hfill
+
+\noindent 6. Using IVT and MVT, show that the polynomial function $g(x) = x^7+x^3+x+1$ has only one root.
+
+\newpage
+
+\begin{center}
+Solutions (Last update: 8/2/25 (2nd of August) 6:58 PM)
+\end{center}
+
+\noindent 1.
+
+\hfill
+
+\noindent (a) Determine one-sided limits.
+
+\[\lim_{x\to-2^+}\frac{\left|x+2\right|}{\left|x\right|-2}=\lim_{x\to-2^+}\frac{x+2}{-x-2}=-1,\quad\quad\lim_{x\to-2^-}\frac{\left|x+2\right|}{\left|x\right|-2}=\lim_{x\to-2^-}\frac{-(x+2)}{-x-2}=1\]
+
+\[\lim_{x\to-2^+}\frac{\left|x+2\right|}{\left|x\right|-2}\neq\lim_{x\to-2^-}\frac{\left|x+2\right|}{\left|x\right|-2}\implies\boxed{\text{The limit does not exist at }x=-2.}\]
+
+\hfill
+
+\noindent (b) We can separate the limit into two limits because we are going to demonstrate that each limit exists individually.
+
+\begin{align}\lim_{x\to0}\frac{x^4\sin(1/x)}{\sin\left(x^2\right)}=\lim_{x\to0}\frac{x^2}{\sin\left(x^2\right)}\cdot\lim_{x\to0}x^2\sin\left(\frac1x\right)\end{align}
+
+\hfill
+
+\noindent The left-hand limit in $(1)$ is a standard form. Recall $\displaystyle\lim_{u\to0}\frac{\sin u}u=0$.
+
+\[\lim_{x\to0}\frac{x^2}{\sin\left(x^2\right)}=\lim_{x\to0}\frac1{\displaystyle\frac{\sin\left(x^2\right)}{x^2}}=\frac1{\displaystyle\lim_{x\to 0}\frac{\sin\left(x^2\right)}{x^2}}=\frac11=1\]
+
+\hfill
+
+\noindent The right-hand limit in $(1)$ can be evaluated using the squeeze theorem. The trigonometric function $\displaystyle\sin\left(\frac1x\right)$ is continuous everywhere except at $x=0$.
+
+\[-1\leq\sin\left(\frac1x\right)\leq1\]
+
+\[-x^2\leq x^2\sin\left(\frac1x\right)\leq x^2\]
+
+\[\lim_{x\to0}-x^2=\lim_{x\to0}x^2=0\implies\lim_{x\to0}x^2\sin\left(\frac1x\right)=0\]
+
+\hfill
+
+\noindent Plug the values of the limits into $(1)$ and find the result.
+
+\[\lim_{x\to0}\frac{x^2}{\sin\left(x^2\right)}\cdot\lim_{x\to0}x^2\sin\left(\frac1x\right)=1\cdot0=\boxed0\]
+
+\hfill
+
+\noindent (c) Notice that this is the definition of the derivative at some point. Let $f(x)=\arccos x$. Then $\displaystyle f'(x) =\frac{-1}{\sqrt{1-x^2}}$.
+
+\[\lim_{x\to0}=\frac{\arccos x -\frac\pi3}{x-\frac12}=\lim_{x\to0}\frac{f(x)-f\left(\frac12\right)}{x-\frac12}=f'\left(\frac12\right)=\frac{-1}{\sqrt{1-\left(\frac12\right)^2}}=\boxed{-\frac{2\sqrt3}{3}}\]
+
+\newpage
+
+\noindent (d) Expand the expression by multiplying and dividing by its conjugate.
+
+\begin{align*}\lim_{x\to-\infty}x+\sqrt{x^2-x-4}&=\lim_{x\to-\infty}\left[\left(x+\sqrt{x^2-x-4}\right)\cdot\frac{x-\sqrt{x^2-x-4}}{x-\sqrt{x^2-x-4}}\right]\\\\&=\lim_{x\to-\infty}\frac{x^2-\left(x^2-x-4\right)}{x-\sqrt{x^2-x-4}}=\lim_{x\to-\infty}\frac{x+4}{x-\sqrt{x^2-x-4}}\\\\&=\lim_{x\to-\infty}\frac{x\left(1+\frac4x\right)}{x-\left|x\right|\sqrt{1-\frac1x-\frac4{x^2}}}=\lim_{x\to-\infty}\frac{x\left(1+\frac4x\right)}{x\left(1+\sqrt{1-\frac1x-\frac4{x^2}}\right)}\\\\&=\lim_{x\to-\infty}\frac{1+\frac4x}{1+\sqrt{1-\frac1x-\frac4{x^2}}}=\frac{1+0}{1+\sqrt{1-0-0}}=\boxed{\frac12}\end{align*}
+
+\hfill
+
+\noindent 2. Let $r,\:h$ represent the radius and height of the cylinder, respectively, for both sections. The volume of the cylinder is given by
+
+\[V=\pi r^2h\]
+
+\noindent The formula for $V$ is continuous and bounded when written as a function of height. According to the extreme value theorem, extrema must exist on the boundary or at critical points.
+
+\hfill
+
+\noindent (a) If this cylinder is vertically placed inside the hemisphere, using the Pythagorean theorem, we get the following relationship.
+
+\[r^2+h^2=3^2\implies r^2=9-h^2\]
+
+\hfill
+
+\noindent Rewrite the volume formula by eliminating $r$.
+
+\[V(h)=\pi\cdot h\cdot(9-h^2)=\pi\left(9h-h^3\right)\implies 0\leq h\leq3\]
+
+\hfill
+
+\noindent To maximize the volume, we need to determine the extrema of $V$ by taking the first derivative.
+
+\[V'(h)=\pi\left(9-3h^2\right)=0\implies 3h^2=9\implies h=\sqrt3\]
+
+\noindent Check the endpoints.
+
+\[V(0)=0,\quad V(3)=0\]
+
+\hfill
+
+\noindent Since $h=\sqrt3,$ $r=\sqrt{9-\left(\sqrt3\right)^2}=\sqrt6$. The volume is then
+
+\[V=\pi r^2 h=\pi\left(\sqrt6\right)^2\cdot\sqrt3=\boxed{6\pi\sqrt3}\]
+
+\hfill
+
+\noindent (b) If the cylinder is placed horizontally, using the Pythagorean theorem, we get the following relationship.
+
+\[\left(\frac h2\right)^2+\left(2r\right)^2=3^2\implies r^2=\frac14\left(9-\frac{h^2}4\right)\]
+
+\hfill
+
+\noindent Rewrite the volume formula.
+
+\[V(h)=\pi\cdot\frac14\left(9-\frac{h^2}4\right)\cdot h\implies0\leq h\leq6\]
+
+\hfill
+
+\noindent Take the first derivative and find the extrema.
+
+\[V'(h) =\frac\pi4\left(9-\frac{3h^2}4\right)=0\implies h=2\sqrt3\]
+
+\hfill
+
+\noindent Check the endpoints.
+
+\[V(0)=0,\quad V(6)=0\]
+
+\hfill
+
+\noindent Since $h=2\sqrt3,$ $r=\sqrt{\frac14\left(9-\frac{(2\sqrt3)^2}4\right)}=\frac{\sqrt6}2$. The volume is then
+
+\[V=\pi r^2 h=\pi\cdot\left(\frac{\sqrt6}2\right)^2\cdot2\sqrt3=\boxed{3\pi\sqrt3}\]
+
+\hfill
+
+\noindent 3. Let $V(t),\:h(t)$ represent the volume and height of the gas in the cylinder as a function of time, respectively. The volume of a right circular cylinder can be expressed as follows.
+
+\[V(t)=\pi\cdot r^2\cdot h(t)\]
+
+\hfill
+
+\noindent Take the derivative of both sides with respect to $t$.
+
+\[V'(t)=\pi r^2\cdot h'(t)\]
+
+\hfill
+
+\noindent It is given that $2r=10\text{ cm},\: h'(t)=-7\text{ cm/s}$. Therefore, $r=5$ cm. The rate of change of volume at that moment is
+
+\[V'(t)=25\pi\cdot(-7)=\boxed{-175\pi\text{ cm}^2\text{/s}}\]
+
+\hfill
+
+\noindent 4)
+
+\hfill
+
+\noindent (a) Let $L$ be the value of the limit. Then we can take the logarithm of both sides. After that, we may take the logarithm of the expression inside the limit. The expression is continuous for $x\neq0$.
+
+\[L=\lim_{x\to0}\left(\frac{\sin x}x\right)^{1/x^2}\]
+
+\[\ln(L) = \ln\left[\lim_{x\to0}\left(\frac{\sin x}x\right)^{1/x^2}\right]=\lim_{x\to0}\ln\left[\left(\frac{\sin x}x\right)^{1/x^2}\right]=\lim_{x\to0}\frac{\ln\left(\frac{\sin x}x\right)}{x^2}\]
+
+\hfill
+
+\noindent Recall that $\displaystyle \lim_{x\to0}\frac{\sin x}x=1$. Therefore, the limit is in the indeterminate form $0/0$. Apply L'Hôpital's rule where $0/0$ forms occur.
+
+\begin{align*}
+\ln(L)&=\lim_{x\to0}\frac{\ln\left(\frac{\sin x}x\right)}{x^2}\overset{\text{L'H.}}{=}\lim_{x\to0}\frac{\displaystyle\frac1{\frac{\sin x}x}\cdot\frac{\cos x\cdot x-\sin x\cdot1}{x^2}}{2x}=\lim_{x\to0}\frac{x\cos x-\sin x}{2x^2\cdot\sin x}\quad\left[\frac00\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to0}\frac{1\cdot\cos x+x(-\sin x)-\cos x}{4x\cdot\sin x+2x^2\cdot\cos x}=\lim_{x\to0}\frac{-\sin x}{4\sin x+2x\cos x}\quad\left[\frac00\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to0}\frac{-\cos x}{4\cos x+2\cos x+2x(-\sin x)}=\frac{-\cos0}{4\cos0+2\cos0-2\cdot0\cdot\sin0}=-\frac16
+\end{align*}
+
+\noindent If $\displaystyle \ln(L)=-\frac16$, then $\boxed{L=e^{\textstyle-\frac16}}$.
+
+\hfill
+
+\noindent (b)
+\[\frac xy=\cos(\pi xy)\implies x=y\cos(\pi xy)\]
+
+\hfill
+
+\noindent Differentiate each side.
+
+\[1=y'\cdot\cos(\pi xy)+y\cdot(-\sin(\pi xy))\cdot\pi(1\cdot y+xy')\]
+\[1=y'\cos(\pi xy)-\pi y^2\sin(\pi xy)-\pi xyy'\sin(\pi xy)\]
+\[1+\pi y^2\sin(\pi xy)=y'\left[\cos(\pi xy)-\pi xy\sin(\pi xy)\right]\]
+
+\[y'=\frac{1+\pi y^2\sin(\pi xy)}{\cos(\pi xy)-\pi xy\sin(\pi xy)}\]
+
+\noindent Calculate $y'$ at the point $(-1,1)$.
+
+\[y' = \frac{1+\pi\cdot\sin(-\pi)}{\cos(-\pi)+\pi\sin(-\pi)}=-1\]
+
+\hfill
+
+\noindent Recall the tangent line formula: $y-y_0=m(x-x_0)$, where $m$ is basically the derivative at the point $(-1,1)$. The tangent line is as follows.
+
+\[y-1=-1(x+1)\implies\boxed{y=-x}\]
+
+\newpage
+
+\noindent 5) The expression is defined $\forall x\in \mathbb{R}- \{-1\}$. Let us find the limit at infinity and the limit at negative infinity.
+
+\[\lim_{x\to\infty}\frac{2x^2}{(x+1)^2}\overset{\text{L'H.}}{=}\lim_{x\to\infty}\frac{4x}{2(x+1)}\overset{\text{L'H.}}{=}\lim_{x\to\infty}\frac42=2\quad\quad\lim_{x\to-\infty}\frac{2x^2}{(x+1)^2}=2\]
+
+\hfill
+
+\noindent The \textit{only} horizontal asymptote is $y=2$ and the \textit{only} vertical asymptote is $x=-1$.
+
+\hfill 
+
+\noindent Take the first derivative.
+
+\[y'=\frac{4x\cdot(x+1)^2-2x^2\cdot2(x+1)}{(x+1)^4}=\frac{4x}{(x+1)^3}\]
+
+\hfill
+
+\noindent The \textit{only} critical point occurs at $x=0$.
+
+\hfill 
+
+\noindent Take the second derivative.
+
+\[y''=\frac{4\cdot(x+1)^3-4x\cdot3(x+1)^2}{(x+1)^6}=\frac{4-8x}{(x+1)^4}\]
+
+\hfill 
+
+\noindent The \textit{only} inflection point occurs at $\displaystyle x=\frac12$.
+
+\hfill 
+
+\noindent Eventually, consider some values of the function, such as the x- and y-intercepts, and set up a table.
+
+\[f(0) = 0, \quad f\left(\frac12\right)=\frac29\]
+
+\begin{center}
+    \large
+    \begin{tabular}{ |c| c c c c| } 
+    \hline
+        $x$ & $(-\infty,-1)$ & $(-1,0]$ & $\left[0,\frac12\right]$ & $\left(\frac12,\infty\right]$ \\
+        \hline
+        $y$ & $(2,\infty)$ & $[0,\infty)$ & $\left[0,\frac29\right]$ & $\left[\frac29,2\right)$ \\
+        \hline
+        $y'$ sign & + & - & + & + \\
+        \hline
+        $y''$ sign & + & + & + & - \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\hfill
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines = center,
+    xlabel = $x$, ylabel = $y$,
+    domain=-6:10,
+    samples=300,
+    ymin=-0.5, ymax=10,
+    xmin=-6, xmax=6,
+    yticklabels={,,,4,6,8,10},
+    axis line style={->},
+    scale=1.5,
+    clip=true,
+    restrict y to domain=0:15,
+    ]
+    \addplot[blue, thick] {(2*x*x)/((x+1)*(x+1))};
+
+    \draw[dashed, red] (axis cs:-10,2) -- (axis cs:10,2);
+    \draw[dashed, red] (axis cs:-1,0) -- (axis cs:-1,10);
+    \draw[dashed] (axis cs:0.5,0) -- (axis cs:0.5,2/9);
+    \draw[dashed] (axis cs:0,2/9) -- (axis cs:0.5,2/9);
+    
+    \node at (0.5, -0.3) {$0.5$};
+    \node at (0.5, 0.8) {$2/9$};
+    \node at (-1, -0.3) {$-1$};
+    \node at (0.25, 2.3) {$2$};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\noindent 6) $g$ is continuous and differentiable everywhere since it is a polynomial.
+
+\hfill
+
+\noindent Since $g(-1) = -2 < 0$ and $g(0)=1>0$, by IVT, there is at least one $c_1\in(-1,0)$ such that $g(c_1)=0$.
+
+\hfill
+
+\noindent Assume that $g$ has another root $c_2$, i.e., $g(c_2)=0$. Since $g$ is continuous on $[c_1, c_2]$ and differentiable on $(c_1,c_2)$, by MVT, there exists a $d\in(c_1,c_2)$ such that
+
+\[g'(d)=\frac{g(c_2)-g(c_1)}{c_2-c_1}=0\]
+
+\hfill
+
+\noindent But, we have
+
+\[g'(x) = 7x^6 + 3x^2 + 1\geq 0+0+1=1>0\]
+
+\hfill
+
+\noindent So, $g'(x)$ cannot be $0$. This yields a contradiction. Therefore, $g$ has only one root.
+
+\end{document} 
