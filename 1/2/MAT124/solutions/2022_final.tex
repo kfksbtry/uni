@@ -66,7 +66,7 @@
 
 \begin{center}
 2021-2022 Spring Final (23/05/2022) Solutions\\
-(Last update: 7/27/25 (27th of July) 6:34 PM)
+(Last update: 8/5/25 (8th of August) 1:58 AM)
 \end{center}
 
 \noindent 1) Let $g(x,y)=x+y-1$ and then, solve the system of equations below using the method of Lagrange multipliers.
@@ -234,7 +234,7 @@
 
 \noindent 4) We have the sphere $x^2+y^2+z^2=16$. So, the upper bound is $z=\sqrt{16-x^2-y^2}$, while the lower bound is $z=0$. If we project the domain onto the $xy$-plane, we see that the upper and lower bounds for $y$ are $\sqrt{2-x^2}$ and $-\sqrt{2-x^2}$, respectively. For $x$, the integration starts from $-\sqrt2$ and ends at $\sqrt2$. The volume of the object can be evaluated using the following integral.
 
-\hfill
+\newpage
 
 \begin{equation*}\mathrm{I}=\int_{-\sqrt2}^{\sqrt2}\int_{-\sqrt{2-x^2}}^{\sqrt{2-x^2}}\left[\sqrt{16-x^2-y^2}-0 \right]\,dy\,dx\end{equation*}
 
@@ -253,7 +253,6 @@ dA=dy\,dx =r\,dr\,d\theta
 0\leq\theta\leq 2\pi\\
 \end{array} 
 \]
-
 \begin{align*}\mathrm{I}&=\int_{0}^{2\pi}\int_{0}^{\sqrt{2}}\sqrt{16-r^2}\,r\,dr\,d\theta=\int_{0}^{2\pi}\left[-\frac13\left(16-r^2\right)^{3/2}\right]_{r=0}^{r=\sqrt2}\,d\theta\\\\&=\frac13\int_0^{2\pi}\left[-14^{3/2}-\left(-16^{3/2}\right)\right]\,d\theta=\boxed{\frac{2\pi}{3}\left(16^{3/2}-14^{3/2}\right)}
 \end{align*}
 
@@ -317,7 +316,7 @@ dA=dy\,dx =r\,dr\,d\theta
 A&=\iint_D\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2 +\left(\frac{\partial z}{\partial y}\right)^2}\,dA= \iint_D\sqrt{1+\left(\frac{x}{\sqrt{x^2+y^2}}\right)^2 +\left(\frac{y}{\sqrt{x^2+y^2}}\right)^2}\,dA \\\\&=\iint_D\sqrt{1+\left(\frac{x^2+y^2}{x^2+y^2}\right)}\,dA=\iint_D\sqrt{1+1}\,dA=\sqrt{2}\iint_D\,dA
 \end{align*}
 
-\hfill
+\newpage
 
 \noindent If we switch to polar coordinates, we can easily evaluate the integral.
 
@@ -333,8 +332,8 @@ A&=\iint_D\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2 +\left(\frac{\par
 
 \[
 \begin{array}{c}
-z=\rho\cos\theta\\
-r=\rho\sin\theta\\
+z=\rho\cos\phi\\
+r=\rho\sin\phi\\
 x^2+y^2+z^2=\rho^2\\
 dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
 \end{array}\quad\rightarrow\quad
