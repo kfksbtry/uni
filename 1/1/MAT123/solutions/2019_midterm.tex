@@ -104,13 +104,15 @@ f(x) = \frac{\mathrm{e}^x}{x}
 
 \hfill
 
-\noindent We can rearrange the limit to obtain an indeterminate form. Afterwards, we may apply L'Hôpital's rule.
+\noindent Rearrange the limit to obtain an indeterminate form. Afterwards, apply L'Hôpital's rule.
 
 \begin{align*}&\lim_{x\to3^+}\left[ \ln\left(\cos(x-3)\right)\ln\left(\frac{2x}{3}-2\right)\right] = \lim_{x\to3^+}\frac{\ln\left(\frac{2x}{3}-2\right)}{1/ \ln\left(\cos(x-3)\right)} \quad \left[\frac00\right] \\\\&\overset{\text{L'H.}}{=} \lim_{x\to3^+}\frac{\displaystyle\frac1{\frac{2x}{3} - 2}\cdot \frac{2}{3}}{\displaystyle \left(-\ln^{-2}\displaystyle \cos(x-3)\right)\cdot \frac{1}{\cos(x-3)}\cdot(-\sin(x-3))}\\\\&= \lim_{x\to3^+} \displaystyle\frac{\ln^2(\cos(x-3))}{(x-3)\tan(x-3)} \quad\left[\frac00\right]\\\\&\overset{\text{L'H.}}{=} \lim_{x\to3^+} \frac{\displaystyle2\ln(\cos(x-3))\cdot\frac{1}{\cos(x-3)}\cdot(-\sin(x-3))}{\tan(x-3) + (x-3)\sec^2(x-3)}\\\\&=\lim_{x\to3^+}\frac{\displaystyle-2\ln(\cos(x-3))\sin(x-3)}{\sin(x-3) + (x-3)\sec(x-3)} \overset{u=x-3}{=} \lim_{u\to0^+}\left(\frac{\displaystyle-2\ln(\cos(u))\sin(u)}{\sin(u) + u\sec(u)} \cdot\frac{u}{u}\right)\\\\& = \frac{\displaystyle\lim_{u\to0^+}[-2\ln(\cos(u))]\cdot \lim_{u\to0^+}\frac{\sin(u)}{u}}{\displaystyle\lim_{u\to0^+}\sec(u)+\lim_{u\to0^+}\frac{\sin(u)}{u}}\quad \left[\lim_{u\to0} \frac{\sin(u)}u=1\right]\\\\&=\frac{\displaystyle\lim_{u\to0^+}[-2\ln(\cos(u))]}{\displaystyle\lim_{u\to0^+}\sec(u)+1}  =\frac{-2\ln(\cos(0))}{1+1} =\frac{-2\ln(1)}{2} = 0\end{align*}
 
 \hfill
 
 \noindent We found out that $\ln(L) = 0$. Therefore, $\boxed{L = 1}$.
+
+\newpage
 
 \noindent 2) \textbf{Remark}: There is misinformation about the continuity in the original question, and I replaced it with continuity at $x=0$.
 
