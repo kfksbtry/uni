@@ -73,7 +73,7 @@
 
 \begin{center}
 2014-2015 Summer Final (23/08/2015) Solutions\\
-(Last update: 8/12/25 (12th of August) 3:12 AM)
+(Last update: 8/14/25 (14th of August) 2:18 AM)
 \end{center}
 
 \noindent 1. $\ln x$ is defined for $x>0$. Therefore, $\ln\left(x^2+1\right)$ is defined on $\mathbb{R}$ because $x^2+1\geq1>0$.
@@ -231,7 +231,7 @@ V&=\int_D\pi\left[R_2^2(y)-R_1^2(y)\right]\,dy=\int_0^4\pi\left[\left((y+1)+1\ri
       axis lines=center,
       xlabel={$x$},
       ylabel={$y$},
-      xmin=-5, xmax=21.5,
+      xmin=-5, xmax=22.5,
       ymin=-8.2, ymax=5,
       samples=250,
       clip=true,
@@ -245,10 +245,10 @@ V&=\int_D\pi\left[R_2^2(y)-R_1^2(y)\right]\,dy=\int_0^4\pi\left[\left((y+1)+1\ri
     \addplot [blue!20, fill opacity=0.6] fill between[of=A and B,soft clip={domain=-4:0}];
     \addplot [blue!20, fill opacity=0.6] fill between[of=C and B,soft clip={domain=0:21}];
 
-    \draw[dashed] (21,-1)--(21,-5); \draw[thick] (0,-8)--(21.5,-8); \draw[thick] (-2.5,-8)--(-5,-8); \draw[dashed] (0,-5)--(21,-5);
-    \node at (19,-7) {$y=-8$};
-    \node at (21,-0.5) {\small $21$};
-    \node at (-0.75,-5) {\small $-5$};
+    \draw[dashed] (21,0)--(21,-5); \draw[thick] (0,-8)--(21.5,-8); \draw[thick] (-2.5,-8)--(-5,-8); \draw[dashed] (0,-5)--(21,-5);
+    \node at (19,-7.5) {$y=-8$};
+    \node at (21.7,-0.5) {\small $21$};
+    \node at (-0.9,-5) {\small $-5$};
   \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -409,7 +409,7 @@ A+B+D&=0\\
 
 \newpage
 
-\begin{align*}\mathrm{I}&=2\int\left|\tan u\right|\tan  u\,du\qquad\left[\left|\tan u\right|>0\right]\\\\&=2\int\tan^2u\,du=2\int\sec^2u\,du-2\int\,du=2\tan u-2u+c\end{align*}
+\begin{align*}\mathrm{I}&=2\int\left|\tan u\right|\tan u\,du\qquad\left[\tan u>0\right]\\\\&=2\int\tan^2u\,du=2\int\sec^2u\,du-2\int\,du=2\tan u-2u+c\end{align*}
 
 \noindent Recall that $\displaystyle x=\frac25\sec u$.
 
@@ -472,7 +472,7 @@ dv=\mathrm{e}^{-x}\,dx\implies v=-\mathrm{e}^{-x}
 
 \hfill
 
-\noindent 7. The length of a curve defined by $x=f(y)$ whose derivative is continuous on the interval $a\leq x\leq b$ can be evaluated using the integral.
+\noindent 7. The length of a curve defined by $x=f(y)$ whose derivative is continuous on the interval $a\leq y\leq b$ can be evaluated using the integral
 
 \[S=\int_a^b\sqrt{1+\left(\frac{dx}{dy}\right)^2}\,dy.\]
 

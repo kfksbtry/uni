@@ -44,9 +44,7 @@
 
 (a) Let $F(x)$ be a one-to-one function with inverse $F^{-1}$. Define a new function
 
-\begin{equation*}
-p(x) = 1-2F\left(\frac x3\right)
-\end{equation*}
+\[p(x) = 1-2F\left(\frac x3\right)\]
 
 Find a formula for $p^{-1}$ in terms of $F^{-1}$.
 
@@ -69,7 +67,7 @@ length of one of its sides is decreasing at a rate of $2$ cm/sec. Find the rate 
 
 \begin{center}
 2011-2012 Fall Midterm I (15/11/2012) Solutions\\
-(Last update: 7/22/25 (22nd of July) 8:27 PM)
+(Last update: 8/16/25 (16th of August) 4:19 PM)
 \end{center}
 
 \noindent 1.
@@ -85,21 +83,17 @@ length of one of its sides is decreasing at a rate of $2$ cm/sec. Find the rate 
 \hfill
 
 \noindent (b)
-\begin{equation*}
-\lim_{x\to 3}\frac{\sin(x^2-9)}{x-3}=\lim_{x\to 3}\left[\frac{\sin(x^2-9)}{x-3}\cdot\frac{x+3}{x+3}\right]=\lim_{x\to3}\left[\frac{\sin(x^2-9)}{x^2-9}\right]\cdot\lim_{x\to 3}(x+3)
-\end{equation*}
+\[\lim_{x\to 3}\frac{\sin(x^2-9)}{x-3}=\lim_{x\to 3}\left[\frac{\sin(x^2-9)}{x-3}\cdot\frac{x+3}{x+3}\right]=\lim_{x\to3}\left[\frac{\sin(x^2-9)}{x^2-9}\right]\cdot\lim_{x\to 3}(x+3)\]
 
 \hfill
 
 \noindent The value $\displaystyle \lim_{x\to0}\frac{\sin u}{u}$ can be evaluated by using the squeeze theorem, and it could be expected that we knew the value of this limit prior to the examination. Set $u=x^2-9$. So, the left-hand limit is $1$.
 
-\begin{equation*}
-=\lim_{x\to3}\left[\frac{\sin(x^2-9)}{x^2-9}\right]\cdot\lim_{x\to 3}(x+3) = 1\cdot 6 = \boxed6
-\end{equation*}
+\[=\lim_{x\to3}\left[\frac{\sin(x^2-9)}{x^2-9}\right]\cdot\lim_{x\to 3}(x+3) = 1\cdot 6 = \boxed6\]
 
 \hfill
 
-\noindent (c) This is an indeterminate ($\infty - \infty$) form. We expand the expression by using its conjugate and divide each side of the fraction by $x$ to eliminate the determination.
+\noindent (c) This is an indeterminate ($\infty - \infty$) form. We expand the expression by using its conjugate and dividing each side of the fraction by $x$ to eliminate the indeterminate form.
 
 \begin{align*}&\lim_{x\to -\infty}\left(\sqrt{x^2-x+1}-\sqrt{x^2-2x}\right)\\\\&=\lim_{x\to -\infty}\left[\sqrt{x^2-x+1}-\sqrt{x^2-2x}\cdot\frac{\sqrt{x^2-x+1}+\sqrt{x^2-2x}}{\sqrt{x^2-x+1}+\sqrt{x^2-2x}}\right]\\\\&=\lim_{x\to-\infty}\frac{x^2-x+1-\left(x^2-2x\right)}{\sqrt{x^2-x+1}+\sqrt{x^2-2x}}=\lim_{x\to-\infty}\left(\frac{x+1}{\sqrt{x^2-x+1}+\sqrt{x^2-2x}}\cdot\frac{x}{x}\right)\\\\&=\lim_{x\to-\infty}\frac{\displaystyle\frac{x+1}x}{\displaystyle \frac{\sqrt{x^2-x+1}+\sqrt{x^2-2x}}x}=\lim_{x\to-\infty}\frac{\displaystyle1+\frac{1}x}{\displaystyle\sqrt{1-\frac1x+\frac1{x^2}}+\sqrt{1-\frac2x}}\\\\&=\frac{1+0}{\sqrt{1-0+0}+\sqrt{1-0}}=\boxed{\frac12}\end{align*}
 
@@ -110,39 +104,37 @@ length of one of its sides is decreasing at a rate of $2$ cm/sec. Find the rate 
 \hfill
 
 \noindent (a) Apply the chain rule accordingly.
-\begin{equation*}
-\boxed{f'(x) = 3\tan^2\left(4\sin^2(3x)\right)\cdot \sec^2\left(4\sin^2(3x)\right)\cdot8\sin(3x)\cdot \cos(3x)\cdot 3}
-\end{equation*}
+\[\boxed{f'(x) = 3\tan^2\left(4\sin^2(3x)\right)\cdot \sec^2\left(4\sin^2(3x)\right)\cdot8\sin(3x)\cdot \cos(3x)\cdot 3}\]
 
 \hfill
 
 \noindent (b) Take the logarithm of both sides to differentiate easily.
-\begin{equation*}\ln\left(f(x)\right)=\ln\left[\left(\cos x^2\right)^x\right]=x\ln\left(\cos x^2\right)\end{equation*}
+\[\ln\left(f(x)\right)=\ln\left[\left(\cos x^2\right)^x\right]=x\ln\left(\cos x^2\right)\]
 
-\begin{equation*}\frac{d}{dx}\,\ln\left(f(x)\right)=\frac{d}{dx}\left[x\ln\left(\cos x^2\right)\right]\end{equation*}
+\[\frac{d}{dx}\,\ln\left(f(x)\right)=\frac{d}{dx}\left[x\ln\left(\cos x^2\right)\right]\]
 
-\begin{equation*}\frac1{f(x)}\cdot f'(x)=1\cdot\left[\ln\left(\cos x^2\right)\right] + x\cdot\frac1{\cos x^2}\cdot\left(-\sin x^2\right)\cdot 2x\end{equation*}
+\[\frac1{f(x)}\cdot f'(x)=1\cdot\left[\ln\left(\cos x^2\right)\right]+x\cdot\frac1{\cos x^2}\cdot\left(-\sin x^2\right)\cdot2x\]
 
-\begin{equation*}f'(x)=f(x)\left[\ln\left(\cos x^2\right)-2x^2\cdot\tan x^2\right]\end{equation*}
+\[f'(x)=f(x)\left[\ln\left(\cos x^2\right)-2x^2\cdot\tan x^2\right]\]
 
-\begin{equation*}\boxed{f'(x)=\left(\cos x^2\right)^x\cdot\left[\ln\left(\cos x^2\right)-2x^2\cdot\tan x^2\right]}\end{equation*}
+\[\boxed{f'(x)=\left(\cos x^2\right)^x\cdot\left[\ln\left(\cos x^2\right)-2x^2\cdot\tan x^2\right]}\]
 
 \hfill
 
 \noindent (c) Rewrite the right-hand side using the property of logarithms. Take the first derivative afterwards.
 
-\begin{equation*}f(x)=\ln\left(\frac{3^x}{3^x+1}\right)=\ln\left(3^x\right)-\ln\left(3^x+1\right)\end{equation*}
+\[f(x)=\ln\left(\frac{3^x}{3^x+1}\right)=\ln\left(3^x\right)-\ln\left(3^x+1\right)\]
 
-\begin{equation*}f'(x)=\frac1{3^x}\cdot 3^x\cdot \ln(3) -\frac1{3^x+1}\cdot3^x\cdot\ln(3)=\ln(3)\cdot\left[1-\frac{3^x}{3^x+1}\right]\end{equation*}
+\[f'(x)=\frac1{3^x}\cdot 3^x\cdot\ln(3)-\frac1{3^x+1}\cdot3^x\cdot\ln(3)=\ln(3)\cdot\left[1-\frac{3^x}{3^x+1}\right]\]
 
-\begin{equation*}f'(0)=\ln(3)\cdot\left[1-\frac{3^0}{3^0+1}\right]=\boxed{\frac{\ln3}2}\end{equation*}
+\[f'(0)=\ln(3)\cdot\left[1-\frac{3^0}{3^0+1}\right]=\boxed{\frac{\ln3}2}\]
 
 \hfill
 
 \noindent 3. Let $L$ be the value of the limit.
 
-\begin{equation*}L = \lim_{x\to0}\left(\mathrm{e}^x-x\right)^{\frac1x}\end{equation*}
-\begin{equation*}\ln(L) = \ln\left[\lim_{x\to0}\left(\mathrm{e}^x-x\right)^{\frac1x}\right]\end{equation*}
+\[L = \lim_{x\to0}\left(\mathrm{e}^x-x\right)^{\frac1x}\]
+\[\ln(L) = \ln\left[\lim_{x\to0}\left(\mathrm{e}^x-x\right)^{\frac1x}\right]\]
 
 \hfill
 
@@ -173,39 +165,33 @@ length of one of its sides is decreasing at a rate of $2$ cm/sec. Find the rate 
 
 \noindent (b) Find a root so that $f(x_0) = \arctan(x_0)+\mathrm{e}^{123\cdot x_0} = 1$. We can intuitively say that the root is small because both $\arctan x$ and $\mathrm{e}^x$ are strictly increasing everywhere. Try $x=0$.
 
-\begin{equation*}f(0) = \arctan 0 + \mathrm{e}^{123\cdot 0} = 0 + 1 = 1\end{equation*}
+\[f(0)=\arctan 0+\mathrm{e}^{123\cdot 0}=0+1=1\]
 
 \hfill
 
 \noindent Therefore, $f^{-1}(1)=0$. The derivative of an inverse function at a given point is
 
-\begin{equation*}
-\left(f^{-1}\right)'(1) = \frac1{f'(f^{-1}(1))}
-\end{equation*}
+\[\left(f^{-1}\right)'(1)=\frac1{f'(f^{-1}(1))}\]
 
 \hfill
 
-\noindent Calculate $f'(x)$ and then, $(f^{-1})(1)$.
+\noindent Calculate $f'(x)$ and $(f^{-1})(1)$.
 
-\begin{equation*}
-    f'(x)=\frac1{1+x^2}+123\mathrm{e}^{122x}
-\end{equation*}
+\[f'(x)=\frac1{1+x^2}+123\mathrm{e}^{122x}\]
 
-\begin{equation*}
-    \left(f^{-1}\right)'(1)=\frac{1}{f'(0)}=\left( \frac1{1+0^2}+123\mathrm{e}^{122\cdot0} \right)^{-1}=\boxed{\frac1{124}}
-\end{equation*}
+\[\left(f^{-1}\right)'(1)=\frac{1}{f'(0)}=\left( \frac1{1+0^2}+123\mathrm{e}^{122\cdot0} \right)^{-1}=\boxed{\frac1{124}}\]
 
 \hfill
 
-\noindent 5) Consider $y=f(x)$. Differentiate both sides implicitly.
+\noindent 5. Consider $y=f(x)$. Differentiate both sides implicitly.
 
-\begin{equation*}\frac{d}{dx}\left(x^2y^2-36x\right) = \frac{d}{dx}\,37\end{equation*}
+\[\frac{d}{dx}\left(x^2y^2-36x\right) = \frac{d}{dx}\,37\]
 
-\begin{equation*}2xy^2+ x^2\cdot2y\cdot \frac{dy}{dx}-36 = 0\end{equation*}
+\[2xy^2+ x^2\cdot2y\cdot \frac{dy}{dx}-36 = 0\]
 
-\begin{equation*}x^2\cdot2y\cdot \frac{dy}{dx}=36 - 2xy^2\end{equation*}
+\[x^2\cdot2y\cdot \frac{dy}{dx}=36 - 2xy^2\]
 
-\begin{equation*}\frac{dy}{dx}=\frac{36-2xy^2}{x^2\cdot2y}\end{equation*}
+\[\frac{dy}{dx}=\frac{36-2xy^2}{x^2\cdot2y}\]
 
 \hfill
 
@@ -219,13 +205,13 @@ length of one of its sides is decreasing at a rate of $2$ cm/sec. Find the rate 
 
 \noindent Using the straight line formula, we find the tangent line. Recall: $y-y_0=m(x-x_0)$, where $m$ can be substituted with $(1)$.
 
-\begin{equation*}\boxed{y-1=19(x+1)}\end{equation*}
+\[\boxed{y-1=19(x+1)}\]
 
 \hfill
 
 \noindent 6. Let $x(t),\,y(t),\,l(t)$ represent the lengths of the sides as functions of time. We can set up the following equation for the area of the right triangle.
 
-\begin{equation*}A(t) = \frac{x(t)\cdot y(t)}{2}\end{equation*}
+\[A(t) = \frac{x(t)\cdot y(t)}{2}\]
 
 \hfill
 
@@ -237,13 +223,13 @@ length of one of its sides is decreasing at a rate of $2$ cm/sec. Find the rate 
 
 \noindent We also know that, by the Pythagorean theorem,
 
-\begin{equation*}l^2(t) = x^2(t)+y^2(t)\end{equation*}
+\[l^2(t) = x^2(t)+y^2(t)\]
 
 \hfill
 
 \noindent Take the derivative of both sides.
 
-\begin{equation*}2l(t)l'(t)= 2x(t)x'(t)+2y(t)y'(t)\end{equation*}
+\[2l(t)l'(t)= 2x(t)x'(t)+2y(t)y'(t)\]
 
 \hfill
 
@@ -255,16 +241,12 @@ length of one of its sides is decreasing at a rate of $2$ cm/sec. Find the rate 
 
 \noindent At $t=t_0$, we have $l(t_0) = 5,\,x(t_0)=3,\,x'(t_0)=-2$, and by the Pythagorean theorem, $y(t_0)=\sqrt{5^2-3^2}=4$. Calculate $y'(t_0)$ from $(3)$.
 
-\begin{equation*}
-y'(t_0)=-\frac{3\cdot (-2)}4 = \frac32
-\end{equation*}
+\[y'(t_0)=-\frac{3\cdot (-2)}4 = \frac32\]
 
 \hfill
 
 \noindent Plug the necessary values into $(2)$ to find the rate of change of the area.
 
-\begin{equation*}
-A'(t_0) =\frac12\left((-2)\cdot4+3\cdot\frac32\right)=\boxed{-\frac74\,\text{cm}^2/\text{s}}
-\end{equation*}
+\[A'(t_0) =\frac12\left((-2)\cdot4+3\cdot\frac32\right)=\boxed{-\frac74\,\text{cm}^2/\text{s}}\]
 
 \end{document}

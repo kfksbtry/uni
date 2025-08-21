@@ -17,7 +17,7 @@
 
 \noindent 1) Evaluate
 
-\begin{equation*}\lim_{x\to3^+}\cos(x-3)^{\ln\left(\frac{2x}{3}-2\right)}\end{equation*}
+\[\lim_{x\to3^+}\cos(x-3)^{\ln\left(\frac{2x}{3}-2\right)}\]
 
 \hfill
 
@@ -26,8 +26,8 @@
 \[
 f(x) =
 \begin{cases}
-\displaystyle \frac{\tan ax}{\tan bx}, & \text{if}\ x < 0 \\
-4, & \text{if}\ x = 0 \\
+\displaystyle \frac{\tan ax}{\tan bx}, & \text{if}\ x < 0 \\[1em]
+4, & \text{if}\ x = 0 \\[1em]
 ax+b, & \text{if}\ x >0 \\
 \end{cases}
 \]
@@ -47,10 +47,7 @@ ax+b, & \text{if}\ x >0 \\
 \hfill
 
 \noindent 5) Sketch the graph of
-
-\begin{equation*} 
-f(x) = \frac{\mathrm{e}^x}{x}
-\end{equation*}
+\[f(x)=\frac{\mathrm{e}^x}{x}\]
 
 \hfill
 
@@ -88,19 +85,19 @@ f(x) = \frac{\mathrm{e}^x}{x}
 
 \begin{center}
 2019-2020 Fall Midterm (04/11/2019) Solutions\\
-(Last update: 7/18/25 (18th of July) 1:56 PM)
+(Last update: 8/17/25 (17th of August) 11:07 PM)
 \end{center}
 
 \noindent 1) Let $L$ be the value of the limit.
 
-\begin{equation*} L = \lim_{x\to3^+}\cos(x-3)^{\ln\left(\frac{2x}{3}-2\right)}\end{equation*}
-\begin{equation*}\ln(L) =\ln\left( \lim_{x\to3^+}\cos(x-3)^{\ln\left(\frac{2x}{3}-2\right)}\right)\end{equation*}
+\[L = \lim_{x\to3^+}\cos(x-3)^{\ln\left(\frac{2x}{3}-2\right)}\]
+\[\ln(L) =\ln\left( \lim_{x\to3^+}\cos(x-3)^{\ln\left(\frac{2x}{3}-2\right)}\right)\]
 
 \hfill
 
 \noindent Since $\cos(x-3)^{\ln(2x/3 -2)}$ is continuous for $x>3$, we can take the logarithm function inside the limit. Using the property of logarithms, we get:
 
-\begin{equation*}\ln(L) =\lim_{x\to3^+}\left[ \ln\left(\cos(x-3)^{\ln\left(\frac{2x}{3}-2\right)}\right)\right] = \lim_{x\to3^+}\left[ \ln\left(\cos(x-3)\right)\ln\left(\frac{2x}{3}-2\right)\right]\quad[0 \cdot \infty] \end{equation*}
+\[\ln(L) =\lim_{x\to3^+}\left[ \ln\left(\cos(x-3)^{\ln\left(\frac{2x}{3}-2\right)}\right)\right] = \lim_{x\to3^+}\left[ \ln\left(\cos(x-3)\right)\ln\left(\frac{2x}{3}-2\right)\right]\quad[0 \cdot \infty]\]
 
 \hfill
 
@@ -120,17 +117,13 @@ f(x) = \frac{\mathrm{e}^x}{x}
 
 \noindent To ensure continuity at $x=0$, the one-sided limit values must be equal to the value of the function at that point.
 
-\begin{equation*}
-\lim_{x\to0^-} \frac{\tan ax}{\tan bx} = \lim_{x\to0^+} (ax+b) = f(0) = 4
-\end{equation*}
+\[\lim_{x\to0^-}\frac{\tan ax}{\tan bx}=\lim_{x\to0^+}(ax+b)=f(0)=4\]
 
 \hfill
 
 \noindent The easy part is that we can calculate the limit from the right.
 
-\begin{equation*}
-\lim_{x\to0^+} (ax+b) = 0+b = b
-\end{equation*}
+\[\lim_{x\to0^+} (ax+b) = 0+b = b\]
 
 \hfill
 
@@ -152,65 +145,55 @@ f(x) = \frac{\mathrm{e}^x}{x}
 
 \noindent Let $f(x) = \sin x - 1 + 2x$ and $x_1$ be one solution to the equation. Then, the root must satisfy $|1-2x| \leq 1$. To disprove the existence of another root, we assume that $x_2$ is another distinct root. Since $f(x_1) = f(x_2) = 0$ and $f(x)$ is differentiable everywhere, by Rolle's theorem, there must exist a point $c$ such that
 
-\begin{equation*}
-f'(c) = \frac{f(x_2) -f(x_1)}{x_2-x_1} = 0
-\end{equation*}
+\[f'(c)=\frac{f(x_2)-f(x_1)}{x_2-x_1}=0\]
 
 \hfill
 
 \noindent Take the first derivative and calculate $f'(c)$
 
-\begin{equation*}
-f'(c) = \cos c + 2
-\end{equation*}
+\[f'(c)=\cos c+2\]
 
 \hfill
 
-\noindent $-1 \leq \cos x \leq 1$. Therefore, there is no such c that satisfies $f'(c) = 0$. This is a contradiction. By Rolle's theorem, there is \textit{only} one root satisfying $\sin x = 1-2x$.
+\noindent $-1\leq\cos x\leq 1$. Therefore, there is no such c that satisfies $f'(c) = 0$. This is a contradiction. By Rolle's theorem, there is \textit{only} one root satisfying $\sin x = 1-2x$.
 
 \noindent 4) Let $f(t)$ and $g(t)$ represent the distance between Ship A and point O, and the distance between Ship B and point O, respectively. The distance between the ships can be represented using the Pythagorean theorem as follows:
 
-\begin{equation*}
-D^2(t) = f^2(t) + g^2(t)
-\end{equation*}
+\[D^2(t)=f^2(t)+g^2(t)\]
 
 \hfill
 
 \noindent Take the derivative of both sides.
 
-\begin{equation*}
-2D\frac{dD}{dt} = 2f(t)f'(t) + 2g(t)g'(t)
-\end{equation*}
+\[2D\frac{dD}{dt} = 2f(t)f'(t) + 2g(t)g'(t)\]
 
 \hfill
 
-\noindent Solve for $\displaystyle \frac{dD}{dt}$.
+\noindent Solve for $\dfrac{dD}{dt}$.
 
-\begin{equation*}
+\[
 \frac{dD}{dt} = \frac{f(t)f'(t) + g(t)g'(t)}{\displaystyle D}
-\end{equation*}
+\]
 
 \hfill
 
-\noindent For $t=t_0$, we have $f(t_0) = 60, \, g(t_0) = 80, f'(t_0) = 20, \, g'(t_0) =-25, \,D(t_0) = \sqrt{60^2 + 80^2} = 100$. We may now find the rate of change of the distance at that time.
+\noindent For $t=t_0$, we have $f(t_0)=60,\:g(t_0)=80,f'(t_0)=20,\:g'(t_0)=-25,\:D(t_0)=\sqrt{60^2+80^2}=100$. We may now find the rate of change of the distance at that time.
 
-\begin{equation*}
-\frac{dD}{dt}\Bigg|_{t=t_0} = \frac{60\cdot 20 -80 \cdot 25}{\displaystyle 100} = \boxed{-8 \, \text{miles/hour}}
-\end{equation*}
+\[\frac{dD}{dt}\Bigg|_{t=t_0} = \frac{60\cdot 20 -80 \cdot 25}{\displaystyle 100} = \boxed{-8 \, \text{miles/hour}}\]
 
 \hfill
 
 \noindent 5) First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $x\neq 0$. The only vertical asymptote occurs at $x = 0$.
 
-\begin{equation*}\mathcal{D} = \mathbb{R} - \{0\} \end{equation*}
+\[\mathcal{D} = \mathbb{R} - \{0\}\]
 
 \hfill
 
 \noindent Let us find the limit at infinity and the limit at negative infinity.
 
-\begin{equation*}\lim_{x\to \infty} \frac{\mathrm{e}^x}{x} \overset{\text{L'H.}}{=} \lim_{x\to \infty} \frac{\mathrm{e}^x}{1} = \infty\end{equation*}
+\[\lim_{x\to\infty}\frac{\mathrm{e}^x}{x}\overset{\text{L'H.}}{=}\lim_{x\to\infty}\frac{\mathrm{e}^x}{1}=\infty\]
 
-\begin{equation*}\lim_{x\to -\infty} \frac{\mathrm{e}^x}{x} = 0\end{equation*}
+\[\lim_{x\to-\infty}\frac{\mathrm{e}^x}{x}=0\]
 
 \hfill
 
@@ -220,17 +203,17 @@ D^2(t) = f^2(t) + g^2(t)
 
 \noindent Take the first derivative by applying the quotient rule.
 
-\begin{equation*}y' = \frac{\mathrm{e}^x\cdot x - \mathrm{e}^x\cdot 1}{x^2}=\frac{\mathrm{e}^x(x-1)}{x^2}\end{equation*}
+\[y'=\frac{\mathrm{e}^x\cdot x-\mathrm{e}^x\cdot1}{x^2}=\frac{\mathrm{e}^x(x-1)}{x^2}\]
 
 \hfill
 
-\noindent $y'$ is undefined for $x=0$, and $y'=0$ for $x=1$. Since 0 is not in the domain, the \textit{only} critical point is $x = 1$.
+\noindent $y'$ is undefined for $x=0$, and $y'=0$ for $x=1$. Since 0 is not in the domain, the \textit{only} critical point is $x=1$.
 
 \hfill
 
 \noindent Take the second derivative.
 
-\begin{equation*}y'' = \frac{[\mathrm{e}^x(x-1) + \mathrm{e}^x]x^2 - \mathrm{e}^x(x-1) \cdot 2x }{x^4}=\frac{\mathrm{e}^x(x^2-2x + 2)}{x^3}\end{equation*}
+\[y''=\frac{[\mathrm{e}^x(x-1)+\mathrm{e}^x]x^2-\mathrm{e}^x(x-1)\cdot2x}{x^4}=\frac{\mathrm{e}^x(x^2-2x+2)}{x^3}\]
 
 \hfill
 
@@ -240,15 +223,15 @@ D^2(t) = f^2(t) + g^2(t)
 
 \noindent Consider some values of the function. Eventually, set up a table and see what the graph looks like in certain intervals.
 
-\begin{equation*}\,f(1) = \frac{\mathrm{e}^1}{1} = \mathrm{e}\end{equation*}
+\[\,f(1) = \frac{\mathrm{e}^1}{1} = \mathrm{e}\]
 
 \begin{center}
     \large
     \begin{tabular}{ |c| c c c| } 
     \hline
-        $x$ & $(-\infty, 0)$ & $(0, 1]$ & $[1, \infty)$  \\
+        $x$ & $(-\infty, 0)$ & $(0, 1)$ & $(1, \infty)$  \\
         \hline
-        $y$ & $(-\infty, 0)$ & $(\infty, \mathrm{e}]$ & $[\mathrm{e}, \infty)$\\
+        $y$ & $(-\infty, 0)$ & $(\infty, \mathrm{e})$ & $(\mathrm{e}, \infty)$\\
         \hline
         $y'$ sign & - & - & + \\
         \hline
@@ -305,17 +288,15 @@ D^2(t) = f^2(t) + g^2(t)
     w=\sec^3 u\,&\rightarrow\, dw = 3\sec^3u\tan u \,du\\
     dz=\sec^2u\,du\,&\rightarrow\, z = \tan u
 \end{align*}
-\begin{equation*}
+\[
 \int\sec^5u \,du =\tan u \cdot \sec^3 u -3\int \tan^2u\cdot \sec^3 u\,du  = \tan u \cdot \sec^3 u - 3\int(\sec^5u- \sec^3u)\,du
-\end{equation*}
+\]
 
 \hfill
 
 \noindent The integral we want to evaluate appears on the right side. After a little algebra, we get:
 
-\begin{equation*}
-\int\sec^5u \,du = \frac 14\cdot\tan u\cdot\sec^3 u + \frac 34\int\sec^3u\,du
-\end{equation*}
+\[\int\sec^5u \,du = \frac 14\cdot\tan u\cdot\sec^3 u + \frac 34\int\sec^3u\,du\]
 
 \hfill
 
@@ -337,9 +318,7 @@ D^2(t) = f^2(t) + g^2(t)
 
 \noindent We encountered a similar case when calculating $\displaystyle \int\sec^5 u \, du$. So,
 
-\begin{equation*}
-\int\sec^3u\,du= \frac12\cdot\tan u \cdot\sec u + \frac12\cdot\int \sec u\,du
-\end{equation*}
+\[\int\sec^3u\,du= \frac12\cdot\tan u \cdot\sec u + \frac12\cdot\int \sec u\,du\]
 
 \hfill
 
@@ -352,21 +331,15 @@ D^2(t) = f^2(t) + g^2(t)
 
 \noindent Rewrite (2) using (3).
 
-\begin{equation*}
-\mathrm{I} = \frac{81}4\cdot\tan u\cdot\sec^3 u -\frac{81}{8} \cdot\tan u \cdot\sec u-\frac{81}{8}\cdot\ln|\tan u + \sec u| + c
-\end{equation*}
+\[\mathrm{I} = \frac{81}4\cdot\tan u\cdot\sec^3 u -\frac{81}{8} \cdot\tan u \cdot\sec u-\frac{81}{8}\cdot\ln|\tan u + \sec u| + c\]
 
 \hfill
 
 \noindent Recall that $x=3\tan u$, then $\displaystyle x^2 = 9\tan^2u = 9\sec^2u-9\,\rightarrow\, \sec u =\frac{\sqrt{x^2+9}}3$. The result is then as follows. Furthermore, we can omit the constant part to simplify.
 
-\begin{equation*}
-\mathrm{I}=\frac{x\sqrt{x^2+9}}8\left(2x^2+9\right)-\frac{81}8\ln\left|\frac{x+\sqrt{x^2+9}}3\right| + c,\,c\in\mathbb{R}
-\end{equation*}
+\[\mathrm{I}=\frac{x\sqrt{x^2+9}}8\left(2x^2+9\right)-\frac{81}8\ln\left|\frac{x+\sqrt{x^2+9}}3\right| + c,\,c\in\mathbb{R}\]
 
-\begin{equation*}
-\boxed{\mathrm{I}=\frac{x\sqrt{x^2+9}}8\left(2x^2+9\right)-\frac{81}8\ln\left|x+\sqrt{x^2+9}\right| + c,\,c\in\mathbb{R}}
-\end{equation*}
+\[\boxed{\mathrm{I}=\frac{x\sqrt{x^2+9}}8\left(2x^2+9\right)-\frac{81}8\ln\left|x+\sqrt{x^2+9}\right| + c,\,c\in\mathbb{R}}\]
 
 \newpage
 
@@ -376,9 +349,7 @@ D^2(t) = f^2(t) + g^2(t)
 \mathrm{I} &=\int\tan x \cdot\sec^6 x\, dx \quad\left[\tan^2x+1=\sec^2x\right] \\\\ &= \int\tan x\cdot\sec^2x\cdot(1+\tan^2x)^2 \,dx=\frac12\int u^2 \,du  = \frac{u^3}6 + c
 \end{align*}
 
-\begin{equation*}
-\boxed{\mathrm{I}=\frac{(\tan^2x+1)^3}{6} + c, \, c\in \mathbb{R}}
-\end{equation*}
+\[\boxed{\mathrm{I}=\frac{(\tan^2x+1)^3}{6} + c, \, c\in \mathbb{R}}\]
 
 \noindent (c) This is an improper integral; we need to make use of the limit concept. The expression is undefined for $x=4$.
 
@@ -397,9 +368,7 @@ D^2(t) = f^2(t) + g^2(t)
 
 \noindent (e) We may utilize the tangent half-angle substitution, which is sometimes called the Weierstrass substitution. Let $\displaystyle t = \tan\left(\frac x2\right)$. After some mathematical operations, we get the following. One can later derive the formulas.
 
-\begin{equation*}
-\sin x={\frac{2t}{1+t^{2}}}\quad\cos x={\frac{1-t^{2}}{1+t^{2}}}\quad dx={\frac2{1+t^{2}}}\,dt
-\end{equation*}
+\[\sin x={\frac{2t}{1+t^{2}}}\quad\cos x={\frac{1-t^{2}}{1+t^{2}}}\quad dx={\frac2{1+t^{2}}}\,dt\]
 
 \hfill
 
@@ -410,31 +379,28 @@ D^2(t) = f^2(t) + g^2(t)
 \end{align}
 
 \begin{align*}
-A(t+1+\sqrt2)+B(t+1-\sqrt2) &= 1\\
-t(A+B) + A + B+\sqrt2(A-B) &= 1\\
-\therefore A+B =0 \quad[\text{eliminate}\ t] \,&\rightarrow\, A- B= \frac1{\sqrt2}
+A(t+1-\sqrt2)+B(t+1+\sqrt2)&=1\\
+t(A+B)+A+B+\sqrt2(B-A)&=1\\
+\therefore A+B=0\quad[\text{eliminate}\:t]\,&\rightarrow\,B-A=\frac1{\sqrt2}
 \end{align*}
 
 \[
 \left.
 \begin{array}{ll}
 A+B=0  \\
-\displaystyle A-B = \frac1{\sqrt2}
+\displaystyle B-A=\frac1{\sqrt2}
 \end{array}
 \right\}
-\quad A=\frac1{2\sqrt2},\quad B=-\frac1{2\sqrt2}
+\quad A=-\frac1{2\sqrt2},\quad B=\frac1{2\sqrt2}
 \]
 
 \hfill
 
 \noindent Plug the values of $A$ and $B$ into $(4)$.
 
-\begin{equation*}
-\mathrm{I} =\frac{\sqrt2}2\int\left(\frac 1{t+1+\sqrt2} - \frac 1{t+1-\sqrt2}\right) \,dt = \frac{\sqrt2}2 \ln\left(\frac{|t+1+\sqrt2|}{|t+1-\sqrt2|}\right) +c,\,c\in\mathbb{R}\end{equation*}
+\[\mathrm{I}=\frac{\sqrt2}2\int\left(\frac1{t+1-\sqrt2}-\frac1{t+1+\sqrt2}\right) \,dt = \frac{\sqrt2}2 \ln\left(\frac{|t+1-\sqrt2|}{|t+1+\sqrt2|}\right) +c,\,c\in\mathbb{R}\]
 
-\begin{equation*}
-\boxed{\mathrm{I} = \frac{\sqrt2}2 \ln\left(\frac{\displaystyle\left|\tan\left(\frac x2\right)+1+\sqrt2\right|}{\displaystyle\left|\tan\left(\frac x2\right)+1-\sqrt2\right|}\right) +c,\,c\in\mathbb{R}}
-\end{equation*}
+\[\boxed{\mathrm{I}=\frac{\sqrt2}2\ln\left(\frac{\displaystyle\left|\tan\left(\frac x2\right)+1-\sqrt2\right|}{\displaystyle\left|\tan\left(\frac x2\right)+1+\sqrt2\right|}\right) +c,\quad c\in\mathbb{R}}\]
 
 \hfill
 
@@ -506,16 +472,16 @@ A+B=0  \\
 
 \noindent (i) The variable is $y$. Hence, the limits are $-1, 1$, respectively.
 
-\begin{equation*}
+\[
 A = \int_{-1}^1\left[ \mathrm{e}^y - (y^2-2) \right] \,dy
-\end{equation*}
+\]
 
 \hfill
 
 \noindent (ii) We have three different regions. This leads us to take three different integrals.
 
-\begin{equation*}
+\[
 A = \int_{-2}^{-1}\left[ \sqrt{x+2} - (-\sqrt{x+2}) \right] \,dx +\int_{-1}^{1/\mathrm{e}}\left[1-(-1) \right] \,dx + \int_{1/\mathrm{e}}^{\mathrm{e}}\left(1 -\ln x \right) \,dx
-\end{equation*}
+\]
 
 \end{document}
