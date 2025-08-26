@@ -57,7 +57,7 @@ a^2x - 2a, & x \geq 2 \\
 
 \begin{center}
 2016-2017 Fall Midterm (05.12.2016) Solutions\\
-(Last update: 07/10/25 (10th of July) 8:52 PM)
+(Last update: 8/21/25 (21st of August) 4:55 PM)
 \end{center}
 
 \noindent 1)
@@ -66,58 +66,56 @@ a^2x - 2a, & x \geq 2 \\
 
 \noindent a) To solve the limit easily, we can use logarithms. The expression is continuous and differentiable for $x > 0$. Assume that the limit exists, then let L be the value of the limit.
 
-\begin{equation*} L = \lim_{x \to \infty} [\mathrm{e}^x + 1]^{\frac{1}{x}} \end{equation*}
+\[ L = \lim_{x \to \infty} [\mathrm{e}^x + 1]^{\frac{1}{x}} \]
 
-\begin{equation*}
-\ln(L) = \ln\Big(\lim_{x \to \infty} [\mathrm{e}^x + 1]^{\frac{1}{x}}\Big) = \lim_{x \to \infty} \Big[ \ln\Big( [\mathrm{e}^x + 1]^{\frac{1}{x}} \Big) \Big]
-\end{equation*}
+\[
+\ln(L) = \ln\left(\lim_{x \to \infty} [\mathrm{e}^x + 1]^{\frac{1}{x}}\right) = \lim_{x \to \infty} \left[ \ln\left( [\mathrm{e}^x + 1]^{\frac{1}{x}} \right) \right]
+\]
 
-\begin{equation*}
-\ln(L) = \lim_{x \to \infty} \Big[ \frac{\ln(\mathrm{e}^x + 1)}{x}\Big]
-\end{equation*}
+\[
+\ln(L) = \lim_{x \to \infty} \left[ \frac{\ln(\mathrm{e}^x + 1)}{x}\right]
+\]
 
 \hfill
 
 \noindent The expressions $x$ and $\mathrm{e}^x + 1$ tend to infinity as $x$ approaches infinity. L'Hôpital's rule suggests that we take the derivatives of both sides of the fraction if there's an indeterminate form of infinity ($\frac{\infty}{\infty}$). Using the chain rule, we get:
 
-\begin{equation*}
-\ln(L) \overset{\text{L'H.}}{=} \lim_{x \to \infty} \Big[ \frac{\frac{1}{\mathrm{e}^x+1} \cdot \mathrm{e}^x}{1} \Big] = \lim_{x \to \infty} \Big( \frac{\mathrm{e}^x}{\mathrm{e}^x+1} \Big)
-\end{equation*}
+\[\ln(L) \overset{\text{L'H.}}{=} \lim_{x \to \infty} \left[ \frac{\frac{1}{\mathrm{e}^x+1} \cdot \mathrm{e}^x}{1}\right] = \lim_{x \to \infty} \left( \frac{\mathrm{e}^x}{\mathrm{e}^x+1} \right)\]
 
 \hfill
 
 \noindent It is obvious that $\ln(L) = 1$. $\mathrm{e}^x$ grows at the same rate as $\mathrm{e}^x + 1$. The behavior can be confirmed using L'Hôpital's rule. Without further ado, we can convert the logarithm back to its original form.
 
-\begin{equation*}\ln(L) = 1\end{equation*}
-\begin{equation*}\boxed{L = \mathrm{e}}\end{equation*}
+\[\ln(L) = 1\]
+\[\boxed{L = \mathrm{e}}\]
 
 \hfill
 
 \noindent b) If we substitute for $x = 1$, it is in the form $0/0$. Multiply each side by the conjugate of the denominator.
 
-\begin{equation*}
-\lim_{x \to 1}\Big( \frac{x-1}{\sqrt{x+3} - 2} \cdot \frac{\sqrt{x+3} + 2}{\sqrt{x+3} + 2} \Big) = \lim_{x \to 1} \frac{(x-1)(\sqrt{x+3} + 2)}{x-1} = \lim_{x \to 1} (\sqrt{x+3} + 2) = \boxed 4\end{equation*}
+\[
+\lim_{x \to 1}\left( \frac{x-1}{\sqrt{x+3} - 2} \cdot \frac{\sqrt{x+3} + 2}{\sqrt{x+3} + 2} \right) = \lim_{x \to 1} \frac{(x-1)(\sqrt{x+3} + 2)}{x-1} = \lim_{x \to 1} (\sqrt{x+3} + 2) = \boxed 4\]
 
 \hfill
 
 \noindent 2) If $f$ is continuous at a point, then the one-sided limits must be equal to the value of the function at that point. $f$ is constant for $x < 2$, meanwhile polynomial for $x \geq 2$. If we check the point where $x=2$, the continuity will be provided for all $x$.
 
-\begin{equation*}\lim_{x \to 2^-} f(x) = 12,\, \lim_{x \to 2^+} f(x) = a^2x-2a \,\rightarrow\, 12 = 2a^2-2a \end{equation*}
+\[\lim_{x\to2^-}f(x)=12,\quad\lim_{x\to2^+}f(x)=a^2x-2a\implies12=2a^2-2a\]
 
-\begin{equation*} 2(a^2-a - 6) = 0\,\rightarrow\,(a-3)(a+2) = 0\,\rightarrow\,\boxed{a_1 = 3,\,a_2 = -2}\end{equation*}
+\[2(a^2-a-6)=0\implies(a-3)(a+2)=0\implies\boxed{a_1=3,\:a_2=-2}\]
 
 \hfill
 
 \noindent 3) Take logarithms of both sides. Then differentiate implicitly.
 
-\begin{equation*}y(x) = x^{\sin x}\end{equation*}
-\begin{equation*}\ln(y) = \sin x \cdot \ln x\end{equation*}
+\[y(x) = x^{\sin x}\]
+\[\ln(y) = \sin x \cdot \ln x\]
 
-\begin{equation*}\frac{d}{dx}\ln(y) = \frac{d}{dx}(\sin x \cdot \ln x)\end{equation*}
+\[\frac{d}{dx}\ln(y) = \frac{d}{dx}(\sin x \cdot \ln x)\]
 
-\begin{equation*} \frac{1}{y} \cdot \frac{dy}{dx} =  \cos x \cdot \ln x +  \sin x \cdot \frac{1}{x}\end{equation*}
+\[\frac{1}{y} \cdot \frac{dy}{dx} =  \cos x \cdot \ln x +  \sin x \cdot \frac{1}{x}\]
 
-\begin{equation} \frac{dy}{dx} = x^{\sin x}\Big(\cos x \cdot \ln x +  \sin x \cdot \frac{1}{x}\Big)\end{equation}
+\begin{equation} \frac{dy}{dx} = x^{\sin x}\left(\cos x \cdot \ln x +  \sin x \cdot \frac{1}{x}\right)\end{equation}
 
 \hfill
 
@@ -125,7 +123,7 @@ a^2x - 2a, & x \geq 2 \\
 
 \[x_0 = \frac{\pi}{2},\,y_0 = \frac{\pi}{2}\]
 
-\[m = \frac{dy}{dx}\Bigg|_{(\pi/2,\, \pi/2)} = \Big(\frac{\pi}{2}\Big)^{\sin \frac{\pi}{2}}\Big(\cos\frac{\pi}{2} \cdot \ln \frac{\pi}{2} + \sin \frac{\pi}{2} \cdot \frac{2}{\pi}\Big) = 1\]
+\[m = \frac{dy}{dx}\Bigg|_{(\pi/2,\, \pi/2)} = \left(\frac{\pi}{2}\right)^{\sin \frac{\pi}{2}}\left(\cos\frac{\pi}{2} \cdot \ln \frac{\pi}{2} + \sin \frac{\pi}{2} \cdot \frac{2}{\pi}\right) = 1\]
 
 \hfill
 
@@ -135,27 +133,25 @@ a^2x - 2a, & x \geq 2 \\
 
 \noindent 4) Let $w$, $l$ be the functions of time representing width and length, respectively, Then the area of the rectangle can be written as:
 
-\begin{equation*}
-A(t) = w(t)\cdot l(t)
-\end{equation*}
+\[A(t) = w(t)\cdot l(t)\]
 
 \hfill
 
 \noindent Take the derivative of both sides with respect to $t$. Apply the chain rule.
 
-\begin{equation*}\frac{d}{dt}A(t) = \frac{d}{dt}(w(t)\cdot l(t))\end{equation*}
+\[\frac{d}{dt}A(t) = \frac{d}{dt}(w(t)\cdot l(t))\]
 
-\begin{equation*}A'(t) = w'(t)\cdot l(t) + w(t)\cdot l'(t)\end{equation*}
+\[A'(t) = w'(t)\cdot l(t) + w(t)\cdot l'(t)\]
 
 \hfill
 
 \noindent Let $t_1$ be the moment when as told in the question.
 
-\begin{equation*}l'(t_1) = -3,\,\,w'(t_1) = 2,\,\,l(t_1) = 50,\,\, w(t_1) = 20\end{equation*}
+\[l'(t_1) = -3,\,\,w'(t_1) = 2,\,\,l(t_1) = 50,\,\, w(t_1) = 20\]
 
-\begin{equation*}A'(t_1) = 2\cdot 50 - 20\cdot 3 = 40\end{equation*}
+\[A'(t_1) = 2\cdot 50 - 20\cdot 3 = 40\]
 
-\begin{equation*}\boxed{A'(t_1) = 40\, \text{cm}^2/\text{s}}\end{equation*}
+\[\boxed{A'(t_1) = 40\, \text{cm}^2/\text{s}}\]
 
 \hfill
 
@@ -165,31 +161,31 @@ A(t) = w(t)\cdot l(t)
 
 \noindent 5) First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $x^2-1 \neq 0 \,\rightarrow\, x\neq \pm 1$. Vertical asymptotes occur at $x = \pm 1$.
 
-\begin{equation*}\text{D} = \mathbb{R} - \{-1, 1\} \end{equation*}
+\[\mathcal{D} = \mathbb{R} - \{-1, 1\} \]
 
 \hfill
 
 \noindent Let us find the limit at infinity.
 
-\begin{equation*}\lim_{x\to \infty} \frac{2x^2}{x^2-1} \overset{\text{L'H.}}{=} \lim_{x\to \infty} \frac{4x}{2x} = \lim_{x\to \infty} 2 = 2\end{equation*}
+\[\lim_{x\to \infty} \frac{2x^2}{x^2-1} \overset{\text{L'H.}}{=} \lim_{x\to \infty} \frac{4x}{2x} = \lim_{x\to \infty} 2 = 2\]
 
 \noindent Similarly,
 
-\begin{equation*}\lim_{x\to -\infty} \frac{2x^2}{x^2-1} = 2\end{equation*}
+\[\lim_{x\to -\infty} \frac{2x^2}{x^2-1} = 2\]
 
 \hfill
 
 \noindent $y=2$ is the only horizontal asymptote. Now, let us glance at the critical points. This will give us an idea of where the graph becomes stationary. Take the first derivative. Apply the quotient rule.
 
-\begin{equation*}\frac{d}{dx}(y) = \frac{d}{dx}\Big(\frac{2x^2}{x^2-1}\Big)\end{equation*}
+\[\frac{d}{dx}(y) = \frac{d}{dx}\left(\frac{2x^2}{x^2-1}\right)\]
 
-\begin{equation*}y' = \frac{4x\cdot(x^2-1) - 2x^2 \cdot 2x}{(x^2-1)^2} = -\frac{4x}{(x^2-1)^2} \end{equation*}
+\[y' = \frac{4x\cdot(x^2-1) - 2x^2 \cdot 2x}{(x^2-1)^2} = -\frac{4x}{(x^2-1)^2} \]
 
 \hfill
 
 \noindent For $x=0$, $y'=0$. (0,0) is a critical point. Look for the inflection points now. Take the second derivative.
 
-\begin{equation*}y'' = -\frac{4\cdot (x^2-1)^2 - 4x \cdot 2(x^2-1)(2x)}{(x^2-1)^4} = \frac{12x^2+4}{(x^2-1)^3} \end{equation*}
+\[y'' = -\frac{4\cdot (x^2-1)^2 - 4x \cdot 2(x^2-1)(2x)}{(x^2-1)^4} = \frac{12x^2+4}{(x^2-1)^3} \]
 
 \hfill
 
@@ -205,7 +201,7 @@ A(t) = w(t)\cdot l(t)
     \hline
         $x$ & $(-\infty, -1)$ & $(-1, 0)$ & $(0, 1)$ &  $(1, \infty)$ \\
         \hline
-        $y$ & $(2, \infty)$ & $(-\infty, 0]$ & $(-\infty, 0]$ & $[2, \infty]$\\
+        $y$ & $(2, \infty)$ & $(-\infty, 0)$ & $(-\infty, 0)$ & $(2, \infty)$\\
         \hline
         $y'$ sign & + & + & - & - \\
         \hline
@@ -229,8 +225,8 @@ A(t) = w(t)\cdot l(t)
     xmin=-4, xmax=4,
     restrict y to domain=-10:10,
     enlargelimits=true,
-    legend pos=outer north east,
     axis line style={->},
+    scale=1.5
     ]
     \addplot[blue, thick] {2*x^2/(x^2 - 1)};
 
@@ -242,21 +238,21 @@ A(t) = w(t)\cdot l(t)
 \end{tikzpicture}
 \end{center}
 
-\hfill
+\newpage
 
 \noindent 6) Let $f(x) = x^4 +3x+1$. $f$ is continuous everywhere. IVT (Intermediate Value Theorem) states that $f$ takes any value on the interval $[a, b]$ between $f(a)$ and $f(b)$. Let us check $f(-1)$ and $f(-2)$.
 
-\begin{equation*} f(-1) = (-1)^4 + 3(-1) + 1 = -1,\,\, f(-2) = (-2)^4 + 3(-2) + 1 = 11\end{equation*}
+\[ f(-1) = (-1)^4 + 3(-1) + 1 = -1,\qquad f(-2) = (-2)^4 + 3(-2) + 1 = 11\]
 
 \hfill
 
 \noindent By IVT, there exists at least one point on $[-2, -1]$ such that the value of $f$ is zero there. To show that this is the only point where $f(x) = 0$, we may use MVT (Mean Value Theorem). $f$ is differentiable on $(-2, -1)$ as well as it is continuous on $[-2, -1]$. By MVT, there exists a point $c$ such that
 
-\begin{equation*} f'(c) = \frac{f(b) - f(a)}{b-a}\end{equation*} where $-2 \leq a \leq -1$ and $-2 \leq b \leq -1$. We can show that $f(x)$ has no more than one root on the interval $(-2, -1)$. Assume that we have $a$ and $b$ such that we have two distinct roots, meaning $f'(c) = 0$ somewhere on $(-2, -1)$. So,
+\[ f'(c) = \frac{f(b) - f(a)}{b-a}\] where $-2 \leq a \leq -1$ and $-2 \leq b \leq -1$. We can show that $f(x)$ has no more than one root on the interval $(-2, -1)$. Assume that we have $a$ and $b$ such that we have two distinct roots, meaning $f'(c) = 0$ somewhere on $(-2, -1)$. So,
 
-\begin{equation*} f'(x) = 4x^3 + 3\,\rightarrow\,f'(c) = 4c^3+3\end{equation*}
-\begin{equation*} f'(c) = 0\,\rightarrow\, 4c^3+3 = 0\,\rightarrow\,  c = \sqrt[3]{-\frac{3}{4}} > -1 \end{equation*}
+\[f'(x)=4x^3+3\implies f'(c)=4c^3+3\]
+\[f'(c)=0\implies4c^3+3=0\implies c=\sqrt[3]{-\frac{3}{4}}>-1\]
 
-\noindent The only point where $f(x) = 0$ is $c=\sqrt[3]{-\frac{3}{4}}$; however, it is outside the interval. For $x < \sqrt[3]{-\frac{3}{4}}$, the function is also strictly decreasing. This contradicts our assumption that we have two distinct roots on $(-2, -1)$. Therefore, there's only one root on the interval $(-2, -1)$.
+\noindent The only point where $f(x)=0$ is $c=\sqrt[3]{-\frac{3}{4}}$; however, it is outside the interval. For $x < \sqrt[3]{-\frac{3}{4}}$, the function is also strictly decreasing. This contradicts our assumption that we have two distinct roots on $(-2, -1)$. Therefore, there's only one root on the interval $(-2,-1)$.
 
 \end{document}

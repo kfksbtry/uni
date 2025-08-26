@@ -17,7 +17,7 @@
 
 \noindent 1) Evaluate
 
-\begin{equation*}\lim_{x\to3^+}(x-3)^{\ln(x-2)}\end{equation*}
+\[\lim_{x\to3^+}(x-3)^{\ln(x-2)}\]
 
 \hfill
 
@@ -42,7 +42,7 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \noindent 4) Sketch the graph of
 
-\begin{equation*}f(x) = \frac{x^2+1}{x}\end{equation*}
+\[f(x) = \frac{x^2+1}{x}\]
 
 \hfill
 
@@ -52,15 +52,19 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \noindent (a) $\displaystyle \int\sqrt{4-\sqrt{x}}\, dx$
 
+\hfill
+
 \noindent (b) $\displaystyle \int(\ln x)^2\, dx$
 
 \hfill
 
-\noindent 6) Let us consider the area $A$ of the region bounded by the curve $x=y^2-6y$ and the straight line $x=-y$. Write an integral (but don't evaluate) corresponding to the area $A$.
+\noindent 6) Let us consider the area $A$ of the region bounded by the curve $x=y^2-6y$ and the straight line $x=-y$. Write an integral (but don't evaluate) corresponding to the area $A$
 
 \hfill
 
 \noindent (i) with respect to the $y$-axis and
+
+\hfill
 
 \noindent (ii) with respect to the $x$-axis.
 
@@ -70,26 +74,26 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \begin{center}
 2017-2018 Summer Midterm (24/07/2018) Solutions\\
-(Last update: 7/14/25 (14th of July) 11:21 AM)
+(Last update: 8/21/25 (21st of August) 3:07 PM)
 \end{center}
 
 \noindent 1) Let $L$ be the limit value. Then, take the logarithm of both sides.
 
-\begin{equation*}L = \lim_{x\to3^+}(x-3)^{\ln(x-2)}\end{equation*}
+\[L = \lim_{x\to3^+}(x-3)^{\ln(x-2)}\]
 
-\begin{equation*}\ln(L) = \ln\left[\lim_{x\to3^+}(x-3)^{\ln(x-2)}\right]\end{equation*}
+\[\ln(L) = \ln\left[\lim_{x\to3^+}(x-3)^{\ln(x-2)}\right]\]
 
 \hfill
 
 \noindent The function is continuous for $x > 3$. So, we can take the logarithm function inside the limit. Using the property of logarithms, we get:
 
-\begin{equation*}\ln(L) = \lim_{x\to3^+}\ln\left[(x-3)^{\ln(x-2)}\right] = \lim_{x\to3^+}\left[\ln(x-2)\cdot \ln(x-3)\right]\end{equation*}
+\[\ln(L) = \lim_{x\to3^+}\ln\left[(x-3)^{\ln(x-2)}\right] = \lim_{x\to3^+}\left[\ln(x-2)\cdot \ln(x-3)\right]\]
 
 \hfill
 
 \noindent If we substitute $x=3$, we see that $\ln(1) = 0$. However, $\ln(x-3)$ becomes undefined (in other words, tends to negative infinity as $x\to3^+$). We can apply L'Hôpital's rule if we treat these two expressions as a single fraction. Rewrite the limit as follows:
 
-\begin{equation*}\lim_{x\to3^+}\left[\ln(x-2) \cdot \ln(x-3)\right] =\lim_{x\to3^+}\left[\frac{\ln(x-2)}{\frac{1}{\ln(x-3)}}\right]  \end{equation*}
+\[\lim_{x\to3^+}\left[\ln(x-2) \cdot \ln(x-3)\right] =\lim_{x\to3^+}\left[\frac{\ln(x-2)}{\frac{1}{\ln(x-3)}}\right]  \]
 
 \hfill
 
@@ -98,7 +102,7 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 \begin{align*}
     \lim_{x\to3^+}\left[\frac{\ln(x-2)}{\frac{1}{\ln(x-3)}}\right] &\overset{\text{L'H.}}{=} \lim_{x\to3^+} \left[\frac{\frac{1}{x-2}}{-\frac{1}{\ln^2(x-3)}\cdot {\frac{1}{x-3}}}\right] = \lim_{x\to3^+} \left[-\frac{\ln^2(x-3)}{\frac{x-2}{x-3}}\right] \quad \left[\frac{\infty}{\infty}\right] \\\\
     &\overset{\text{L'H.}}{=} \lim_{x\to3^+}\left[-\frac{2\ln(x-3)\cdot\frac{1}{x-3}}{\frac{(x-3) -(x-2)}{(x-3)^2}}\right] = \lim_{x\to3^+} \left[\frac{2\ln(x-3)}{\frac{1}{x-3}}\right] \quad \left[\frac{\infty}{\infty}\right] \\\\
-    &\overset{\text{L'H.}}{=} \lim_{x\to3^+} \left[\frac{\frac{2}{x-3}}{-\frac{1}{(x-3)^2}}\right] = \lim_{x\to3^+} \left[-\frac{2(x-3)}{1}\right] = \lim_{x\to3^+} (6-2x)\\\\&=0
+    &\overset{\text{L'H.}}{=} \lim_{x\to3^+} \left[\frac{\frac{2}{x-3}}{-\frac{1}{(x-3)^2}}\right] = \lim_{x\to3^+} \left[-\frac{2(x-3)}{1}\right]=\lim_{x\to3^+} (6-2x)\\\\&=0
 \end{align*}
 
 \hfill
@@ -109,8 +113,8 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \noindent 2) We need to ensure continuity at $x=1$. The one-sided limits must be equal to the value of the function at that point. The function is a polynomial expression for $x<1$, and another polynomial expression for $x>1$. Both expressions are defined for $x=1$ (x=1 is actually in the domain with another condition), so we can just substitute $x=1$ in the limits.
 
-\begin{equation*}\lim_{x\to1^+} (ax+b) = a+b = 3\end{equation*}
-\begin{equation*}\lim_{x\to1^-} (x^2-4x+b+3) = 1^2 -4 +b+3 =  3\end{equation*}
+\[\lim_{x\to1^+} (ax+b) = a+b = 3\]
+\[\lim_{x\to1^-} (x^2-4x+b+3) = 1^2 -4 +b+3 =  3\]
 
 \noindent $\boxed{b=3}$, so $a+3 = 3\rightarrow \boxed{a = 0}$.
 
@@ -122,11 +126,11 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \noindent 3) Let $x = f(t), \,y = g(t)$ and $L$ be the length of the ladder. $f(t)$ and $g(t)$ represent the location of the bottom and top of the ladder, respectively. The length of the ladder remains constant as time goes on. We can write the following using the Pythagorean theorem. Apply the Chain Rule appropriately.
 
-\begin{equation*}L = \sqrt{f^2(t) + g^2(t)}\end{equation*}
+\[L = \sqrt{f^2(t) + g^2(t)}\]
 
-\begin{equation*}\frac{dL}{dt} = \frac{d}{dt}\sqrt{f^2(t) + g^2(t)}\end{equation*}
+\[\frac{dL}{dt} = \frac{d}{dt}\sqrt{f^2(t) + g^2(t)}\]
 
-\begin{equation*}0 = \frac{1}{2\sqrt{f^2(t)+g^2(t)}} \cdot [2f(t)f'(t) + 2g(t)g'(t)]\end{equation*}
+\[0 = \frac{1}{2\sqrt{f^2(t)+g^2(t)}} \cdot [2f(t)f'(t) + 2g(t)g'(t)]\]
 
 \begin{equation}\therefore \, f(t)f'(t) = -g(t)g'(t)\end{equation}
 
@@ -134,43 +138,41 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \noindent For $t=t_0$, given $g(t_0) = 9$ m, $f'(t_0) = -6$ m/s, $g'(t_0) = 5$ m/s. Find $f(t_0)$ using $(1)$.
 
-\begin{equation*}f(t_0) = -\frac{g(t_0)g'(t_0)}{f'(t_0)} = -\frac{9\cdot (-5)}{6} = \frac{15}{2}\end{equation*}
+\[f(t_0) = -\frac{g(t_0)g'(t_0)}{f'(t_0)} = -\frac{9\cdot (-5)}{6} = \frac{15}{2}\]
 
 \noindent Now, we can find $L$.
 
-\begin{equation*}L =\sqrt{f^2(t_0) + g^2(t_0)} = \sqrt{\left(\frac{15}{2}\right)^2 + 9^2} = \sqrt{\frac{549}{4}}\end{equation*}
+\[L =\sqrt{f^2(t_0) + g^2(t_0)} = \sqrt{\left(\frac{15}{2}\right)^2 + 9^2} = \sqrt{\frac{549}{4}}\]
 
 \hfill
 
-\begin{equation*}\boxed{L=\frac{3\sqrt{61}}{2}}\end{equation*}
+\[\boxed{L=\frac{3\sqrt{61}}{2}}\]
 
 \hfill
 
 \noindent 4) First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $x^2 \neq 0 \,\rightarrow\, x\neq0$. The only vertical asymptote occurs at $x = 0$.
 
-\begin{equation*}\mathcal{D} = \mathbb{R} - \{0\} \end{equation*}
-
-\hfill
+\[\mathcal{D} = \mathbb{R} - \{0\} \]
 
 \noindent Let us find the limit at infinity.
 
-\begin{equation*}\lim_{x\to \infty} \frac{x^2+1}{x} \overset{\text{L'H.}}{=} \lim_{x\to \infty} \frac{2x}{1} = \infty\end{equation*}
+\[\lim_{x\to \infty} \frac{x^2+1}{x} \overset{\text{L'H.}}{=} \lim_{x\to \infty} \frac{2x}{1} = \infty\]
 
 \noindent Similarly,
 
-\begin{equation*}\lim_{x\to -\infty} \frac{x^2+ 1}{x} = -\infty\end{equation*}
+\[\lim_{x\to -\infty} \frac{x^2+ 1}{x} = -\infty\]
 
 \hfill
 
 \noindent There is no horizontal asymptote. However, there exists a slant asymptote. If we attempt to make a long division, the quotient will be $x$. So, the slant asymptote is $y=x$. Let us verify with the limit.
 
-\begin{equation*}\lim_{x\to\infty} \left(\frac{x^2+1}{x} - x\right) = \lim_{x\to\infty} \frac{1}{x} = 0\end{equation*}
+\[\lim_{x\to\infty} \left(\frac{x^2+1}{x} - x\right) = \lim_{x\to\infty} \frac{1}{x} = 0\]
 
 \hfill
 
 \noindent Take the first derivative by applying the quotient rule.
 
-\begin{equation*}y' = \frac{2x\cdot x - (x^2+1)}{x^2}=\frac{x^2-1}{x^2}\end{equation*}
+\[y' = \frac{2x\cdot x - (x^2+1)}{x^2}=\frac{x^2-1}{x^2}\]
 
 \hfill
 
@@ -180,7 +182,7 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \noindent Take the second derivative.
 
-\begin{equation*}y'' = \frac{2x\cdot x^2 - (x^2-1)\cdot(2x)}{x^4}=\frac{1}{x^3}\end{equation*}
+\[y'' = \frac{2x\cdot x^2 - (x^2-1)\cdot(2x)}{x^4}=\frac{1}{x^3}\]
 
 \hfill
 
@@ -190,15 +192,15 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \noindent Consider some values of the function. Eventually, set up a table and see what the graph looks like in certain intervals.
 
-\begin{equation*}f(-1) = \frac{(-1)^2 + 1}{-1} = -2,\,f(1) = \frac{(1)^2 + 1}{1} = 2\end{equation*}
+\[f(-1) = \frac{(-1)^2 + 1}{-1} = -2,\quad f(1) = \frac{(1)^2 + 1}{1} = 2\]
 
 \begin{center}
     \large
     \begin{tabular}{ |c| c c c c| } 
     \hline
-        $x$ & $(-\infty, -1]$ & $[-1, 0)$ & $(0, 1]$ &  $[1, \infty)$ \\
+        $x$ & $(-\infty, -1)$ & $(-1, 0)$ & $(0, 1)$ &  $(1, \infty)$ \\
         \hline
-        $y$ & $(-\infty, -2]$ & $(-\infty, -2]$ & $[2, \infty)$ & $[2, \infty)$\\
+        $y$ & $(-\infty, -2)$ & $(-\infty, -2)$ & $(2, \infty)$ & $(2, \infty)$\\
         \hline
         $y'$ sign & + & - & - & + \\
         \hline
@@ -244,62 +246,35 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \hfill
 
-\noindent (a) Let $x=16\sin^4u$. Then, $dx = 64\sin^3 u \cos u\, du$.
+\noindent (a) Let $u=\sqrt{4-\sqrt x}$.
 
-\begin{align*}\mathrm{I} &= \int \sqrt{4-\sqrt{x}}\,dx= \int\sqrt{4-\sqrt{{16\sin^4u}}} \cdot 64\sin^3 u\cos u\, du\\\\
-&= 64\int{\sqrt{4-4\sin^2 u}\cdot \sin^3 u \cos u\,du} \quad [\sin^2u + \cos^2u = 1]\\\\
-&=128\int {\sin^3 u \cos^2 u\,du} = 128\int {\sin u \cdot (1-\cos^2 u)\cdot\cos^2 u\,du}\end{align*}
+\[u^2=4-\sqrt x\implies 4-u^2=\sqrt x\implies\left(4-u^2\right)^2=x\implies2\left(4-u^2\right)\cdot(-2u)\,du=dx\]
 
-\hfill
-
-\noindent Let $t=\cos u$. Then, $dt = -\sin u \, du$.
-
-\begin{equation*}\mathrm{I}=-128\int t^2(1-t^2) \,dt = -128\int (t^2-t^4) \,dt\end{equation*}
-
-\begin{equation}\mathrm{I}=-128\left[\frac{t^3}{3}-\frac{t^5}{5} \right] + c =128\left[\frac{t^5}{5}- \frac{t^3}{3} \right] +c\end{equation}
+\begin{align*}\int\sqrt{4-\sqrt{x}}\,dx&=\int u\cdot(8-2u^2)\cdot(-2u)\,du=\int\left(4u^4-16u^2\right)\,du=\frac{4u^5}5-\frac{16u^3}3+c\\\\&=\boxed{\frac{4\left(\sqrt{4-\sqrt x}\right)^5}5-\frac{16\left(\sqrt{4-\sqrt x}\right)^3}3+c,\quad c\in\mathbb{R}}\end{align*}
 
 \hfill
 
-\noindent Now, rewrite $x$ in terms of $t$. Recall that $x=16\sin^4u, \, t=\cos u$. Then,
+\noindent (b) Apply integration by parts.
 
-\begin{align*}
-x=16\sin^4u \,&\rightarrow\, \sqrt{x} = 4\sin^2u\\
-t=\cos u \,&\rightarrow\, 4t^2 = 4\cos^2u\\
-&\therefore\,\, 4t^2 +\sqrt{x} = 4
-\end{align*}
+\[\left.\begin{array}{c}
+u=(\ln x)^2\implies du=2\ln x\cdot\dfrac1x\,dx\\
+dv=dx\implies v=x
+\end{array}\right\}\rightarrow \int u\,dv=uv-\int v\,du\]
 
-\begin{equation*}4t^2 = 4-\sqrt{x}\end{equation*}
-\begin{equation}t=\frac{\sqrt{4-\sqrt{x}}}{2}\end{equation}
+\[\int(\ln x)^2\,dx=x(\ln x)^2-\int2\ln x\,dx\]
 
 \hfill
 
-\noindent Plug (3) into (2).
+\noindent Apply integration by parts once again.
 
-\begin{equation*}\boxed{\mathrm{I} = \frac{4\left(\sqrt{4-\sqrt{x}}\right)^5}{5}-\frac{16\left(\sqrt{4-\sqrt{x}}\right)^3}{3} + c}\end{equation*}
+\[\left.\begin{array}{c}
+u=\ln x\implies du=\dfrac1x\,dx\\
+dv=dx\implies v=x
+\end{array}\right\}\rightarrow \int u\,dv=uv-\int v\,du\]
 
-\hfill
+\[\int(\ln x)^2\,dx=x(\ln x)^2-\int2\ln x\,dx\]
 
-\noindent (b) We'll use integration by parts. Let $u=\ln x,\quad dv = \ln x\,dx$. Then, $\displaystyle du = \frac{dx}{x}, \quad v = \int \ln x\, dx$.
-
-\begin{equation*}
-\mathrm{I} = \int(\ln x)^2 \, dx = \ln x \cdot \int \ln x\, dx - \int\left[\left(\int \ln x\, dx\right)\frac{dx}{x}\right]
-\end{equation*}
-
-\hfill
-
-\noindent It seems that we need another integration by parts in order to calculate the $\displaystyle \int\ln x\,dx$. Let $w=\ln x,\quad dz = dx$. Then, $\displaystyle dw = \frac{dx}{x}, \quad z = x$.
-
-\begin{equation*}
-\int\ln x \, dx =x\ln x -\int{dx} = x\ln x -x +c_1
-\end{equation*}
-
-\hfill
-
-\noindent $c_1$ is trivial and will not change the result. Therefore, we can omit it. However, we should still place some constant after the last integration.
-
-\begin{align*}
-\mathrm{I} &= \ln x \cdot(x \ln x - x) -\int(x\ln x - x)\frac{dx}{x} = x\ln^2x -x\ln x -\int(\ln x - 1)\, dx\\&=\boxed{x\ln^2x - 2x\ln x +2x + c}
-\end{align*}
+\[x(\ln x)^2-\int2\ln x\,dx=x(\ln x)^2-2\left[x\ln x-\int dx\right]=\boxed{x(\ln x)^2-2x\ln x+2x+c,\: c\in\mathbb{R}}\]
 
 \hfill
 
@@ -430,17 +405,15 @@ t=\cos u \,&\rightarrow\, 4t^2 = 4\cos^2u\\
 
 \noindent (i) We'll take the integral along the $y$-axis. The lower and upper limits of the integral are 0 and 5, respectively.
 
-\begin{equation*}
-A = \int_0^5[(-y)-(y^2-6y)]\,dy = \int_0^5(-y^2+5y)\,dy
-\end{equation*}
+\[A = \int_0^5[(-y)-(y^2-6y)]\,dy = \int_0^5(-y^2+5y)\,dy\]
 
 \hfill
 
 \noindent (ii) We have two different regions. $y=-x$ and $y=\sqrt{x-9}+3$ intersect at the point $(-5, 5)$. Therefore, we will write two separate integrals.
 
 \begin{align*}
-A&=\int_{-9}^{-5}[(\sqrt{x+9}+3) -(-\sqrt{x+9}+3)]\,dx + \int_{-5}^{0}[(-x) - (-\sqrt{x+9}+3)]\,dx\\\\
-&= \int_{-9}^{-5}2(\sqrt{x+9})\,dx + \int_{-5}^{0}(-x + \sqrt{x+9}-3)\,dx
+A&=\int_{-9}^{-5}\left[\left(\sqrt{x+9}+3\right) -\left(-\sqrt{x+9}+3\right)\right]\,dx + \int_{-5}^{0}\left[(-x) - \left(-\sqrt{x+9}+3\right)\right]\,dx\\\\
+&=\int_{-9}^{-5}2\left(\sqrt{x+9}\right)\,dx + \int_{-5}^{0}\left(-x + \sqrt{x+9}-3\right)\,dx
 \end{align*}
 
 \end{document}
