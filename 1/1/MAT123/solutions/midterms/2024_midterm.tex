@@ -14,13 +14,13 @@
 2024-2025 Fall \\MAT123 Midterm\\(02/12/2024)
 \end{center}
 
-\noindent 1) Let
+\noindent 1. Let
 
 \[
 f(x) =
 \begin{cases}
-\displaystyle \frac{\tan ax}{\tan bx}, & \text{if}\ x < 0 \\
-4, & \text{if}\ x = 0 \\
+\displaystyle \frac{\tan ax}{\tan bx}, & \text{if}\ x < 0 \\[1em]
+4, & \text{if}\ x = 0 \\[1em]
 ax+b, & \text{if}\ x >0 \\
 \end{cases}
 \]
@@ -35,7 +35,11 @@ ax+b, & \text{if}\ x >0 \\
 
 \hfill
 
-\noindent 3. (a) Without using L'Hôpital's rule, evaluate $\displaystyle \lim_{x\to 0} \frac{5-6\cos x + \cos^2x}{x\sin x}$.
+\noindent 3.
+
+\hfill
+
+\noindent (a) Without using L'Hôpital's rule, evaluate $\displaystyle \lim_{x\to 0} \frac{5-6\cos x + \cos^2x}{x\sin x}$.
 
 \hfill
 
@@ -43,7 +47,7 @@ ax+b, & \text{if}\ x >0 \\
 
 \hfill
 
-\noindent (c) Evaluate $\displaystyle\lim_{x\to1^+} (\sqrt x)^{\ln(x-1)}$.
+\noindent (c) Evaluate $\displaystyle\lim_{x\to1^+}v\left(\sqrt x\right)^{\ln(x-1)}$.
 
 \hfill
 
@@ -55,13 +59,17 @@ ax+b, & \text{if}\ x >0 \\
 
 \hfill
 
-\noindent 6. Let $\displaystyle f(x) = \frac{x^2-2}{(x-1)^2}$
+\noindent 6. Let $f(x)=\dfrac{x^2-2}{(x-1)^2}$.
 
 \hfill
 
 (a) Determine the interval of increase, decrease and concavity of $f$.
 
+\hfill
+
 (b) Construct a table.
+
+\hfill
 
 (c) Sketch the graph of $f$.
 
@@ -69,10 +77,10 @@ ax+b, & \text{if}\ x >0 \\
 
 \begin{center}
 2024-2025 Fall Midterm (02/12/2024) Solutions\\
-(Last update: 8/21/25 (21st of August) 4:34 PM)
+(Last update: 30/08/2025 00:09)
 \end{center}
 
-\noindent 1) To ensure continuity at $x=0$, the one-sided limit values must be equal to the value of the function at that point.
+\noindent 1. To ensure continuity at $x=0$, the one-sided limit values must be equal to the value of the function at that point.
 
 \[
 \lim_{x\to0^-} \frac{\tan ax}{\tan bx} = \lim_{x\to0^+} (ax+b) = f(0) = 4
@@ -96,11 +104,11 @@ ax+b, & \text{if}\ x >0 \\
 
 \hfill
 
-\noindent Now, set $\displaystyle \frac ab = b\,\rightarrow\, a= 16$. $\boxed{a=16,\,b=4}$
+\noindent Now, set $\displaystyle \frac ab = b\implies a= 16$. $\boxed{a=16,\,b=4}$
 
 \hfill
 
-\noindent 2) Let $f(x) = x^{1/3}$ and $g(x) = x^{1/2}$. Using the differential approximation, we get
+\noindent 2. Let $f(x) = x^{1/3}$ and $g(x) = x^{1/2}$. Using the differential approximation, we get
 
 \begin{align*}
 f(x+\Delta x)\approx f(x) + f'(x)\Delta x&=x^{1/3}+\frac13x^{-2/3}\Delta x\\
@@ -115,49 +123,43 @@ g(x+\Delta x)\approx g(x) + g'(x)\Delta x&=x^{1/2}+\frac12x^{-1/2}\Delta x
 
 \newpage
 
-\noindent 3)
+\noindent 3.
 
 \hfill
 
-\noindent (a) \begin{align*}
+\noindent (a) Factor the numerator and use the conjugate of the expression $\cos x-1$.
+\begin{align*}
 &\lim_{x\to0}\frac{5-6\cos x + \cos^2x}{x\sin x}=\lim_{x\to0}\frac{(\cos x -1)(\cos x-5)}{x\sin x} \\\\&=\lim_{x\to0}\frac{(\cos x -1)(\cos x-5)(\cos x +1)}{(x\sin x)(\cos x +1)}
 =\lim_{x\to0}\left(-\frac{\sin^2x\cdot(\cos x -5)}{x\sin x \cdot(\cos x +1)}\right)\\\\&=\lim_{x\to0}\left(-\frac{\sin x\cdot(\cos x -5)}{x \cdot(\cos x +1)}\right)=-\lim_{x\to0}\frac{\sin{x}} x\cdot \lim_{x\to0}\frac{\cos x -5}{\cos x +1}=-1\cdot\frac{\cos0 -5}{\cos0+1} = \boxed{2}
 \end{align*}
 
 \hfill
 
-\noindent (b) For all $\epsilon > 0$, there exists a $\delta > 0$ such that
-
-\[0<\left|x+3\right| < \delta\implies\left|f(x) - 1\right| < \epsilon\]
-
+\noindent (b) For all $\epsilon > 0$, there exists a $\delta > 0$ such that $0<\left|x+3\right|<\delta\implies\left|f(x)-1\right|<\epsilon$.
 \begin{align*}
-\left|f(x) - 1\right|&=\left|\sqrt{-x-2}-1\right| = \left|\sqrt{-x-2}-1\cdot\frac{\sqrt{-x-2}+1}{\sqrt{-x-2}+1}\right|\\\\&=\left|\frac{-x-3}{\sqrt{-x-2}+1}\right|\leq \left|-x-3\right|\quad\left[\sqrt{-x-2} + 1\geq0+1=1\right]\\\\&=\left|x+3\right|<\delta=\epsilon
+\left|f(x)-1\right|&=\left|\sqrt{-x-2}-1\right|=\left|\sqrt{-x-2}-1\cdot\frac{\sqrt{-x-2}+1}{\sqrt{-x-2}+1}\right|\\&=\left|\frac{-x-3}{\sqrt{-x-2}+1}\right|\leq\left|-x-3\right|\qquad\left[\sqrt{-x-2}+1\geq0+1=1\right]\\\\&=\left|x+3\right|<\delta
 \end{align*}
-
-\hfill
-
-\noindent If we set $\delta=\epsilon$, the proof is complete.
+\noindent Let $\delta=\epsilon$.
+\[\left|\sqrt{-x-2}-1\right|\leq|x-3|<\epsilon=\delta\]
 
 \hfill
 
 \noindent (c) Let $L$ be the value of the limit. Then, take the logarithm of both sides. Since the expression is continuous for $x>1$, we can take the logarithm function inside the limit.
 
-\begin{align*}
-L&=\lim_{x\to1^+} (\sqrt x)^{\ln(x-1)}\quad \left[1^{-\infty}\right]\\
-\ln(L) &= \ln\left[\lim_{x\to1^+} (\sqrt x)^{\ln(x-1)}\right]
-\end{align*}
+\[L=\lim_{x\to1^+}\left(\sqrt x\right)^{\ln(x-1)}\implies
+\ln(L) = \ln\left[\lim_{x\to1^+}\left(\sqrt x\right)^{\ln(x-1)}\right]\]
 
 \begin{align*}
-\ln(L)&=\lim_{x\to1^+}\ln\left[(\sqrt x)^{\ln(x-1)}\right]=\lim_{x\to1^+}\left[\ln(x-1)\cdot\ln(\sqrt x)\right]\quad\left[\infty \cdot 0\right]\\\\&=\lim_{x\to1^+}\left[\frac{\ln(x-1)}{\frac1{\ln\left(\sqrt x\right)}}\right]\quad\left[\frac\infty\infty\right]\\\\&=\lim_{x\to1^+}\left[\frac{\frac1{{x-1}}}{\frac1{-\ln^2\left(\sqrt x\right)}\cdot\frac1{\sqrt x}\cdot\frac1{2\sqrt x}}\right]=\lim_{x\to1^+}\left[-\frac{\ln^2(\sqrt x)\cdot 2x}{x-1}\right]\quad\left[\frac00\right]\\\\&=\lim_{x\to1^+}\left(-\frac{2\ln\left(\sqrt x\right)\cdot \frac1{\sqrt x}\cdot\frac1{2\sqrt x}\cdot2x+\ln^2 (\sqrt x)\cdot 2 }1\right)=\lim_{x\to1^+} \left[2\ln\left(\sqrt x\right) + 2\ln^2\left(\sqrt x\right) \right]\\\\&=\left[2\ln\left(\sqrt 1\right) + 2\ln^2\left(\sqrt 1\right) \right] = 0
+\ln(L)&=\lim_{x\to1^+}\ln\left[(\sqrt x)^{\ln(x-1)}\right]=\lim_{x\to1^+}\left[\ln(x-1)\cdot\ln(\sqrt x)\right]=\lim_{x\to1^+}\frac{\ln(x-1)}{\frac1{\ln\left(\sqrt x\right)}}\quad\left[\frac\infty\infty\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to1^+}\frac{\frac1{{x-1}}}{\frac1{-\ln^2\left(\sqrt x\right)}\cdot\frac1{\sqrt x}\cdot\frac1{2\sqrt x}}=\lim_{x\to1^+}\frac{\ln^2(\sqrt x)\cdot 2x}{1-x}\quad\left[\frac00\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to1^+}\frac{2\ln\left(\sqrt x\right)\cdot \frac1{\sqrt x}\cdot\frac1{2\sqrt x}\cdot2x+\ln^2 (\sqrt x)\cdot 2 }{-1}=\lim_{x\to1^+} \left[-2\ln\left(\sqrt x\right)-2\ln^2\left(\sqrt x\right) \right]\\\\&=2\ln\left(\sqrt 1\right) + 2\ln^2\left(\sqrt 1\right)=0
 \end{align*}
 
 \hfill
 
-\noindent $\ln(L) = 0$. Therefore, $\boxed{L=1}$.
+\noindent $\ln(L)=0$. Therefore, $\boxed{L=1}$.
 
 \hfill
 
-\noindent 4) Let $f(x)$ represent the volume of coffee in the cone in cubic inches. The coffee in the cone will have a conical shape while draining. We may set up the equation below using the formula of the volume of a cone.
+\noindent 4. Let $f(x)$ represent the volume of coffee in the cone in cubic inches. The coffee in the cone will have a conical shape while draining. We may set up the equation below using the formula of the volume of a cone.
 
 \[f(t) = \frac13\cdot h(t)\cdot \pi r^2(t)\]
 
@@ -165,7 +167,7 @@ L&=\lim_{x\to1^+} (\sqrt x)^{\ln(x-1)}\quad \left[1^{-\infty}\right]\\
 
 \noindent $h(t), r(t)$ represent the height and radius of the circular area that coffee forms, respectively, in inches. We can eliminate $r$ to proceed with $h$. $r$ and $h$ are proportional.
 
-\[\frac rh=\frac25\,\rightarrow\,r=\frac{2h}5\]
+\[\frac rh=\frac25\implies r=\frac{2h}5\]
 
 \[f(t)=\frac{4\pi h^3(t)}{75}\]
 
@@ -183,7 +185,7 @@ L&=\lim_{x\to1^+} (\sqrt x)^{\ln(x-1)}\quad \left[1^{-\infty}\right]\\
 
 \hfill
 
-\noindent 5) Let $f(x) = \ln(1+x)-x$. We have $f(0) = \ln(1 + 0) - 0 = 0$. The mean value theorem (MVT) states that if a function $g(x)$ is continuous on $[a, b]$ and differentiable on $(a,b)$, then there exists a point $c$ such that
+\noindent 5. Let $f(x) = \ln(1+x)-x$. We have $f(0) = \ln(1 + 0) - 0 = 0$. The mean value theorem (MVT) states that if a function $g(x)$ is continuous on $[a, b]$ and differentiable on $(a,b)$, then there exists a point $c$ such that
 
 \[
 g'(c) = \frac{g(b)-g(a)}{b-a}
@@ -194,7 +196,7 @@ g'(c) = \frac{g(b)-g(a)}{b-a}
 \noindent $f$ is continuous on $[0,x]$ and differentiable on $(0,x)$. By MVT, $\displaystyle\frac{f(x)-f(0)}{x-0}=f'(c)$ provided for some point $c$ such that $0<c<x$.
 
 \[f'(c)=\frac1{c+1}-1=\frac{\ln(x+1) - x}x=\frac{f(x)-f(0)}{x-0}\]
-\[\frac1{c+1}=\frac{\ln(x+1) }x\,\rightarrow\, c+1 = \frac x{\ln(x+1)}\]
+\[\frac1{c+1}=\frac{\ln(x+1) }x\implies c+1 = \frac x{\ln(x+1)}\]
 \[c=\frac{x-\ln(x+1)}{\ln(x+1)}\]
 
 \hfill
@@ -205,15 +207,15 @@ g'(c) = \frac{g(b)-g(a)}{b-a}
 \[0<x-\ln(x+1)\]
 \[\ln(x+1)<x\]
 
+\newpage
+
+\noindent 6.
+
 \hfill
 
-\noindent 6)
+\noindent (a) First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $(x-1)^2\neq0\implies x\neq1$. The only vertical asymptote occurs at $x=1$.
 
-\hfill
-
-\noindent (a) First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $(x-1)^2\neq0\,\rightarrow\,x\neq1$. The only vertical asymptote occurs at $x = 1$.
-
-\[\mathcal{D} = \mathbb{R} - \{1\}\]
+\[\mathcal{D}=\mathbb{R}-\{1\}\]
 
 \hfill
 
@@ -233,7 +235,7 @@ g'(c) = \frac{g(b)-g(a)}{b-a}
 
 \noindent Take the first derivative by applying the quotient rule.
 
-\[y' = \frac{(2x)\cdot (x-1)^2 - (x^2-2)\cdot 2(x-1)}{(x-1)^4}=\frac{4-2x}{(x-1)^3}\]
+\[y'=\frac{(2x)\cdot(x-1)^2-(x^2-2)\cdot 2(x-1)}{(x-1)^4}=\frac{4-2x}{(x-1)^3}\]
 
 \hfill
 
@@ -243,17 +245,17 @@ g'(c) = \frac{g(b)-g(a)}{b-a}
 
 \noindent Take the second derivative.
 
-\[y'' = \frac{(-2)\cdot(x-1)^3-(4-2x)\cdot3(x-1)^2 }{(x-1)^6}=\frac{4x-10}{(x-1)^4}\]
+\[y''=\frac{(-2)\cdot(x-1)^3-(4-2x)\cdot3(x-1)^2}{(x-1)^6}=\frac{4x-10}{(x-1)^4}\]
 
 \hfill
 
-\noindent The only inflection point occurs at $\displaystyle x=\frac52$.
+\noindent The only inflection point occurs at $x=\dfrac52$.
 
 \hfill
 
 \noindent (b) Consider some values of the function. Eventually, set up a table and see what the graph looks like in certain intervals.
 
-\[\,f\left(-\sqrt2\right)=f\left(\sqrt2\right)=0,\,f(0)=-2,\,f(2)=2,\,f(5/2)=17/9\]
+\[f\left(-\sqrt2\right)=f\left(\sqrt2\right)=0,\:f(0)=-2,\:f(2)=2,\:f(5/2)=17/9\]
 
 \begin{center}
     \large
@@ -270,7 +272,7 @@ g'(c) = \frac{g(b)-g(a)}{b-a}
     \end{tabular}
 \end{center}
 
-\hfill
+\newpage
 
 \noindent (c)
 
@@ -294,10 +296,10 @@ g'(c) = \frac{g(b)-g(a)}{b-a}
     \draw[dashed, red] (axis cs:1,2.2) -- (axis cs:1,-5.2);
     
     \draw[dashed, black] (axis cs:2,0) -- (axis cs:2,2);
-    \draw[dashed, black] (axis cs:5/2,0) -- (axis cs:5/2,17/9);
+    %\draw[dashed, black] (axis cs:5/2,0) -- (axis cs:5/2,17/9);
     
     \draw[dashed, black] (axis cs:0,2) -- (axis cs:2,2);
-    \draw[dashed, black] (axis cs:0,17/9) -- (axis cs:5/2,17/9);
+    %\draw[dashed, black] (axis cs:0,17/9) -- (axis cs:5/2,17/9);
 
   \end{axis}
 \end{tikzpicture}

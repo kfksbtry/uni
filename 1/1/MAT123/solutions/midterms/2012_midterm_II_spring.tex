@@ -63,7 +63,7 @@
 
 \begin{center}
 2011-2012 Spring Midterm II (08/05/2012) Solutions\\
-(Last update: 8/21/25 (21st of August) 3:13 PM)
+(Last update: 29/08/2025 20:11)
 \end{center}
 
 \noindent 1.
@@ -94,9 +94,9 @@
 
     \draw (axis cs:2,0) -- (axis cs:2,4);
     \draw[dashed] (axis cs:0,4) -- (axis cs:2,4);
-    \node[blue] at (1,2) {$y=x^2$};
-    \node at (1.7,0.8) {$x=2$};
-  \end{axis}
+    \node[blue] at (1,2.4) {$y=x^2$};
+    \node at (1.6,0.8) {$x=2$};
+   \end{axis}
 \end{tikzpicture}
 \end{center}
 
@@ -119,6 +119,7 @@
     y domain=0:360,
     colormap/cool,
     scale=1.5,
+    ytick=\empty, ztick=\empty
     ]
     
     \addplot3 [
@@ -129,16 +130,6 @@
       x,
       {x^2 * cos(y)},
       {x^2 * sin(y)}
-    );
-
-    \addplot3 [
-      domain=0:360,
-      samples=40,
-    ]
-    (
-      {2},
-      {4 * cos(x)},
-      {4 * sin(x)}
     );
 
     \draw[dashed, thick] (2,0,0)--(2,0,4);
@@ -319,7 +310,7 @@ A+B=0\\
 
 \noindent Multiply by the expression inside the limit $\displaystyle \frac xx$. Notice that we obtain a standard form.
 
-\begin{align*}\lim_{x\to0}\left(\frac{1-\cos x^2}x\cdot\frac xx\right)&=\lim_{x\to0}\frac{1-\cos x^2}{x^2}\cdot\lim_{x\to0}x\quad\left[\lim_{u\to0}\frac{1-\cos u}u = 0\right]\\\\&=1\cdot0=\boxed0\end{align*}
+\begin{align*}\lim_{x\to0}\left(\frac{1-\cos x^2}x\cdot\frac xx\right)&=\lim_{x\to0}\frac{1-\cos x^2}{x^2}\cdot\lim_{x\to0}x\quad\left[\lim_{u\to0}\frac{1-\cos u}u = 0\right]\\\\&=0\cdot0=\boxed0\end{align*}
 
 \hfill
 

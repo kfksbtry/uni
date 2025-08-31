@@ -14,7 +14,7 @@
 2022-2023 Fall \\MAT123-02,05 Midterm\\(23/11/2022)
 \end{center}
 
-\noindent 1) Evaluate the following limits without using L'Hôpital's rule.
+\noindent 1. Evaluate the following limits without using L'Hôpital's rule.
 
 \hfill
 
@@ -22,11 +22,15 @@
 
 \hfill
 
-\noindent 2) A balloon is released at point $A$ rises vertically with a constant speed of 5 m/s. Point $B$ is level with and 100 m distant from the point $A$. How fast is the angle of elevation of the balloon at $B$ changing when the balloon is 200 m above $A$?
+\noindent 2. A balloon is released at point $A$ rises vertically with a constant speed of 5 m/s. Point $B$ is level with and 100 m distant from the point $A$. How fast is the angle of elevation of the balloon at $B$ changing when the balloon is 200 m above $A$?
 
 \hfill
 
-\noindent 3) (a) State IVT and MVT.
+\noindent 3.
+
+\hfill
+
+\noindent (a) State IVT and MVT.
 
 \hfill
 
@@ -34,34 +38,33 @@
 
 \hfill
 
-\noindent 4) Find the tangent line to the curve defined implicitly by the equation
+\noindent 4. Find the tangent line to the curve defined implicitly by the equation
 
-\begin{equation*}
-\sin\left(y^2\mathrm{e}^{2x}\right) + \sqrt{\pi}y = x^2 + \pi
-\end{equation*}
+\[\sin\left(y^2\mathrm{e}^{2x}\right)+\sqrt{\pi}y=x^2+\pi\]
 
-\noindent at $(0, \sqrt\pi).$
+\noindent at $\left(0, \sqrt\pi\right).$
 
 \hfill
 
-\noindent 5) Evaluate $\displaystyle \lim_{x \to \infty} \left(\frac{\ln x}{x}\right)^{1/x}$.
+\noindent 5. Evaluate $\displaystyle \lim_{x \to \infty} \left(\frac{\ln x}{x}\right)^{1/x}$.
 
 \hfill
 
-\noindent 6) Sketch the graph of $\displaystyle f(x) = \frac{x^2-2}{(x-1)^2}$.
+\noindent 6. Sketch the graph of $\displaystyle f(x) = \frac{x^2-2}{(x-1)^2}$.
 
 \newpage
 
 \begin{center}
 2022-2023 Fall Midterm (23/11/2022) Solutions\\
-(Last update: 8/21/25 (21st of August) 4:26 PM)
+(Last update: 29/08/2025 22:59)
 \end{center}
 
-\noindent 1)
+\noindent 1.
 
 \hfill
 
-\noindent (a) \begin{equation*}\lim_{x\to 0^+} \frac{\left|\sin x\right|}{x}=\lim_{x\to 0^+}\frac{\sin x}{x}=1,\quad\quad \lim_{x\to 0^-} \frac{\left|\sin x\right|}{x}=\lim_{x\to0^-}\left(-\frac{\sin x}{x}\right)=-\lim_{x\to0^-}\frac{\sin x}{x}=-1\end{equation*}
+\noindent (a) Find the one-sided limits.
+\[\lim_{x\to 0^+} \frac{\left|\sin x\right|}{x}=\lim_{x\to 0^+}\frac{\sin x}{x}=1,\quad\quad \lim_{x\to 0^-} \frac{\left|\sin x\right|}{x}=\lim_{x\to0^-}\left(-\frac{\sin x}{x}\right)=-\lim_{x\to0^-}\frac{\sin x}{x}=-1\]
 
 \hfill
 
@@ -69,40 +72,38 @@
 
 \hfill
 
-\noindent (b)
-\begin{align*}-1\leq \cos(1/x)\leq1&\implies\mathrm{e}^{-1}\leq\mathrm{e}^{\cos(1/x)}\leq\mathrm{e}^1\implies x\mathrm{e}^{-1}\leq x\mathrm{e}^{\cos(1/x)}\leq x\mathrm{e}\\\\&\implies\lim_{x\to 0^+} x\mathrm{e}^{-1}\leq\lim_{x\to 0^+}  x\mathrm{e}^{\cos(1/x)}\leq\lim_{x\to 0^+} x\mathrm{e}\implies\lim_{x\to 0^+} x\mathrm{e}^{\cos(1/x)}=0\end{align*}
-
-\hfill
+\noindent (b) We have $-1\leq\cos(1/x)\leq1$ for all $x\in\mathbb R-\{0\}$. So, $\mathrm{e}^{-1}\leq\mathrm{e}^{\cos(1/x)}\leq\mathrm{e}^1$.
+\[x\mathrm{e}^{-1}\leq x\mathrm{e}^{\cos(1/x)}\leq x\mathrm{e}\implies\lim_{x\to0^+} x\mathrm{e}^{-1}=\lim_{x\to0^+}x\mathrm{e}=0\implies\lim_{x\to0^+}x\mathrm{e}^{\cos(1/x)}=\boxed0\]
 
 \noindent By the squeeze theorem, the limit is 0.
 
 \hfill
 
-\noindent (c) $\displaystyle\lim_{x\to0}\frac{\sqrt{1+\tan x}-\sqrt{1-\sin x}}{x^3}$
-\begin{align*}
-&=\lim_{x\to0}\left(\frac{\sqrt{1+\tan x}-\sqrt{1-\sin x}}{x^3}\cdot\frac{\sqrt{1+\tan x}+\sqrt{1-\sin x}}{\sqrt{1+\tan x}+\sqrt{1-\sin x}}\right)\\\\&=\lim_{x\to0}\frac{(1+\tan x)-(1-\sin x)}{x^3\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}=\lim_{x\to0}\frac{\tan x+\sin x}{x^3\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\\\\&=\lim_{x\to0}\frac{\sin x+\sin x\cdot\cos x}{\cos x\cdot x^3\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\\\\&=\lim_{x\to0}\frac{1+\cos x}{\cos x\cdot x^2\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\cdot\lim_{x\to0}\frac{\sin x}{x}\quad\left[\lim_{x\to0}\frac{\sin x}x=1\right]\\\\&=\lim_{x\to0}\left[\frac{1+\cos x}{\cos x\cdot x^2\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\cdot\frac{1-\cos x}{1-\cos x}\right]\\\\&=\lim_{x\to0}\left[\frac{1-\cos^2x}{\cos x\cdot x^2\cdot(1-\cos x)\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\right]\quad\left[\sin^2x+\cos^2x=1\right]\\\\&=\lim_{x\to0}\frac{\sin^2x}{x^2}\cdot\lim_{x\to0}\frac1{\cos x\cdot(1-\cos x)\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\\\\&=\lim_{x\to0}\frac1{\cos x}\cdot\lim_{x\to0}\frac1{1-\cos x}\cdot\lim_{x\to0}\frac1{\sqrt{1+\tan x}+\sqrt{1-\sin x}}=1\cdot\lim_{x\to0}\frac1{1-\cos x}\cdot\frac12 =\boxed{\infty}\end{align*}
+\noindent (c)
+\begin{align*}L&=\displaystyle\lim_{x\to0}\frac{\sqrt{1+\tan x}-\sqrt{1-\sin x}}{x^3}
+\\\\&=\lim_{x\to0}\left(\frac{\sqrt{1+\tan x}-\sqrt{1-\sin x}}{x^3}\cdot\frac{\sqrt{1+\tan x}+\sqrt{1-\sin x}}{\sqrt{1+\tan x}+\sqrt{1-\sin x}}\right)\\\\&=\lim_{x\to0}\frac{(1+\tan x)-(1-\sin x)}{x^3\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}=\lim_{x\to0}\frac{\tan x+\sin x}{x^3\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\\\\&=\lim_{x\to0}\frac{\sin x+\sin x\cdot\cos x}{\cos x\cdot x^3\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\\\\&=\lim_{x\to0}\frac{1+\cos x}{\cos x\cdot x^2\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\cdot\lim_{x\to0}\frac{\sin x}{x}\quad\left[\lim_{x\to0}\frac{\sin x}x=1\right]\\\\&=\lim_{x\to0}\left[\frac{1+\cos x}{\cos x\cdot x^2\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\cdot\frac{1-\cos x}{1-\cos x}\right]\\\\&=\lim_{x\to0}\left[\frac{1-\cos^2x}{\cos x\cdot x^2\cdot(1-\cos x)\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\right]\quad\left[\sin^2x+\cos^2x=1\right]\\\\&=\lim_{x\to0}\frac{\sin^2x}{x^2}\cdot\lim_{x\to0}\frac1{\cos x\cdot(1-\cos x)\cdot\left(\sqrt{1+\tan x}+\sqrt{1-\sin x}\right)}\\\\&=\lim_{x\to0}\frac1{\cos x}\cdot\lim_{x\to0}\frac1{1-\cos x}\cdot\lim_{x\to0}\frac1{\sqrt{1+\tan x}+\sqrt{1-\sin x}}=1\cdot\lim_{x\to0}\frac1{1-\cos x}\cdot\frac12 =\boxed{\infty}\end{align*}
 
 \hfill
 
-\noindent 2) Let $g(t),\,f(t)$ represent the distance between point $A$ and point $B$, and the distance between point $A$ and the balloon, respectively. We may express the angle as follows.
+\noindent 2. Let $g(t),\,f(t)$ represent the distance between point $A$ and point $B$, and the distance between point $A$ and the balloon, respectively. We may express the angle as follows.
 
-\begin{equation*}\theta(t)=\arctan{\frac{f(t)}{g(t)}}\end{equation*}
+\[\theta(t)=\arctan{\frac{f(t)}{g(t)}}\]
 
 \hfill
 
 \noindent The first derivative of $\theta$ gives the rate of change of the angle. Apply the chain rule accordingly.
 
-\begin{equation*}\theta'(t)=\frac1{\displaystyle 1+\frac{f^2(t)}{g^2(t)}}\cdot\frac{f'(t)\cdot g(t) - f(t) \cdot g'(t)}{g^2(t)}=\frac{f'(t)\cdot g(t) - f(t) \cdot g'(t)}{g^2(t)+f^2(t)}\end{equation*}
+\[\theta'(t)=\frac1{\displaystyle 1+\frac{f^2(t)}{g^2(t)}}\cdot\frac{f'(t)\cdot g(t) - f(t) \cdot g'(t)}{g^2(t)}=\frac{f'(t)\cdot g(t) - f(t) \cdot g'(t)}{g^2(t)+f^2(t)}\]
 
 \hfill
 
 \noindent At $t=t_0$, $f(t_0)= 200,\,g(t_0) =100,\,f'(t_0)=5,\,g'(t_0) = 0$. The reason why $g'(t_0) = 0$ is that the distance between the points does not change over time. Calculate $\theta'(t_0)$.
 
-\begin{equation*}\theta'(t_0)=\frac{5\cdot 100 - 200 \cdot 0}{100^2+200^2}=\frac{500}{50000}=\boxed{\frac1{100}\,\mathrm{rad/s}} \end{equation*}
+\[\theta'(t_0)=\frac{5\cdot 100 - 200 \cdot 0}{100^2+200^2}=\frac{500}{50000}=\boxed{\frac1{100}\,\mathrm{rad/s}} \]
 
 \hfill
 
-\noindent 3)
+\noindent 3.
 
 \hfill
 
@@ -112,23 +113,23 @@
 
 \noindent (b) Let $f(x) = x^{123}+2x^{85} + 3x^{17} + 4x-1$. Since this is a polynomial expression, $f$ is continuous and differentiable everywhere. Arbitrarily choose $x=-1$ and $x=1$ to make calculations easy. By IVT, $f$ takes any value on $[f(-1), f(1)]$.
 
-\begin{equation*}f(-1) = -11,\quad f(1) =9\end{equation*}
+\[f(-1) = -11,\quad f(1) =9\]
 
 \hfill
 
 \noindent $f$ must have at least one root $x_1$ on $[-1, 1]$ by IVT. Now, we need to prove that there is \textit{only} one. We assume that there is another distinct root $x_2$. Since $f(x_1) = f(x_2) = 0$, at some point $c$, the first derivative of the function at this point is $0$.
 
-\begin{equation*}f'(c) = 123x^{122}+170x^{84} + 51x^{16} + 4 \geq 0+ 0+ 0+ 4 = 4\end{equation*}
+\[f'(c) = 123x^{122}+170x^{84} + 51x^{16} + 4 \geq 0+ 0+ 0+ 4 = 4\]
 
 \hfill
 
-\noindent $f'(c)\geq4$. However, this is a contradiction. Therefore, there is \textit{only} one root.
+\noindent $f'(c)>0$. However, this is a contradiction. Therefore, there is \textit{only} one root.
 
 \hfill
 
-\noindent 4) Differentiate both sides.
+\noindent 4. Differentiate both sides.
 
-\[\frac d{dx}\left[\sin(y^2\mathrm{e}^{2x})+\sqrt\pi y\right] =\frac {d}{dx} \left(x^2+\pi\right)\]
+\[\frac d{dx}\left[\sin(y^2\mathrm{e}^{2x})+\sqrt\pi y\right]=\frac{d}{dx}\left(x^2+\pi\right)\]
 \[\cos\left(y^2\mathrm{e}^{2x}\right)\cdot\left(2y{\frac{dy}{dx}\mathrm{e}^{2x}}+y^2\mathrm{e}^{2x}\cdot2\right)+\sqrt\pi\frac{dy}{dx}=2x\]
 \[2y{\mathrm{e}^{2x}}\cos\left(y^2\mathrm{e}^{2x}\right)\frac{dy}{dx}+2y^2\mathrm{e}^{2x}\cos\left(y^2\mathrm{e}^{2x}\right)+\sqrt\pi\frac{dy}{dx}=2x\]
 \[\frac{dy}{dx}\left[2y\mathrm{e}^{2x}\cos\left(y^2\mathrm{e}^{2x}\right)+\sqrt\pi\right]=2x-2y^2{\mathrm{e}^{2x}}\cos\left(y^2\mathrm{e}^{2x}\right)\]
@@ -139,26 +140,26 @@
 
 \noindent Evaluate (1) at $\left(0, \sqrt\pi\right)$.
 
-\begin{equation*}\frac{dy}{dx}\Bigg|_{\left(0, \sqrt\pi\right)}=\frac{2\cdot0-2\left(\sqrt\pi\right)^2{\mathrm{e}^{0}}\cos\left(\left(\sqrt\pi\right)^2\mathrm{e}^{0}\right)}{2\sqrt\pi\mathrm{e}^{0}\cos\left(\left(\sqrt\pi\right)^2\mathrm{e}^{0}\right)+\sqrt\pi}=\frac{2\pi}{-\sqrt\pi}=-2\sqrt\pi\end{equation*}
+\[\left.\frac{dy}{dx}\right|_{\left(0, \sqrt\pi\right)}=\frac{2\cdot0-2\left(\sqrt\pi\right)^2{\mathrm{e}^{0}}\cos\left(\left(\sqrt\pi\right)^2\mathrm{e}^{0}\right)}{2\sqrt\pi\mathrm{e}^{0}\cos\left(\left(\sqrt\pi\right)^2\mathrm{e}^{0}\right)+\sqrt\pi}=\frac{2\pi}{-\sqrt\pi}=-2\sqrt\pi\]
 
 \hfill
 
-\noindent Use the straight line formula. $y-y_0 = m(x-x_0)$, where $\displaystyle m=\frac{dy}{dx}\Bigg|_{\left(0, \sqrt\pi\right)}$
+\noindent Use the straight line formula. $y-y_0=m(x-x_0)$, where $m=\left.\dfrac{dy}{dx}\right|_{\left(0,\sqrt\pi\right)}$
 
-\begin{equation*}\boxed{y=\sqrt\pi(1-2x)}\end{equation*}
+\[\boxed{y=\sqrt\pi(1-2x)}\]
 
 \hfill
 
-\noindent 5) Let $L$ be the value of the limit.
+\noindent 5. Let $L$ be the value of the limit.
 
-\[L =\lim_{x\to \infty} \left(\frac{\ln x}x\right)^{1/x}\quad \left[\infty^0\right]\]
-\[\ln(L) =\ln\left[\lim_{x\to \infty} \left(\frac{\ln x}x\right)^{1/x}\right]\]
+\[L=\lim_{x\to\infty}\left(\frac{\ln x}x\right)^{1/x}\qquad\left[\infty^0\right]\]
+\[\ln(L)=\ln\left[\lim_{x\to\infty}\left(\frac{\ln x}x\right)^{1/x}\right]\]
 
 \hfill
 
 \noindent Take the logarithm inside the limit because the expression is continuous for $x>0$.
 
-\begin{align*}\ln(L)&=\lim_{x\to \infty} \ln\left[\left(\frac{\ln x}x\right)^{1/x}\right]=\lim_{x\to \infty} \left[\frac{\ln\left(\frac{\ln x}x\right)}x\right]\quad\left[\frac\infty\infty\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to\infty} \frac{\frac1{\frac{\ln x}{x}}\cdot\frac{\frac1x\cdot x -\ln x\cdot 1}{x^2}}{1}=\lim_{x\to\infty}\left({\frac x{\ln x}\cdot\frac{1-\ln x}{x^2}}\right)=\lim_{x\to\infty}\frac{1-\ln x}{x\ln x}\\\\&=\lim_{x\to\infty}\frac1{x\ln x} - \lim_{x\to\infty}\frac{\ln x}{x\ln x}=0-\lim_{x\to\infty}\frac1x=0\end{align*}
+\begin{align*}\ln(L)&=\lim_{x\to\infty}\ln\left[\left(\frac{\ln x}x\right)^{1/x}\right]=\lim_{x\to \infty}\left[\frac{\ln\left(\frac{\ln x}x\right)}x\right]\quad\left[\frac\infty\infty\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to\infty} \frac{\dfrac1{\frac{\ln x}{x}}\cdot\dfrac{\frac1x\cdot x-\ln x\cdot1}{x^2}}{1}=\lim_{x\to\infty}\left({\frac x{\ln x}\cdot\frac{1-\ln x}{x^2}}\right)=\lim_{x\to\infty}\frac{1-\ln x}{x\ln x}\\\\&=\lim_{x\to\infty}\frac1{x\ln x}-\lim_{x\to\infty}\frac{\ln x}{x\ln x}=0-\lim_{x\to\infty}\frac1x=0\end{align*}
 
 \hfill
 
@@ -166,19 +167,19 @@
 
 \hfill
 
-\noindent 6) First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $(x-1)^2\neq0\,\rightarrow\,x\neq1$. The only vertical asymptote occurs at $x = 1$.
+\noindent 6. First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $(x-1)^2\neq0\,\rightarrow\,x\neq1$. The only vertical asymptote occurs at $x = 1$.
 
-\begin{equation*}\mathcal{D} = \mathbb{R} - \{1\}\end{equation*}
+\[\mathcal{D}=\mathbb{R}-\{1\}\]
 
 \hfill
 
 \noindent Let us find the limit at infinity.
 
-\begin{equation*}\lim_{x\to \infty}\frac{x^2-2}{(x-1)^2} \overset{\text{L'H.}}{=} \lim_{x\to \infty} \frac{2x}{2(x-1)} \overset{\text{L'H.}}{=} \lim_{x\to \infty} \frac{2}{2}=1\end{equation*}
+\[\lim_{x\to \infty}\frac{x^2-2}{(x-1)^2}\overset{\text{L'H.}}{=}\lim_{x\to \infty}\frac{2x}{2(x-1)}\overset{\text{L'H.}}{=}\lim_{x\to\infty}\frac{2}{2}=1\]
 
 \noindent Similarly,
 
-\begin{equation*}\lim_{x\to -\infty}\frac{x^2-2}{(x-1)^2}=1\end{equation*}
+\[\lim_{x\to-\infty}\frac{x^2-2}{(x-1)^2}=1\]
 
 \hfill
 
@@ -188,7 +189,7 @@
 
 \noindent Take the first derivative by applying the quotient rule.
 
-\begin{equation*}y' = \frac{(2x)\cdot (x-1)^2 - (x^2-2)\cdot 2(x-1)}{(x-1)^4}=\frac{4-2x}{(x-1)^3}\end{equation*}
+\[y'=\frac{(2x)\cdot(x-1)^2-\left(x^2-2\right)\cdot2(x-1)}{(x-1)^4}=\frac{4-2x}{(x-1)^3}\]
 
 \hfill
 
@@ -198,17 +199,17 @@
 
 \noindent Take the second derivative.
 
-\begin{equation*}y'' = \frac{(-2)\cdot(x-1)^3-(4-2x)\cdot3(x-1)^2 }{(x-1)^6}=\frac{4x-10}{(x-1)^4}\end{equation*}
+\[y''=\frac{(-2)\cdot(x-1)^3-(4-2x)\cdot3(x-1)^2}{(x-1)^6}=\frac{4x-10}{(x-1)^4}\]
 
 \hfill
 
-\noindent The only inflection point occurs at $\displaystyle x=\frac52$.
+\noindent The only inflection point occurs at $x=\dfrac52$.
 
 \hfill
 
 \noindent Consider some values of the function. Eventually, set up a table and see what the graph looks like in certain intervals.
 
-\begin{equation*}\,f\left(-\sqrt2\right)=f\left(\sqrt2\right)=0,\,f(0)=-2,\,f(2)=2,\,f(5/2)=17/9\end{equation*}
+\[\,f\left(-\sqrt2\right)=f\left(\sqrt2\right)=0,\:f(0)=-2,\:f(2)=2,\:f(5/2)=17/9\]
 
 \begin{center}
     \large
@@ -243,14 +244,15 @@
     ]
     \addplot[blue, thick] {(x^2-2)/(x-1)^2};
 
-    \draw[dashed, red] (axis cs:-12,1) -- (axis cs:12,1);
+    \draw[dashed, red] (axis cs:-12,1) -- (axis cs:-1.5,1);
+    \draw[dashed, red] (axis cs:0,1) -- (axis cs:12,1);
     \draw[dashed, red] (axis cs:1,2.2) -- (axis cs:1,-5.2);
     
     \draw[dashed, black] (axis cs:2,0) -- (axis cs:2,2);
-    \draw[dashed, black] (axis cs:5/2,0) -- (axis cs:5/2,17/9);
+    %\draw[dashed, black] (axis cs:5/2,0) -- (axis cs:5/2,17/9);
     
     \draw[dashed, black] (axis cs:0,2) -- (axis cs:2,2);
-    \draw[dashed, black] (axis cs:0,17/9) -- (axis cs:5/2,17/9);
+    %\draw[dashed, black] (axis cs:0,17/9) -- (axis cs:5/2,17/9);
 
   \end{axis}
 \end{tikzpicture}

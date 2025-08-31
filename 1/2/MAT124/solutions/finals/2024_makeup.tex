@@ -55,7 +55,7 @@
 
 \begin{center}
 2023-2024 Spring Makeup (27/06/2024) Solutions\\
-(Last update: 8/5/25 (5th of August) 12:51 AM)
+(Last update: 05/08/2025 00:51)
 \end{center}
 
 \noindent 1. Let $g(x,y,z)=x^2+y^2+z^2-100$ for the constraint. Solve the system of equations below.
@@ -112,6 +112,7 @@
       samples=50,
       clip=true,
       scale=1,
+      ytick={1,2,3},
     ]
 
     \addplot [thick, blue, domain=0:1] {3*x};
@@ -132,6 +133,7 @@
 
     \draw[dashed] (0,3) -- (1,3);
     \draw[dashed] (1,0) -- (1,3);
+    \node at (-0.2,4.15) {$4$};
   \end{axis}
 \end{tikzpicture}
 \end{minipage}
@@ -191,8 +193,6 @@ x^2+y^2\leq16\implies r^2\leq 16\implies 0\leq r\leq 4,\quad \displaystyle0\leq\
 
 \noindent Calculate the Jacobian determinant.
 
-\hfill
-
 \[
 \left|\frac{\partial(x,y)}{\partial(r,\theta)}\right|=\left|\begin{array}{cc}
 \displaystyle\frac{\partial x}{\partial r}&\displaystyle\frac{\partial x}{\partial\theta}\\[1em]
@@ -208,6 +208,8 @@ x^2+y^2\leq16\implies r^2\leq 16\implies 0\leq r\leq 4,\quad \displaystyle0\leq\
 \noindent Then we have the integral
 
 \begin{align*}\int_0^{2\pi}\int_0^1\left|\frac{\partial(x,y)}{\partial(r,\theta)}\right|\,dr\,d\theta&=\int_0^{2\pi}\int_0^120r\,dr\,d\theta=20\int_0^{2\pi}\left[\frac12r^2\right]_{r=0}^{r=1}d\theta=10\int_0^{2\pi}d\theta=\boxed{20\pi}\end{align*}
+
+\hfill
 
 \noindent 6.
 

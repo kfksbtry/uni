@@ -41,7 +41,7 @@
 
 \noindent 5. Evaluate the double integral
 
-\[\int_1^2\int_{y^2}^{y^5}\mathrm{e}^{x/y^2}\,\xcancel{dy\,dx}\,dx\,dy.\]
+\[\int_1^2\int_{y^2}^{y^5}\mathrm{e}^{x/y^2}\,dx\,dy.\]
 
 \hfill
 
@@ -65,7 +65,7 @@
 
 \begin{center}
 2019-2020 Spring Final (01/07/2020) Solutions\\
-(Last update: 8/5/25 (8th of August) 10:40 PM)
+(Last update: 30/08/2025 02:16)
 \end{center}
 
 \noindent 1. Let $g(x,y,z)=x^2+y^2+z^2-100$ and then, solve the system of equations below using the method of Lagrange multipliers.
@@ -205,8 +205,9 @@
 
 \newpage
 
-\noindent 5. \textbf{Remark}: There was a mistake in the original question. The order of integration must be reversed.
+\hfill
 
+\noindent 5. 
 \begin{align*}\int_1^2\int_{y^2}^{y^5}\mathrm{e}^{x/y^2}\,dx\,dy&=\int_1^2\left[y^2\cdot{\mathrm{e}^{x/y^2}}\right]_{x=y^2}^{x=y^5}\,dy=\int_1^2\left(y^2\cdot\mathrm{e}^{y^3}-y^2\cdot\mathrm{e}\right)\,dy=\left[\frac13\mathrm{e}^{y^3}-\frac13\mathrm{e}y^3\right]_1^2\\\\&=\frac13\mathrm{e}^{8}-\frac{8\mathrm{e}}3-\left(\frac13\mathrm{e}^1-\frac13\mathrm{e}\right)=\boxed{\frac{\mathrm{e}}3\left(\mathrm{e}^7-8\right)}\end{align*}
 
 \hfill

@@ -15,13 +15,13 @@
 2017-2018 Summer\\MAT123-07 Midterm\\(24/07/2018)
 \end{center}
 
-\noindent 1) Evaluate
+\noindent 1. Evaluate
 
 \[\lim_{x\to3^+}(x-3)^{\ln(x-2)}\]
 
 \hfill
 
-\noindent 2) Find constants a and b such that $f(2) + 3 = f(0)$ and $f(x)$ is continuous at $x=1$ where $f(x)$ is defined by
+\noindent 2. Find constants a and b such that $f(2) + 3 = f(0)$ and $f(x)$ is continuous at $x=1$ where $f(x)$ is defined by
 
 \[
 f(x) =
@@ -36,17 +36,17 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \hfill
 
-\noindent 3) The top of a ladder leaning against a wall slides down the wall at the rate of 6 m/s. When the bottom of the ladder is 9 m from the wall, it is moved away from the wall at the rate of 5 m/s. How long is the ladder?
+\noindent 3. The top of a ladder leaning against a wall slides down the wall at the rate of 6 m/s. When the bottom of the ladder is 9 m from the wall, it is moved away from the wall at the rate of 5 m/s. How long is the ladder?
 
 \hfill
 
-\noindent 4) Sketch the graph of
+\noindent 4. Sketch the graph of
 
 \[f(x) = \frac{x^2+1}{x}\]
 
 \hfill
 
-\noindent 5) Evaluate the following integrals.
+\noindent 5. Evaluate the following integrals.
 
 \hfill
 
@@ -58,7 +58,7 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \hfill
 
-\noindent 6) Let us consider the area $A$ of the region bounded by the curve $x=y^2-6y$ and the straight line $x=-y$. Write an integral (but don't evaluate) corresponding to the area $A$
+\noindent 6. Let us consider the area $A$ of the region bounded by the curve $x=y^2-6y$ and the straight line $x=-y$. Write an integral (but don't evaluate) corresponding to the area $A$
 
 \hfill
 
@@ -74,10 +74,10 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \begin{center}
 2017-2018 Summer Midterm (24/07/2018) Solutions\\
-(Last update: 8/21/25 (21st of August) 3:07 PM)
+(Last update: 29/08/2025 21:13)
 \end{center}
 
-\noindent 1) Let $L$ be the limit value. Then, take the logarithm of both sides.
+\noindent 1. Let $L$ be the limit value. Then, take the logarithm of both sides.
 
 \[L = \lim_{x\to3^+}(x-3)^{\ln(x-2)}\]
 
@@ -111,7 +111,7 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \hfill
 
-\noindent 2) We need to ensure continuity at $x=1$. The one-sided limits must be equal to the value of the function at that point. The function is a polynomial expression for $x<1$, and another polynomial expression for $x>1$. Both expressions are defined for $x=1$ (x=1 is actually in the domain with another condition), so we can just substitute $x=1$ in the limits.
+\noindent 2. We need to ensure continuity at $x=1$. The one-sided limits must be equal to the value of the function at that point. The function is a polynomial expression for $x<1$, and another polynomial expression for $x>1$. Both expressions are defined for $x=1$ (x=1 is actually in the domain with another condition), so we can just substitute $x=1$ in the limits.
 
 \[\lim_{x\to1^+} (ax+b) = a+b = 3\]
 \[\lim_{x\to1^-} (x^2-4x+b+3) = 1^2 -4 +b+3 =  3\]
@@ -124,7 +124,7 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \hfill
 
-\noindent 3) Let $x = f(t), \,y = g(t)$ and $L$ be the length of the ladder. $f(t)$ and $g(t)$ represent the location of the bottom and top of the ladder, respectively. The length of the ladder remains constant as time goes on. We can write the following using the Pythagorean theorem. Apply the Chain Rule appropriately.
+\noindent 3. Let $x = f(t), \,y = g(t)$ and $L$ be the length of the ladder. $f(t)$ and $g(t)$ represent the location of the bottom and top of the ladder, respectively. The length of the ladder remains constant as time goes on. We can write the following using the Pythagorean theorem. Apply the Chain Rule appropriately.
 
 \[L = \sqrt{f^2(t) + g^2(t)}\]
 
@@ -150,7 +150,7 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
 
 \hfill
 
-\noindent 4) First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $x^2 \neq 0 \,\rightarrow\, x\neq0$. The only vertical asymptote occurs at $x = 0$.
+\noindent 4. First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $x^2 \neq 0 \,\rightarrow\, x\neq0$. The only vertical asymptote occurs at $x = 0$.
 
 \[\mathcal{D} = \mathbb{R} - \{0\} \]
 
@@ -220,10 +220,10 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
     samples=300,
     ymin=-5, ymax=5,
     xmin=-5, xmax=5,
-    restrict y to domain=-6:6,
+    restrict y to domain=-5.6:5.6,
     enlargelimits=true,
     axis line style={->},
-    ytick={-6,-4,-2,2,4,6},
+    ytick={2,4},
     xtick={-6,-5,-4,-3,-2,-1, 1,2,3,4,5,6},
     scale=1.5,
     ]
@@ -236,13 +236,15 @@ x^2-4x+b+3, & \text{if}\ x < 1 \\
     \draw[dashed, black] (axis cs:1,0) -- (axis cs:1,2);
     \draw[dashed, black] (axis cs: -1,0) -- (axis cs:-1,-2);
 
+    \node at (0.4,-2) {$-2$};
+    \node at (0.4,-4) {$-4$};
   \end{axis}
 \end{tikzpicture}
 \end{center}
 
 \newpage
 
-\noindent 5)
+\noindent 5.
 
 \hfill
 
@@ -278,7 +280,7 @@ dv=dx\implies v=x
 
 \hfill
 
-\noindent 6)
+\noindent 6.
 
 \begin{center}
 \begin{tikzpicture}

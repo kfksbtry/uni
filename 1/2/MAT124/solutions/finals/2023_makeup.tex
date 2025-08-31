@@ -59,10 +59,10 @@
 
 \begin{center}
 2022-2023 Spring Makeup (12/06/2023) Solutions\\
-(Last update: 7/31/25 (31st of July) 7:34 PM)
+(Last update: 31/07/2025 19:34)
 \end{center}
 
-\noindent 1) Let $g(x,y,z)=x^2+y^2-1$ and then solve the system of equations below using the method of Lagrange multipliers.
+\noindent 1. Let $g(x,y,z)=x^2+y^2-1$ and then solve the system of equations below using the method of Lagrange multipliers.
 
 \[
 \left.
@@ -109,7 +109,7 @@
 
 \hfill
 
-\noindent 2)
+\noindent 2.
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
@@ -178,7 +178,7 @@
 
 \hfill
 
-\noindent 3) We are interested in the upper half of the cardioid. Therefore, $0\leq\theta\leq\pi$.
+\noindent 3. We are interested in the upper half of the cardioid. Therefore, $0\leq\theta\leq\pi$.
 \begin{center}
 \begin{tikzpicture}
   \begin{polaraxis}[ytick=\empty, axis y line=none, xticklabel=$\pgfmathprintnumber{\tick}^\circ$,]
@@ -218,7 +218,7 @@
 
 \newpage
 
-\noindent 4)
+\noindent 4.
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
@@ -285,7 +285,7 @@ r^2\leq z\leq2-r^2\\
 
 \hfill
 
-\noindent 5) For the upper hemisphere, we have $z=\sqrt{4-x^2-y^2}$. The projection of the surface onto the $xy$-plane gives us the region $x^2+y^2\leq1$. Find the surface area.
+\noindent 5. For the upper hemisphere, we have $z=\sqrt{4-x^2-y^2}$. The projection of the surface onto the $xy$-plane gives us the region $x^2+y^2\leq1$. Find the surface area.
 
 \begin{align*}
 \begin{array}{c}
@@ -315,7 +315,7 @@ x^2+y^2\leq1\,\rightarrow\,r^2\leq1\implies0\leq r\leq1\\[0.3cm]
 
 \hfill
 
-\noindent 6)
+\noindent 6.
 
 \hfill
 
@@ -333,13 +333,15 @@ x^2+y^2\leq1\,\rightarrow\,r^2\leq1\implies0\leq r\leq1\\[0.3cm]
     ymin=-2.1, ymax=2.8,
     zmin=0, zmax=4.4,
     domain=0:2,
-    colormap/cool,
     scale=2,
+    z buffer=sort,
   ]
     \addplot3[
       surf,
       y domain=-1.8:2.6,
+      opacity=0.6,
       samples=15,
+          colormap/cool,
     ] {4 - 2*x};
     \addplot3[
       surf,
@@ -348,7 +350,8 @@ x^2+y^2\leq1\,\rightarrow\,r^2\leq1\implies0\leq r\leq1\\[0.3cm]
       variable y=\t,
       y domain=-90:90,
       samples=20,
-      thick
+      thick,
+        colormap/cool,
     ]
     (
       {r*cos(t)},
