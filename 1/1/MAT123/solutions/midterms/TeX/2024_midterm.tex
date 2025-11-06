@@ -77,7 +77,7 @@ ax+b, & \text{if}\ x >0 \\
 
 \begin{center}
 2024-2025 Fall Midterm (02/12/2024) Solutions\\
-(Last update: 30/08/2025 00:09)
+(Last update: 06/11/2025 23:23)
 \end{center}
 
 \noindent 1. To ensure continuity at $x=0$, the one-sided limit values must be equal to the value of the function at that point.
@@ -137,10 +137,11 @@ g(x+\Delta x)\approx g(x) + g'(x)\Delta x&=x^{1/2}+\frac12x^{-1/2}\Delta x
 
 \noindent (b) For all $\epsilon > 0$, there exists a $\delta > 0$ such that $0<\left|x+3\right|<\delta\implies\left|f(x)-1\right|<\epsilon$.
 \begin{align*}
-\left|f(x)-1\right|&=\left|\sqrt{-x-2}-1\right|=\left|\sqrt{-x-2}-1\cdot\frac{\sqrt{-x-2}+1}{\sqrt{-x-2}+1}\right|\\&=\left|\frac{-x-3}{\sqrt{-x-2}+1}\right|\leq\left|-x-3\right|\qquad\left[\sqrt{-x-2}+1\geq0+1=1\right]\\\\&=\left|x+3\right|<\delta
+\left|f(x)-1\right|&=\left|\sqrt{-x-2}-1\right|=\left|\left(\sqrt{-x-2}-1\right)\cdot\frac{\sqrt{-x-2}+1}{\sqrt{-x-2}+1}\right|\\&=\left|\frac{-x-3}{\sqrt{-x-2}+1}\right|\leq\frac{\left|-x-3\right|}1=|x+3|\qquad\left[\sqrt{-x-2}+1\geq0+1=1\right]
 \end{align*}
-\noindent Let $\delta=\epsilon$.
-\[\left|\sqrt{-x-2}-1\right|\leq|x-3|<\epsilon=\delta\]
+\noindent We need to ensure that for all $\epsilon>0$, there exists such a $\delta$ satisfying the inequality. To control the expression $\sqrt{-x-2}+1$ in the denominator, we can assume that $|x-3|<1$. Then, the inequality $\sqrt{-x-2}+1\geq1$ holds. We need to guarantee $\delta =1$ when $\epsilon >1$ because of the restriction $|x-3|<1$. Therefore, let $\delta=\min(1,\epsilon)$.
+
+\[\left|\sqrt{-x-2}-1\right|\leq|x-3|<\delta\leq\epsilon\]
 
 \hfill
 
