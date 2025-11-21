@@ -1,0 +1,71 @@
+% Student Number: 2240357068
+% Student Name: Baturay KAFKAS
+% EEE @ Hacettepe University
+
+% Last update: 09:49 29/10/25
+
+% My resource collection: https://github.com/kfksbtry/uni
+% Circuits were set up in LTspice.
+
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage[top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{moresize}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Baturay KAFKAS 2240357068 Electrical \& Electronics Engineering}
+
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+\large
+\textit{This part of the experiment is prepared with Online LaTeX Editor Overleaf. Visit the website for the source here:}
+
+\textbf{https://www.overleaf.com/read/qttbxkqmkrzp\#987be0}
+
+\hrule
+
+\hfill
+
+\textbf{2. EXPERIMENT 2 - PRELIMINARY WORK}
+
+\textbf{2.1} The waveforms in \textit{Figure 2} are seen on the screen of the oscilloscope. As given, time scale is 0.5 ms/square and voltage scale for Channel 1 is 1 V/square and for Channel 2, it is 5 V/square. First, determine the type of the signals, then find the period, frequency, and maximum voltage values of both signals.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{chrome_nPbQoFfzPQ.png}
+\end{figure}
+
+\textbf{Answer}: The signal obtained from the first channel is an analog signal in the sinusoidal waveform. There are two divisions for the wave on the oscilloscope. Since the time scale is 0.5 ms/square, the period is $T=2\times 0.5=1$ ms. Frequency is then $f=\dfrac1T=10^3$ Hz. There is one division between the peak and the horizontal axis. Therefore, the maximum voltage is $1\times 1=1$ V.
+
+The signal obtained from the second channel is a digital signal in the square waveform. There are two divisions for the wave on the oscilloscope. Since the time scale is 0.5 ms/square, the period is $T=2\times 0.5=1$ ms. Frequency is then $f=\dfrac1T=10^3$ Hz. There is one division between the peak and the horizontal axis. Therefore, the maximum voltage is $1\times 5=5$ V.
+\[\begin{array}{|c|c|c|c|c|}
+\hline  &\text{Type}& \text{Period (ms)}&\text{Frequency (kHz)}&\text{Maximum voltage (V)}\\
+\hline\text{Channel 1}&\text{Analog, sinusoidal}&1&1&1\\
+\hline\text{Channel 2}&\text{Digital, square}&1&1&5\\\hline
+\end{array}\]
+
+\newpage
+
+\textbf{2.2} Consider the signals shown in \textit{Figure 3}. What is the phase difference between these signals in degrees if the time scale is 1 ms/div and voltage scale is 1 V/div?
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{chrome_absrss8QgG.png}
+\end{figure}
+
+\textbf{Answer}: The frequencies of the signals are equal. The frequency of each signal is $f=\dfrac1T=\dfrac1{4\times1\text{ m}}=250\text{ Hz}$. The horizontal distance between the nearest peaks of the two signals is half a division, and one period of one signal is four divisions. Therefore, the phase difference in degrees can be calculated by
+
+\[\theta=\dfrac{0.5}{4}\times360^\circ=\boxed{45^\circ}\]
+
+\end{document}
