@@ -4,6 +4,7 @@
 \usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
 \usepackage{pgfplots}
 \usepackage{mathtools}
+\usepackage{parskip}
 \pgfplotsset{compat=1.18}
 
 \begin{document}
@@ -11,10 +12,10 @@
 \large
 
 \begin{center}
-2024-2025 Fall \\MAT123 Midterm\\(02/12/2024)
+\textbf{2024-2025 Fall \\MAT123 Midterm\\(02/12/2024)}
 \end{center}
 
-\noindent 1. Let
+\textbf{1.} Let
 
 \[
 f(x) =
@@ -25,127 +26,91 @@ ax+b, & \text{if}\ x >0 \\
 \end{cases}
 \]
 
-\hfill
+Determine the values of $a$ and $b$ such that $f$ is continuous at the point $x=0$.
 
-\noindent Determine the values of $a$ and $b$ such that $f$ is continuous at the point $x=0$.
+\vspace{1em}
 
-\hfill
+\textbf{2.} Use differential to approximate $3\sqrt[3]{66}+2\sqrt{66}$.
 
-\noindent 2. Use differential to approximate $3\sqrt[3]{66}+2\sqrt{66}$.
+\vspace{1em}
 
-\hfill
+\textbf{3. (a)} Without using L'Hôpital's rule, evaluate $\displaystyle \lim_{x\to 0} \frac{5-6\cos x + \cos^2x}{x\sin x}$.
 
-\noindent 3.
+\textbf{(b)} Prove that $\displaystyle \lim_{x\to -3} \sqrt{-x-2} = 1$ by using the formal definition of limit.
 
-\hfill
+\textbf{(c)} Evaluate $\displaystyle\lim_{x\to1^+}\left(\sqrt x\right)^{\ln(x-1)}$.
 
-\noindent (a) Without using L'Hôpital's rule, evaluate $\displaystyle \lim_{x\to 0} \frac{5-6\cos x + \cos^2x}{x\sin x}$.
+\vspace{1em}
 
-\hfill
+\textbf{4.} Coffee is draining out of a conical filter at a rate of 2.25 in.$^3$/min. If the cone is 5 in. tall and has a radius of 2 in., how fast is the coffee level dropping when the coffee is 3 in. deep?
 
-\noindent (b) Prove that $\displaystyle \lim_{x\to -3} \sqrt{-x-2} = 1$ by using the formal definition of limit.
+\vspace{1em}
 
-\hfill
+\textbf{5.} Using the Mean Value Theorem, show that $\ln(x+1) < x$ for $x > 0$.
 
-\noindent (c) Evaluate $\displaystyle\lim_{x\to1^+}\left(\sqrt x\right)^{\ln(x-1)}$.
+\vspace{1em}
 
-\hfill
+\textbf{6.} Let $f(x)=\dfrac{x^2-2}{(x-1)^2}$.
 
-\noindent 4. Coffee is draining out of a conical filter at a rate of 2.25 in.$^3$/min. If the cone is 5 in. tall and has a radius of 2 in., how fast is the coffee level dropping when the coffee is 3 in. deep?
+\textbf{(a)} Determine the interval of increase, decrease and concavity of $f$.
 
-\hfill
+\textbf{(b)} Construct a table.
 
-\noindent 5. Using the Mean Value Theorem, show that $\ln(x+1) < x$ for $x > 0$.
-
-\hfill
-
-\noindent 6. Let $f(x)=\dfrac{x^2-2}{(x-1)^2}$.
-
-\hfill
-
-(a) Determine the interval of increase, decrease and concavity of $f$.
-
-\hfill
-
-(b) Construct a table.
-
-\hfill
-
-(c) Sketch the graph of $f$.
+\textbf{(c)} Sketch the graph of $f$.
 
 \newpage
 
 \begin{center}
-2024-2025 Fall Midterm (02/12/2024) Solutions\\
-(Last update: 06/11/2025 23:23)
+\textbf{2024-2025 Fall Midterm (02/12/2024) Solutions\\
+(Last update: 06/11/2025 23:23)}
 \end{center}
 
-\noindent 1. To ensure continuity at $x=0$, the one-sided limit values must be equal to the value of the function at that point.
+\textbf{1.} To ensure continuity at $x=0$, the one-sided limit values must be equal to the value of the function at that point.
 
-\[
-\lim_{x\to0^-} \frac{\tan ax}{\tan bx} = \lim_{x\to0^+} (ax+b) = f(0) = 4
-\]
+\[\lim_{x\to0^-} \frac{\tan ax}{\tan bx} = \lim_{x\to0^+} (ax+b) = f(0) = 4\]
 
-\hfill
+The easy part is that we can calculate the limit from the right.
 
-\noindent The easy part is that we can calculate the limit from the right.
+\[\lim_{x\to0^+} (ax+b) = 0+b = b\]
 
-\[
-\lim_{x\to0^+} (ax+b) = 0+b = b
-\]
-
-\hfill
-
-\noindent Hence, $b=4$. To calculate from the left, we need another technique.
+Hence, $b=4$. To calculate from the left, we need another technique.
 
 \begin{align*}
 \lim_{x\to0^-} \frac{\tan ax}{\tan bx} &= \lim_{x\to0^-} \left(\frac{\sin ax}{\cos ax} \cdot \frac{\cos bx}{\sin bx} \cdot \frac{bx}{bx}\cdot \frac{ax}{ax}\right)\\\\&=\lim_{x\to0^-} \left(\frac{\sin ax}{ax} \right)\cdot \lim_{x\to0^-} \left(\frac1{ \frac{\sin bx}{bx}}\right)\ \cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot ax}{\cos(ax) \cdot bx}\right)\\\\&=1\cdot  \frac1{\displaystyle \lim_{x\to0^-} \frac{\sin bx}{bx} }\cdot \lim_{x\to0^-} \left(\frac{\cos (bx) \cdot a}{\cos(ax) \cdot b}\right)= 1\cdot 1\cdot\left(\frac{\cos(0) \cdot a}{\cos(0) \cdot b}\right)\\&=\frac ab
 \end{align*}
 
-\hfill
+Now, set $\displaystyle \frac ab = b\implies a= 16$. $\boxed{a=16,\,b=4}$
 
-\noindent Now, set $\displaystyle \frac ab = b\implies a= 16$. $\boxed{a=16,\,b=4}$
+\vspace{1em}
 
-\hfill
-
-\noindent 2. Let $f(x) = x^{1/3}$ and $g(x) = x^{1/2}$. Using the differential approximation, we get
+\textbf{2.} Let $f(x) = x^{1/3}$ and $g(x) = x^{1/2}$. Using the differential approximation, we get
 
 \begin{align*}
 f(x+\Delta x)\approx f(x) + f'(x)\Delta x&=x^{1/3}+\frac13x^{-2/3}\Delta x\\
 g(x+\Delta x)\approx g(x) + g'(x)\Delta x&=x^{1/2}+\frac12x^{-1/2}\Delta x
 \end{align*}
 
-\hfill
-
-\noindent Set $x = 64$ and $\Delta x = 2$.
+Set $x = 64$ and $\Delta x = 2$.
 
 \begin{align*}3\sqrt[3]{66}+2\sqrt{66}&\approx3\left(64^{1/3}+\frac13\cdot64^{-2/3}\cdot2\right)+2\left(64^{1/2}+\frac{1}2\cdot64^{-1/2}\cdot2\right)\\&=3\left(4+\frac1{24}\right)+2\left(8+\frac18\right)=\boxed{28.375}\end{align*}
 
 \newpage
 
-\noindent 3.
-
-\hfill
-
-\noindent (a) Factor the numerator and use the conjugate of the expression $\cos x-1$.
+\textbf{3. (a)} Factor the numerator and use the conjugate of the expression $\cos x-1$.
 \begin{align*}
 &\lim_{x\to0}\frac{5-6\cos x + \cos^2x}{x\sin x}=\lim_{x\to0}\frac{(\cos x -1)(\cos x-5)}{x\sin x} \\\\&=\lim_{x\to0}\frac{(\cos x -1)(\cos x-5)(\cos x +1)}{(x\sin x)(\cos x +1)}
 =\lim_{x\to0}\left(-\frac{\sin^2x\cdot(\cos x -5)}{x\sin x \cdot(\cos x +1)}\right)\\\\&=\lim_{x\to0}\left(-\frac{\sin x\cdot(\cos x -5)}{x \cdot(\cos x +1)}\right)=-\lim_{x\to0}\frac{\sin{x}} x\cdot \lim_{x\to0}\frac{\cos x -5}{\cos x +1}=-1\cdot\frac{\cos0 -5}{\cos0+1} = \boxed{2}
 \end{align*}
 
-\hfill
-
-\noindent (b) For all $\epsilon > 0$, there exists a $\delta > 0$ such that $0<\left|x+3\right|<\delta\implies\left|f(x)-1\right|<\epsilon$.
+\textbf{(b)} For all $\epsilon > 0$, there exists a $\delta > 0$ such that $0<\left|x+3\right|<\delta\implies\left|f(x)-1\right|<\epsilon$.
 \begin{align*}
 \left|f(x)-1\right|&=\left|\sqrt{-x-2}-1\right|=\left|\left(\sqrt{-x-2}-1\right)\cdot\frac{\sqrt{-x-2}+1}{\sqrt{-x-2}+1}\right|\\&=\left|\frac{-x-3}{\sqrt{-x-2}+1}\right|\leq\frac{\left|-x-3\right|}1=|x+3|\qquad\left[\sqrt{-x-2}+1\geq0+1=1\right]
 \end{align*}
-\noindent We need to ensure that for all $\epsilon>0$, there exists such a $\delta$ satisfying the inequality. To control the expression $\sqrt{-x-2}+1$ in the denominator, we can assume that $|x-3|<1$. Then, the inequality $\sqrt{-x-2}+1\geq1$ holds. We need to guarantee $\delta =1$ when $\epsilon >1$ because of the restriction $|x-3|<1$. Therefore, let $\delta=\min(1,\epsilon)$.
+We need to ensure that for all $\epsilon>0$, there exists such a $\delta$ satisfying the inequality. To control the expression $\sqrt{-x-2}+1$ in the denominator, we can assume that $|x-3|<1$. Then, the inequality $\sqrt{-x-2}+1\geq1$ holds. We need to guarantee $\delta =1$ when $\epsilon >1$ because of the restriction $|x-3|<1$. Therefore, let $\delta=\min(1,\epsilon)$.
 
 \[\left|\sqrt{-x-2}-1\right|\leq|x-3|<\delta\leq\epsilon\]
 
-\hfill
-
-\noindent (c) Let $L$ be the value of the limit. Then, take the logarithm of both sides. Since the expression is continuous for $x>1$, we can take the logarithm function inside the limit.
+\textbf{(c)} Let $L$ be the value of the limit. Then, take the logarithm of both sides. Since the expression is continuous for $x>1$, we can take the logarithm function inside the limit.
 
 \[L=\lim_{x\to1^+}\left(\sqrt x\right)^{\ln(x-1)}\implies
 \ln(L) = \ln\left[\lim_{x\to1^+}\left(\sqrt x\right)^{\ln(x-1)}\right]\]
@@ -154,55 +119,41 @@ g(x+\Delta x)\approx g(x) + g'(x)\Delta x&=x^{1/2}+\frac12x^{-1/2}\Delta x
 \ln(L)&=\lim_{x\to1^+}\ln\left[(\sqrt x)^{\ln(x-1)}\right]=\lim_{x\to1^+}\left[\ln(x-1)\cdot\ln(\sqrt x)\right]=\lim_{x\to1^+}\frac{\ln(x-1)}{\frac1{\ln\left(\sqrt x\right)}}\quad\left[\frac\infty\infty\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to1^+}\frac{\frac1{{x-1}}}{\frac1{-\ln^2\left(\sqrt x\right)}\cdot\frac1{\sqrt x}\cdot\frac1{2\sqrt x}}=\lim_{x\to1^+}\frac{\ln^2(\sqrt x)\cdot 2x}{1-x}\quad\left[\frac00\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to1^+}\frac{2\ln\left(\sqrt x\right)\cdot \frac1{\sqrt x}\cdot\frac1{2\sqrt x}\cdot2x+\ln^2 (\sqrt x)\cdot 2 }{-1}=\lim_{x\to1^+} \left[-2\ln\left(\sqrt x\right)-2\ln^2\left(\sqrt x\right) \right]\\\\&=2\ln\left(\sqrt 1\right) + 2\ln^2\left(\sqrt 1\right)=0
 \end{align*}
 
-\hfill
+$\ln(L)=0$. Therefore, $\boxed{L=1}$.
 
-\noindent $\ln(L)=0$. Therefore, $\boxed{L=1}$.
+\vspace{1em}
 
-\hfill
-
-\noindent 4. Let $f(x)$ represent the volume of coffee in the cone in cubic inches. The coffee in the cone will have a conical shape while draining. We may set up the equation below using the formula of the volume of a cone.
+\textbf{4.} Let $f(x)$ represent the volume of coffee in the cone in cubic inches. The coffee in the cone will have a conical shape while draining. We may set up the equation below using the formula of the volume of a cone.
 
 \[f(t) = \frac13\cdot h(t)\cdot \pi r^2(t)\]
 
-\hfill
-
-\noindent $h(t), r(t)$ represent the height and radius of the circular area that coffee forms, respectively, in inches. We can eliminate $r$ to proceed with $h$. $r$ and $h$ are proportional.
+$h(t), r(t)$ represent the height and radius of the circular area that coffee forms, respectively, in inches. We can eliminate $r$ to proceed with $h$. $r$ and $h$ are proportional.
 
 \[\frac rh=\frac25\implies r=\frac{2h}5\]
 
 \[f(t)=\frac{4\pi h^3(t)}{75}\]
 
-\hfill
-
-\noindent Take the derivative of both sides.
+Take the derivative of both sides.
 
 \[f'(t)=\frac{4\pi}{25}\cdot h^2(t)\cdot h'(t)\]
 
-\hfill
-
-\noindent Given that at $t=t_0$, $f'(t_0) = -2.25,\,h(t_0) =3$. We may now find $h'(t_0)$. Solve for $h'(t_0)$.
+Given that at $t=t_0$, $f'(t_0) = -2.25,\,h(t_0) =3$. We may now find $h'(t_0)$. Solve for $h'(t_0)$.
 
 \[h'(t_0)=\frac{25f'(t_0)}{4\pi h^2(t_0)}=\frac{25\cdot(-2.25)}{4\pi\cdot(3)^2}=\boxed{-\frac{1.5625}\pi\,\text{inches/minute}}\]
 
-\hfill
+\vspace{1em}
 
-\noindent 5. Let $f(x) = \ln(1+x)-x$. We have $f(0) = \ln(1 + 0) - 0 = 0$. The mean value theorem (MVT) states that if a function $g(x)$ is continuous on $[a, b]$ and differentiable on $(a,b)$, then there exists a point $c$ such that
+\textbf{5.} Let $f(x) = \ln(1+x)-x$. We have $f(0) = \ln(1 + 0) - 0 = 0$. The mean value theorem (MVT) states that if a function $g(x)$ is continuous on $[a, b]$ and differentiable on $(a,b)$, then there exists a point $c$ such that
 
-\[
-g'(c) = \frac{g(b)-g(a)}{b-a}
-\]
+\[g'(c) = \frac{g(b)-g(a)}{b-a}\]
 
-\hfill
-
-\noindent $f$ is continuous on $[0,x]$ and differentiable on $(0,x)$. By MVT, $\displaystyle\frac{f(x)-f(0)}{x-0}=f'(c)$ provided for some point $c$ such that $0<c<x$.
+$f$ is continuous on $[0,x]$ and differentiable on $(0,x)$. By MVT, $\displaystyle\frac{f(x)-f(0)}{x-0}=f'(c)$ provided for some point $c$ such that $0<c<x$.
 
 \[f'(c)=\frac1{c+1}-1=\frac{\ln(x+1) - x}x=\frac{f(x)-f(0)}{x-0}\]
 \[\frac1{c+1}=\frac{\ln(x+1) }x\implies c+1 = \frac x{\ln(x+1)}\]
 \[c=\frac{x-\ln(x+1)}{\ln(x+1)}\]
 
-\hfill
-
-\noindent From the inequality $0<c<x$,
+From the inequality $0<c<x$,
 
 \[0<\frac{x-\ln(x+1)}{\ln(x+1)}\]
 \[0<x-\ln(x+1)\]
@@ -210,51 +161,33 @@ g'(c) = \frac{g(b)-g(a)}{b-a}
 
 \newpage
 
-\noindent 6.
-
-\hfill
-
-\noindent (a) First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $(x-1)^2\neq0\implies x\neq1$. The only vertical asymptote occurs at $x=1$.
+\textbf{6. (a)} First off, find the domain. The expression is undefined when the denominator is zero. Therefore, $(x-1)^2\neq0\implies x\neq1$. The only vertical asymptote occurs at $x=1$.
 
 \[\mathcal{D}=\mathbb{R}-\{1\}\]
 
-\hfill
-
-\noindent Let us find the limit at infinity.
+Let us find the limit at infinity.
 
 \[\lim_{x\to \infty}\frac{x^2-2}{(x-1)^2} \overset{\text{L'H.}}{=} \lim_{x\to \infty} \frac{2x}{2(x-1)} \overset{\text{L'H.}}{=} \lim_{x\to \infty} \frac{2}{2}=1\]
 
-\noindent Similarly,
+Similarly,
 
 \[\lim_{x\to -\infty}\frac{x^2-2}{(x-1)^2}=1\]
 
-\hfill
+The horizontal asymptote occurs only at $y=0$.
 
-\noindent The horizontal asymptote occurs only at $y=0$.
-
-\hfill
-
-\noindent Take the first derivative by applying the quotient rule.
+Take the first derivative by applying the quotient rule.
 
 \[y'=\frac{(2x)\cdot(x-1)^2-(x^2-2)\cdot 2(x-1)}{(x-1)^4}=\frac{4-2x}{(x-1)^3}\]
 
-\hfill
+$y'$ is undefined for $x=1$, and $y'=0$ for $x=2$. Since $1$ is not in the domain, the \textit{only} critical point is $x = 2$.
 
-\noindent $y'$ is undefined for $x=1$, and $y'=0$ for $x=2$. Since $1$ is not in the domain, the \textit{only} critical point is $x = 2$.
-
-\hfill
-
-\noindent Take the second derivative.
+Take the second derivative.
 
 \[y''=\frac{(-2)\cdot(x-1)^3-(4-2x)\cdot3(x-1)^2}{(x-1)^6}=\frac{4x-10}{(x-1)^4}\]
 
-\hfill
+The only inflection point occurs at $x=\dfrac52$.
 
-\noindent The only inflection point occurs at $x=\dfrac52$.
-
-\hfill
-
-\noindent (b) Consider some values of the function. Eventually, set up a table and see what the graph looks like in certain intervals.
+\textbf{(b)} Consider some values of the function. Eventually, set up a table and see what the graph looks like in certain intervals.
 
 \[f\left(-\sqrt2\right)=f\left(\sqrt2\right)=0,\:f(0)=-2,\:f(2)=2,\:f(5/2)=17/9\]
 
@@ -275,7 +208,7 @@ g'(c) = \frac{g(b)-g(a)}{b-a}
 
 \newpage
 
-\noindent (c)
+\textbf{(c)}
 
 \begin{center}
 \begin{tikzpicture}

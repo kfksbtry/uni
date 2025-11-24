@@ -4,6 +4,7 @@
 \usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
 \usepackage{pgfplots}
 \usepackage{mathtools}
+\usepackage{parskip}
 \usepgfplotslibrary{fillbetween}
 \pgfplotsset{compat=1.18}
 
@@ -12,14 +13,14 @@
 \large
 
 \begin{center}
-2020-2021 Fall\\MAT123 Midterm\\(30/11/2020)
+\textbf{2020-2021 Fall\\MAT123 Midterm\\(30/11/2020)}
 \end{center}
 
-\noindent 1. Evaluate $\displaystyle\lim_{x\to0^+}(\sqrt x)^{\ln(x+1)}$.
+\textbf{1.} Evaluate $\displaystyle\lim_{x\to0^+}(\sqrt x)^{\ln(x+1)}$.
 
-\hfill
+\vspace{1em}
 
-\noindent 2. Show that the function $f(x)$ defined by
+\textbf{2.} Show that the function $f(x)$ defined by
 
 \[
 f(x)=
@@ -30,87 +31,70 @@ f(x)=
 \end{cases}
 \]
 
-\noindent is not continuous at the point $x=0$.
+is not continuous at the point $x=0$.
 
-\hfill
+\vspace{1em}
 
-\noindent 3. Find an equation of the line which is tangent to the curve
+\textbf{3.} Find an equation of the line which is tangent to the curve
 
 \[\cos y^2+xy+1=0\]
 
-\noindent at the point $\left(\sqrt{\dfrac{2}{\pi}},-\sqrt{\dfrac{\pi}{2}} \right)$. Note that $y=f(x)$.
+at the point $\left(\sqrt{\dfrac{2}{\pi}},-\sqrt{\dfrac{\pi}{2}} \right)$. Note that $y=f(x)$.
 
-\hfill
+\vspace{1em}
 
-\noindent 4. A block of ice in the shape of a cube originally having volume of $3000$ cm$^3$. When it is melting, the surface area is decreasing at the rate of 36 cm$^2$/h. At what rate does the length of each of its edges decrease at the time its volume is 216 cm$^3$? Assume that during melting, the block of ice maintains its cubical shape.
+\textbf{4.} A block of ice in the shape of a cube originally having volume of $3000$ cm$^3$. When it is melting, the surface area is decreasing at the rate of 36 cm$^2$/h. At what rate does the length of each of its edges decrease at the time its volume is 216 cm$^3$? Assume that during melting, the block of ice maintains its cubical shape.
 
-\hfill
+\vspace{1em}
 
-\noindent 5.
+\textbf{5. (a)} Using the Intermediate Value Theorem and Rolle’s theorem, show that the equation $e^x + x = 0$ has only one root (Note that if this root $c_1$, then $c_1\in(-1,0)$).
 
-\hfill
+\textbf{(b)} Determine the interval of increase, decrease, and concavity of the function $f(x)=\mathrm e^x+x$. By constructing a table, sketch the graph.
 
-\noindent (a) Using the Intermediate Value Theorem and Rolle’s theorem, show that the equation $e^x + x = 0$ has only one root (Note that if this root $c_1$, then $c_1\in(-1,0)$).
+\vspace{1em}
 
-\hfill
+\textbf{6.} Determine (but do not evaluate) the integral corresponding to the area of the region bounded by the curves $y=-x^2+1$ and $y =|x|-1$.
 
-\noindent (b) Determine the interval of increase, decrease, and concavity of the function $f(x)=\mathrm e^x+x$. By constructing a table, sketch the graph.
+\vspace{1em}
 
-\hfill
-
-\noindent 6. Determine (but do not evaluate) the integral corresponding to the area of the region bounded by the curves $y=-x^2+1$ and $y =|x|-1$.
-
-\hfill
-
-\noindent 7. Evaluate $\displaystyle\int x\ln x\,dx$.
-
-\hfill
+\textbf{7.} Evaluate $\displaystyle\int x\ln x\,dx$.
 
 \newpage
 
 \begin{center}
-2020-2021 Fall Midterm (30/11/2020) Solutions\\
-(Last update: 29/08/2025 22:18)
+\textbf{2020-2021 Fall Midterm (30/11/2020) Solutions\\
+(Last update: 29/08/2025 22:18)}
 \end{center}
 
-\noindent 1. Let $L$ be the value of the limit. Since the expression is continuous for $x>0$, we can apply the logarithm function to each side of the equation. Then, we can swap the logarithm and the limit. Use the property of logarithms afterwards.
+\textbf{1.} Let $L$ be the value of the limit. Since the expression is continuous for $x>0$, we can apply the logarithm function to each side of the equation. Then, we can swap the logarithm and the limit. Use the property of logarithms afterwards.
 
 \[L=\lim_{x\to0^+}\left(\sqrt x\right)^{\ln\left(x+1\right)}\]
 
 \[\ln(L)=\ln\left[\lim_{x\to0^+}\left(\sqrt x\right)^{\ln\left(x+1\right)}\right]=\lim_{x\to0^+}\ln\left[\left(\sqrt x\right)^{\ln\left(x+1\right)}\right]=\lim_{x\to0^+}\ln\left[\left(\sqrt x\right)^{\ln\left(x+1\right)}\right] \]
 \[\ln\left(L\right)=\lim_{x\to0^+}\left[\ln\left(x+1\right)\cdot\ln\left(\sqrt x\right)\right] \quad\left[0\cdot\infty\right]\]
 
-\hfill
-
-\noindent Make it so the limit is in the form $\displaystyle \frac00$ or $\displaystyle \frac\infty\infty$ in order to apply the L'Hôpital's rule.
+Make it so the limit is in the form $\displaystyle \frac00$ or $\displaystyle \frac\infty\infty$ in order to apply the L'Hôpital's rule.
 
 \begin{align*}\ln\left(L\right)&=\lim_{x\to0^+}\left[\frac{\ln\left(\sqrt x\right)}{\frac1{\ln\left(x+1\right)}}\right] \quad\left[\frac\infty\infty\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to0^+}\left[\frac{\frac1{\sqrt x}\cdot\frac1{2\sqrt x}}{-\frac1{\ln^2\left(x+1\right)}\cdot \frac1{x+1}}\right]=\lim_{x\to0^+}\left[-\frac{\ln^2(x+1)\cdot(x+1)}{2x}\right]\\\\&=\lim_{x\to0^+}\left[-\frac{\ln^2(x+1)}{2x}\right] \cdot\lim_{x\to0^+} \left(x+1\right)=\lim_{x\to0^+}\left[-\frac{\ln^2(x+1)}{2x}\right]\quad\left[\frac00\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to0^+}\left[-\frac{2\ln(x+1) \cdot\frac1{x+1}}2\right]=\lim_{x\to0^+}\left[\frac{\ln(x+1)}{x+1}\right]=\frac{\ln1}{1}=0\end{align*}
 
-\hfill
+$\ln(L)=0$, so $\boxed{L=1}$.
 
-\noindent $\ln(L)=0$, so $\boxed{L=1}$.
+\vspace{1em}
 
-\hfill
-
-\noindent 2. $\displaystyle \arctan\frac1x$ takes it values on $\displaystyle -\frac{\pi}2 \leq \arctan\frac1x \leq \frac{\pi}2$. Multiply each side by $x$, then we get $\displaystyle -\frac{x\pi}2 \leq x\arctan\frac1x \leq \frac{x\pi}2$. Take the limits of each side. By the squeeze theorem, we see that the limit of $\displaystyle x\arctan\frac1x$ at the point $x=0$ is $0$. This means that for $f(x)$, the limit from the right side also equals $0$.
+\textbf{2.} $\displaystyle \arctan\frac1x$ takes it values on $\displaystyle -\frac{\pi}2 \leq \arctan\frac1x \leq \frac{\pi}2$. Multiply each side by $x$, then we get $\displaystyle -\frac{x\pi}2 \leq x\arctan\frac1x \leq \frac{x\pi}2$. Take the limits of each side. By the squeeze theorem, we see that the limit of $\displaystyle x\arctan\frac1x$ at the point $x=0$ is $0$. This means that for $f(x)$, the limit from the right side also equals $0$.
 
 \[\lim_{x\to 0}\left(-\frac{x\pi}2\right)\leq\lim_{x\to 0}\left(x\arctan\frac1x\right)\leq\lim_{x\to 0}\left(\frac{x\pi}2\right)\]
 \[0\leq\lim_{x\to 0}\left(x\arctan\frac1x\right)\leq0\]
 \[\therefore\lim_{x\to 0}\left(x\arctan\frac1x\right) = 0\]
 
-\hfill
-
-\noindent From the left side, the limit is equal to as follows.
-
+From the left side, the limit is equal to as follows.
 \[\lim_{x\to0^-}\frac{x-\cos x}{x^2}=\lim_{x\to0^-}(x-\cos x)\cdot\lim_{x\to0^-}\frac1{x^2} =-\infty\]
 
-\hfill
+Continuity requires the equality of one-sided limits and the value of the function at that point. However, the one-sided limits are not equal; $0\neq-\infty$. Therefore, $f(x)$ is discontinuous at $x=0$.
 
-\noindent Continuity requires the equality of one-sided limits and the value of the function at that point. However, the one-sided limits are not equal; $0\neq-\infty$. Therefore, $f(x)$ is discontinuous at $x=0$.
+\vspace{1em}
 
-\hfill
-
-\noindent 3. Differentiate both sides implicitly.
+\textbf{3.} Differentiate both sides implicitly.
 
 \[\frac{d}{dx}\left(\cos y^2+xy+1\right)=\frac{d}{dx}(0)\]
 \[-\sin y^2\cdot2y\frac{dy}{dx}+y+x\frac{dy}{dx}=0\]
@@ -118,28 +102,18 @@ f(x)=
 \[\frac{dy}{dx}\left(-\sin y^2\cdot2y+x\right)=-y\]
 
 \begin{equation}\frac{dy}{dx}= \frac y{\sin y^2 \cdot 2y - x}\end{equation}
-
-\hfill
-
-\noindent Evaluate $\displaystyle \frac{dy}{dx}$ at the point.
-
+Evaluate $\displaystyle \frac{dy}{dx}$ at the point.
 \begin{equation}\left.\frac{dy}{dx}\right|_{\left(\sqrt{\frac{2}{\pi}},-\sqrt{\frac{\pi}{2}}\right)} =\frac y{\sin y^2\cdot2y-x}=\frac{-\sqrt{\frac{\pi}{2}}}{\sin\left(\left(-\sqrt{\frac{\pi}{2}}\right)^2\right)\cdot2\left(-\sqrt{\frac{\pi}{2}}\right)-\sqrt{\frac{2}{\pi}}} =\frac{\sqrt{\frac{\pi}{2}}}{\sqrt{2\pi}+\sqrt{\frac{2}{\pi}}}\end{equation}
 
-\hfill
-
-\noindent Recall: $y-y_0 = m(x-x_0)$, where $m$ is the slope. Substitute $m$ with $(2)$ and find the tangent line.
-
+Recall: $y-y_0 = m(x-x_0)$, where $m$ is the slope. Substitute $m$ with $(2)$ and find the tangent line.
 \[\boxed{y+\sqrt{\frac{\pi}{2}}=\frac{\displaystyle\sqrt{\frac{\pi}{2}}}{\displaystyle\sqrt{2\pi}+\sqrt{\frac{2}{\pi}}}\left(x-\sqrt{\frac{2}{\pi}}\right)}\]
 
-\hfill
+\vspace{1em}
 
-\noindent 4. Let $S(t),\, V(t),\, a(t)$ represent the surface area, the volume, and the length of one side of the object, respectively, as a function of time. We may write the following.
-
+\textbf{4.} Let $S(t),\, V(t),\, a(t)$ represent the surface area, the volume, and the length of one side of the object, respectively, as a function of time. We may write the following.
 \[S(t)=6a^2(t),\quad V(t)=a^3(t)\]
 
-\hfill
-
-\noindent Given that at $t=t_0$, $V(t_0) = 216, \,S'(t_0)=-36$. Using the relationship with the sides,
+Given that at $t=t_0$, $V(t_0) = 216, \,S'(t_0)=-36$. Using the relationship with the sides,
 
 \begin{align*}
 &V(t_0) = a^3(t_0)= 216\,\rightarrow\, a(t_0) = 6\\
@@ -151,45 +125,29 @@ f(x)=
 
 \newpage
 
-\noindent 5.
+\textbf{5. (a)} Let $f(x) =  e^x + x$. $f$ is continuous and differentiable for all $x\in\mathbb{R}$.
 
-\hfill
+\[f(-1)= e^{-1}-1=\frac1{ e}-1,\quad f(0)= e-0= e\]
 
-\noindent (a) Let $f(x) = \mathrm{e}^x + x$. $f$ is continuous and differentiable for all $x\in\mathbb{R}$.
+Since $f(-1) < 0$ and $f(0) > 0$ and $f$ is continuous on the interval $[-1, 0]$, by IVT, there is at least one point $x_1$ that satisfies $f(x_1) = 0$. Assume that there is another distinct root $x_2$. Rolle's theorem states that if $f$ is continuous on a particular interval with endpoints having the same function value, there exists a point $c$ on that interval such that $f'(c) = 0$ there.
 
-\[f(-1)=\mathrm{e}^{-1}-1=\frac1{\mathrm{e}}-1,\quad f(0)=\mathrm{e}-0=\mathrm{e}\]
+\[f'(c)= e^c+1\geq1\qquad\left[ e^c>0\right]\]
 
-\hfill
+This yields a contradiction. Therefore, there is \textit{only} one root.
 
-\noindent Since $f(-1) < 0$ and $f(0) > 0$ and $f$ is continuous on the interval $[-1, 0]$, by IVT, there is at least one point $x_1$ that satisfies $f(x_1) = 0$. Assume that there is another distinct root $x_2$. Rolle's theorem states that if $f$ is continuous on a particular interval with endpoints having the same function value, there exists a point $c$ on that interval such that $f'(c) = 0$ there.
+\textbf{(b)} The expression is defined $\forall x\in\mathbb{R}$. Let us find the limit at infinity and the limit at negative infinity.
 
-\[f'(c)=\mathrm{e}^c+1\geq1\qquad\left[\mathrm{e}^c>0\right]\]
+\[\lim_{x\to\infty}\left( e^x+x\right)=\infty\qquad\lim_{x\to-\infty}\left( e^x+x\right)=-\infty\]
 
-\hfill
+There are no vertical or horizontal asymptotes. However, there is a slant asymptote. Attempt a long polynomial division and we will find that the slant asymptote is $y=x$. Verify with the following limit:
 
-\noindent This yields a contradiction. Therefore, there is \textit{only} one root.
+\[\lim_{x\to-\infty}\left[\left( e^x+x\right)-x\right]=\lim_{x\to-\infty} e^x=0\]
 
-\hfill
+Take the first and second derivatives.
 
-\noindent (b) The expression is defined $\forall x\in\mathbb{R}$. Let us find the limit at infinity and the limit at negative infinity.
+\[y'= e^x+1,\quad y''= e^x\]
 
-\[\lim_{x\to\infty}\left(\mathrm{e}^x+x\right)=\infty\qquad\lim_{x\to-\infty}\left(\mathrm{e}^x+x\right)=-\infty\]
-
-\hfill
-
-\noindent There are no vertical or horizontal asymptotes. However, there is a slant asymptote. Attempt a long polynomial division and we will find that the slant asymptote is $y=x$. Verify with the following limit:
-
-\[\lim_{x\to-\infty}\left[\left(\mathrm{e}^x+x\right)-x\right]=\lim_{x\to-\infty}\mathrm{e}^x=0\]
-
-\hfill 
-
-\noindent Take the first and second derivatives.
-
-\[y'=\mathrm{e}^x+1,\quad y''=\mathrm{e}^x\]
-
-\hfill 
-
-\noindent We see that there are no critical or inflection points either. Now, set up a table and see what the graph looks like.
+We see that there are no critical or inflection points either. Now, set up a table and see what the graph looks like.
 
 \begin{center}
     \large
@@ -205,8 +163,6 @@ f(x)=
         \hline
     \end{tabular}
 \end{center}
-
-\hfill
 
 \begin{center}
 \begin{tikzpicture}
@@ -229,7 +185,9 @@ f(x)=
 \end{tikzpicture}
 \end{center}
 
-\noindent 6.
+\vspace{1em}
+
+\textbf{6.}
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
@@ -281,15 +239,12 @@ f(x)=
 \end{tikzpicture}
 \end{center}
 
-\hfill
-
-\noindent The area of the region is as follows.
-
+The area of the region is as follows.
 \[A=\int_{-1}^1\left[(-x^2+1)-(|x|-1)\right]\,dx=\int_{-1}^0(-x^2+x +2)\,dx+\int_{0}^1(-x^2-x+2)\,dx\]
 
-\hfill
+\vspace{1em}
 
-\noindent 7. We'll use integration by parts.
+\textbf{7.} We'll use integration by parts.
 
 \[
 \left.
@@ -299,7 +254,7 @@ f(x)=
 \end{array}
 \right\}\quad
 \begin{array}{ll}
-\mathrm{I}&=\displaystyle\int x\ln x\,dx = \frac{x^2}2\cdot\ln x-\int\frac{x^2}2\cdot \frac1x \,dx \\\\&=\displaystyle\frac{x^2}2\cdot\ln x-\int\frac{x}2\,dx=\boxed{\frac{x^2}2\cdot\ln x - \frac{x^2}4+c,\,c\in\mathbb{R}}
+I&=\displaystyle\int x\ln x\,dx = \frac{x^2}2\cdot\ln x-\int\frac{x^2}2\cdot \frac1x \,dx \\\\&=\displaystyle\frac{x^2}2\cdot\ln x-\int\frac{x}2\,dx=\boxed{\frac{x^2}2\cdot\ln x - \frac{x^2}4+c,\,c\in\mathbb{R}}
 \end{array}
 \]
 

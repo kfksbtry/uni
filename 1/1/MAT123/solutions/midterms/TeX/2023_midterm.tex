@@ -4,6 +4,8 @@
 \usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
 \usepackage{pgfplots}
 \usepackage{mathtools}
+\usepackage{parskip}
+
 \pgfplotsset{compat=1.18}
 
 \begin{document}
@@ -11,135 +13,103 @@
 \large
 
 \begin{center}
-2023-2024 Fall \\MAT123-02,05 Midterm\\(01/11/2023)
+\textbf{2023-2024 Fall \\MAT123-02,05 Midterm\\(01/11/2023)}
 \end{center}
 
-\noindent 1. Evaluate the following limits without using L'Hôpital's rule.
+\textbf{1.} Evaluate the following limits without using L'Hôpital's rule.
 
-\hfill
+\textbf{(a)} $\displaystyle \lim_{t\to 0} \frac{\tan^{-1} t}{\sin^{-1} t}$ \ \ \ \textbf{(b)} $\displaystyle \lim_{x\to 0^+} x e^{\displaystyle \sin(1/x)}$
 
-(a) $\displaystyle \lim_{t\to 0} \frac{\tan^{-1} t}{\sin^{-1} t}$ \ \ \ (b) $\displaystyle \lim_{x\to 0^+} x\mathrm{e}^{\displaystyle \sin(1/x)}$
+\vspace{1em}
 
-\hfill
+\textbf{2.} A spherical balloon is being filled with air in such a way that its radius is increasing at the constant rate of 2 cm/s. At what rate is the volume of the balloon increasing at the instant when its surface has area $4\pi$ cm$^2$?
 
-\noindent 2. A spherical balloon is being filled with air in such a way that its radius is increasing at the constant rate of 2 cm/s. At what rate is the volume of the balloon increasing at the instant when its surface has area $4\pi$ cm$^2$?
+\vspace{1em}
 
-\hfill
+\textbf{3. (a)} State MVT.
 
-\noindent 3.
+\textbf{(b)} Using MVT, show that for all $x>0$,
 
-\hfill
+\[1+x< e^x<1+x e^x\]
 
-\noindent (a) State MVT.
+\vspace{1em}
 
-\hfill
-
-\noindent (b) Using MVT, show that for all $x>0$,
-
-\[1+x<\mathrm{e}^x<1+x\mathrm{e}^x\]
-
-\hfill
-
-\noindent 4. Find the tangent line to the curve defined implicitly by the equation
+\textbf{4.} Find the tangent line to the curve defined implicitly by the equation
 
 \[y^2x^x+xy=2\]
 
-\hfill
+at the point $(1,1)$. Note that $y=f(x)$.
 
-\noindent at the point $(1,1)$. Note that $y=f(x)$.
+\vspace{1em}
 
-\hfill
+\textbf{5.} Find the number $A$ so that $\displaystyle\lim_{x\to\infty}\left(\frac{x+A}{x-2A}\right)^{x}=5$.
 
-\noindent 5. Find the number $A$ so that $\displaystyle\lim_{x\to\infty}\left(\frac{x+A}{x-2A}\right)^{x}=5$.
+\vspace{1em}
 
-\hfill
-
-\noindent 6. Sketch the graph of $f(x)=(\ln x)^2$.
+\textbf{6.} Sketch the graph of $f(x)=(\ln x)^2$.
 
 \newpage
 
 \begin{center}
-2023-2024 Fall Midterm (01/11/2023) Solutions\\
-(Last update: 20/10/2025 17:04)
+\textbf{2023-2024 Fall Midterm (01/11/2023) Solutions\\
+(Last update: 20/10/2025 17:04)}
 \end{center}
 
-\noindent 1.
-
-\hfill
-
-\noindent (a)
+\textbf{1. (a)}
 \begin{align*}
 \lim_{t\to 0} \frac{\tan^{-1} t}{\sin^{-1} t}&= \lim_{t\to 0}\left( \frac{\tan^{-1} t}{\sin^{-1}t} \cdot\frac tt\right) = \lim_{t\to 0}\left( \frac{\tan^{-1} t}{t} \cdot\frac1{\frac {\sin^{-1}t}t}\right)\\\\&=\lim_{t\to0}\frac{\tan^{-1}t}t\cdot\frac1{\displaystyle\lim_{t\to 0}\frac{\sin^{-1}t}t}=1\cdot1=\boxed1
 \end{align*}
 
-\noindent The limits above are well-known limits. If we're supposed to write these limits in the form of $\sin x$ and $x$, follow these steps.
+The limits above are well-known limits. If we're supposed to write these limits in the form of $\sin x$ and $x$, follow these steps.
 
 \[\lim_{t\to0}\frac{\tan^{-1} t}{t}\overset{u=\tan^{-1} t}{=}\lim_{u\to0}\frac u{\tan u} = \lim_{u\to0}\frac{\cos u}{\frac{\sin u}u}=\frac{\displaystyle \lim_{u\to0}\cos u}{\displaystyle\lim_{u\to0}\frac{\sin u}u} = \frac11 = 1\]
 
 \[\lim_{t\to0}\frac{\sin^{-1} t}{t}\overset{v=\sin^{-1} t}{=}\lim_{v\to0}\frac v{\sin v} =\frac1{\displaystyle\lim_{u\to0}\frac{\sin v}v} = \frac11 = 1\]
 
-\hfill
-
-\noindent (b)
+\textbf{(b)}
 \[-1\leq\sin(1/x) \leq 1\]
-\[\mathrm{e}^{-1}\leq\mathrm{e}^{\sin(1/x)} \leq \mathrm{e}^1\]
-\[x\mathrm{e}^{-1}\leq x\mathrm{e}^{\sin(1/x)} \leq x\mathrm{e}\]
-\[\lim_{x\to0^+}x\mathrm{e}^{-1}\leq \lim_{x\to0^+}x\mathrm{e}^{\sin(1/x)} \leq\lim_{x\to0^+}x\mathrm{e}\]
-\[0\leq \lim_{x\to0^+}x\mathrm{e}^{\sin(1/x)} \leq0\]
+\[ e^{-1}\leq e^{\sin(1/x)} \leq  e^1\]
+\[x e^{-1}\leq x e^{\sin(1/x)} \leq x e\]
+\[\lim_{x\to0^+}x e^{-1}\leq \lim_{x\to0^+}x e^{\sin(1/x)} \leq\lim_{x\to0^+}x e\]
+\[0\leq \lim_{x\to0^+}x e^{\sin(1/x)} \leq0\]
 
-\hfill
+By the squeeze theorem, the limit is $\boxed{0}$.
 
-\noindent By the squeeze theorem, the limit is $\boxed{0}$.
+\vspace{1em}
 
-\hfill
-
-\noindent 2. Let $V(t),\,S(t),\,r(t)$ represent the volume, surface area and radius, respectively. $r'(t) = 2$ for all $t$. The rate of change of volume at $t=t_0$ is
+\textbf{2.} Let $V(t),\,S(t),\,r(t)$ represent the volume, surface area and radius, respectively. $r'(t) = 2$ for all $t$. The rate of change of volume at $t=t_0$ is
 
 \[V'(t_0) = 4\pi r^2(t_0)r'(t_0) \quad\left[V(t) = \frac43 \pi r^3(t)\right] \]
 
-\hfill
-
-\noindent We also have $S(t_0) = 4\pi$. Using the surface area formula $S(t) = 4\pi r^2(t)$, we find that at $t=t_0$, the radius of the balloon is 1. Therefore, the rate of change of volume can now be evaluated.
+We also have $S(t_0) = 4\pi$. Using the surface area formula $S(t) = 4\pi r^2(t)$, we find that at $t=t_0$, the radius of the balloon is 1. Therefore, the rate of change of volume can now be evaluated.
 
 \[V'(t_0)=4\pi\cdot1^2\cdot2=\boxed{8\pi\,\text{cm}^3\text{/s}}\]
 
 \newpage
 
-\noindent 3.
+\textbf{3. (a)} The MVT states that if a function $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, there is at least one point $P$ on the interval $(a,b)$ such that the slope of the line that passes through the endpoints is equal to the slope of the line that is tangent to $P$.
 
-\hfill
+\textbf{(b)} Let $f(x)= e^x$. $f$ is continuous on $[0,x]$ and differentiable on $(0,x)$.  There exists at least one point $c$ on $(0,x)$ such that
 
-\noindent (a) The MVT states that if a function $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, there is at least one point $P$ on the interval $(a,b)$ such that the slope of the line that passes through the endpoints is equal to the slope of the line that is tangent to $P$.
+\[f'(c) =  e^c=\frac{ e^x-1}x=\frac{f(x)-f(0)}{x-0}\]
 
-\hfill
+From the inequality $0<c<x$,
 
-\noindent (b) Let $f(x)=\mathrm{e}^x$. $f$ is continuous on $[0,x]$ and differentiable on $(0,x)$.  There exists at least one point $c$ on $(0,x)$ such that
+\[ e^0< e^c< e^x\]
+\[1<\frac{ e^x-1}x< e^x\]
+\[x< e^x-1 <x e^x\]
+\[1+x< e^x <1+x e^x\]
 
-\[
-f'(c) = \mathrm{e}^c=\frac{\mathrm{e}^x-1}x=\frac{f(x)-f(0)}{x-0}
-\]
+\vspace{1em}
 
-\hfill
-
-\noindent From the inequality $0<c<x$,
-
-\[\mathrm{e}^0<\mathrm{e}^c<\mathrm{e}^x\]
-\[1<\frac{\mathrm{e}^x-1}x<\mathrm{e}^x\]
-\[x<\mathrm{e}^x-1 <x\mathrm{e}^x\]
-\[1+x<\mathrm{e}^x <1+x\mathrm{e}^x\]
-
-\hfill
-
-\noindent 4. Let us find the derivative of $x^x$ with respect to x.
+\textbf{4.} Let us find the derivative of $x^x$ with respect to $x$.
 
 \[y=x^x\]
 \[\ln(y)=\ln(x^x) = x\ln x\]
 \[\frac1y\cdot y'=1\cdot\ln x + x\cdot \frac1x = \ln x +1\]
 \[y'=x^x(\ln x+1)\]
 
-\hfill
-
-\noindent We can now differentiate both sides of the equation given in the question.
+We can now differentiate both sides of the equation given in the question.
 
 \[\frac d{dx}\left(y^2x^x + xy\right) = \frac d{dx}\,2\]
 \[2y\cdot y'\cdot x^x + y^2\cdot x^x(\ln x+1)+1\cdot y +x\cdot y'=0\]
@@ -147,69 +117,51 @@ f'(c) = \mathrm{e}^c=\frac{\mathrm{e}^x-1}x=\frac{f(x)-f(0)}{x-0}
 
 \[y'=-\frac{y+y^2\cdot x^x(\ln x+1)}{2y\cdot x^x+x}\]
 
-\hfill
+Evaluating $y'$ at $(1,1)$ gives $\displaystyle-\frac23$. Using the straight line formula $y-y_0 = m(x-x_0)$, we get
 
-\noindent Evaluating $y'$ at $(1,1)$ gives $\displaystyle-\frac23$. Using the straight line formula $y-y_0 = m(x-x_0)$, we get
-
-\[
-\boxed{y-1 =-\frac23(x-1)}
-\]
+\[\boxed{y-1 =-\frac23(x-1)}\]
 
 \newpage
 
-\noindent 5. Take the logarithm of both sides of the equation and apply L'Hôpital's rule.
+\textbf{5.} Take the logarithm of both sides of the equation and apply L'Hôpital's rule.
 
 \begin{align*}
 \ln(5)&=\ln\left[\lim_{x\to\infty}\left(\frac{\displaystyle1+\frac Ax}{\displaystyle1-\frac {2A}x}\right)^{x}\right]=\lim_{x\to\infty}\ln\left[\left(\frac{\displaystyle1+\frac Ax}{\displaystyle1-\frac {2A}x}\right)^{x}\right]=\lim_{x\to\infty}\left[x\ln\left(\frac{\displaystyle1+\frac Ax}{\displaystyle1-\frac {2A}x}\right)\right]\\\\&=\lim_{x\to\infty}\left\{x\left[\ln\left(1+\frac Ax\right)-\ln\left(1-\frac {2A}x\right)\right]\right\}\quad\left[\infty\cdot0\right]\\\\&=\lim_{x\to\infty}\frac{\displaystyle\ln\left(1+\frac Ax\right)-\ln\left(1-\frac {2A}x\right)}{\displaystyle\frac1x}\quad\left[\frac00\right]\\\\&\overset{\text{L'H.}}{=}\lim_{x\to\infty}\left[\frac{\displaystyle\left(\frac1{1+\frac Ax}\right)\cdot\left(-\frac{A}{x^2}\right)-\left(\frac1{1-\frac{2A}x}\right)\cdot\left(\frac{2A}{x^2}\right)}{\displaystyle -\frac1{x^2}}\right]\\\\&=\lim_{x\to\infty}\left[\frac{\displaystyle\left(-\frac{A}{x^2}\right)\cdot\left(\frac1{1+\frac{A}x}+\frac{2}{1-\frac{2A}x}\right)}{\displaystyle-\frac{1}{x^2}}\right]\\\\&=A\lim_{x\to\infty}\frac1{\frac Ax + 1}+A\lim_{x\to\infty}\frac2{1-\frac{2A}x} = A \cdot 1 + A \cdot 2 = 3A
 \end{align*}
 
-\hfill
+If $\ln(5) = 3A$, then $\boxed{A =\frac{\ln5}3}$.
 
-\noindent If $\ln(5) = 3A$, then $\boxed{A =\frac{\ln5}3}$.
+\vspace{1em}
 
-\hfill
-
-\noindent 6. First off, find the domain. The expression is defined \textit{only} for $x>0$. The only vertical asymptote occurs at $x=0$.
+\textbf{6.} First off, find the domain. The expression is defined \textit{only} for $x>0$. The only vertical asymptote occurs at $x=0$.
 
 \[\mathcal{D} = \mathbb{R}^+\]
 
-\hfill
-
-\noindent The limits as $x\to\infty$ and as $x\to0^+$ are:
+The limits as $x\to\infty$ and as $x\to0^+$ are:
 
 \[\lim_{x\to \infty}(\ln x)^2=\infty,\quad \lim_{x\to0^+}(\ln x)^2=\infty \]
 
-\hfill
-
-\noindent Take the first derivative to find the critical points.
+Take the first derivative to find the critical points.
 
 \[y'=2\ln x\cdot\frac1x\]
 
-\hfill
+The \textit{only} critical point is $x=1$.
 
-\noindent The \textit{only} critical point is $x=1$.
-
-\hfill
-
-\noindent Take the second derivative by applying the quotient rule.
+Take the second derivative by applying the quotient rule.
 
 \[y''=2\cdot\frac{\frac1x \cdot x-\ln x \cdot 1}{x^2}=\frac{2-2\ln x}{x^2}\]
 
-\hfill
+The \textit{only} inflection point is $x= e$.
 
-\noindent The \textit{only} inflection point is $x=\mathrm{e}$.
+Consider some values of the function. Eventually, set up a table and see what the graph looks like in certain intervals.
 
-\hfill
-
-\noindent Consider some values of the function. Eventually, set up a table and see what the graph looks like in certain intervals.
-
-\[\,f\left(1\right)=0,\,f(\mathrm{e})=1\]
+\[\,f\left(1\right)=0,\,f( e)=1\]
 
 \begin{center}
     \large
     \begin{tabular}{ |c| c c c| } 
     \hline
-        $x$ & $\left(0, 1\right)$ & $\left(1, \mathrm{e}\right)$&$\left(\mathrm{e}, \infty\right)$  \\
+        $x$ & $\left(0, 1\right)$ & $\left(1,  e\right)$&$\left( e, \infty\right)$  \\
         \hline
         $y$ & $(0, \infty)$ &$(0,1)$ & $(1, \infty)$ \\
         \hline
@@ -219,8 +171,6 @@ f'(c) = \mathrm{e}^c=\frac{\mathrm{e}^x-1}x=\frac{f(x)-f(0)}{x-0}
         \hline
     \end{tabular}
 \end{center}
-
-\hfill
 
 \begin{center}
 \begin{tikzpicture}

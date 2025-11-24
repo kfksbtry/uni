@@ -5,77 +5,60 @@
 \usepackage{pgfplots}
 \usepackage{mathtools}
 \pgfplotsset{compat=1.18}
+\usepackage{parskip}
 
 \begin{document}
 \pagestyle{empty}
 \large
 
 \begin{center}
-2011-2012 Spring \\MAT123-[Instructor] Midterm I\\(06/04/2012)\\Time: 15:00 - 16:45\\Duration: 105 minutes
+\textbf{2011-2012 Spring \\MAT123-[Instructor] Midterm I\\(06/04/2012)\\Time: 15:00 - 16:45\\Duration: 105 minutes}
 \end{center}
 
-\noindent 1. Find the equation of the tangent line to the curve $x^2+2xy+y^2=4$ at the point $(3,-1)$.
+\textbf{1.} Find the equation of the tangent line to the curve $x^2+2xy+y^2=4$ at the point $(3,-1)$.
 
-\hfill
+\vspace{1em}
 
-\noindent 2. Find the point on the parabola $y=\sqrt x$ which is the closest to the point $(2,0)$.
+\textbf{2.} Find the point on the parabola $y=\sqrt x$ which is the closest to the point $(2,0)$.
 
-\hfill
+\vspace{1em}
 
-\noindent 3. Evaluate the limit, if it exists, and explain your answer. Do not use L'Hôpital's rule.
+\textbf{3.} Evaluate the limit, if it exists, and explain your answer. Do not use L'Hôpital's rule.
 
-\hfill
+\textbf{(a)} $\displaystyle\lim_{x\to0}\sqrt{x^2+2x^3} \sin\left(\frac1x\right)$ \ \ \ \textbf{(b)} $\displaystyle \lim_{x\to3}\frac{x^2-9}{x^2-x-6}$ \ \ \ \textbf{(c)} $\displaystyle \lim_{x\to-\infty}\sqrt{x^2-4x}+x$
 
-(a) $\displaystyle\lim_{x\to0}\sqrt{x^2+2x^3} \sin\left(\frac1x\right)$ \ \ \ (b) $\displaystyle \lim_{x\to3}\frac{x^2-9}{x^2-x-6}$ \ \ \ (c) $\displaystyle \lim_{x\to-\infty}\sqrt{x^2-4x}+x$
+\textbf{(d)} $\displaystyle\lim_{h\to0}\frac{(1+h)^{123}-1}{h}$
 
-\hfill
+\vspace{1em}
 
-(d) $\displaystyle\lim_{h\to0}\frac{(1+h)^{123}-1}{h}$
+\textbf{4.} Find the derivatives of the following functions.
 
-\hfill
+\textbf{(a)} $f(x)=x^{\cos\left(x^3\right)}$ \ \ \ \textbf{(b)} $f(x) = \tan\left( e^{2x}\sin(3x)\right)$
 
-\noindent 4. Find the derivatives of the following functions.
+\textbf{(c)} Find the second derivative $f''(x)$ of $\displaystyle f(x) =\ln\left(\frac{x^2}{x^2+4}\right)$.
 
-\hfill
+\vspace{1em}
 
-(a) $f(x)=x^{\cos\left(x^3\right)}$ \ \ \ (b) $f(x) = \tan\left(\mathrm{e}^{2x}\sin(3x)\right)$
+\textbf{5.} For the function $\displaystyle f(x)=\frac{1}{x^2-4}$,
 
-\hfill
+\textbf{(a)} Find the vertical and horizontal asymptotes.
 
-(c) Find the second derivative $f''(x)$ of $\displaystyle f(x) =\ln\left(\frac{x^2}{x^2+4}\right)$.
+\textbf{(b)} Find the intervals of increase or decrease.
 
-\hfill
+\textbf{(c)} Find the local maximum and minimum values, if any.
 
-\noindent 5. For the function $\displaystyle f(x)=\frac{1}{x^2-4}$,
+\textbf{(d)} Find the intervals of concavity and the inflection points, if any.
 
-\hfill
-
-(a) Find the vertical and horizontal asymptotes.
-
-\hfill
-
-(b) Find the intervals of increase or decrease.
-
-\hfill
-
-(c) Find the local maximum and minimum values, if any.
-
-\hfill
-
-(d) Find the intervals of concavity and the inflection points, if any.
-
-\hfill
-
-(e) Sketch the graph of $f$.
+\textbf{(e)} Sketch the graph of $f$.
 
 \newpage
 
 \begin{center}
-2011-2012 Spring Midterm I (06/04/2012) Solutions\\
-(Last update: 29/08/2025 19:24)
+\textbf{2011-2012 Spring Midterm I (06/04/2012) Solutions\\
+(Last update: 29/08/2025 19:24)}
 \end{center}
 
-\noindent 1. $y$ is implicitly defined as a function of $x$. Differentiate each side.
+\textbf{1.} $y$ is implicitly defined as a function of $x$. Differentiate each side.
 
 \[\frac{d}{dx}\left(x^2+2xy+y^2\right)=\frac{d}{dx}\,(4)\]
 \[2x+2y\cdot1+2x\cdot\frac{dy}{dx}+2y\frac{dy}{dx}=0\]
@@ -83,85 +66,61 @@
 
 \[\frac{dy}{dx}=-1\]
 
-\hfill
-
-\noindent Recall the equation of a straight line: $y-y_0=m(x-x_0)$, where $m$ is simply $\displaystyle \frac{dy}{dx}$. Therefore, the tangent line at $(3,-1)$ is as follows.
+Recall the equation of a straight line: $y-y_0=m(x-x_0)$, where $m$ is simply $\displaystyle \frac{dy}{dx}$. Therefore, the tangent line at $(3,-1)$ is as follows.
 
 \[\boxed{y+1=-1(x-3)}\]
 
-\hfill
+Furthermore, since $\displaystyle \frac{dy}{dx}=-1$, the tangent line consists of every point of the upper line. In other words, the tangent line is the upper line itself. The equation $x^2+2xy+y^2=4$ forms two parallel straight lines in the $xy-$coordinate system.
 
-\noindent Furthermore, since $\displaystyle \frac{dy}{dx}=-1$, the tangent line consists of every point of the upper line. In other words, the tangent line is the upper line itself. The equation $x^2+2xy+y^2=4$ forms two parallel straight lines in the $xy-$coordinate system.
+\vspace{1em}
 
-\hfill
-
-\noindent 2. Let $\left(x,\sqrt x\right)$ be a point on this parabola. The distance between the points can be expressed using the Pythagorean theorem as follows.
+\textbf{2.} Let $\left(x,\sqrt x\right)$ be a point on this parabola. The distance between the points can be expressed using the Pythagorean theorem as follows.
 
 \[f(x)=(2-x)^2 + \left(\sqrt x - 0\right)^2=L^2\]
 
-\hfill
-
-\noindent Take the derivative of both sides and set $\displaystyle f'(x)=0$ to find the critical points.
+Take the derivative of both sides and set $\displaystyle f'(x)=0$ to find the critical points.
 
 \begin{equation*}
 f'(x)=2(2-x)\cdot(-1) + 1 = 2x-3=0 \implies x=\frac{3}2
 \end{equation*}
 
-\hfill
-
-\noindent Now, verify whether this is a local minimum by taking the second derivative.
+Now, verify whether this is a local minimum by taking the second derivative.
 
 \[f''(x)=(2x-3)'=2>0\]
 
-\noindent Since this is a local minimum of $f$, the distance is closest at $\displaystyle x=\frac32$. The point we are looking for is
+Since this is a local minimum of $f$, the distance is closest at $\displaystyle x=\frac32$. The point we are looking for is
 
 \[\boxed{\left(\frac32,\sqrt{\frac32}\right)}\]
 
 \newpage
 
-\noindent 3.
-
-\hfill
-
-\noindent (a) The inequality $\displaystyle-1 \leq \sin\left(\frac1x\right)\leq1$ holds for all $x\in\mathbb{R}$ except for $x=0$. For small $x$, we can multiply each side of the inequality by $\sqrt{x^2+2x^3}$. Using the squeeze theorem, the limit is equal to $0$.
+\textbf{3. (a)} The inequality $\displaystyle-1 \leq \sin\left(\frac1x\right)\leq1$ holds for all $x\in\mathbb{R}$ except for $x=0$. For small $x$, we can multiply each side of the inequality by $\sqrt{x^2+2x^3}$. Using the squeeze theorem, the limit is equal to $0$.
 
 \[-1\leq\sin\left(\frac1x\right)\leq1\]
 \[-\sqrt{x^2+2x^3}\leq\sqrt{x^2+2x^3}\sin\left(\frac1x\right)\leq\sqrt{x^2+2x^3}\]
 
 \[\lim_{x\to0}-\sqrt{x^2+2x^3}=\lim_{x\to0}\sqrt{x^2+2x^3}=0\implies\lim_{x\to0}\sqrt{x^2+2x^3}\sin\left(\frac1x\right)=\boxed0\]
 
-\hfill
-
-\noindent (b) Factor each side of the fraction and eliminate like terms.
+\textbf{(b)} Factor each side of the fraction and eliminate like terms.
 
 \[\lim_{x\to3}\frac{x^2-9}{x^2-x-6}=\lim_{x\to3}\frac{(x-3)(x+3)}{(x-3)(x+2)}=\lim_{x\to3}\frac{x+3}{x+2}=\boxed{\frac65}\]
 
-\hfill
-
-\noindent (c) The expression is in the form $\infty-\infty$. Expand the expression by multiplying by its conjugate to eliminate the indetermination.
+\textbf{(c)} The expression is in the form $\infty-\infty$. Expand the expression by multiplying by its conjugate to eliminate the indetermination.
 
 \begin{align*}
 \lim_{x\to-\infty}\sqrt{x^2-4x}+x&=\lim_{x\to-\infty}\left[\left(\sqrt{x^2-4x} + x\right) \cdot\frac{\sqrt{x^2-4x}-x}{\sqrt{x^2-4x}-x}\right]=\lim_{x\to-\infty}\frac{x^2-4x-x^2}{\sqrt{x^2-4x}-x}\\\\&=\lim_{x\to-\infty}\frac{-4x}{\sqrt{x^2-4x}-x}=\lim_{x\to-\infty}\frac{-4x}{\displaystyle |x|\sqrt{1-\frac4x}-x}\\\\&=\lim_{x\to-\infty}\frac{-4}{\displaystyle-\sqrt{1-\frac4x}-1}=\lim_{x\to-\infty}\frac42=\boxed{2}\end{align*}
 
-\hfill
-
-\noindent (d) Recall the definition of the derivative of a function at a point. Let $f$ be a differentiable function, then
+\textbf{(d)} Recall the definition of the derivative of a function at a point. Let $f$ be a differentiable function, then
 
 \[\lim_{h\to 0} \frac{f(x+h)-f(x)}{h} = f'(x)\]
 
-\hfill
-
-\noindent If we set $f(x) = x^{123}$, then we can differentiate $f$ at $x=1$.
+If we set $f(x) = x^{123}$, then we can differentiate $f$ at $x=1$.
 
 \[\lim_{h\to0}\frac{(1+h)^{123}-1}{h}=f'(1)=123\cdot(1)^{122} = \boxed{123}\]
 
 \newpage
 
-\noindent 4.
-
-\hfill
-
-\noindent (a) Take the logarithm of each side to compute the derivative easily.
+\textbf{4. (a)} Take the logarithm of each side to compute the derivative easily.
 
 \[f(x)=x^{\cos\left(x^3\right)}\]
 \[\ln(f(x))=\ln\left[x^{\cos\left(x^3\right)}\right]=\cos\left(x^3\right)\cdot\ln x\]
@@ -170,56 +129,42 @@ f'(x)=2(2-x)\cdot(-1) + 1 = 2x-3=0 \implies x=\frac{3}2
 
 \[\boxed{f'(x) = x^{\cos\left(x^3\right)}\cdot\left[-\sin\left(x^3\right)\cdot 3x^2 \cdot \ln x + \cos\left(x^3\right)\cdot\frac1x\right]}\]
 
-\hfill
+\textbf{(b)} Apply the chain rule accordingly.
 
-\noindent (b) Apply the chain rule accordingly.
+\begin{equation*}f(x) = \tan\left( e^{2x}\sin(3x)\right)\end{equation*}
+\begin{equation*}\boxed{f'(x) = \sec^2\left( e^{2x}\sin(3x)\right)\cdot\left[ e^{2x}\cdot 2\cdot\sin(3x) +  e^{2x}\cdot\cos(3x)\cdot3\right]}\end{equation*}
 
-\begin{equation*}f(x) = \tan\left(\mathrm{e}^{2x}\sin(3x)\right)\end{equation*}
-\begin{equation*}\boxed{f'(x) = \sec^2\left(\mathrm{e}^{2x}\sin(3x)\right)\cdot\left[\mathrm{e}^{2x}\cdot 2\cdot\sin(3x) + \mathrm{e}^{2x}\cdot\cos(3x)\cdot3\right]}\end{equation*}
-
-\noindent (c) Compute the first and second derivatives, respectively, applying the chain rule and the quotient rule accordingly.
+\textbf{(c)} Compute the first and second derivatives, respectively, applying the chain rule and the quotient rule accordingly.
 
 \begin{equation*}f(x) = \ln\left(\frac{x^2}{x^2+4}\right)\end{equation*}
 \begin{equation*}f'(x)= \frac{x^2+4}{x^2}\cdot\frac{2x\cdot(x^2+4)-x^2\cdot2x}{\left(x^2+4\right)^2}=\frac{8}{x^3+4x}\end{equation*}
 \begin{equation*}f''(x)= -\frac{8}{\left(x^3+4x\right)^2}\cdot\left(3x^2+4\right)=\boxed{-\frac{24x^2+32}{\left(x^3+4x\right)^2}}\end{equation*}
 
-\hfill
+\vspace{1em}
 
-\noindent 5.
-
-\hfill
-
-\noindent (a) Find the horizontal asymptotes.
+\textbf{5. (a)} Find the horizontal asymptotes.
 \[\lim_{x\to\pm\infty}\frac{1}{x^2-4}=0\]
 
-\hfill
-
-\noindent Find the vertical asymptotes. The expression is undefined for $x=\pm2$.
+Find the vertical asymptotes. The expression is undefined for $x=\pm2$.
 
 \[\lim_{x\to2^+}\frac{1}{x^2-4}=\lim_{x\to-2^-}\frac{1}{x^2-4}=\infty\]
 \[\lim_{x\to2^-}\frac{1}{x^2-4}=\lim_{x\to-2^+}\frac{1}{x^2-4}=-\infty\]
 
 \[\boxed{\text{The horizontal asymptote is } y= 0. \text{ The vertical asymptotes are } x=\pm2.}\]
 
-\hfill
-
-\noindent (b) Compute the first derivative and set it to $0$ to find the critical points.
+\textbf{(b)} Compute the first derivative and set it to $0$ to find the critical points.
 
 \[f'(x)=-\frac{1}{\left(x^2-4\right)^2}\cdot2x\]
 
-\noindent $f$ is increasing where $f'(x)>0$ and decreasing where $f'(x)<0$.
+$f$ is increasing where $f'(x)>0$ and decreasing where $f'(x)<0$.
 
 \[\boxed{\text{f is decreasing for } x>0, \text{increasing for } x<0.}\]
 
-\hfill
-
-\noindent (c) The \textit{only} critical point occurs at $x=0$. Compute the second derivative to check whether this is a local minimum or local maximum.
+\textbf{(c)} The \textit{only} critical point occurs at $x=0$. Compute the second derivative to check whether this is a local minimum or local maximum.
 
 \begin{equation*}f''(x)=-\frac{2\cdot\left(x^2-4\right)^2-2x\cdot2\cdot(x^2-4)\cdot(2x)}{\left(x^2-4\right)^4}=\frac{8+6x^2}{\left(x^2-4\right)^3}\end{equation*}
 
-\hfill
-
-\noindent $\displaystyle f''(0)=\frac{8+6\cdot0^2}{\left(0^2-4\right)^3}=-\frac18<0$. Therefore, $(0, f(0))$  is a local maximum.
+$\displaystyle f''(0)=\frac{8+6\cdot0^2}{\left(0^2-4\right)^3}=-\frac18<0$. Therefore, $(0, f(0))$  is a local maximum.
 
 \[
 \boxed{
@@ -227,9 +172,7 @@ f'(x)=2(2-x)\cdot(-1) + 1 = 2x-3=0 \implies x=\frac{3}2
 \displaystyle \text{No local minimums exist.}\\\displaystyle \text{The }\textit{only} \text{ local maximum occurs at } x=0,\text{ which is}\left(0,-\frac14\right).
 \end{array}}\]
 
-\hfill
-
-\noindent (d) $8+6x^2 \geq 0$. Therefore, no inflection points. $f$ is concave up if $f''(x)>0$, concave down if $f''(x)<0$.
+\textbf{(d)} $8+6x^2 \geq 0$. Therefore, no inflection points. $f$ is concave up if $f''(x)>0$, concave down if $f''(x)<0$.
 
 \[
 \boxed{
@@ -237,9 +180,7 @@ f'(x)=2(2-x)\cdot(-1) + 1 = 2x-3=0 \implies x=\frac{3}2
 \displaystyle \text{No inflection points exist. }\\$f$ \text{ is concave up for } x>2 \text{ and } x<-2.\:$f$ \text{ is concave down for } |x|<2.
 \end{array}}\]
 
-\hfill
-
-\noindent (e)
+\textbf{(e)}
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
@@ -256,7 +197,7 @@ f'(x)=2(2-x)\cdot(-1) + 1 = 2x-3=0 \implies x=\frac{3}2
     ytick={-6,-4,-2,0,2,4,6},
     unbounded coords=jump,
     clip=true,
-    scale=2
+    scale=1.8
 ]
 \addplot[blue, thick] {1/(x^2 - 4)};
 \draw[dashed, red] (axis cs: -6,0.02) -- (axis cs: 6,0.02);

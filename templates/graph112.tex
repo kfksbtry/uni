@@ -9,10 +9,11 @@
 \usepackage{fancyhdr}
 \usepackage{booktabs}
 
+\usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{width=10cm,compat=1.9}
-\usepgfplotslibrary{external}
-\tikzexternalize
+
+%%\setcounter{page}{[NUM]} Enter the next integer after the last page number used.
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -22,13 +23,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-%%\setcounter{page}{[NUM]} Enter the next integer after the last page number used.
-
 \begin{document}
 \begin{center}
 \begin{tikzpicture}[scale = 0.8]
 
-\draw[step=1cm,gray,very thin] (0,0) grid (20,28);
+\draw[step=0.2cm,gray!70,very thin] (0,0) grid (20,28);
+\draw[step=1cm,black,thin] (0,0) grid (20,28);
 \draw[thick] (0,0) rectangle (20,28);
 
 \end{tikzpicture}
