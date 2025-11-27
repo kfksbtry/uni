@@ -5,6 +5,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{mathtools}
+\usepackage{parskip}
 \usepgfplotslibrary{polar}
 \usepgfplotslibrary{fillbetween}
 \usepackage{tikz}
@@ -15,69 +16,55 @@
 \large
 
 \begin{center}
-2020-2021 Spring \\MAT124 Final\\(09/06/2021)
+\textbf{2020-2021 Spring \\MAT124 Final\\(09/06/2021)}
 \end{center}
 
-\noindent 1. Sketch the region corresponding to the double integral
+\textbf{1.} Sketch the region corresponding to the double integral
 
 \[\int_{-1}^2\int_{x^2}^{x+2}\,dy\,dx\]
 
-\hfill
+and reverse the order of integration.
 
-\noindent and reverse the order of integration.
+\vspace{1em}
 
-\hfill
+\textbf{2.} Find the volume of the solid bounded above by the cone $z=\sqrt{x^2+y^2}$ and below by the circular region $x^2+y^2\leq4$ in the $xy$-plane.
 
-\noindent 2. Find the volume of the solid bounded above by the cone $z=\sqrt{x^2+y^2}$ and below by the circular region $x^2+y^2\leq4$ in the $xy$-plane.
+\vspace{1em}
 
-\hfill
+\textbf{3.} Let $R$ be the region lying outside $r=1$ and inside $r=1+\cos\theta$.
 
-\noindent 3. Let $R$ be the region lying outside $r=1$ and inside $r=1+\cos\theta$.
+\textbf{(i)} Sketch the graph of the region $R$.
 
-\hfill
+\textbf{(ii)} Set up (but do not evaluate) a double integral in polar coordinates for the area of the region $R$.
 
-\noindent (i) Sketch the graph of the region $R$.
+\vspace{1em}
 
-\hfill
+\textbf{4.} Let $S$ be the portion of the surface $z=y^2$ that lies over the rectangular region in the $xy$-plane with the vertices $(0,0,0), (0,1,0), (1,1,0)$ and $(1,0,0)$.
 
-\noindent (ii) Set up (but do not evaluate) a double integral in polar coordinates for the area of the region $R$.
+\textbf{(i)} Sketch the graph of $S$.
 
-\hfill
+\textbf{(ii)} Evaluate the surface area.
 
-\noindent 4. Let $S$ be the portion of the surface $z=y^2$ that lies over the rectangular region in the $xy$-plane with the vertices $(0,0,0), (0,1,0), (1,1,0)$ and $(1,0,0)$.
+\vspace{1em}
 
-\hfill
+\textbf{5.} Evaluate $\displaystyle \iiint_E z\,dV$, where $E$ is the region bounded below by $x^2+y^2+z^2=4$ and above by $x^2+y^2+z^2=9$.
 
-\noindent (i) Sketch the graph of $S$.
+\vspace{1em}
 
-\hfill
+\textbf{6.} Let $S$ be the region bounded above by the paraboloid $z=1-x^2-y^2$ and below by the $xy$-plane.
 
-\noindent (ii) Evaluate the surface area.
+\textbf{(i)} Using the spherical coordinates, set up (but do not evaluate) an integral for the volume of the solid $S$.
 
-\hfill
-
-\noindent 5. Evaluate $\displaystyle \iiint_E z\,dV$, where $E$ is the region bounded below by $x^2+y^2+z^2=4$ and above by $x^2+y^2+z^2=9$.
-
-\hfill
-
-\noindent 6. Let $S$ be the region bounded above by the paraboloid $z=1-x^2-y^2$ and below by the $xy$-plane.
-
-\hfill
-
-\noindent (i) Using the spherical coordinates, set up (but do not evaluate) an integral for the volume of the solid $S$.
-
-\hfill
-
-\noindent (ii) Using the cylindrical coordinates, set up (but do not evaluate) an integral for the volume of the solid $S$.
+\textbf{(ii)} Using the cylindrical coordinates, set up (but do not evaluate) an integral for the volume of the solid $S$.
 
 \newpage
 
 \begin{center}
-2020-2021 Spring Final (09/06/2021) Solutions\\
-(Last update: 05/08/2025 00:46)
+\textbf{2020-2021 Spring Final (09/06/2021) Solutions\\
+(Last update: 05/08/2025 00:46)}
 \end{center}
 
-\noindent 1.
+\textbf{1.}
 
 \begin{minipage}{0.45\textwidth}
 \begin{tikzpicture}
@@ -124,13 +111,13 @@
 \end{tikzpicture}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
-\begin{equation*}
-\boxed{\int_0^1\int_{-\sqrt y}^{\sqrt y}\,dx\,dy+\int_1^4\int_{y-2}^{\sqrt y}\,dx\,dy}\end{equation*}
+\[
+\boxed{\int_0^1\int_{-\sqrt y}^{\sqrt y}\,dx\,dy+\int_1^4\int_{y-2}^{\sqrt y}\,dx\,dy}\]
 \end{minipage}
 
-\hfill
+\vspace{1em}
 
-\noindent 2. Using polar coordinates, we can find the volume with a double integral.
+\textbf{2.} Using polar coordinates, we can find the volume with a double integral.
 
 \[
 \begin{array}{c}
@@ -145,16 +132,11 @@ x^2+y^2\leq4\,\rightarrow\,r^2\leq4\implies 0\leq r\leq 2\\[0.3cm]
 
 \begin{align*}\text{Volume}&=\int_0^{2\pi}\int_{0}^{2}\left[r-0\right]\cdot r\,dr\,d\theta=\int_0^{2\pi}\int_{0}^{2}r^2\,dr\,d\theta=\int_0^{2\pi}\left[\frac{r^3}3\right]_{r=0}^{r=2}d\theta\\\\&=\frac83\int_0^{2\pi}\,d\theta=\boxed{\frac{16\pi}3}\end{align*}
 
-\hfill
+\vspace{1em}
 
-\noindent 3.
-
-\hfill
+\textbf{3. (i)}
 
 \begin{minipage}{0.5\textwidth}
-
-(i)
-
 \begin{tikzpicture}
   \begin{polaraxis}[ytick=\empty, axis y line=none, scale=0.9, xticklabel=$\pgfmathprintnumber{\tick}^\circ$,]
     \addplot [
@@ -205,18 +187,12 @@ x^2+y^2\leq4\,\rightarrow\,r^2\leq4\implies 0\leq r\leq 2\\[0.3cm]
 \end{tikzpicture}
 \end{minipage}
 \begin{minipage}{0.4\textwidth}
-\begin{equation*}
-\text{(ii)}\quad\boxed{A=\int_{-\pi/2}^{\pi/2}\int_1^{1+\cos\theta}r\,dr\,d\theta}
-\end{equation*}
+\[\textbf{(ii)}\quad\boxed{A=\int_{-\pi/2}^{\pi/2}\int_1^{1+\cos\theta}r\,dr\,d\theta}\]
 \end{minipage}
 
 \newpage
 
-\noindent 4.
-
-\hfill
-
-\noindent (i)
+\textbf{4. (i)}
 
 \begin{center}
 \begin{tikzpicture}
@@ -249,21 +225,15 @@ x^2+y^2\leq4\,\rightarrow\,r^2\leq4\implies 0\leq r\leq 2\\[0.3cm]
 \end{tikzpicture}
 \end{center}
 
-\hfill
+\textbf{(ii)} Calculate the partial derivatives to find the surface area.
 
-\noindent (ii) Calculate the partial derivatives to find the surface area.
-
-\begin{equation*}
+\[
 z=y^2\implies\quad\frac{\partial z}{\partial x}=0,\quad \frac{\partial z}{\partial y}=2y
-\end{equation*}
-
-\hfill
+\]
 
 \begin{align*}\text{Surface area}&=\iint_D\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2}\,dA=\int_0^1\int_0^1\sqrt{1+\left(0\right)^2+\left(2y\right)^2}\,dx\,dy\\\\&=\int_0^1\int_0^1\sqrt{4y^2+1}\,dx\,dy=\int_0^1\left[x\sqrt{4y^2+1}\right]_{x=0}^{x=1}\,dy\\\\&=\int_0^1\sqrt{4y^2+1}\,dy\:\left[y=\frac12\tan u \implies dy=\frac12\sec^2u\,du,\:\begin{array}{l}u_{\text{upper}}=\arctan2\\u_{\text{lower}}=0\end{array}\right]\\\\&=\frac12\int_0^{\arctan2}\sqrt{\tan^2u+1}\cdot\sec^2u\,du=\frac12\int_0^{\arctan2}\sec^3u\,du\end{align*}
 
-\hfill
-
-\noindent To evaluate the last integral, we will use integration by parts.
+To evaluate the last integral, we will use integration by parts.
 
 \begin{align*}
     w=\sec u\,&\rightarrow\, dw = \sec u\tan u \,du\\
@@ -273,30 +243,22 @@ z=y^2\implies\quad\frac{\partial z}{\partial x}=0,\quad \frac{\partial z}{\parti
 \int_0^{\arctan2}\sec^3u\,du&=\tan u \cdot \sec u\,\bigg|_0^{\arctan2} -\int_0^{\arctan2} \tan^2 u\sec u\, du\\\\&= \tan u \cdot \sec u\,\bigg|_0^{\arctan2} -\int_0^{\arctan2} \frac{1-\cos^2u}{\cos^3 u}\, du\\\\&= \tan u \cdot \sec u\,\bigg|_0^{\arctan2} - \int_0^{\arctan2} \sec^3u \, du + \int_0^{\arctan2} \sec u \, du 
 \end{align*}
 
-\hfill
+Notice that the integral we want to evaluate appears on the right side. After a little algebra, we can evaluate the integral.
 
-\noindent Notice that the integral we want to evaluate appears on the right side. After a little algebra, we can evaluate the integral.
-
-\begin{equation*}
+\[
 \int_0^{\arctan2}\sec^3u\,du=\frac12\cdot\tan u\cdot\sec u\,\bigg|_0^{\arctan2}+\frac12\cdot\int_0^{\arctan2}\sec u\,du
-\end{equation*}
+\]
 
-\hfill
+The integral of $\sec u$ with respect to $u$ is as follows. One can derive it with particular methods.
+\[\int_0^{\arctan2}\sec u \, du = \ln\left|\tan u + \sec u\right|\bigg|_0^{\arctan2}\]
 
-\noindent The integral of $\sec u$ with respect to $u$ is as follows. One can derive it with particular methods.
-
-\begin{equation*}\int_0^{\arctan2}\sec u \, du = \ln\left|\tan u + \sec u\right|\bigg|_0^{\arctan2}
-\end{equation*}
-
-\hfill
-
-\noindent So, the surface area becomes as follows.
+So, the surface area becomes as follows.
 
 \begin{align*}\text{Surface area}&=\frac12\int_0^{\arctan2}\sec^3u\,du=\frac14\left(\tan u\cdot\sec u+\ln\left|\tan u+\sec u\right|\right)\bigg|_0^{\arctan2}\\\\&=\frac14\left[2\sec(\arctan2)+ \ln(2+\sec(\arctan2))-0\right]=\boxed{\frac14\left[2\sqrt5+\ln\left(2+\sqrt5\right)\right]}\end{align*}
 
-\hfill
+\vspace{1em}
 
-\noindent 5. By means of spherical coordinates, we can easily evaluate the integral. For spherical coordinates, we have
+\textbf{5.} By means of spherical coordinates, we can easily evaluate the integral. For spherical coordinates, we have
 
 \[
 \begin{array}{c}
@@ -319,11 +281,7 @@ z\equiv\rho\cos\phi\\
 
 \newpage
 
-\noindent 6.
-
-\hfill
-
-\noindent (i) For spherical coordinates, we have
+\textbf{6. (i)} For spherical coordinates, we have
 
 \[
 \begin{array}{c}
@@ -338,9 +296,7 @@ z=1-x^2-y^2\implies\rho\cos\phi=1-\rho^2\sin^2\phi&(1)\\[0.3cm]
 \end{array}
 \]
 
-\hfill
-
-\noindent Find $\rho_{\text{upper}}$ with equation $(1)$.
+Find $\rho_{\text{upper}}$ with equation $(1)$.
 
 \[
 \begin{array}{c}
@@ -350,13 +306,9 @@ z=1-x^2-y^2\implies\rho\cos\phi=1-\rho^2\sin^2\phi&(1)\\[0.3cm]
 \end{array}
 \]
 
-\hfill
-
 \[\boxed{\text{Volume}=\int_0^{2\pi}\int_0^{\pi/2}\int_0^{\textstyle\frac{-\cos\phi +\sqrt{\cos^2\phi+4\sin^2\phi}}{2\sin^2\phi}}\rho^2\sin\phi\,d\rho\,d\phi\,d\theta}\]
 
-\hfill
-
-\noindent (ii) For cylindrical coordinates, we have
+\textbf{(ii)} For cylindrical coordinates, we have
 
 \[
 \begin{array}{c}

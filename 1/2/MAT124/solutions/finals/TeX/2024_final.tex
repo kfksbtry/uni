@@ -5,6 +5,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{mathtools}
+\usepackage{parskip}
 \usepgfplotslibrary{polar}
 \usepgfplotslibrary{fillbetween}
 
@@ -13,63 +14,57 @@
 \large
 
 \begin{center}
-2023-2024 Spring \\MAT124 Final\\(04/06/2024)
+\textbf{2023-2024 Spring \\MAT124 Final\\(04/06/2024)}
 \end{center}
 
-\noindent 1. Using Lagrange multipliers, find the closest point of the plane $x+z+1=0$ to the point $(1,2,0)$.
+\textbf{1.} Using Lagrange multipliers, find the closest point of the plane $x+z+1=0$ to the point $(1,2,0)$.
 
-\hfill
+\vspace{1em}
 
-\noindent 2. Sketch the region and reverse the order of the double integral
+\textbf{2.} Sketch the region and reverse the order of the double integral
 
 \[
 \int_0^1
 \int_0^{x^2/2}dy\,dx+\int_1^{\sqrt2}\int_{x^2-1}^{x^2/2}dy\,dx\]
 
-\hfill
+\vspace{1em}
 
-\noindent 3. Sketch the region and use a double integral in polar coordinates to find the area inside the cardioid $r=1-\cos\theta$ outside the circle $r=1$.
+\textbf{3.} Sketch the region and use a double integral in polar coordinates to find the area inside the cardioid $r=1-\cos\theta$ outside the circle $r=1$.
 
-\hfill
+\vspace{1em}
 
-\noindent 4. Sketch the region and use a double integral to find the volume of the solid bounded above by the plane $x=z$ and below in the $xy$-plane by the part of the disk $x^2+y^2\leq4$ in the fourth quadrant.
+\textbf{4.} Sketch the region and use a double integral to find the volume of the solid bounded above by the plane $x=z$ and below in the $xy$-plane by the part of the disk $x^2+y^2\leq4$ in the fourth quadrant.
 
-\hfill
+\vspace{1em}
 
-\noindent 5. Find the surface area of the portion of the paraboloid $z=25-x^2-y^2$ that lies above the $xy$-plane.
+\textbf{5.} Find the surface area of the portion of the paraboloid $z=25-x^2-y^2$ that lies above the $xy$-plane.
 
-\hfill
+\vspace{1em}
 
-\noindent 6. Using the change of variables $u=x-y$ and $v=x+y$, evaluate the integral
+\textbf{6.} Using the change of variables $u=x-y$ and $v=x+y$, evaluate the integral
 
 \[\iint_{\mathcal{R}}(x-y)\sin\left(x^2-y^2\right)\,dy\,dx\]
 
-\hfill
+where $\mathcal{R}$ is the region bounded by the lines $x+y=1$ and $x+y=3$ and the curves $x^2-y^2=-1$ and $x^2-y^2=1$.
 
-\noindent where $\mathcal{R}$ is the region bounded by the lines $x+y=1$ and $x+y=3$ and the curves $x^2-y^2=-1$ and $x^2-y^2=1$.
+\vspace{1em}
 
-\hfill
+\textbf{7.} Let $R$ be the solid region bounded by the cone $z=\sqrt{3x^2+3y^2}$ and above by the sphere $x^2+y^2+z^2=9$. Let
 
-\noindent 7. Let $R$ be the solid region bounded by the cone $z=\sqrt{3x^2+3y^2}$ and above by the sphere $x^2+y^2+z^2=9$. Let
+\[{I}=\iiint_R\left(x^2+y^2\right)\,dV\]
 
-\[\mathrm{I}=\iiint_R\left(x^2+y^2\right)\,dV\]
+\textbf{(i)} Express (but do not evaluate) ${I}$ as a triple integral in spherical coordinates.
 
-\hfill
-
-\noindent (i) Express (but do not evaluate) $\mathrm{I}$ as a triple integral in spherical coordinates.
-
-\hfill
-
-\noindent (ii) Express (but do not evaluate) $\mathrm{I}$ as a triple integral in cylindrical coordinates.
+\textbf{(ii)} Express (but do not evaluate) ${I}$ as a triple integral in cylindrical coordinates.
 
 \newpage
 
 \begin{center}
-2023-2024 Spring Final (04/06/2024) Solutions\\
-(Last update: 07/08/2025 14:29)
+\textbf{2023-2024 Spring Final (04/06/2024) Solutions\\
+(Last update: 07/08/2025 14:29)}
 \end{center}
 
-\noindent 1. Let $g(x,y,z)=x+z+1$ and $f(x,y,z)=D^2=(x-1)^2+(y-2)^2+(z-0)^2$. It is easier to work with the square of the distance. Finding the points will not change the result. Solve the system of equations below.
+\textbf{1.} Let $g(x,y,z)=x+z+1$ and $f(x,y,z)=D^2=(x-1)^2+(y-2)^2+(z-0)^2$. It is easier to work with the square of the distance. Finding the points will not change the result. Solve the system of equations below.
 
 \[
 \left.
@@ -85,20 +80,15 @@
 
 \begin{equation}2x-2=2z\implies z=x-1\end{equation}
 
-\hfill
-
-\noindent Substitute $(1)$ into the constraint.
-
+Substitute $(1)$ into the constraint.
 \[x+z+1=0\implies x+x-1+1=0\implies2x=0\implies x=0\]
 \[\therefore 0+z+1=0\implies z=-1\]
 
-\hfill
+The closest point is then $\boxed{(0,2,-1)}$.
 
-\noindent The closest point is then $\boxed{(0,2,-1)}$.
+\vspace{1em}
 
-\hfill
-
-\noindent 2.
+\textbf{2.}
 \begin{center}
 \begin{minipage}{0.6\textwidth}
 \begin{tikzpicture}
@@ -149,9 +139,9 @@
 \end{minipage}
 \end{center}
 
-\hfill
+\vspace{1em}
 
-\noindent 3. Find where these two curves intersect and then find the area.
+\textbf{3.} Find where these two curves intersect and then find the area.
 
 \[1=1-\cos\theta\implies\cos\theta=0\implies\theta=\frac{\pi}2+\pi k,\quad k\in\mathbb{Z}\]
 
@@ -203,9 +193,9 @@
 \text{Area}&=\int_{\pi/2}^{3\pi/2}\int_1^{1-\cos\theta}r\,dr\,d\theta=\int_{\pi/2}^{3\pi/2}\left[\frac12r^2\right]_{r=1}^{r=1-\cos\theta}\,d\theta=\frac12\int_{\pi/2}^{3\pi/2}\left[(1-\cos\theta)^2-1^2\right]\,d\theta\\\\&=\frac12\int_{\pi/2}^{3\pi/2}\left(-2\cos\theta+\cos^2\theta\right)\,d\theta=\frac12\int_{\pi/2}^{3\pi/2}\left(-2\cos\theta+\frac{\cos(2\theta)+1}2\right)\,d\theta\\\\&=\frac12\left[-2\sin\theta+\frac{\sin(2\theta)}4+\frac\theta2\right]_{\pi/2}^{3\pi/2}=\frac12\left[\left(2+0+\frac{3\pi}4\right)-\left(-2+0+\frac\pi4\right)\right]=\boxed{2+\frac\pi4}
 \end{align*}
 
-\hfill
+\vspace{1em}
 
-\noindent 4.
+\textbf{4.}
 
 \begin{center}
 \begin{tikzpicture}
@@ -244,30 +234,26 @@ z=0\implies z_{\text{lower}}=0\\[0.2cm]
 \end{array} 
 \]
 
-\hfill
-
-\noindent The volume of this solid can be evaluated with the following integral.
+The volume of this solid can be evaluated with the following integral.
 
 \begin{align*}\text{Volume}&=\int_0^{\pi/2}\int_0^2\left(r\cos\theta-0\right)\,r\,dr\,d\theta=\int_0^{\pi/2}\int_0^2r^2\cos\theta\,dr\,d\theta=\int_0^{\pi/2}\left[\frac{r^3}3\right]_{r=0}^{r=2}\cos\theta\,d\theta\\\\&=\frac83\int_0^{\pi/2}\cos\theta\,d\theta=\frac83\sin\theta\,\bigg|_{0}^{\pi/2}=\frac83(1-0)=\boxed{\frac83}
 \end{align*}
 
-\newpage
+\vspace{1em}
 
-\noindent 5. For $z=0$, we get the circle $x^2+y^2=25$. Therefore, the domain is $x^2+y^2\leq25$. Using the double integral below, we find the surface area.
+\textbf{5.} For $z=0$, we get the circle $x^2+y^2=25$. Therefore, the domain is $x^2+y^2\leq25$. Using the double integral below, we find the surface area.
 
 \begin{align*}
 \text{Surface area}&=\iint_D\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2 +\left(\frac{\partial z}{\partial y}\right)^2}\,dA\\\\&=\int_{-5}^5\int_{-\sqrt{25-x^2}}^{\sqrt{25-x^2}}\sqrt{1+\left(-2x\right)^2 +\left(-2y\right)^2}\,dy\,dx\\\\&=\int_{-5}^5\int_{-\sqrt{25-x^2}}^{\sqrt{25-x^2}}\sqrt{1+4x^2+4y^2}\,dy\,dx
 \end{align*}
 
-\hfill
-
-\noindent If we switch to polar coordinates, we can easily evaluate the integral.
+If we switch to polar coordinates, we can easily evaluate the integral.
 
 \begin{align*}\text{Surface area}&=\int_0^{2\pi}\int_0^5\sqrt{1+4r^2}\,r\,dr\,d\theta=\int_0^{2\pi}\left[\frac1{12}\left(1+4r^2\right)^{3/2}\right]_{r=0}^{r=5}\,d\theta\\\\&=\frac1{12}\int_0^{2\pi}\left[\left(1+4\cdot25\right)^{3/2}-\left(1+4\cdot0\right)^{3/2}\right]\,d\theta=\frac{101^{3/2}-1}{12}\int_0^{2\pi}d\theta\\\\&=\boxed{\frac{101^{3/2}-1}6\cdot\pi}\end{align*}
 
-\hfill
+\vspace{1em}
 
-\noindent 6. Rewrite $x$ and $y$ in terms of $u$ and $v$ and sketch the regions in both coordinates.
+\textbf{6.} Rewrite $x$ and $y$ in terms of $u$ and $v$ and sketch the regions in both coordinates.
 
 \[
 \left.
@@ -360,9 +346,7 @@ u=x-y\\v=x+y
 \end{minipage}
 \end{center}
 
-\hfill
-
-\noindent Calculate the Jacobian determinant to find the area in terms of $u$ and $v$.
+Calculate the Jacobian determinant to find the area in terms of $u$ and $v$.
 
 \[
 \frac{\partial(x,y)}{\partial(u,v)}=\left|\begin{array}{cc}
@@ -374,35 +358,25 @@ u=x-y\\v=x+y
 \end{array}\right|=\frac12\cdot\frac12-\left(-\frac12\cdot\frac12\right)=\frac12
 \]
 
-\hfill
-
-\noindent The integral then becomes
-
+The integral then becomes
 \begin{align*}
-\mathrm{I}&=\iint_{\mathcal{R}}(x-y)\sin\left(x^2-y^2\right)\,dy\,dx=\int_1^3\int_{-1/v}^{1/v}u\cdot\sin(uv)\cdot\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv\\\\&=\int_1^3\int_{-1/v}^{1/v}u\cdot\sin(uv)\cdot\frac12\,du\,dv
+{I}&=\iint_{\mathcal{R}}(x-y)\sin\left(x^2-y^2\right)\,dy\,dx=\int_1^3\int_{-1/v}^{1/v}u\cdot\sin(uv)\cdot\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv\\\\&=\int_1^3\int_{-1/v}^{1/v}u\cdot\sin(uv)\cdot\frac12\,du\,dv
 \end{align*}
 
-\hfill
-
-\noindent Multiply each side by $2$ to obviate the mess with the fraction $\displaystyle\frac12$ and then change the order of integration.
-
+Multiply each side by $2$ to obviate the mess with the fraction $\displaystyle\frac12$ and then change the order of integration.
 \begin{align*}
-2\mathrm{I}&=\int_{-1}^{\textstyle-\frac13}\int_1^{\textstyle-\frac1u}u\sin(uv)\,dv\,du+\int_{\textstyle-\frac13}^{\textstyle\frac13}\int_1^3u\sin(uv)\,dv\,du+\int_{\textstyle\frac13}^1\int_1^{\textstyle\frac1u}u\sin(uv)\,dv\,du\\\\&=\int_{-1}^{\textstyle-\frac13}(-\cos(uv))\,\bigg|_{v=1}^{v=-\frac1u}\,du+\int_{\textstyle-\frac13}^{\textstyle\frac13}(-\cos(uv))\,\bigg|_{v=1}^{v=3}\,du+\int_{\textstyle\frac13}^1(-\cos(uv))\,\bigg|_{v=1}^{v=\frac1u}\,du\\\\&=\int_{-1}^{\textstyle-\frac13}[-\cos(-1)+\cos u]\,du+\int_{\textstyle-\frac13}^{\textstyle\frac13}[-\cos(3u)+\cos u]\,du+\int_{\textstyle\frac13}^1[-\cos1+\cos u]\,du\\\\&=\bigg[-u\cos(-1)+\sin u\bigg]_{-1}^{\textstyle-\frac13}+\bigg[-\frac13\sin(3u)+\sin u\bigg]_{\textstyle-\frac13}^{\textstyle\frac13}+\bigg[-u\cos1+\sin u\bigg]_{\textstyle\frac13}^1
+2{I}&=\int_{-1}^{\textstyle-\frac13}\int_1^{\textstyle-\frac1u}u\sin(uv)\,dv\,du+\int_{\textstyle-\frac13}^{\textstyle\frac13}\int_1^3u\sin(uv)\,dv\,du+\int_{\textstyle\frac13}^1\int_1^{\textstyle\frac1u}u\sin(uv)\,dv\,du\\\\&=\int_{-1}^{\textstyle-\frac13}(-\cos(uv))\,\bigg|_{v=1}^{v=-\frac1u}\,du+\int_{\textstyle-\frac13}^{\textstyle\frac13}(-\cos(uv))\,\bigg|_{v=1}^{v=3}\,du+\int_{\textstyle\frac13}^1(-\cos(uv))\,\bigg|_{v=1}^{v=\frac1u}\,du\\\\&=\int_{-1}^{\textstyle-\frac13}[-\cos(-1)+\cos u]\,du+\int_{\textstyle-\frac13}^{\textstyle\frac13}[-\cos(3u)+\cos u]\,du+\int_{\textstyle\frac13}^1[-\cos1+\cos u]\,du\\\\&=\bigg[-u\cos(-1)+\sin u\bigg]_{-1}^{\textstyle-\frac13}+\bigg[-\frac13\sin(3u)+\sin u\bigg]_{\textstyle-\frac13}^{\textstyle\frac13}+\bigg[-u\cos1+\sin u\bigg]_{\textstyle\frac13}^1
 \end{align*}
 
 \begin{align*}
-2\mathrm{I}&=\left[-\frac23\cos(-1)+\sin\left(-\frac13\right)-\sin(-1)\right]+\left[-\frac13\left(\sin1-\sin(-1)\right)+\sin\frac13-\sin\left(-\frac13\right)\right]\\\\&\quad\:+\left[-\frac23\cos1+\sin1-\sin\frac13\right]\\\\&=\frac43(\sin1-\cos1)
+2{I}&=\left[-\frac23\cos(-1)+\sin\left(-\frac13\right)-\sin(-1)\right]+\left[-\frac13\left(\sin1-\sin(-1)\right)+\sin\frac13-\sin\left(-\frac13\right)\right]\\\\&\quad\:+\left[-\frac23\cos1+\sin1-\sin\frac13\right]\\\\&=\frac43(\sin1-\cos1)
 \end{align*}
 
-\noindent This is the value of $2\mathrm{I}$. Therefore, $\boxed{\mathrm{I}=\frac23(\sin1-\cos1)}$.
+This is the value of $2{I}$. Therefore, $\boxed{{I}=\frac23(\sin1-\cos1)}$.
 
-\hfill
+\vspace{1em}
 
-\noindent 7.
-
-\hfill
-
-\noindent (i) For spherical coordinates, we have
+\textbf{7. (i)} For spherical coordinates, we have
 
 \[
 \begin{array}{c}
@@ -420,15 +394,11 @@ x^2+y^2+z^2=9\implies\rho^2=9\implies\rho=3\\[0.1cm]
 \end{array}
 \]
 
-\hfill
+The integral in spherical coordinates can be expressed as follows.
 
-\noindent The integral in spherical coordinates can be expressed as follows.
+\[\boxed{{I}=\int_0^{2\pi}\int_0^{\pi/6}\int_{0}^3\rho^2\sin^2\phi\cdot\rho^2\sin\phi\,d\rho\,d\phi\,d\theta=\int_0^{2\pi}\int_0^{\pi/6}\int_{0}^3\rho^4\sin^3\phi\,d\rho\,d\phi\,d\theta}\]
 
-\[\boxed{\mathrm{I}=\int_0^{2\pi}\int_0^{\pi/6}\int_{0}^3\rho^2\sin^2\phi\cdot\rho^2\sin\phi\,d\rho\,d\phi\,d\theta=\int_0^{2\pi}\int_0^{\pi/6}\int_{0}^3\rho^4\sin^3\phi\,d\rho\,d\phi\,d\theta}\]
-
-\hfill
-
-\noindent (ii) For cylindrical coordinates, we have
+\textbf{(ii)} For cylindrical coordinates, we have
 
 \[
 \begin{array}{c}
@@ -444,16 +414,12 @@ x^2+y^2+z^2=9\implies z=\sqrt{9-r^2}\\[0.1cm]
 \end{array}
 \]
 
-\hfill
-
-\noindent Find where the curves intersect to find the upper limit of $r$.
+Find where the curves intersect to find the upper limit of $r$.
 
 \[r\sqrt3=\sqrt{9-r^2}\implies3r^2=9-r^2\implies r^2=\frac94\implies r=\frac32\]
 
-\hfill
+The integral in cylindrical coordinates can be expressed as follows.
 
-\noindent The integral in cylindrical coordinates can be expressed as follows.
-
-\[\boxed{\mathrm{I}=\int_0^{2\pi}\int_0^{3/2}\int_{r\sqrt3}^{\sqrt{9-r^2}}r^2\cdot r\,dz\,dr\,d\theta=\int_0^{2\pi}\int_0^{3/2}\int_{r\sqrt3}^{\sqrt{9-r^2}}r^3\,dz\,dr\,d\theta}\]
+\[\boxed{{I}=\int_0^{2\pi}\int_0^{3/2}\int_{r\sqrt3}^{\sqrt{9-r^2}}r^2\cdot r\,dz\,dr\,d\theta=\int_0^{2\pi}\int_0^{3/2}\int_{r\sqrt3}^{\sqrt{9-r^2}}r^3\,dz\,dr\,d\theta}\]
 
 \end{document}

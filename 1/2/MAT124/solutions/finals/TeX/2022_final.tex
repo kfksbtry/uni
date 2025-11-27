@@ -3,6 +3,7 @@
 \usepackage{amssymb}
 \usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
 \usepackage{pgfplots}
+\usepackage{parskip}
 \pgfplotsset{compat=1.18}
 \usepackage{mathtools}
 \usepgfplotslibrary{polar}
@@ -13,63 +14,53 @@
 \large
 
 \begin{center}
-2021-2022 Spring \\MAT124 Final\\(23/05/2022)
+\textbf{2021-2022 Spring \\MAT124 Final\\(23/05/2022)}
 \end{center}
 
-\noindent 1. Find the largest and smallest values of $f(x,y) = x^2+y^2$ subject to the constraint $x+y=1$ with $x\geq0$ and $y\geq0$.
+\textbf{1.} Find the largest and smallest values of $f(x,y) = x^2+y^2$ subject to the constraint $x+y=1$ with $x\geq0$ and $y\geq0$.
 
-\hfill
+\vspace{1em}
 
-\noindent 2. Sketch the region corresponding to the double integral
+\textbf{2.} Sketch the region corresponding to the double integral
 
-\begin{equation*}
+\[
     \int_0^{\frac{-1+\sqrt5}{2}}\int_{\sqrt{y}}^{\sqrt{1-y^2}}\,dx\,dy
-\end{equation*}
+\]
 
-\hfill
+and reverse the order of integration. Do not evaluate the integral!
 
-\noindent and reverse the order of integration. Do not evaluate the integral!
+\vspace{1em}
 
-\hfill
+\textbf{3.} Sketch the region inside the circle $r=1$ and outside the cardioid $r=1+\sin\theta$ and then, using a double integral, find the area of the region.
 
-\noindent 3. Sketch the region inside the circle $r=1$ and outside the cardioid $r=1+\sin\theta$ and then, using a double integral, find the area of the region.
+\vspace{1em}
 
-\hfill
+\textbf{4.} Using a double integral, find the volume of the solid bounded above by the sphere $x^2+y^2+z^2 = 16$ and below by the circular region $x^2+y^2\leq2$ in the $xy$-plane.
 
-\noindent 4. Using a double integral, find the volume of the solid bounded above by the sphere $x^2+y^2+z^2 = 16$ and below by the circular region $x^2+y^2\leq2$ in the $xy$-plane.
+\vspace{1em}
 
-\hfill
+\textbf{5.} Let us consider the frustum of the cone $z=\sqrt{x^2+y^2}$ between the planes $z=1$ and $z=2$.
 
-\noindent 5. Let us consider the frustum of the cone $z=\sqrt{x^2+y^2}$ between the planes $z=1$ and $z=2$.
+\textbf{(i)} Sketch the graph of the frustum.
 
-\hfill
+\textbf{(ii)} Find the surface area of the frustum.
 
-\noindent (i) Sketch the graph of the frustum.
+\vspace{1em}
 
-\hfill
+\textbf{6.} Let $S$ be the region in the cylinder $x^2+y^2 = 1$ bounded above by the plane $z=6$ and below by the paraboloid $z=1-x^2-y^2$.
 
-\noindent (ii) Find the surface area of the frustum.
+\textbf{(i)} Using the spherical coordinates, set up (but do not evaluate!) an integral for the volume of the solid $S$.
 
-\hfill
-
-\noindent 6. Let $S$ be the region in the cylinder $x^2+y^2 = 1$ bounded above by the plane $z=6$ and below by the paraboloid $z=1-x^2-y^2$.
-
-\hfill
-
-\noindent (i) Using the spherical coordinates, set up (but do not evaluate!) an integral for the volume of the solid $S$.
-
-\hfill
-
-\noindent (ii) Using the cylindrical coordinates, find the volume of the solid $S$.
+\textbf{(ii)} Using the cylindrical coordinates, find the volume of the solid $S$.
 
 \newpage
 
 \begin{center}
-2021-2022 Spring Final (23/05/2022) Solutions\\
-(Last update: 05/08/2025 01:58)
+\textbf{2021-2022 Spring Final (23/05/2022) Solutions\\
+(Last update: 05/08/2025 01:58)}
 \end{center}
 
-\noindent 1) Let $g(x,y)=x+y-1$ and then, solve the system of equations below using the method of Lagrange multipliers.
+\textbf{1.} Let $g(x,y)=x+y-1$ and then, solve the system of equations below using the method of Lagrange multipliers.
 
 \[
 \left.
@@ -86,28 +77,22 @@
 \[\lambda=2x=2y\implies x=y\]
 \[x+y-1=0 \,\rightarrow\, 2x-1 = 0\,\rightarrow\,x=\frac12=y\]
 
-\hfill
-
-\noindent Evaluate $\displaystyle f\left(\frac12,\frac12\right)$ to find the minimum value.
+Evaluate $\displaystyle f\left(\frac12,\frac12\right)$ to find the minimum value.
 
 \[f\left(\frac12,\frac12\right)=\left(\frac12\right)^2+\left(\frac12\right)^2=\frac12\]
 
-\hfill
-
-\noindent $f(x,y)$ is defined for $x\geq0$ and $y\geq0$. This implies that $0\leq y \leq1$ and $0\leq x\leq1$ by the constraint. The domain of $f$ is closed and bounded, and $f$ is continuous. By the extreme value theorem, the absolute minima and maxima must exist. Using the method of Lagrange multipliers, we could find only one point. This means that the other value exists on the boundary of $f$.
+$f(x,y)$ is defined for $x\geq0$ and $y\geq0$. This implies that $0\leq y \leq1$ and $0\leq x\leq1$ by the constraint. The domain of $f$ is closed and bounded, and $f$ is continuous. By the extreme value theorem, the absolute minima and maxima must exist. Using the method of Lagrange multipliers, we could find only one point. This means that the other value exists on the boundary of $f$.
 
 \[x=0\,\rightarrow\,0+y-1=0\,\rightarrow\,y=1,\quad y=0\,\rightarrow\, x+0-1=0\,\rightarrow\, x=1\]
 \[f(0,1) = 0^2 +1^2 = 1,\quad f(1,0) = 1^2+0^2 = 1\]
 
-\hfill
-
-\noindent Eventually, compare the values we obtain.
+Eventually, compare the values we obtain.
 
 \[\boxed{\frac12\,\text{is the absolute minimum}, 1\,\text{is the absolute maximum}.}\]
 
-\hfill
+\vspace{1em}
 
-\noindent 2)
+\textbf{2.}
 
 \begin{center}
 \begin{tikzpicture}
@@ -163,25 +148,19 @@
   \end{axis}
 \end{tikzpicture}
 \end{center}
+The integral with reverse order is as follows.
 
-\hfill
+\[\boxed{\int_0^{\sqrt{\frac{\sqrt5 - 1}2}}\int_0^{x^2}\,dy\,dx + \int_{\sqrt{\frac{\sqrt5 - 1}2}}^{1}\int_0^{\sqrt{1-x^2}}\,dy\,dx}\]
 
-\noindent The integral with reverse order is as follows.
+\vspace{1em}
 
-\begin{equation*}
-\boxed{\int_0^{\sqrt{\frac{\sqrt5 - 1}2}}\int_0^{x^2}\,dy\,dx + \int_{\sqrt{\frac{\sqrt5 - 1}2}}^{1}\int_0^{\sqrt{1-x^2}}\,dy\,dx}
-\end{equation*}
-
-\hfill
-
-\noindent 3) Find where these two curves intersect and then find the area.
+\textbf{3.} Find where these two curves intersect and then find the area.
 
 \[1=1+\sin\theta\implies\sin\theta=0\implies\theta=k\pi,\quad k\in\mathbb{Z}\]
 
-
 \begin{center}
 \begin{tikzpicture}
-  \begin{polaraxis}[ytick=\empty, axis y line=none, xticklabel=$\pgfmathprintnumber{\tick}^\circ$,]
+  \begin{polaraxis}[ytick=\empty, axis y line=none, xticklabel=$\pgfmathprintnumber{\tick}^\circ$, scale=0.9]
     \addplot [
       domain=pi:2*pi,
       samples=300,
@@ -230,17 +209,15 @@
 \text{Area}&=\int_{\pi}^{2\pi}\int_{1+\sin\theta}^1\,r\,dr\,d\theta=\frac12\int_\pi^{2\pi}\left[1^2-(1+\sin\theta)^2\right]\,d\theta\\\\&=\frac12\int_\pi^{2\pi}\left[-2\sin\theta-\sin^2\theta\right]\,d\theta\quad\left[\sin^2\theta+\cos^2\theta=1\right]\\\\&=-\int_\pi^{2\pi}\sin\theta\,d\theta-\frac12\int_\pi^{2\pi}(1-\cos^2\theta)\,d\theta\quad[2\cos^2\theta-1=\cos(2\theta)] \\\\&=-\int_\pi^{2\pi}\sin\theta\,d\theta+\int_\pi^{2\pi}\frac{\cos(2\theta)-1}{4}\,d\theta=\int_\pi^{2\pi}\left[-\frac14+\frac14\cos(2\theta)-\sin\theta\right]\,d\theta\\\\&=\left[-\frac\theta4+\frac18\sin(2\theta)+\cos\theta\right]_{\pi}^{2\pi}=\left[\left(-\frac{\pi}2+0+1\right)-\left(-\frac{\pi}4+0-1\right)\right]={\boxed{2-\frac{\pi}4}}
 \end{align*}
 
-\hfill
+\vspace{1em}
 
-\noindent 4) We have the sphere $x^2+y^2+z^2=16$. So, the upper bound is $z=\sqrt{16-x^2-y^2}$, while the lower bound is $z=0$. If we project the domain onto the $xy$-plane, we see that the upper and lower bounds for $y$ are $\sqrt{2-x^2}$ and $-\sqrt{2-x^2}$, respectively. For $x$, the integration starts from $-\sqrt2$ and ends at $\sqrt2$. The volume of the object can be evaluated using the following integral.
+\textbf{4.} We have the sphere $x^2+y^2+z^2=16$. So, the upper bound is $z=\sqrt{16-x^2-y^2}$, while the lower bound is $z=0$. If we project the domain onto the $xy$-plane, we see that the upper and lower bounds for $y$ are $\sqrt{2-x^2}$ and $-\sqrt{2-x^2}$, respectively. For $x$, the integration starts from $-\sqrt2$ and ends at $\sqrt2$. The volume of the object can be evaluated using the following integral.
 
 \newpage
 
-\begin{equation*}\mathrm{I}=\int_{-\sqrt2}^{\sqrt2}\int_{-\sqrt{2-x^2}}^{\sqrt{2-x^2}}\left[\sqrt{16-x^2-y^2}-0 \right]\,dy\,dx\end{equation*}
+\[{I}=\int_{-\sqrt2}^{\sqrt2}\int_{-\sqrt{2-x^2}}^{\sqrt{2-x^2}}\left[\sqrt{16-x^2-y^2}-0 \right]\,dy\,dx\]
 
-\hfill
-
-\noindent This integral seems a little bit hard. We can switch to polar coordinates for ease. Use the transformation below.
+This integral seems a little bit hard. We can switch to polar coordinates for ease. Use the transformation below.
 
 \[
 \begin{array}{c}
@@ -253,16 +230,12 @@ dA=dy\,dx =r\,dr\,d\theta
 0\leq\theta\leq 2\pi\\
 \end{array} 
 \]
-\begin{align*}\mathrm{I}&=\int_{0}^{2\pi}\int_{0}^{\sqrt{2}}\sqrt{16-r^2}\,r\,dr\,d\theta=\int_{0}^{2\pi}\left[-\frac13\left(16-r^2\right)^{3/2}\right]_{r=0}^{r=\sqrt2}\,d\theta\\\\&=\frac13\int_0^{2\pi}\left[-14^{3/2}-\left(-16^{3/2}\right)\right]\,d\theta=\boxed{\frac{2\pi}{3}\left(16^{3/2}-14^{3/2}\right)}
+\begin{align*}{I}&=\int_{0}^{2\pi}\int_{0}^{\sqrt{2}}\sqrt{16-r^2}\,r\,dr\,d\theta=\int_{0}^{2\pi}\left[-\frac13\left(16-r^2\right)^{3/2}\right]_{r=0}^{r=\sqrt2}\,d\theta\\\\&=\frac13\int_0^{2\pi}\left[-14^{3/2}-\left(-16^{3/2}\right)\right]\,d\theta=\boxed{\frac{2\pi}{3}\left(16^{3/2}-14^{3/2}\right)}
 \end{align*}
 
-\hfill
+\vspace{1em}
 
-\noindent 5)
-
-\hfill
-
-\noindent (i)
+\textbf{5. (i)}
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
@@ -308,9 +281,7 @@ dA=dy\,dx =r\,dr\,d\theta
 \end{tikzpicture}
 \end{center}
 
-\hfill
-
-\noindent (ii) Using the double integral below, we find the lateral surface area.
+\textbf{(ii)} Using the double integral below, we find the lateral surface area.
 
 \begin{align*}
 A&=\iint_D\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2 +\left(\frac{\partial z}{\partial y}\right)^2}\,dA= \iint_D\sqrt{1+\left(\frac{x}{\sqrt{x^2+y^2}}\right)^2 +\left(\frac{y}{\sqrt{x^2+y^2}}\right)^2}\,dA \\\\&=\iint_D\sqrt{1+\left(\frac{x^2+y^2}{x^2+y^2}\right)}\,dA=\iint_D\sqrt{1+1}\,dA=\sqrt{2}\iint_D\,dA
@@ -318,17 +289,13 @@ A&=\iint_D\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2 +\left(\frac{\par
 
 \newpage
 
-\noindent If we switch to polar coordinates, we can easily evaluate the integral.
+If we switch to polar coordinates, we can easily evaluate the integral.
 
-\begin{equation*}A=\sqrt2\int_0^{2\pi}\int_1^2\,r\,dr\,d\theta=\sqrt2\int_0^{2\pi}\left[\frac{r^2}2\right]_{r=1}^{r=2}\,d\theta=\sqrt2\int_0^{2\pi}\frac32\,d\theta=\boxed{3\pi\sqrt2}\end{equation*}
+\[A=\sqrt2\int_0^{2\pi}\int_1^2\,r\,dr\,d\theta=\sqrt2\int_0^{2\pi}\left[\frac{r^2}2\right]_{r=1}^{r=2}\,d\theta=\sqrt2\int_0^{2\pi}\frac32\,d\theta=\boxed{3\pi\sqrt2}\]
 
-\hfill
+\vspace{1em}
 
-\noindent 6)
-
-\hfill
-
-\noindent (i) For spherical coordinates, we have
+\textbf{6. (i)} For spherical coordinates, we have
 
 \[
 \begin{array}{c}
@@ -344,9 +311,7 @@ z=1-x^2-y^2\,\rightarrow\,\rho\cos\phi=1-\rho^2\sin^2\phi
 \end{array}
 \]
 
-\hfill
-
-\noindent We have the lower bound for $\rho$, which is the solution of $\rho\cos\phi=1-\rho^2\sin^2\phi$
+We have the lower bound for $\rho$, which is the solution of $\rho\cos\phi=1-\rho^2\sin^2\phi$
 
 \[
 \begin{array}{c}
@@ -357,13 +322,11 @@ z=1-x^2-y^2\,\rightarrow\,\rho\cos\phi=1-\rho^2\sin^2\phi
 \end{array}
 \]
 
-\hfill
+However, we have two distinct upper bounds for $\rho$. We need to find the value of $\phi$ where the surfaces $\rho\cos\phi = 6$ and $\rho^2\sin^2\phi=1$ intersect.
 
-\noindent However, we have two distinct upper bounds for $\rho$. We need to find the value of $\phi$ where the surfaces $\rho\cos\phi = 6$ and $\rho^2\sin^2\phi=1$ intersect.
-
-\begin{equation*}
+\[
 \rho^2\sin^2\phi=1 \,\rightarrow\,\rho\sin\phi = 1
-\end{equation*}
+\]
 
 \[
 \left.
@@ -374,32 +337,24 @@ z=1-x^2-y^2\,\rightarrow\,\rho\cos\phi=1-\rho^2\sin^2\phi
 \right\}\quad\tan\phi=\frac16\implies\phi=\arctan{\frac16}
 \]
 
-\hfill
+For $\displaystyle\phi<\arctan\frac16$, the upper bound is $\displaystyle \frac6{\cos\phi}$. Meanwhile, for $\displaystyle\phi>\arctan\frac16$, it is $\displaystyle \frac1{\sin\phi}$.
 
-\noindent For $\displaystyle\phi<\arctan\frac16$, the upper bound is $\displaystyle \frac6{\cos\phi}$. Meanwhile, for $\displaystyle\phi>\arctan\frac16$, it is $\displaystyle \frac1{\sin\phi}$.
+The region in the $xy-$plane is circular, therefore $0\leq\theta\leq2\pi$. As for $\phi$, we have $\displaystyle0\leq\phi\leq\frac{\pi}2$. The volume of the object in spherical coordinates can be expressed as follows.
 
-\hfill
-
-\noindent The region in the $xy-$plane is circular, therefore $0\leq\theta\leq2\pi$. As for $\phi$, we have $\displaystyle0\leq\phi\leq\frac{\pi}2$. The volume of the object in spherical coordinates can be expressed as follows.
-
-\begin{equation*}
+\[
 \boxed{\begin{array}{cc}
 V=&\displaystyle\int_0^{2\pi}\int_0^{\arctan{\textstyle\frac16}}\int_{\textstyle\frac{-\cos\phi +\sqrt{\cos^2\phi+4\sin^2\phi}}{2\sin^2\phi}}^{\textstyle\frac6{\cos\phi}}\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\\
 &\displaystyle+\int_0^{2\pi}\int_{\arctan{\textstyle\frac16}}^{\pi/2}\int_{\textstyle\frac{-\cos\phi +\sqrt{\cos^2\phi+4\sin^2\phi}}{2\sin^2\phi}}^{\textstyle\frac1{\sin\phi}}\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta 
 \end{array}}
-\end{equation*}
+\]
 
-\hfill
+In fact, we are looking for the minimum value of the upper bound for $\rho$ between $\displaystyle\frac1{\sin\phi}$ and $\displaystyle\frac6{\cos\phi}$. Hence, we can write the equivalent expression as follows.
 
-\noindent In fact, we are looking for the minimum value of the upper bound for $\rho$ between $\displaystyle\frac1{\sin\phi}$ and $\displaystyle\frac6{\cos\phi}$. Hence, we can write the equivalent expression as follows.
-
-\begin{equation*}
+\[
 \boxed{V=\displaystyle\int_0^{2\pi}\int_0^{\pi/2}\int_{\textstyle\frac{-\cos\phi +\sqrt{\cos^2\phi+4\sin^2\phi}}{2\sin^2\phi}}^{\min\left(\textstyle\frac6{\cos\phi},\frac1{\sin\phi}\right)}\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta}
-\end{equation*}
+\]
 
-\hfill
-
-\noindent (ii) For cylindrical coordinates, we have
+\textbf{(ii)} For cylindrical coordinates, we have
 
 \[
 \begin{array}{c}
@@ -414,9 +369,7 @@ z=1-x^2-y^2\,\rightarrow\,z=1-r^2
 \end{array}
 \]
 
-\hfill
-
-\noindent The volume can be expressed as follows.
+The volume can be expressed as follows.
 
 \begin{align*}
     V&=\int_0^{2\pi}\int_0^1\int_{1-r^2}^{6}\,r\,dz\,dr\,d\theta=\int_0^{2\pi}\int_0^1\big[z\big]_{z=1-r^2}^{z=6}\,r\,dr\,d\theta\\\\&=\int_0^{2\pi}\int_0^1\left(r^3+5r\right)\,dr\,d\theta=\int_0^{2\pi}\left[\frac{r^4}{4} + \frac{5r^2}{2}\right]_{r=0}^{r=1}\,d\theta\\\\&=\big[\theta\big]_0^{2\pi}\cdot\left[ \left(\frac{1^4}4 + \frac{5\cdot1^2}2\right)-\left(0\right)\right]=\boxed{\frac{11\pi}2}

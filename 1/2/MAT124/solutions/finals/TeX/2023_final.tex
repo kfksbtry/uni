@@ -5,6 +5,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{mathtools}
+\usepackage{parskip}
 \usepgfplotslibrary{polar}
 \usepgfplotslibrary{fillbetween}
 
@@ -13,61 +14,51 @@
 \large
 
 \begin{center}
-2022-2023 Spring \\MAT124 Final\\(12/06/2023)
+\textbf{2022-2023 Spring \\MAT124 Final\\(12/06/2023)}
 \end{center}
 
-\noindent 1. Maximize the function $f(x,y)=xy^2z$ on the sphere $x^2+y^2+z^2 = 4$.
+\textbf{1.} Maximize the function $f(x,y)=xy^2z$ on the sphere $x^2+y^2+z^2 = 4$.
 
-\hfill
+\vspace{1em}
 
-\noindent 2. Sketch the region corresponding to the double integral
+\textbf{2.} Sketch the region corresponding to the double integral
 
-\begin{equation*}\int_0^1\int_{x^{1/4}}^1\,\mathrm{e}^{y^5}dy\,dx\end{equation*}
+\[\int_0^1\int_{x^{1/4}}^1\,{e}^{y^5}dy\,dx\]
 
-\hfill
+and evaluate it.
 
-\noindent and evaluate it.
+\vspace{1em}
 
-\hfill
+\textbf{3.} Sketch the region $R$ inside the cardioid $r=1+\cos\theta$ and outside the limaçon $r=2-\cos\theta$, and set up the polar double integral corresponding to the area of the region $R$.
 
-\noindent 3. Sketch the region $R$ inside the cardioid $r=1+\cos\theta$ and outside the limaçon $r=2-\cos\theta$, and set up the polar double integral corresponding to the area of the region $R$.
+\vspace{1em}
 
-\hfill
+\textbf{4.} Using a double integral, find the volume of the solid bounded above by the elliptic paraboloid $z=4-x^2-y^2$ and below by the circular region $x^2+y^2\leq2$ in the $xy$-plane where $x\geq0$ and $y\geq0$.
 
-\noindent 4. Using a double integral, find the volume of the solid bounded above by the elliptic paraboloid $z=4-x^2-y^2$ and below by the circular region $x^2+y^2\leq2$ in the $xy$-plane where $x\geq0$ and $y\geq0$.
+\vspace{1em}
 
-\hfill
+\textbf{5.} Let us consider the frustum of the cone $z=\sqrt{x^2+y^2}$ between the planes $z=1$ and $z=2$.
 
-\noindent 5. Let us consider the frustum of the cone $z=\sqrt{x^2+y^2}$ between the planes $z=1$ and $z=2$.
+\textbf{(i)} Sketch the graph of the frustum.
 
-\hfill
+\textbf{(ii)} Find the surface area of the frustum.
 
-\noindent (i) Sketch the graph of the frustum.
+\vspace{1em}
 
-\hfill
+\textbf{6.} Let $S$ be the region in the cylinder $x^2+y^2 = 1$ bounded above by the plane $z=4$ and below by the sphere $x^2+y^2+z^2=1$.
 
-\noindent (ii) Find the surface area of the frustum.
+\textbf{(i)} Using the spherical coordinates, set up (but do not evaluate!) an integral for the volume of the solid $S$.
 
-\hfill
-
-\noindent 6. Let $S$ be the region in the cylinder $x^2+y^2 = 1$ bounded above by the plane $z=4$ and below by the sphere $x^2+y^2+z^2=1$.
-
-\hfill
-
-\noindent (i) Using the spherical coordinates, set up (but do not evaluate!) an integral for the volume of the solid $S$.
-
-\hfill
-
-\noindent (ii) Using the cylindrical coordinates, find the volume of the solid $S$.
+\textbf{(ii)} Using the cylindrical coordinates, find the volume of the solid $S$.
 
 \newpage
 
 \begin{center}
-2022-2023 Spring Final (12/06/2023) Solutions\\
-(Last update: 05/08/2025 00:53)
+\textbf{2022-2023 Spring Final (12/06/2023) Solutions\\
+(Last update: 05/08/2025 00:53)}
 \end{center}
 
-\noindent 1. Let $g(x,y,z)=x^2+y^2+z^2-4$ and then solve the system of equations below using the method of Lagrange multipliers.
+\textbf{1.} Let $g(x,y,z)=x^2+y^2+z^2-4$ and then solve the system of equations below using the method of Lagrange multipliers.
 
 \[
 \left.
@@ -95,22 +86,18 @@
 \end{array}
 \]
 
-\hfill
-
-\noindent Now, use the constraint to find the coordinates. Write $y$ and $z$ in terms of $x$.
+Now, use the constraint to find the coordinates. Write $y$ and $z$ in terms of $x$.
 
 \[x^2+y^2+z^2-4=0\implies x^2+\left(\sqrt2x\right)^2+x^2-4=0\implies4x^2=4\implies x=\pm1\]
 \[\therefore y=\pm\sqrt2,\quad z=\pm1\]
 
-\hfill
-
-\noindent Evaluate $f$ at either of these points: $(1,\sqrt2,1)$, $(-1,\sqrt2,-1)$, $(-1,-\sqrt2,-1)$.
+Evaluate $f$ at either of these points: $(1,\sqrt2,1)$, $(-1,\sqrt2,-1)$, $(-1,-\sqrt2,-1)$.
 
 \[f_{\text{max}}=f(1,\sqrt2,1)=1\cdot\left(\sqrt2\right)^2\cdot1=\boxed{2}\]
 
-\hfill
+\vspace{1em}
 
-\noindent 2.
+\textbf{2.}
 
 \begin{center}
 \begin{tikzpicture}
@@ -158,15 +145,13 @@
 \end{tikzpicture}
 \end{center}
 
-\hfill
+The integral given with this order is difficult to evaluate. Change the order of integration.
 
-\noindent The integral given with this order is difficult to evaluate. Change the order of integration.
-
-\begin{align*}\int_0^1\int_{x^{1/4}}^1\,\mathrm{e}^{y^5}dy\,dx=\int_0^1\int_0^{y^4}\mathrm{e}^{y^5}\,dx\,dy=\int_0^1y^4\mathrm{e}^{y^5}\,dy=\left[\frac15\mathrm{e}^{y^5}\right]_0^1=\boxed{\frac{\mathrm{e-1}}{5}}\end{align*}
+\begin{align*}\int_0^1\int_{x^{1/4}}^1\,{e}^{y^5}dy\,dx=\int_0^1\int_0^{y^4}{e}^{y^5}\,dx\,dy=\int_0^1y^4{e}^{y^5}\,dy=\left[\frac15{e}^{y^5}\right]_0^1=\boxed{\frac{{e-1}}{5}}\end{align*}
 
 \newpage
 
-\noindent 3. Find where these two curves intersect and then find the area.
+\textbf{3.} Find where these two curves intersect and then find the area.
 
 \[2-\cos\theta=1+\cos\theta\implies2\cos\theta=1\implies\cos\theta=\frac12\implies\theta=2k\pi\pm\frac{\pi}{3},\quad k\in\mathbb{Z}\]
 
@@ -222,15 +207,13 @@
 \text{Area}&=\int_{-\pi/3}^{\pi/3}\int_{2-\cos\theta}^{1+\cos\theta}\,r\,dr\,d\theta=\frac12\int_{-\pi/3}^{\pi/3}\left[(1+\cos\theta)^2-(2-\cos\theta)^2\right]\,d\theta\\\\&=\frac12\int_{-\pi/3}^{\pi/3}\left[1+2\cos\theta+\cos^2\theta-\left(4-4\cos\theta+\cos^2\theta\right)\right]\,d\theta=\frac12\int_{-\pi/3}^{\pi/3}\left(6\cos\theta-3\right)\,d\theta \\\\&=\frac12\bigg[6\sin\theta-3\theta\bigg]_{-\pi/3}^{\pi/3}=\frac12\left[6\sin\frac\pi3-3\cdot\frac\pi3-\left(6\sin\left(-\frac\pi3\right)+3\cdot\frac{\pi}3 \right)\right]=\boxed{3\sqrt3-\pi}
 \end{align*}
 
-\hfill
+\vspace{1em}
 
-\noindent 4. The upper bound is $z=4-x^2-y^2$, while the lower bound is $z=0$. If we project the domain onto the $xy$-plane, we see that the upper and lower bounds for $y$ are $\sqrt{2-x^2}$ and $0$, respectively. For $x$, the integration starts from $0$ and ends at $\sqrt2$. The volume of the object can be evaluated using the following integral.
+\textbf{4.} The upper bound is $z=4-x^2-y^2$, while the lower bound is $z=0$. If we project the domain onto the $xy$-plane, we see that the upper and lower bounds for $y$ are $\sqrt{2-x^2}$ and $0$, respectively. For $x$, the integration starts from $0$ and ends at $\sqrt2$. The volume of the object can be evaluated using the following integral.
 
-\begin{equation*}\mathrm{I}=\int_0^{\sqrt2}\int_0^{\sqrt{2-x^2}}\left[4-x^2-y^2-0 \right]\,dy\,dx\end{equation*}
+\[{I}=\int_0^{\sqrt2}\int_0^{\sqrt{2-x^2}}\left[4-x^2-y^2-0 \right]\,dy\,dx\]
 
-\hfill
-
-\noindent This integral seems a little bit hard. We can switch to polar coordinates for ease. Use the transformation below.
+This integral seems a little bit hard. We can switch to polar coordinates for ease. Use the transformation below.
 
 \[
 \begin{array}{c}
@@ -244,16 +227,12 @@ dA=dy\,dx =r\,dr\,d\theta
 \end{array}
 \]
 
-\begin{align*}\mathrm{I}&=\int_{0}^{\pi/2}\int_{0}^{\sqrt{2}}\left(4-r^2\right)\,r\,dr\,d\theta=\int_{0}^{\pi/2}\int_{0}^{\sqrt{2}}\left(4r-r^3\right)\,dr\,d\theta=\int_{0}^{\pi/2}\left[2r^2-\frac{r^4}4\right]_{r=0}^{r=\sqrt2}\,d\theta\\\\&=\int_0^{\pi/2}3\,d\theta=\boxed{\frac{3\pi}2}
+\begin{align*}{I}&=\int_{0}^{\pi/2}\int_{0}^{\sqrt{2}}\left(4-r^2\right)\,r\,dr\,d\theta=\int_{0}^{\pi/2}\int_{0}^{\sqrt{2}}\left(4r-r^3\right)\,dr\,d\theta=\int_{0}^{\pi/2}\left[2r^2-\frac{r^4}4\right]_{r=0}^{r=\sqrt2}\,d\theta\\\\&=\int_0^{\pi/2}3\,d\theta=\boxed{\frac{3\pi}2}
 \end{align*}
 
-\hfill
+\vspace{1em}
 
-\noindent 5.
-
-\hfill
-
-\noindent (i)
+\textbf{5. (i)}
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
@@ -299,27 +278,19 @@ dA=dy\,dx =r\,dr\,d\theta
 \end{tikzpicture}
 \end{center}
 
-\hfill
-
-\noindent (ii) Using the double integral below, we find the lateral surface area.
+\textbf{(ii)} Using the double integral below, we find the lateral surface area.
 
 \begin{align*}
 A&=\iint_D\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2 +\left(\frac{\partial z}{\partial y}\right)^2}\,dA= \iint_D\sqrt{1+\left(\frac{x}{\sqrt{x^2+y^2}}\right)^2 +\left(\frac{y}{\sqrt{x^2+y^2}}\right)^2}\,dA \\\\&=\iint_D\sqrt{1+\left(\frac{x^2+y^2}{x^2+y^2}\right)}\,dA=\iint_D\sqrt{1+1}\,dA=\sqrt{2}\iint_D\,dA
 \end{align*}
 
-\hfill
+If we switch to polar coordinates, we can easily evaluate the integral.
 
-\noindent If we switch to polar coordinates, we can easily evaluate the integral.
-
-\begin{equation*}A=\sqrt2\int_0^{2\pi}\int_1^2\,r\,dr\,d\theta=\sqrt2\int_0^{2\pi}\left[\frac{r^2}2\right]_{r=1}^{r=2}\,d\theta=\sqrt2\int_0^{2\pi}\frac32\,d\theta=\boxed{3\pi\sqrt2}\end{equation*}
+\[A=\sqrt2\int_0^{2\pi}\int_1^2\,r\,dr\,d\theta=\sqrt2\int_0^{2\pi}\left[\frac{r^2}2\right]_{r=1}^{r=2}\,d\theta=\sqrt2\int_0^{2\pi}\frac32\,d\theta=\boxed{3\pi\sqrt2}\]
 
 \newpage
 
-\noindent 6.
-
-\hfill
-
-\noindent (i) For spherical coordinates, we have
+\textbf{6. (i)} For spherical coordinates, we have
 
 \[
 \begin{array}{c}
@@ -335,9 +306,7 @@ z=\sqrt{1-x^2-y^2}\,\rightarrow\,\rho\cos\phi=\sqrt{1-\rho^2\sin^2\phi}
 \end{array}
 \]
 
-\hfill
-
-\noindent We have the lower bound for $\rho$, which is the solution of $\rho\cos\phi=\sqrt{1-\rho^2\sin^2\phi}$.
+We have the lower bound for $\rho$, which is the solution of $\rho\cos\phi=\sqrt{1-\rho^2\sin^2\phi}$.
 
 \[
 \begin{array}{c}
@@ -347,13 +316,11 @@ z=\sqrt{1-x^2-y^2}\,\rightarrow\,\rho\cos\phi=\sqrt{1-\rho^2\sin^2\phi}
 \end{array}
 \]
 
-\hfill
+However, we have two distinct upper bounds for $\rho$. We need to find the value of $\phi$ where the surfaces $\rho\cos\phi = 4$ and $\rho^2\sin^2\phi=1$ intersect.
 
-\noindent However, we have two distinct upper bounds for $\rho$. We need to find the value of $\phi$ where the surfaces $\rho\cos\phi = 4$ and $\rho^2\sin^2\phi=1$ intersect.
-
-\begin{equation*}
+\[
 \rho^2\sin^2\phi=1 \,\rightarrow\,\rho\sin\phi = 1
-\end{equation*}
+\]
 \[
 \left.
 \begin{array}{c}
@@ -363,32 +330,24 @@ z=\sqrt{1-x^2-y^2}\,\rightarrow\,\rho\cos\phi=\sqrt{1-\rho^2\sin^2\phi}
 \right\}\quad\cot\phi=\implies\phi=\cot^{-1}(4)
 \]
 
-\hfill
+For $\displaystyle\phi<\cot^{-1}(4)$, the upper bound is $\displaystyle \frac4{\cos\phi}$. Meanwhile, for $\displaystyle\phi>\cot^{-1}(4)$, it is $\displaystyle \frac1{\sin\phi}$.
 
-\noindent For $\displaystyle\phi<\cot^{-1}(4)$, the upper bound is $\displaystyle \frac4{\cos\phi}$. Meanwhile, for $\displaystyle\phi>\cot^{-1}(4)$, it is $\displaystyle \frac1{\sin\phi}$.
+The region in the $xy-$plane is circular, therefore $0\leq\theta\leq2\pi$. As for $\phi$, we have $\displaystyle0\leq\phi\leq\frac{\pi}2$. The volume of the object in spherical coordinates can be expressed as follows.
 
-\hfill
-
-\noindent The region in the $xy-$plane is circular, therefore $0\leq\theta\leq2\pi$. As for $\phi$, we have $\displaystyle0\leq\phi\leq\frac{\pi}2$. The volume of the object in spherical coordinates can be expressed as follows.
-
-\begin{equation*}
+\[
 \boxed{\begin{array}{cc}
 V=\displaystyle\int_0^{2\pi}\int_0^{\cot^{-1}(4)}\int_1^{\textstyle\frac4{\cos\phi}}\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
 +\int_0^{2\pi}\int_{\cot^{-1}(4)}^{\pi/2}\int_1^{\textstyle\frac1{\sin\phi}}\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta 
 \end{array}}
-\end{equation*}
+\]
 
-\hfill
+In fact, we are looking for the minimum value of the upper bound for $\rho$ between $\displaystyle\frac1{\sin\phi}$ and $\displaystyle\frac4{\cos\phi}$. Hence, we can write the equivalent expression as follows.
 
-\noindent In fact, we are looking for the minimum value of the upper bound for $\rho$ between $\displaystyle\frac1{\sin\phi}$ and $\displaystyle\frac4{\cos\phi}$. Hence, we can write the equivalent expression as follows.
-
-\begin{equation*}
+\[
 \boxed{V=\displaystyle\int_0^{2\pi}\int_0^{\pi/2}\int_1^{\min\left(\textstyle\frac4{\cos\phi},\frac1{\sin\phi}\right)}\,\rho^2\sin\phi\,d\rho\,d\phi\,d\theta}
-\end{equation*}
+\]
 
-\hfill
-
-\noindent (ii) For cylindrical coordinates, we have
+\textbf{(ii)} For cylindrical coordinates, we have
 
 \[
 \begin{array}{c}
@@ -403,9 +362,7 @@ z=\sqrt{1-x^2-y^2}\,\rightarrow\,z=\sqrt{1-r^2}
 \end{array}
 \]
 
-\hfill
-
-\noindent The volume can be expressed as follows.
+The volume can be expressed as follows.
 
 \begin{align*}
     V&=\int_0^{2\pi}\int_0^1\int_{\sqrt{1-r^2}}^{4}\,r\,dz\,dr\,d\theta=\int_0^{2\pi}\int_0^1\big[z\big]_{z=\sqrt{1-r^2}}^{z=4}\,r\,dr\,d\theta\\\\&=\int_0^{2\pi}\int_0^1\left(4r-r\sqrt{1-r^2}\right)\,dr\,d\theta=\int_0^{2\pi}\left[2r^2 + \frac13\left(1-r^2\right)^{3/2}\right]_{r=0}^{r=1}\,d\theta\\\\&=\big[\theta\big]_0^{2\pi}\cdot\left[\left(2\cdot1^2 +0\right)-\left(\frac13+0\right)\right]=\boxed{\frac{10\pi}3}
