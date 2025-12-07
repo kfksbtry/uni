@@ -1,0 +1,1382 @@
+% Student Number: 2240357068
+% Student Name: Baturay KAFKAS
+% EEE @ Hacettepe University
+
+% Last update: HH:MM DD/MM/YY
+
+% My resource collection: https://github.com/kfksbtry/uni
+% Circuits were set up in LTspice.
+
+\documentclass{article}
+
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage[top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{moresize}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{upquote}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{textcomp}
+\usetikzlibrary{matrix,calc, positioning, shapes, arrows}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Baturay KAFKAS 2240357068 Electrical \& Electronics Engineering}
+
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+
+\definecolor{imp1}{RGB}{200, 200, 200}
+\definecolor{imp2}{RGB}{170, 170, 170}
+\definecolor{imp3}{RGB}{140, 140, 140}
+\definecolor{imp4}{RGB}{110, 110, 110}
+\definecolor{imp5}{RGB}{80, 80, 80}
+
+%%% K-MAP
+
+%isolated term
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - node
+%#3 - filling color
+\newcommand{\implicantsol}[3][0]{
+    \draw[rounded corners=3pt, fill=#3, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#2.south east)+(-45:#1)$);
+    }
+
+
+%internal group
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicant}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#3.south east)+(-45:#1)$);
+    }
+
+%group lateral borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantcostats}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.east |- #2.north)+(90:#1)$)-| ($(#2.east)+(0:#1)$) |- ($(rf.east |- #3.south)+(-90:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.west |- #2.north)+(90:#1)$) -| ($(#3.west)+(180:#1)$) |- ($(cf.west |- #3.south)+(-90:#1)$);
+}
+
+%group top-bottom borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantdaltbaix}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.south -| #2.west)+(180:#1)$) |- ($(#2.south)+(-90:#1)$) -| ($(cf.south -| #3.east)+(0:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.north -| #2.west)+(180:#1)$) |- ($(#3.north)+(90:#1)$) -| ($(rf.north -| #3.east)+(0:#1)$);
+}
+
+%group corners
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - filling color
+\newcommand{\implicantcantons}[2][0]{
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -| ($(0.east |- cf.south)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$);
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -|  ($(0.east |- cf.south)+(0:#1)$) [sharp corners] ($(rf.east |- 0.south)+(-90:#1)$) |-  ($(0.east |- cf.south)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$) [sharp corners] ($(rf.east |- 8.north)+(90:#1)$) |- ($(8.east |- rf.north)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$) [sharp corners]($(cf.west |- 2.south)+(-90:#1)$) |- ($(2.west |- cf.south)+(180:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$) [sharp corners] ($(cf.west |- 10.north)+(90:#1)$) |- ($(10.west |- rf.north)+(180:#1)$) ;
+}
+
+%Empty Karnaugh map 4x4
+\newenvironment{Karnaugh1}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.9,above right,anchor=south west] {\small A(1)A(0)} node [pos=0.9,below left,anchor=north east] {\small A(3)A(2)} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 00             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 01             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| 11             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| 10             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+\newenvironment{Karnaugh2}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.9,above right,anchor=south west] {\small CD} node [pos=0.9,below left,anchor=north east] {\small AB} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 00             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 01             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| 11             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| 10             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x4
+\newenvironment{Karnaughvuit}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {$yz$} node [pos=0.7,below left,anchor=north east] {$x$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 0             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 1             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x2
+\newenvironment{Karnaughquatre}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (2,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {b} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=2.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+          \& |(c00)| 0          \& |(c01)| 1  \\
+|(r00)| 0 \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \\
+|(r01)| 1 \& |(2)|  \phantom{0} \& |(3)|  \phantom{0} \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Defines 8 or 16 values (0,1,X)
+\newcommand{\contingut}[1]{%
+\foreach \x [count=\xi from 0]  in {#1}
+     \path (\xi) node {\x};
+}
+
+%Places 1 in listed positions
+\newcommand{\minterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {1};
+}
+
+%Places 0 in listed positions
+\newcommand{\maxterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {0};
+}
+
+%Places X in listed positions
+\newcommand{\indeterminats}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {X};
+}
+
+%%%
+
+\begin{document}
+
+\large %% Default font size
+
+%%------------------------------------%%
+{\Large \textbf{EXPERIMENT 3 PRELIMINARY WORK}} %%
+
+\vspace{1em}
+
+\textbf{Q1:} \textbf{1. Analytical Solution}
+
+\textit{Hand-drawn circuits and RTL schematics}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{1_hdc1_g.jpg}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{1_hdc2_g.jpg}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{1_rtl1_i_g.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{1_rtl2_i_g.png}
+\end{figure}
+
+\newpage
+
+\textit{CircuitLab}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{1_mux.png}
+\end{figure}
+
+\vspace{1em}
+
+\begin{center}Graph of Input x\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{1_clgraph1_g.png}
+\end{figure}
+\newpage
+\begin{center}Graph of Input y\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{1_clgraph2_g.png}
+\end{figure}
+\begin{center}Graph of Input z\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{1_clgraph3_g.png}
+\end{figure}
+\begin{center}Graph of Output f\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{1_clgraph4_g.png}
+\end{figure}
+
+\newpage
+
+\textbf{2. Codes}
+
+\textit{VHDL - MUX}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP3_PRE_Q1_MUX is
+    Port ( I : in  STD_LOGIC_VECTOR (3 downto 0);
+           S : in  STD_LOGIC_VECTOR (1 downto 0);
+           R : out  STD_LOGIC);
+end EXP3_PRE_Q1_MUX;
+
+architecture Behavioral of EXP3_PRE_Q1_MUX is
+
+begin
+    R <= (not S(1) and not S(0) and I(0)) or
+         (not S(1) and S(0) and I(1)) or
+         (S(1) and not S(0) and I(2)) or
+         (S(1) and S(0) and I(3));
+end Behavioral;
+\end{verbatim}
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textit{VHDL - Function}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP3_PRE_Q1_FUNCTION is
+    Port ( x, y, z : in  STD_LOGIC;
+           f : out  STD_LOGIC);
+end EXP3_PRE_Q1_FUNCTION;
+
+architecture Behavioral of EXP3_PRE_Q1_FUNCTION is
+
+signal inp : STD_LOGIC_VECTOR (3 downto 0);
+signal sel : STD_LOGIC_VECTOR (1 downto 0);
+
+component EXP3_PRE_Q1_MUX
+    Port ( I : in  STD_LOGIC_VECTOR (3 downto 0);
+           S : in  STD_LOGIC_VECTOR (1 downto 0);
+           R : out  STD_LOGIC);
+end component;
+
+begin
+    sel(0) <= y; sel(1) <= x;
+    inp(0) <= not z; inp(1) <= not z; inp(2) <= '1'; inp(3) <= '0';
+    MUX : EXP3_PRE_Q1_MUX port map (inp, sel, f);
+end Behavioral;
+\end{verbatim}
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textbf{3. Results}
+
+\textit{Test bench}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin		
+    x <= '0'; y <= '0'; z <= '0'; wait for 100 ns;
+    x <= '0'; y <= '0'; z <= '1'; wait for 100 ns;
+    x <= '0'; y <= '1'; z <= '0'; wait for 100 ns;
+    x <= '0'; y <= '1'; z <= '1'; wait for 100 ns;
+    x <= '1'; y <= '0'; z <= '0'; wait for 100 ns;
+    x <= '1'; y <= '0'; z <= '1'; wait for 100 ns;
+    x <= '1'; y <= '1'; z <= '0'; wait for 100 ns;
+    x <= '1'; y <= '1'; z <= '1'; wait for 100 ns;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{mux_graph_i_g.png}
+\end{figure}
+
+\textbf{Q2:} \textbf{1. Analytical Solution}
+
+\textit{Hand-drawn circuits and RTL schematic}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{2_hdc1_g.jpg}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\linewidth]{2_hdc2_g.jpg}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{2_rtl_i_g.png}
+\end{figure}
+
+\vspace{1em}
+
+\newpage
+
+\textbf{2. Codes}
+
+\textit{VHDL - Decoder}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP3_PRE_Q2_DECODER is
+    Port ( A : in  STD_LOGIC_VECTOR (2 downto 0);
+           Z : out  STD_LOGIC_VECTOR (7 downto 0));
+end EXP3_PRE_Q2_DECODER;
+
+architecture Behavioral of EXP3_PRE_Q2_DECODER is
+begin
+    Z(0) <= not A(2) and not A(1) and not A(0);
+    Z(1) <= not A(2) and not A(1) and A(0);
+    Z(2) <= not A(2) and A(1) and not A(0);
+    Z(3) <= not A(2) and A(1) and A(0);
+    Z(4) <= A(2) and not A(1) and not A(0);
+    Z(5) <= A(2) and not A(1) and A(0);
+    Z(6) <= A(2) and A(1) and not A(0);
+    Z(7) <= A(2) and A(1) and A(0);
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textit{VHDL - Full Adder}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP3_PRE_Q2_FULLADDER is
+    Port (fa_a, fa_b, fa_c_in : in STD_LOGIC;
+          fa_s, fa_c_out : out STD_LOGIC);
+end EXP3_PRE_Q2_FULLADDER;
+
+architecture Behavioral of EXP3_PRE_Q2_FULLADDER is
+signal res : STD_LOGIC_VECTOR (7 downto 0);
+signal inp : STD_LOGIC_VECTOR (2 downto 0);
+component EXP3_PRE_Q2_DECODER is
+    Port ( A : in  STD_LOGIC_VECTOR (2 downto 0);
+           Z : out  STD_LOGIC_VECTOR (7 downto 0));
+end component;
+begin
+    inp <= fa_a & fa_b & fa_c_in;
+    Decoder : EXP3_PRE_Q2_DECODER port map(A => inp, Z => res);
+    
+    fa_s <= res(1) or res(2) or res(4) or res(7);
+    fa_c_out <= res(3) or res(5) or res(6) or res(7);
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\newpage
+
+\textbf{3. Results}
+
+\textit{Test bench - Full Adder}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin
+    fa_a <= '0'; fa_b <= '0'; fa_c_in <= '0'; wait for 100 ns;
+    fa_a <= '0'; fa_b <= '0'; fa_c_in <= '1'; wait for 100 ns;
+    fa_a <= '0'; fa_b <= '1'; fa_c_in <= '0'; wait for 100 ns;
+    fa_a <= '0'; fa_b <= '1'; fa_c_in <= '1'; wait for 100 ns;
+    fa_a <= '1'; fa_b <= '0'; fa_c_in <= '0'; wait for 100 ns;
+    fa_a <= '1'; fa_b <= '0'; fa_c_in <= '1'; wait for 100 ns;
+    fa_a <= '1'; fa_b <= '1'; fa_c_in <= '0'; wait for 100 ns;
+    fa_a <= '1'; fa_b <= '1'; fa_c_in <= '1';
+    wait;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{2_graph_i_g.png}
+\end{figure}
+
+\textbf{Q3:} \textbf{1. Analytical Solution}
+
+\textit{Hand-drawn circuits and RTL schematics}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\linewidth]{3_hdc1_g.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{3_hdc2_g.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{3_rtl1_i_g.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{3_rtl2_i_g.png}
+\end{figure}
+
+\textbf{2. Codes}
+
+\textit{VHDL - Decoder}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity EXP3_PRE_Q3_DECODER is
+    Port ( A : in  STD_LOGIC_VECTOR (1 downto 0); En : in STD_LOGIC;
+           Z : out  STD_LOGIC_VECTOR (3 downto 0));
+end EXP3_PRE_Q3_DECODER;
+architecture Behavioral of EXP3_PRE_Q3_DECODER is
+begin
+    Z(0) <= En and not A(1) and not A(0);
+    Z(1) <= En and not A(1) and A(0);
+    Z(2) <= En and A(1) and not A(0);
+    Z(3) <= En and A(1) and A(0);
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textit{VHDL - Comparator}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity EXP3_PRE_Q3_COMPARATOR is
+    Port ( A, B : in  STD_LOGIC_VECTOR (1 downto 0);
+           G, E, L : out  STD_LOGIC);
+end EXP3_PRE_Q3_COMPARATOR;
+architecture Behavioral of EXP3_PRE_Q3_COMPARATOR is
+component EXP3_PRE_Q3_DECODER
+    Port ( A : in  STD_LOGIC_VECTOR (1 downto 0); En : in STD_LOGIC;
+           Z : out  STD_LOGIC_VECTOR (3 downto 0));
+end component;
+signal D1_in, D2_in : STD_LOGIC_VECTOR(1 downto 0);
+signal D1_out, D2_out : STD_LOGIC_VECTOR (3 downto 0);
+signal En2 : STD_LOGIC;
+begin
+    D1_in <= A(1) & B(1); D2_in <= A(0) & B(0);
+    Decoder1 : EXP3_PRE_Q3_DECODER port map(D1_in, '1', D1_out);
+    En2 <= D1_out(0) or D1_out(3);
+    Decoder2 : EXP3_PRE_Q3_DECODER port map(D2_in, En2, D2_out);
+    G <= D1_out(2) or D2_out(2);
+    E <= D2_out(0) or D2_out(3);
+    L <= D1_out(1) or D2_out(1);
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textbf{3. Results}
+
+\textit{Test bench}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin
+    a <= "00"; b <= "00"; wait for 50 ns;
+    a <= "00"; b <= "01"; wait for 50 ns;
+    a <= "00"; b <= "10"; wait for 50 ns;
+    a <= "00"; b <= "11"; wait for 50 ns;
+    a <= "01"; b <= "00"; wait for 50 ns;
+    a <= "01"; b <= "01"; wait for 50 ns;
+    a <= "01"; b <= "10"; wait for 50 ns;
+    a <= "01"; b <= "11"; wait for 50 ns;
+    a <= "10"; b <= "00"; wait for 50 ns;
+    a <= "10"; b <= "01"; wait for 50 ns;
+    a <= "10"; b <= "10"; wait for 50 ns;
+    a <= "10"; b <= "11"; wait for 50 ns;
+    a <= "11"; b <= "00"; wait for 50 ns;
+    a <= "11"; b <= "01"; wait for 50 ns;
+    a <= "11"; b <= "10"; wait for 50 ns;
+    a <= "11"; b <= "11"; wait for 50 ns;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{3_graph_i_g.png}
+\end{figure}
+
+\textbf{Q4:} \textbf{1. Analytical Solution}
+
+{\small\[\begin{array}{cccccccccccccc}
+\text{A(5)}&\text{A(4)}&\text{A(3)}&\text{A(2)}&\text{A(1)}&A\text{(0)}&\text{B(7)}&\text{B(6)}&\text{B(5)}&\text{B(4)}&\text{B(3)}&\text{B(2)}&\text{B(1)}&\text{B(0)}\\
+\hline
+0&0&0&0&0&0&0&0&0&0&0&0&0&0\\[-0.15em]
+0&0&0&0&0&1&0&0&0&0&0&0&0&1\\[-0.15em]
+0&0&0&0&1&0&0&0&0&0&0&0&1&0\\[-0.15em]
+0&0&0&0&1&1&0&0&0&0&0&0&1&1\\[-0.15em]
+0&0&0&1&0&0&0&0&0&0&0&1&0&0\\[-0.15em]
+0&0&0&1&0&1&0&0&0&0&0&1&0&1\\[-0.15em]
+0&0&0&1&1&0&0&0&0&0&0&1&1&0\\[-0.15em]
+0&0&0&1&1&1&0&0&0&0&0&1&1&1\\[-0.15em]
+0&0&1&0&0&0&0&0&0&0&1&0&0&0\\[-0.15em]
+0&0&1&0&0&1&0&0&0&0&1&0&0&1\\[-0.15em]
+0&0&1&0&1&0&0&0&0&1&0&0&0&0\\[-0.15em]
+0&0&1&0&1&1&0&0&0&1&0&0&0&1\\[-0.15em]
+0&0&1&1&0&0&0&0&0&1&0&0&1&0\\[-0.15em]
+0&0&1&1&0&1&0&0&0&1&0&0&1&1\\[-0.15em]
+0&0&1&1&1&0&0&0&0&1&0&1&0&0\\[-0.15em]
+0&0&1&1&1&1&0&0&0&1&0&1&0&1\\[-0.15em]
+0&1&0&0&0&0&0&0&0&1&0&1&1&0\\[-0.15em]
+0&1&0&0&0&1&0&0&0&1&0&1&1&1\\[-0.15em]
+0&1&0&0&1&0&0&0&0&1&1&0&0&0\\[-0.15em]
+0&1&0&0&1&1&0&0&0&1&1&0&0&1\\[-0.15em]
+0&1&0&1&0&0&0&0&1&0&0&0&0&0\\[-0.15em]
+0&1&0&1&0&1&0&0&1&0&0&0&0&1\\[-0.15em]
+0&1&0&1&1&0&0&0&1&0&0&0&1&0\\[-0.15em]
+0&1&0&1&1&1&0&0&1&0&0&0&1&1\\[-0.15em]
+0&1&1&0&0&0&0&0&1&0&0&1&0&0\\[-0.15em]
+0&1&1&0&0&1&0&0&1&0&0&1&0&1\\[-0.15em]
+0&1&1&0&1&0&0&0&1&0&0&1&1&0\\[-0.15em]
+0&1&1&0&1&1&0&0&1&0&0&1&1&1\\[-0.15em]
+0&1&1&1&0&0&0&0&1&0&1&0&0&0\\[-0.15em]
+0&1&1&1&0&1&0&0&1&0&1&0&0&1\\[-0.15em]
+0&1&1&1&1&0&0&0&1&1&0&0&0&0\\[-0.15em]
+0&1&1&1&1&1&0&0&1&1&0&0&0&1\\[-0.15em]
+1&0&0&0&0&0&0&0&1&1&0&0&1&0\\[-0.15em]
+1&0&0&0&0&1&0&0&1&1&0&0&1&1\\[-0.15em]
+1&0&0&0&1&0&0&0&1&1&0&1&0&0\\[-0.15em]
+1&0&0&0&1&1&0&0&1&1&0&1&0&1\\[-0.15em]
+1&0&0&1&0&0&0&0&1&1&0&1&1&0\\[-0.15em]
+1&0&0&1&0&1&0&0&1&1&0&1&1&1\\[-0.15em]
+1&0&0&1&1&0&0&0&1&1&1&0&0&0\\[-0.15em]
+1&0&0&1&1&1&0&0&1&1&1&0&0&1\\[-0.15em]
+1&0&1&0&0&0&0&1&0&0&0&0&0&0\\[-0.15em]
+1&0&1&0&0&1&0&1&0&0&0&0&0&1\\[-0.15em]
+1&0&1&0&1&0&0&1&0&0&0&0&1&0\\[-0.15em]
+1&0&1&0&1&1&0&1&0&0&0&0&1&1\\[-0.15em]
+1&0&1&1&0&0&0&1&0&0&0&1&0&0\\[-0.15em]
+1&0&1&1&0&1&0&1&0&0&0&1&0&1\\[-0.15em]
+1&0&1&1&1&0&0&1&0&0&0&1&1&0\\[-0.15em]
+1&0&1&1&1&1&0&1&0&0&0&1&1&1\\[-0.15em]
+1&1&0&0&0&0&0&1&0&0&1&0&0&0\\[-0.15em]
+1&1&0&0&0&1&0&1&0&0&1&0&0&1\\[-0.15em]
+1&1&0&0&1&0&0&1&0&1&0&0&0&0\\[-0.15em]
+1&1&0&0&1&1&0&1&0&1&0&0&0&1\\[-0.15em]
+1&1&0&1&0&0&0&1&0&1&0&0&1&0\\[-0.15em]
+1&1&0&1&0&1&0&1&0&1&0&0&1&1\\[-0.15em]
+1&1&0&1&1&0&0&1&0&1&0&1&0&0\\[-0.15em]
+1&1&0&1&1&1&0&1&0&1&0&1&0&1\\[-0.15em]
+1&1&1&0&0&0&0&1&0&1&0&1&1&0\\[-0.15em]
+1&1&1&0&0&1&0&1&0&1&0&1&1&1\\[-0.15em]
+1&1&1&0&1&0&0&1&0&1&1&0&0&0\\[-0.15em]
+1&1&1&0&1&1&0&1&0&1&1&0&0&1\\[-0.15em]
+1&1&1&1&0&0&0&1&1&0&0&0&0&0\\[-0.15em]
+1&1&1&1&0&1&0&1&1&0&0&0&0&1\\[-0.15em]
+1&1&1&1&1&0&0&1&1&0&0&0&1&0\\[-0.15em]
+1&1&1&1&1&1&0&1&1&0&0&0&1&1\\[-0.15em]
+\end{array}\]}
+\newpage
+
+By looking at the truth table, we could directly say that $\text{B}(7)=0,\:\text{B}(0)=\text{A}(0).$
+
+Set up 4 $k$-maps for B$(1)$.
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,1,1,0,0,1,1,0,0,0,0,1,1,0,0}
+    \implicant{3}{2}{imp1}
+    \implicant{7}{6}{imp2}
+    \implicant{12}{13}{imp3}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=0\\
+    $(\overline{\text{A}(2)}+\text{A}(2))(\overline{\text{A}(3)}\text{A}(1))+\text{A}(3)\text{A}(2)\overline{\text{A}(1)}$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{1,1,0,0,0,0,1,1,0,0,1,1,0,0,0,0}
+    \implicant{0}{1}{imp1}
+    \implicant{7}{6}{imp2}
+    \implicant{11}{10}{imp3}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=1\\
+    $\overline{\text{A}(3)}\,\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\overline{\text{A}(3)}\text{A}(2)\text{A}(1)+\text{A}(3)\overline{\text{A}(2)}\text{A}(1)$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{1,1,0,0,1,1,0,0,0,0,1,1,0,0,1,1}
+    \implicant{0}{1}{imp1}
+    \implicant{4}{5}{imp2}
+    \implicant{15}{14}{imp3}
+    \implicant{11}{10}{imp4}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=0\\
+    $(\overline{\text{A}(2)}+\text{A}(2))\overline{\text{A}(3)}\,\overline{\text{A}(1)}+(\overline{\text{A}(2)}+\text{A}(2))\text{A}(3)\text{A}(1)$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,1,1,0,0,1,1,0,0,0,0,1,1}
+    \implicant{4}{5}{imp1}
+    \implicant{8}{9}{imp2}
+    \implicant{15}{14}{imp3}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=1\\
+    $\overline{\text{A}(3)}\text{A}(2)\overline{\text{A}(1)}+\text{A}(3)\text{A}(2)\text{A}(1)+{\text{A}(3)}\overline{\text{A}(2)}\,\overline{\text{A}(1)}$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+The minimized expression for B$(1)$ is
+\begin{align*}
+\text{B}(1)&=(\text{A}(5)\oplus\text{A}(4))\overline{\text{A}(3)}\,\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\overline{\text{A}(5)}\,\overline{\text{A}(4)}\,\overline{\text{A}(3)}\,\overline{\text{A}(2)}\,\text{A}(1)+\text{A}(5)\overline{\text{A}(3)}\text{A}(2)\overline{\text{A}(1)}\\&\quad+\overline{\text{A}(5)}\,\overline{\text{A}(3)}\text{A}(2)\text{A}(1)+\overline{\text{A}(5)}\,\overline{\text{A}(4)}\text{A}(3)\text{A}(2)\overline{\text{A}(1)}+\text{A}(5)\text{A}(3)\text{A}(2)\text{A}(1)\\&\quad+\text{A}(5)\text{A}(4){\text{A}(3)}\overline{\text{A}(2)}\,\overline{\text{A}(1)}+(\text{A}(5)\oplus\text{A}(4))\text{A}(3)\overline{\text{A}(2)}\text{A}(1)
+\end{align*}
+
+Set up 4 $k$-maps for B$(2)$.
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,1,1,1,1,0,0,0,0,0,0,1,1}
+    \implicant{4}{5}{imp1}
+    \implicant{7}{6}{imp2}
+    \implicant{15}{14}{imp3}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=0\\
+    $\text{A}(2)(\overline{\text{A}(1)\oplus\text{A}(3)})+\overline{\text{A}(3)}\text{A}(2)\text{A}(1)$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0}
+    \implicant{0}{1}{imp1}
+    \implicant{8}{9}{imp2}
+    \implicant{11}{10}{imp3}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=1\\
+    $\overline{\text{A}(3)}\,\overline{\text{A}(2)}\,\overline{\text{A}(1)}+{\text{A}(3)}\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\text{A}(3)\overline{\text{A}(2)}\text{A}(1)$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1}
+    \implicant{3}{2}{imp1}
+    \implicant{4}{5}{imp2}
+    \implicant{12}{13}{imp3}
+    \implicant{15}{14}{imp4}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=0\\
+    $\overline{\text{A}(2)}\,\overline{\text{A}(3)}\text{A}(1)+\text{A}(3)\text{A}(2)\overline{\text{A}(1)}+\text{A}(2)(\overline{\text{A}(1)\oplus\text{A}(3)})$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0}
+    \implicant{7}{6}{imp1}
+    \implicant{8}{9}{imp2}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=1\\
+    ${\text{A}(3)}\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\overline{\text{A}(3)}\text{A}(2)\text{A}(1)$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+The minimized expression for B$(2)$ is
+\begin{align*}
+\text{B}(2)&=\overline{\text{A}(5)}\text{A}(4)\overline{\text{A}(3)}\,\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\text{A}(5)\overline{\text{A}(4)}\,\overline{\text{A}(3)}\,\overline{\text{A}(2)}\text{A}(1)+(\overline{\text{A}(5)\oplus\text{A}(4)})\overline{\text{A}(3)}\text{A}(2)\text{A}(1)\\&\quad+\text{A}(5)\overline{\text{A}(4)}\text{A}(3)\text{A}(2)\overline{\text{A}(1)}+\overline{\text{A}(4)}(\overline{\text{A}(1)\oplus\text{A}(3)})\text{A}(2)+\text{A}(4){\text{A}(3)}\overline{\text{A}(2)}\,\overline{\text{A}(1)}\\&\quad+\overline{\text{A}(5)}\text{A}(4)\text{A}(3)\overline{\text{A}(2)}\text{A}(1)
+\end{align*}
+
+Set up 4 $k$-maps for B$(3)$.
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0}
+    \implicant{8}{9}{imp1}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=0\\
+    ${\text{A}(3)}\overline{\text{A}(2)}\,\overline{\text{A}(1)}$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,1,1,0,0,0,0,0,0,0,0,1,1,0,0}
+    \implicant{3}{2}{imp1}
+    \implicant{12}{13}{imp2}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=1\\
+    $\overline{\text{A}(3)}\,\overline{\text{A}(2)}\text{A}(1)+\text{A}(3)\text{A}(2)\overline{\text{A}(1)}$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0}
+    \implicant{7}{6}{imp1}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=0\\
+    $\overline{\text{A}(3)}\text{A}(2)\text{A}(1)$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{1,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0}
+    \implicant{0}{1}{imp1}
+    \implicant{11}{10}{imp2}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=1\\
+    $\overline{\text{A}(3)}\,\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\text{A}(3)\overline{\text{A}(2)}\text{A}(1)$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+The minimized expression for B$(3)$ is
+\begin{align*}
+\text{B}(3)&=\overline{\text{A}(5)}\,\overline{\text{A}(4)}{\text{A}(3)}\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\overline{\text{A}(5)}{\text{A}(4)}(\overline{\text{A}(3)}\,\overline{\text{A}(2)}\text{A}(1)+\text{A}(3)\text{A}(2)\overline{\text{A}(1)})\\&\quad+\text{A}(5)\overline{\text{A}(4)}\,\overline{\text{A}(3)}\text{A}(2)\text{A}(1)+\text{A}(5)\text{A}(4)(\overline{\text{A}(3)\oplus\text{A}(1)})\overline{\text{A}(2)}
+\end{align*}
+
+Set up 4 $k$-maps for B$(4)$.
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1}
+    \implicant{12}{13}{imp1}
+    \implicant{15}{14}{imp2}
+    \implicant{11}{10}{imp3}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=0\\
+    $\text{A}(3)\text{A}(2)\overline{\text{A}(1)}+\text{A}(3)\text{A}(2)\text{A}(1)+\text{A}(3)\overline{\text{A}(2)}\text{A}(1)$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1}
+    \implicant{0}{1}{imp1}
+    \implicant{3}{2}{imp2}
+    \implicant{15}{14}{imp3}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=1\\
+    $\overline{\text{A}(3)}\,\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\overline{\text{A}(2)}\,\overline{\text{A}(3)}\text{A}(1)+\text{A}(3)\text{A}(2)\text{A}(1)$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0}
+    \implicant{0}{1}{imp1}
+    \implicant{3}{2}{imp2}
+    \implicant{4}{6}{imp3}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=0\\
+    $\overline{\text{A}(3)}\,\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\overline{\text{A}(2)}\,\overline{\text{A}(3)}\text{A}(1)+\overline{\text{A}(3)}\text{A}(2)$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0}
+    \implicant{3}{2}{imp1}
+    \implicant{4}{6}{imp2}
+    \implicant{8}{9}{imp3}
+    \implicant{11}{10}{imp4}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=1\\
+    $\overline{\text{A}(2)}\,\overline{\text{A}(3)}\text{A}(1)+\overline{\text{A}(3)}\text{A}(2)+{\text{A}(3)}\overline{\text{A}(2)}\,\overline{\text{A}(1)}+\text{A}(3)\overline{\text{A}(2)}\text{A}(1)$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+The minimized expression for B$(4)$ is
+\begin{align*}
+\text{B}(4)&=(\text{A}(5)\oplus\text{A}(4))(\overline{\text{A}(3)}\,\overline{\text{A}(2)}\,\overline{\text{A}(1)})+\text{A}(5)\overline{\text{A}(3)}\text{A}(2)+\overline{\text{A}(5)}\,\overline{\text{A}(4)}\text{A}(3)\text{A}(2)\overline{\text{A}(1)}\\&\quad+\overline{\text{A}(5)}\text{A}(3)\text{A}(2)\text{A}(1)+\text{A}(5)\text{A}(4){\text{A}(3)}\overline{\text{A}(2)}\,\overline{\text{A}(1)}+(\overline{\text{A}(5)\oplus\text{A}(4)})\text{A}(3)\overline{\text{A}(2)}\text{A}(1)\\&\quad+(\text{A}(5)+\text{A}(4))\overline{\text{A}(3)}\,\overline{\text{A}(2)}\text{A}(1)
+\end{align*}
+
+Set up 4 $k$-maps for B$(5)$.
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=0\\
+    $0$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1}
+    \implicant{4}{6}{imp1}
+    \implicant{12}{14}{imp2}
+    \implicant{8}{10}{imp3}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=1\\
+    $\overline{\text{A}(3)}\text{A}(2)+\text{A}(3)\text{A}(2)+\overline{\text{A}(3)}\text{A}(2)$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0}
+    \implicant{0}{2}{imp1}
+    \implicant{4}{6}{imp2}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=0\\
+    $\overline{\text{A}(3)}\,\overline{\text{A}(2)}+\overline{\text{A}(3)}\text{A}(2)$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1}
+    \implicant{12}{14}{imp1}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=1\\
+    $\text{A}(3)\text{A}(2)$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+The minimized expression for B$(5)$ is
+\begin{align*}
+\text{B}(5)&=\text{A}(5)\overline{\text{A}(4)}\,\overline{\text{A}(3)}\,\overline{\text{A}(2)}+(\text{A}(5)\oplus\text{A}(4))\overline{\text{A}(3)}\text{A}(2)+\text{A}(4)\text{A}(3)\text{A}(2)+\overline{\text{A}(5)}\text{A}(4)\text{A}(3)\overline{\text{A}(2)}
+\end{align*}
+
+Set up 4 $k$-maps for B$(6)$.
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=0\\
+    $0$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=0, A(4)=1\\
+    $0$
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1}
+    \implicant{12}{10}{imp1}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=0\\
+    $\text{A}(3)$
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{Karnaugh1}
+    \contingut{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+    \implicant{0}{10}{imp1}
+\end{Karnaugh1}
+\vspace{-1em}
+\begin{center}\small
+    A(5)=1, A(4)=1\\
+    $1$
+    \end{center}
+\end{minipage}
+
+\vspace{1em}
+
+The minimized expression for B$(6)$ is
+\begin{align*}
+\text{B}(6)&=\text{A}(5)\overline{\text{A}(4)}\text{A}(3)+\text{A}(5)\text{A}(4)
+\end{align*}
+
+\textit{Hand-drawn circuit and RTL schematic}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{4_hdc_g.png}
+\end{figure}
+
+\newpage
+
+\setcounter{page}{20}
+
+\textbf{2. Codes}
+
+\textit{VHDL}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP3_PRE_Q4_CONVERTER is
+    Port ( A : in  STD_LOGIC_VECTOR (5 downto 0);
+           B : out  STD_LOGIC_VECTOR (7 downto 0));
+end EXP3_PRE_Q4_CONVERTER;
+architecture Behavioral of EXP3_PRE_Q4_CONVERTER is
+begin
+    B(0) <= A(0);
+    B(1) <= ((A(5) xor A(4)) and not A(3) and not A(2) and not A(1))
+            or (not A(5) and not A(4) and not A(3) and not A(2) and A(1))
+            or (A(5) and not A(3) and A(2) and not A(1))
+            or (not A(5) and not A(3) and A(2) and A(1))
+            or (not A(5) and not A(4) and A(3) and A(2) and not A(1))
+            or (A(5) and A(3) and A(2) and A(1))
+            or (A(5) and A(4) and A(3) and not A(2) and not A(1))
+            or ((A(5) xor A(4)) and A(3) and not A(2) and A(1));
+    B(2) <= (not A(5) and A(4) and not A(3) and not A(2) and not A(1))
+            or (A(5) and not A(4) and not A(3) and not A(2) and A(1))
+            or ((A(5) xnor A(4)) and not A(3) and A(2) and A(1))
+            or (A(5) and not A(4) and A(3) and A(2) and not A(1))
+            or (not A(4) and (A(3) xnor A(1)) and A(2))
+            or (A(4) and A(3) and not A(2) and not A(1))
+            or (not A(5) and A(4) and A(3) and not A(2) and A(1));
+    B(3) <= (not A(5) and not A(4) and A(3) and not A(2) and not A(1))
+            or (not A(5) and A(4) and ((not A(3) and not A(2) and A(1))
+                 or (A(3) and A(2) and not A(1))))
+            or (A(5) and not A(4) and not A(3) and A(2) and A(1))
+            or (A(5) and A(4) and (A(3) xnor A(1)) and not A(2));
+    B(4) <= ((A(5) xor A(4)) and not A(3) and not A(2) and not A(1))
+            or (A(5) and not A(3) and A(2))
+            or (not A(5) and not A(4) and A(3) and A(2) and not A(1))
+            or (not A(5) and A(3) and A(2) and A(1))
+            or (A(5) and A(4) and A(3) and not A(2) and not A(1))
+            or ((A(5) xnor A(4)) and A(3) and not A(2) and A(1))
+            or ((A(5) or A(4)) and not A(3) and not A(2) and A(1));
+    B(5) <= (A(5) and not A(4) and not A(3) and not A(2))
+            or ((A(5) xor A(4)) and not A(3) and A(2))
+            or (A(4) and A(3) and A(2))
+            or (not A(5) and A(4) and A(3) and not A(2));
+    B(6) <= (A(5) and not A(4) and A(3)) or (A(5) and A(4));
+    B(7) <= '0';
+end Behavioral;
+\end{verbatim}
+
+\vspace{0.5mm} % 1mm actual
+\hrule
+
+\vspace{1em}
+
+\textbf{3. Results}
+
+\textit{Test bench}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin
+     A <= "000110"; wait for 100 ns; A <= "000111"; wait for 100 ns;
+     A <= "011010"; wait for 100 ns; A <= "011011"; wait for 100 ns;
+     A <= "111000"; wait for 100 ns; A <= "111001"; wait for 100 ns;
+     A <= "111110"; wait for 100 ns; A <= "111111"; wait for 100 ns;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{4_graph_i_g.png}
+\end{figure}
+
+\textbf{Q5:} \textbf{1. Analytical Solution}
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c| } 
+    \hline
+     ABCD &a&b&c&d&e&f&g\\\hline
+    $0000$&1&1&1&1&1&1&0\\\hline
+    $0001$&0&1&1&0&0&0&0\\\hline
+    $0010$&1&1&0&1&1&0&1\\\hline
+    $0011$&1&1&1&1&0&0&1\\\hline
+    $0100$&0&1&1&0&0&1&1\\\hline
+    $0101$&1&0&1&1&0&1&1\\\hline
+    $0110$&1&0&1&1&1&1&1\\\hline
+    $0111$&1&1&1&0&0&0&0\\\hline
+    $1000$&1&1&1&1&1&1&1\\\hline
+    $1001$&1&1&1&1&0&1&1\\\hline
+    $1010$&0&0&0&0&0&0&0\\\hline
+    $1011$&0&0&0&0&0&0&0\\\hline
+    $1100$&0&0&0&0&0&0&0\\\hline
+    $1101$&0&0&0&0&0&0&0\\\hline
+    $1110$&0&0&0&0&0&0&0\\\hline
+    $1111$&0&0&0&0&0&0&0\\\hline
+\end{tabular}
+
+\begin{Karnaugh2}
+    \contingut{1,0,1,1,0,1,1,1,1,1,0,0,0,0,0,0}
+    \implicantdaltbaix{0}{8}{imp1}
+    \implicant{8}{9}{imp2}
+    \implicant{3}{6}{imp3}
+    \implicant{5}{7}{imp4}
+\end{Karnaugh2}
+
+\vspace{-2em}
+
+\[\text{a}=\text{B}'\text{C}'\text{D}'+\text{A}\text{B}'\text{C}'+\text{A}'\text{B}\text{D}+\text{A}'\text{C}\]
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{center}
+\begin{Karnaugh2}
+    \contingut{1,1,1,1,1,0,0,1,1,1,0,0,0,0,0,0}
+    \implicantdaltbaix{0}{9}{imp1}
+    \implicant{0}{4}{imp2}
+    \implicant{0}{2}{imp3}
+    \implicant{3}{7}{imp4}
+\end{Karnaugh2}
+
+\vspace{-2em}
+
+\[\text{b}=\text{A}'\text{C}'\text{D}'+\text{B}'\text{C}'+\text{A}'\text{B}'+\text{A}'\text{C}\text{D}\]
+
+\vspace{-1em}
+
+\begin{Karnaugh2}
+    \contingut{1,1,0,1,1,1,1,1,1,1,0,0,0,0,0,0}
+    \implicantdaltbaix{0}{9}{imp1}
+    \implicant{4}{6}{imp2}
+    \implicant{1}{7}{imp3}
+\end{Karnaugh2}
+
+\vspace{-2em}
+
+\[\text{c}=\text{B}'\text{C}'+\text{A}'\text{B}+\text{A}'\text{D}\]
+\end{center}
+\end{minipage}
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{center}
+\begin{Karnaugh2}
+    \contingut{1,0,1,1,0,1,1,0,1,1,0,0,0,0,0,0}
+    \implicantdaltbaix{0}{8}{imp1}
+    \implicant{8}{9}{imp2}
+    \implicant{3}{2}{imp3}
+    \implicant{2}{6}{imp4}
+    \implicant{5}{5}{imp5}
+\end{Karnaugh2}
+
+\vspace{-2em}
+
+\begin{align*}
+\text{d}&=\text{B}'\text{C}'\text{D}'+\text{A}\text{B}'\text{C}'\\
+&\quad+\text{A}'\text{B}\text{C}'\text{D}+\text{A}'\text{B}'\text{C}+\text{A}'\text{C}\text{D}'
+\end{align*}
+
+\vspace{-1em}
+
+\begin{Karnaugh2}
+    \contingut{1,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0}
+    \implicantdaltbaix{0}{8}{imp1}
+    \implicant{2}{6}{imp2}
+\end{Karnaugh2}
+
+\vspace{-2em}
+
+\[\text{e}=\text{B}'\text{C}'\text{D}'+\text{A}'\text{C}\text{D}'\]
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{center}
+
+\vspace{-1em}
+
+\begin{Karnaugh2}
+    \contingut{1,0,0,0,1,1,1,0,1,1,0,0,0,0,0,0}
+    \implicantcostats{4}{6}{imp1}
+    \implicant{0}{4}{imp2}
+    \implicant{4}{5}{imp3}
+    \implicant{8}{9}{imp4}
+\end{Karnaugh2}
+
+\vspace{-2em}
+
+\[\text{f}=\text{A}'\text{C}'\text{D}'+\text{A}'\text{B}\text{C}'+\text{A}'\text{B}\text{D}'+\text{A}\text{B}\text{C}'\]
+
+\vspace{-1em}
+
+\begin{Karnaugh2}
+    \contingut{0,0,1,1,1,1,1,0,1,1,0,0,0,0,0,0}
+    \implicant{4}{5}{imp1}
+    \implicant{3}{2}{imp2}
+    \implicant{2}{6}{imp3}
+    \implicant{8}{9}{imp4}
+\end{Karnaugh2}
+
+\vspace{-2em}
+
+\[\text{g}=\text{A}'\text{B}'\text{C}+\text{A}'\text{C}\text{D}'+\text{A}'\text{B}\text{C}'+\text{A}\text{B}'\text{C}'\]
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+\textit{Hand-drawn circuit and RTL schematic}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{5_hdc_g.png}
+\end{figure}
+
+\newpage
+
+\setcounter{page}{24}
+
+\textbf{2. Codes}
+
+\textit{VHDL}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP3_PRE_Q5 is
+    Port ( A, B, C, D : in STD_LOGIC;
+           a_out, b_out, c_out, d_out,
+           e_out, f_out, g_out : out  STD_LOGIC);
+end EXP3_PRE_Q5;
+
+architecture Behavioral of EXP3_PRE_Q5 is
+
+begin
+    a_out <= (not B and not C and not D) or (A and not B and not C)
+             or (not A and B and D) or (not A and C);
+    b_out <= (not A and not C and not D) or (not B and not C)
+             or (not A and not B) or (not A and C and D);
+    c_out <= (not B and not C) or (not A and B) or (not A and D);
+    d_out <= (not B and not C and not D) or (A and not B and not C)
+             or (not A and B and not C and D) or (not A and not B and C)
+             or (not A and C and not D);
+    e_out <= (not B and not C and not D) or (not A and C and not D);
+    f_out <= (not A and not C and not D) or (not A and B and not C)
+             or (not A and B and not D) or (A and not B and not C);
+    g_out <= (not A and not B and C) or (not A and C and not D)
+             or (not A and B and not C) or (A and not B and not C);
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textbf{3. Results}
+
+\textit{Test bench}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin
+    A <= '0'; B <= '0'; C <= '0'; D <= '0'; wait for 100 ns;
+    A <= '0'; B <= '0'; C <= '0'; D <= '1'; wait for 100 ns;
+    A <= '0'; B <= '0'; C <= '1'; D <= '0'; wait for 100 ns;
+    A <= '0'; B <= '0'; C <= '1'; D <= '1'; wait for 100 ns;
+    A <= '0'; B <= '1'; C <= '0'; D <= '0'; wait for 100 ns;
+    A <= '0'; B <= '1'; C <= '0'; D <= '1'; wait for 100 ns;
+    A <= '0'; B <= '1'; C <= '1'; D <= '0'; wait for 100 ns;
+    A <= '0'; B <= '1'; C <= '1'; D <= '1'; wait for 100 ns;
+    A <= '1'; B <= '0'; C <= '0'; D <= '0'; wait for 100 ns;
+    A <= '1'; B <= '0'; C <= '0'; D <= '1'; wait for 100 ns;
+    A <= '1'; B <= '0'; C <= '1'; D <= '0'; wait for 100 ns;
+    A <= '1'; B <= '0'; C <= '1'; D <= '1'; wait for 100 ns;
+    A <= '1'; B <= '1'; C <= '0'; D <= '0'; wait for 100 ns;
+    A <= '1'; B <= '1'; C <= '0'; D <= '1'; wait for 100 ns;
+    A <= '1'; B <= '1'; C <= '1'; D <= '0'; wait for 100 ns;
+    A <= '1'; B <= '1'; C <= '1'; D <= '1'; wait for 100 ns;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{5_graph_i_g.png}
+\end{figure}
+
+\end{document}
