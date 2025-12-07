@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\usepackage[
+  paperwidth=594mm,
+  paperheight=841mm,
+  top=25mm,
+  bottom=25mm,
+  left=25mm,
+  right=25mm
+]{geometry}
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage[T1]{fontenc}
+
+\setcounter{page}{19}
+
+\pdfpagewidth=594mm
+\pdfpageheight=841mm
+\special{papersize=594mm,841mm}
+
+\setlength{\hoffset}{0pt}
+\setlength{\voffset}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\Large Baturay KAFKAS 2240357068 Electrical \& Electronics Engineering}
+\fancyfoot[R]{\Large\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+\AddToShipoutPictureBG*{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[inner sep=0pt, anchor=center] at (current page.center) {
+      \includegraphics[
+        width=\dimexpr\paperwidth-40mm\relax,
+        height=\dimexpr\paperheight-40mm\relax,
+        keepaspectratio
+      ]{4_rtl_i_g.png}
+    };
+  \end{tikzpicture}
+}
+
+\mbox{}
+\clearpage
+
+\ClearShipoutPictureBG
+
+\newpage
+\setcounter{page}{23}
+
+\AddToShipoutPictureBG*{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[inner sep=0pt, anchor=center] at (current page.center) {
+      \includegraphics[
+        width=\dimexpr\paperwidth-40mm\relax,
+        height=\dimexpr\paperheight-40mm\relax,
+        keepaspectratio
+      ]{5_rtl_i_g.png}
+    };
+  \end{tikzpicture}
+}
+
+\mbox{}
+\clearpage
+
+\ClearShipoutPictureBG
+
+\end{document}
