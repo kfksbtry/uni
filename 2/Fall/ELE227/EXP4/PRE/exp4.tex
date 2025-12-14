@@ -1,0 +1,1281 @@
+% Student Number: 2240357068
+% Student Name: Baturay KAFKAS
+% EEE @ Hacettepe University
+
+% Last update: HH:MM DD/MM/YY
+
+% My resource collection: https://github.com/kfksbtry/uni
+% Circuits were set up in LTspice.
+
+\documentclass{article}
+
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage[top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{amsmath}
+\usepackage{moresize}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{upquote}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{textcomp}
+\usetikzlibrary{matrix,calc, positioning, shapes, arrows}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Baturay KAFKAS 2240357068 Electrical \& Electronics Engineering}
+
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+
+\definecolor{imp1}{RGB}{200, 200, 200}
+\definecolor{imp2}{RGB}{170, 170, 170}
+\definecolor{imp3}{RGB}{140, 140, 140}
+\definecolor{imp4}{RGB}{110, 110, 110}
+\definecolor{imp5}{RGB}{80, 80, 80}
+
+%%% K-MAP
+
+%isolated term
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - node
+%#3 - filling color
+\newcommand{\implicantsol}[3][0]{
+    \draw[rounded corners=3pt, fill=#3, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#2.south east)+(-45:#1)$);
+    }
+
+
+%internal group
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicant}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#3.south east)+(-45:#1)$);
+    }
+
+%group lateral borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantcostats}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.east |- #2.north)+(90:#1)$)-| ($(#2.east)+(0:#1)$) |- ($(rf.east |- #3.south)+(-90:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.west |- #2.north)+(90:#1)$) -| ($(#3.west)+(180:#1)$) |- ($(cf.west |- #3.south)+(-90:#1)$);
+}
+
+%group top-bottom borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantdaltbaix}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.south -| #2.west)+(180:#1)$) |- ($(#2.south)+(-90:#1)$) -| ($(cf.south -| #3.east)+(0:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.north -| #2.west)+(180:#1)$) |- ($(#3.north)+(90:#1)$) -| ($(rf.north -| #3.east)+(0:#1)$);
+}
+
+%group corners
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - filling color
+\newcommand{\implicantcantons}[2][0]{
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -| ($(0.east |- cf.south)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$);
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -|  ($(0.east |- cf.south)+(0:#1)$) [sharp corners] ($(rf.east |- 0.south)+(-90:#1)$) |-  ($(0.east |- cf.south)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$) [sharp corners] ($(rf.east |- 8.north)+(90:#1)$) |- ($(8.east |- rf.north)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$) [sharp corners]($(cf.west |- 2.south)+(-90:#1)$) |- ($(2.west |- cf.south)+(180:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$) [sharp corners] ($(cf.west |- 10.north)+(90:#1)$) |- ($(10.west |- rf.north)+(180:#1)$) ;
+}
+
+%Empty Karnaugh map 4x4
+\newenvironment{Karnaugh1}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.9,above right,anchor=south west] {\small A(1)A(0)} node [pos=0.9,below left,anchor=north east] {\small A(3)A(2)} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 00             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 01             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| 11             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| 10             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+\newenvironment{Karnaugh2}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.9,above right,anchor=south west] {\small CD} node [pos=0.9,below left,anchor=north east] {\small AB} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 00             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 01             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| 11             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| 10             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x4
+\newenvironment{Karnaughvuit}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.85,above right,anchor=south west] {\small JK} node [pos=0.85,below left,anchor=north east] {\small Q} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 0             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 1             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+\newenvironment{Karnaughvuit2}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.85,above right,anchor=south west] {\small D1(t)\,D2(t)} node [pos=0.85,below left,anchor=north east] {\small x} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 0             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 1             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+
+\newenvironment{Karnaughvuit3}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.85,above right,anchor=south west] {\small Data\,parityin} node [pos=0.85,below left,anchor=north east] {\small T(t)} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 0             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 1             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+
+%Empty Karnaugh map 2x2
+\newenvironment{Karnaughquatre}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (2,2);
+\draw (0,2) -- node [pos=0.9,above right,anchor=south west] {\small Data} node [pos=0.9,below left,anchor=north east] {\small T(t)} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=2.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+          \& |(c00)| 0          \& |(c01)| 1  \\
+|(r00)| 0 \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \\
+|(r01)| 1 \& |(2)|  \phantom{0} \& |(3)|  \phantom{0} \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Defines 8 or 16 values (0,1,X)
+\newcommand{\contingut}[1]{%
+\foreach \x [count=\xi from 0]  in {#1}
+     \path (\xi) node {\x};
+}
+
+%Places 1 in listed positions
+\newcommand{\minterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {1};
+}
+
+%Places 0 in listed positions
+\newcommand{\maxterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {0};
+}
+
+%Places X in listed positions
+\newcommand{\indeterminats}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {X};
+}
+
+%%%
+
+\begin{document}
+
+\large %% Default font size
+
+%%------------------------------------%%
+{\Large \textbf{EXPERIMENT 3 PRELIMINARY WORK}} %%
+
+\vspace{1em}
+
+\textbf{Q1:} \textbf{1. Analytical Solution}
+
+\textit{Hand-drawn circuits and RTL schematics}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{1_hdc1_g.jpg}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{1_hdc2_g.jpg}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{1_hdc3_g.jpg}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{1_hdc4_g.jpg}
+\end{figure}
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\linewidth]{1_a_rtl_i_g.png}
+\end{figure}
+
+\vspace{-2em}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\linewidth]{1_b_rtl_i_g.png}
+\end{figure}
+
+\vspace{-2em}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\linewidth]{1_c_rtl_i_g.png}
+\end{figure}
+
+\vspace{-2em}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\linewidth]{1_d_rtl_i_g.png}
+\end{figure}
+
+\textit{CircuitLab}
+
+\begin{center}\textbf{a.} Sr Latch with NAND Gates\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{c1.png}
+\end{figure}
+
+\begin{center}Graph of Input S\_sr\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_S_sr_i.png}
+\end{figure}
+
+\begin{center}Graph of Input En\_sr\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_En_sr_i.png}
+\end{figure}
+
+\newpage
+
+\begin{center}Graph of Input R\_sr\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_R_sr_i.png}
+\end{figure}
+
+\begin{center}Graph of Output Q\_sr\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_Q_sr_i.png}
+\end{figure}
+
+\begin{center}Graph of Output Qn\_sr\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_Qn_sr_i.png}
+\end{figure}
+
+\newpage
+
+\begin{center}\textbf{b.} D Latch\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{c2.png}
+\end{figure}
+
+\begin{center}Graph of Input D\_d\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_D_d_i.png}
+\end{figure}
+
+\begin{center}Graph of Output Q\_d\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_Q_d_i.png}
+\end{figure}
+
+\newpage
+
+\begin{center}Graph of Output Qn\_d\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_Q_nd_i.png}
+\end{figure}
+
+\begin{center}\textbf{c.} Positive-Edge-Triggered D Flip-Flop\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{c3.png}
+\end{figure}
+
+\begin{center}Graph of Input D\_dff\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_D_dff_i.png}
+\end{figure}
+
+\newpage
+
+\begin{center}Graph of Input Clk\_dff\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_Clk_dff_i.png}
+\end{figure}
+
+\begin{center}Graph of Output Q\_dff\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_Q_dff_i.png}
+\end{figure}
+
+
+\begin{center}\textbf{d.} Positive-Edge-Triggered T Flip-Flop\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{c4.png}
+\end{figure}
+
+\newpage
+
+\begin{center}Graph of Input T\_tff\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_T_tff_i.png}
+\end{figure}
+
+\begin{center}Graph of Input Clk\_tff\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_Clk_tff_i.png}
+\end{figure}
+
+\begin{center}Graph of Output Q\_tff\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_Q_tff_i.png}
+\end{figure}
+
+\newpage
+
+\begin{center}Graph of Output Qn\_tff\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graph_Qn_tff_i.png}
+\end{figure}
+
+\textbf{2. Codes}
+
+\textit{VHDL - \textbf{a}. SR Latch with NAND Gates}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library ieee;
+use ieee.std_logic_1164.all;
+entity EXP4_PRE_Q1_SRLATCH is
+    port ( S_sr, R_sr, En_sr : in  std_logic; Q_sr, Qn_sr : out std_logic);
+end EXP4_PRE_Q1_SRLATCH;
+architecture Behavioral of EXP4_PRE_Q1_SRLATCH is
+signal temp_Q, temp_Qn : STD_LOGIC;
+begin
+	 temp_Q <= (S_sr nand En_sr) nand temp_Qn;
+	 temp_Qn <= (R_sr nand En_sr) nand temp_Q;
+	 Q_sr <= temp_Q; Qn_sr <= temp_Qn;
+end Behavioral;
+\end{verbatim}
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textit{VHDL - \textbf{b.} D Latch}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity EXP4_PRE_Q1_DLATCH is
+    port ( D_d, En_d : in  std_logic;
+           Q_d, Qn_d : out std_logic);
+end EXP4_PRE_Q1_DLATCH;
+architecture Behavioral of EXP4_PRE_Q1_DLATCH is
+component EXP4_PRE_Q1_SRLATCH
+    port ( S_sr, R_sr, En_sr : in  std_logic; Q_sr, Qn_sr : out std_logic);
+end component;
+signal notD_d : std_logic;
+begin
+    notD_d <= not D_d;
+    sr_latch : EXP4_PRE_Q1_SRLATCH port map (D_d, notD_d, En_d, Q_d, Qn_d);
+end Behavioral;
+\end{verbatim}
+\vspace{1mm}
+\hrule
+
+\newpage
+
+\textit{VHDL - \textbf{c}. Positive-Edge-Triggered D Flip-Flop}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP4_PRE_Q1_DFLIPFLOP is
+    port ( D_dff, Clk_dff : in  std_logic;
+           Q_dff, Qn_dff : out std_logic);
+end EXP4_PRE_Q1_DFLIPFLOP;
+
+architecture Behavioral of EXP4_PRE_Q1_DFLIPFLOP is
+
+component EXP4_PRE_Q1_DLATCH
+    port ( D_d, En_d : in  std_logic;
+           Q_d, Qn_d : out std_logic);
+end component;
+
+signal notClk_dff, Q1_dff, Q1n_dff : std_logic;
+
+begin
+  notClk_dff <= not Clk_dff;
+  latch1 : EXP4_PRE_Q1_DLATCH port map (D_dff, notClk_dff, Q1_dff, Q1n_dff);
+  latch2 : EXP4_PRE_Q1_DLATCH port map (Q1_dff, Clk_dff, Q_dff, Qn_dff);
+end Behavioral;
+\end{verbatim}
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textit{VHDL - \textbf{d.} JK Flip-Flop with Reset State}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP4_PRE_Q1_JKFF is
+    Port ( J_jkff, K_jkff, Reset_jkff, Clock_jkff : in STD_LOGIC;
+           Q_jkff, Qn_jkff : out STD_LOGIC);
+end EXP4_PRE_Q1_JKFF;
+
+architecture Behavioral of EXP4_PRE_Q1_JKFF is
+
+signal tempQ: std_logic;
+
+begin
+    process (Reset_jkff, Clock_jkff)
+    begin
+        if Clock_jkff'event and Clock_jkff = '1' then
+            if Reset_jkff = '1' then tempQ <= '0';
+                elsif (J_jkff='0' and K_jkff='0') then tempQ <= tempQ;
+                elsif (J_jkff='0' and K_jkff='1') then tempQ <= '0';
+                elsif (J_jkff='1' and K_jkff='0') then tempQ <= '1';
+                elsif (J_jkff='1' and K_jkff='1') then tempQ <= not (tempQ);
+            end if;
+        end if;
+    end process;
+    Q_jkff <= tempQ; Qn_jkff <= not tempQ;
+end Behavioral;
+\end{verbatim}
+\vspace{1mm}
+\hrule
+
+
+\vspace{1em}
+
+\textit{VHDL - \textbf{d.} Positive-Edge-Triggered T Flip-Flop}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity EXP4_PRE_Q1_TFLIPFLOP is
+    Port ( T_tff, Reset_tff, Clk_tff : in std_logic;
+           Q_tff, Qn_tff : out std_logic);
+end EXP4_PRE_Q1_TFLIPFLOP;
+architecture Behavioral of EXP4_PRE_Q1_TFLIPFLOP is
+component EXP4_PRE_Q1_JKFF
+    Port ( J_jkff, K_jkff, Reset_jkff, Clock_jkff : in STD_LOGIC;
+           Q_jkff, Qn_jkff : out STD_LOGIC);
+end component;
+signal notClk_tff : std_logic;
+begin
+    jkff : EXP4_PRE_Q1_JKFF port map(T_tff, T_tff, Reset_tff,
+                                     Clk_tff, Q_tff, Qn_tff);
+end Behavioral;
+\end{verbatim}
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textbf{3. Results}
+
+\textit{Test bench - \textbf{a.} SR Latch with NAND Gates}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin		
+    En_sr <= '0'; S_sr <= '0'; R_sr <= '0'; wait for 100 ns;
+    En_sr <= '0'; S_sr <= '0'; R_sr <= '1'; wait for 100 ns;
+    En_sr <= '0'; S_sr <= '1'; R_sr <= '0'; wait for 100 ns;
+    En_sr <= '0'; S_sr <= '1'; R_sr <= '1'; wait for 100 ns;
+    En_sr <= '1'; S_sr <= '0'; R_sr <= '0'; wait for 100 ns;
+    En_sr <= '1'; S_sr <= '0'; R_sr <= '1'; wait for 100 ns;
+    En_sr <= '1'; S_sr <= '1'; R_sr <= '0'; wait for 100 ns;
+    En_sr <= '1'; S_sr <= '1'; R_sr <= '1'; wait for 100 ns;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{1_a_graph_i_g.png}
+\end{figure}
+
+\vspace{0.2em}
+
+\textit{Test bench - \textbf{b.} D Latch}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin		
+    En_d <= '0'; D_d <= '0'; wait for 100 ns;
+    En_d <= '0'; D_d <= '1'; wait for 100 ns;
+    En_d <= '1'; D_d <= '0'; wait for 100 ns;
+    En_d <= '1'; D_d <= '1'; wait for 100 ns;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{1_b_graph_i_g.png}
+\end{figure}
+
+\vspace{0.2em} % 1mm actual
+
+\textit{Test bench - \textbf{c.} Positive-Edge-Triggered D Flip-Flop}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin		
+    D_dff <= '0'; wait for Clk_dff_period*2;
+    D_dff <= '1'; wait for Clk_dff_period*2;
+    D_dff <= '0'; wait for Clk_dff_period*2;
+    D_dff <= '1'; wait for Clk_dff_period*2;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{1_c_graph_i_g.png}
+\end{figure}
+
+\vspace{0.2em} % 1mm actual
+
+\textit{Test bench - \textbf{d.} Positive-Edge-Triggered T Flip-Flop}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin		
+    Reset_tff <= '1'; T_tff <= '0'; wait for Clk_tff_period*2;
+    Reset_tff <= '0'; T_tff <= '0'; wait for Clk_tff_period*2;
+    T_tff <= '1'; wait for Clk_tff_period*2;
+    T_tff <= '0'; wait for Clk_tff_period*2;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{1_d_graph_i_g.png}
+\end{figure}
+
+\textbf{Q2:} \textbf{1. Analytical Solution}
+
+\begin{minipage}{0.57\textwidth}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{Present State} & Input & \multicolumn{2}{c|}{Next State} & Output \\ \hline
+D1(t) & D2(t) & x & D1(t+1) & D2(t+1) & y \\\hline
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 & 1 & 0 \\ 
+1 & 0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 1 & 1 & 1 & 0 \\
+1 & 1 & 0 & 1 & 0 & 0 \\
+1 & 1 & 1 & 0 & 1 & 1 \\\hline
+\end{tabular}
+
+\vspace{0.5em}
+
+State Table for Mealy Sequence Detector
+
+\vspace{0.5em}
+
+$\text{y}=\text{D1}(\text{t})\,\text{D2}(\text{t})\,\text{x}$
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{Karnaughvuit2}
+\contingut{0,1,0,1,0,0,1,0}
+\implicant{1}{3}{imp1}
+\implicant{6}{6}{imp2}
+\end{Karnaughvuit2}
+
+\vspace{-1em}
+
+{\small
+$\text{D1}(\text{t}+1)=\text{x}'\,\text{D2}(\text{t})+\text{x}\,\text{D1}(\text{t})\,\text{D2}'(\text{t})$}
+
+\begin{Karnaughvuit2}
+\contingut{0,0,0,0,1,1,1,1}
+\implicant{4}{6}{imp1}
+\end{Karnaughvuit2}
+
+\vspace{-1em}
+
+{\small
+$\text{D2}(\text{t}+1)=\text{x}$}
+
+\end{minipage}
+
+\vspace{1em}
+The characteristic equation of a D flip-flop is $\text{D}=\text{Q}(\text{t}+1)$. Therefore, we may use 2 D flip-flops for $\text{D1}(\text{t}+1)$ and $\text{D2}(\text{t}+1)$ and treat the next states as the inputs of the D flip-flops.
+
+\textit{Hand-drawn circuit and RTL schematic}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{2_hdc_g.jpg}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{2_rtl_i_g.png}
+\end{figure}
+
+\vspace{1em}
+
+\textbf{2. Codes}
+
+\textit{VHDL - D Flip-Flop}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP4_PRE_Q2_DFLIPFLOP is
+    Port ( D_dff, Reset_dff, Clock_dff : in STD_LOGIC;
+           Q_dff, Qn_dff : out STD_LOGIC);
+end EXP4_PRE_Q2_DFLIPFLOP;
+
+architecture Behavioral of EXP4_PRE_Q2_DFLIPFLOP is
+signal tempQ : STD_LOGIC;
+begin
+    process (Reset_dff, Clock_dff)
+    begin
+        if Clock_dff'event and Clock_dff = '1' then
+            if Reset_dff = '1' then tempQ <= '0';
+            else tempQ <= D_dff;
+            end if;
+        end if;
+    end process;
+    Q_dff <= tempQ;
+    Qn_dff <= not tempQ;
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\newpage
+
+\textit{VHDL - Detector}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP4_PRE_Q2_DETECTOR is
+    Port ( x, res, clk : in STD_LOGIC;
+           y : out STD_LOGIC);
+end EXP4_PRE_Q2_DETECTOR;
+
+architecture Behavioral of EXP4_PRE_Q2_DETECTOR is
+component EXP4_PRE_Q2_DFLIPFLOP
+    Port ( D_dff, Reset_dff, Clock_dff : in STD_LOGIC;
+           Q_dff, Qn_dff : out STD_LOGIC);
+end component;
+signal D1, D2, Q1, Q1n, Q2, Q2n : STD_LOGIC;
+begin
+    D1 <= (not x and Q2) or (x and Q1 and Q2n) ;
+    D2 <= x;
+    dff1 : EXP4_PRE_Q2_DFLIPFLOP port map(D1, res, clk, Q1, Q1n);
+    dff2 : EXP4_PRE_Q2_DFLIPFLOP port map(D2, res, clk, Q2, Q2n);
+    y <= Q1 and Q2 and x;
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textbf{3. Results}
+
+\textit{Test bench}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin
+    res <= '1'; wait for clk_period;
+    x <= '0'; res <= '0'; wait for clk_period;
+    x <= '1'; wait for clk_period;
+    x <= '1'; wait for clk_period;
+    x <= '0'; wait for clk_period;
+    x <= '0'; wait for clk_period;
+    x <= '1'; wait for clk_period;
+    x <= '0'; wait for clk_period;
+    x <= '1'; wait for clk_period;
+    x <= '1'; wait for clk_period;
+    x <= '1'; wait for clk_period;
+    x <= '0'; wait for clk_period
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{2_graph_i_g.png}
+\end{figure}
+
+\newpage
+
+\textbf{Q3:} \textbf{1. Analytical Solution}
+
+\begin{minipage}{1\textwidth}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Present State & \multicolumn{2}{|c|}{Input} & Next State & Output \\ \hline
+T(t) & Data & parityin & T$(\text{t}+1)$ & paritychk \\\hline
+0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 1 & 0 \\
+1 & 0 & 0 & 0 & 0 \\
+1 & 0 & 1 & 0 & 1 \\
+1 & 1 & 0 & 1 & 0 \\
+1 & 1 & 1 & 1 & 1 \\\hline
+\end{tabular}
+
+\vspace{0.5em}
+
+State Table for Parity Generator \& Checker
+\end{minipage}
+
+\begin{minipage}{0.5\textwidth}
+\centering
+\begin{Karnaughvuit3}
+    \contingut{0,0,1,1,0,0,1,1}
+    \implicant{3}{7}{imp1}
+\end{Karnaughvuit3}
+
+\vspace{-1em}
+
+{\small
+$\text{T}(\text{t}+1)=\text{Data}$}
+\end{minipage}\begin{minipage}{0.5\textwidth}
+\centering
+\begin{Karnaughvuit3}
+    \contingut{1,0,1,0,0,1,0,1}
+    \implicant{3}{7}{imp1}
+\end{Karnaughvuit3}
+
+\vspace{-1em}
+
+{\small
+$\text{paritychk}=\text{T}'(\text{t})\,\text{parityin}'+\text{T}(\text{t})\,\text{parityin}$
+$\text{paritychk}=(\text{T}(\text{t})\oplus\text{parityin})'$}
+\end{minipage}
+
+\vspace{1em}
+
+\textit{Hand-drawn circuit and RTL schematic}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{3_hdc_g.jpg}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{3_rtl_i_g.png}
+\end{figure}
+
+\textbf{2. Codes}
+
+\textit{VHDL - T Flip-Flop}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity EXP4_PRE_Q3_TFLIPFLOP is
+    port ( T_tff, Reset_tff, Clk_tff : in std_logic;
+           Q_tff, Qn_tff : out std_logic);
+end EXP4_PRE_Q3_TFLIPFLOP;
+architecture Behavioral of EXP4_PRE_Q3_TFLIPFLOP is
+signal tempQ : std_logic;
+begin
+    process (Reset_tff, Clk_tff)
+    begin
+        if Clk_tff'event and Clk_tff = '1' then
+            if Reset_tff = '1' then tempQ <= '0';
+            elsif T_tff = '1' then tempQ <= not tempQ;
+            end if;
+        end if;
+    end process;
+    Q_tff <= tempQ; Qn_tff <= not tempQ;
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\newpage
+
+\textit{VHDL - Parity Generator \& Checker}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity EXP4_PRE_Q3_PARITY is
+    Port ( data, parityin, reset, clk : in STD_LOGIC;
+	        parityout, paritychk : out STD_LOGIC);
+end EXP4_PRE_Q3_PARITY;
+
+architecture Behavioral of EXP4_PRE_Q3_PARITY is
+component EXP4_PRE_Q3_TFLIPFLOP
+    port ( T_tff, Reset_tff, Clk_tff : in std_logic;
+           Q_tff, Qn_tff : out std_logic);
+end component;
+signal tempQ, tempQn: STD_LOGIC; 
+begin
+    tff : EXP4_PRE_Q3_TFLIPFLOP port map (data, reset, clk, tempQ, tempQn);
+    parityout <= tempQ;
+    paritychk <= tempQ xnor parityin;
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textbf{3. Results}
+
+\textit{Test bench }
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin
+    -- Data 1
+    reset <= '1'; parityin <= '1'; wait for clk_period;
+    reset <= '0'; data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    
+    -- Data 2
+    reset <= '1'; parityin <= '1'; wait for clk_period;
+    reset <= '0'; data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    
+    -- Data 3
+    reset <= '1'; parityin <= '0'; wait for clk_period;
+    reset <= '0'; data <= '0'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '0'; wait for clk_period;
+    
+    -- Data 4
+    reset <= '1'; parityin <= '0'; wait for clk_period;
+    reset <= '0'; data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+    data <= '1'; wait for clk_period;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\newpage
+
+\begin{center}\textit{Data 1}\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{3_graph1_i_g.png}
+\end{figure}
+
+\vspace{1em}
+
+\begin{center}\textit{Data 2}\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{3_graph2_i_g.png}
+\end{figure}
+
+\vspace{1em}
+
+\begin{center}\textit{Data 3}\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{3_graph3_i_g.png}
+\end{figure}
+
+\vspace{1em}
+
+\begin{center}\textit{Data 4}\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{3_graph4_i_g.png}
+\end{figure}
+
+\newpage
+
+\textbf{Q4:} \textbf{1. Analytical Solution}
+
+\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|}
+    \hline J & K & Q(t) & Q(t+1) & D \\\hline
+    0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 1 & 1 \\
+    0 & 1 & 0 & 0 & 0 \\
+    0 & 1 & 1 & 0 & 0 \\
+    1 & 0 & 0 & 1 & 1 \\
+    1 & 0 & 1 & 1 & 1 \\
+    1 & 1 & 0 & 1 & 1 \\
+    1 & 1 & 1 & 0 & 0 \\\hline
+\end{tabular}
+
+\vspace{1em}
+
+Truth Table for D Flip-Flop
+
+Excitation Table for JK Flip-Flop
+
+\end{center}
+
+\end{minipage}\begin{minipage}{0.5\textwidth}\hspace{0.75em}
+\begin{center}
+\begin{Karnaughvuit}
+\contingut{0,0,1,1,1,0,1,0}
+\implicant{3}{2}{imp1}
+\implicantcostats{4}{6}{imp2}
+\end{Karnaughvuit}
+
+\vspace{-1em}
+
+$\text{D}=\text{QK}'+\text{Q}'\text{J}$
+
+\end{center}
+\end{minipage}
+
+\vspace{1em}
+
+\textit{Hand-drawn circuit and RTL schematic}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{4_hdc_g.jpg}
+\end{figure}
+
+\vspace{-0.5em}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{4_rtl_i_g.png}
+\end{figure}
+
+\newpage
+
+\textbf{2. Codes}
+
+
+\textit{VHDL - D Flip-Flop}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity EXP4_PRE_Q4_DFLIPFLOP is
+    Port ( D_dff, Reset_dff, Clock_dff : in STD_LOGIC;
+           Q_dff, Qn_dff : out STD_LOGIC);
+end EXP4_PRE_Q4_DFLIPFLOP;
+
+architecture Behavioral of EXP4_PRE_Q4_DFLIPFLOP is
+signal tempQ : STD_LOGIC;
+begin
+    process (Reset_dff, Clock_dff)
+    begin
+        if Clock_dff'event and Clock_dff = '1' then
+            if Reset_dff = '1' then tempQ <= '0';
+            else tempQ <= D_dff;
+            end if;
+        end if;
+    end process;
+    Q_dff <= tempQ; Qn_dff <= not tempQ;
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textit{VHDL - Blackbox}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity EXP4_PRE_Q4_BLACKBOX is
+    Port ( J_jkff, K_jkff, Reset_jkff, Clock_jkff : in STD_LOGIC;
+           Q_jkff, Qn_jkff : out STD_LOGIC);
+end EXP4_PRE_Q4_BLACKBOX;
+
+architecture Behavioral of EXP4_PRE_Q4_BLACKBOX is
+component EXP4_PRE_Q4_DFLIPFLOP
+    Port ( D_dff, Reset_dff, Clock_dff : in STD_LOGIC;
+           Q_dff, Qn_dff : out STD_LOGIC);
+end component;
+signal tempQ, tempQn, D : STD_LOGIC;
+begin
+    D <= (tempQ and not K_jkff) or (tempQn and J_jkff);
+    dff : EXP4_PRE_Q4_DFLIPFLOP port map (D, Reset_jkff, Clock_jkff,
+	                                         tempQ, tempQn);
+    Q_jkff <= tempQ;
+    Qn_jkff <= tempQn;
+end Behavioral;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\vspace{1em}
+
+\textbf{3. Results}
+
+\textit{Test bench}
+
+\vspace{1mm}
+\hrule
+
+\begin{verbatim}
+stim_proc: process
+begin
+  Reset_jkff <= '1'; wait for Clock_jkff_period;
+  J_jkff <= '0'; K_jkff <= '0'; Reset_jkff<='0'; wait for Clock_jkff_period;
+  J_jkff <= '0'; K_jkff <= '1'; wait for Clock_jkff_period;
+  J_jkff <= '1'; K_jkff <= '0'; wait for Clock_jkff_period;
+  J_jkff <= '1'; K_jkff <= '1'; wait for Clock_jkff_period*2;
+  J_jkff <= '0'; K_jkff <= '1'; wait for Clock_jkff_period;
+  J_jkff <= '0'; K_jkff <= '0'; wait for Clock_jkff_period;
+end process;
+\end{verbatim}
+
+\vspace{1mm}
+\hrule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{4_graph_i_g.png}
+\end{figure}
+
+\end{document}
