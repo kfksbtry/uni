@@ -49,11 +49,11 @@
 
 \textbf{Answer}: By a KCL equation for $0 < t < 1.32$ ms,
 
-\[\frac{V_C-V_S}{R}=C\frac{dV_C}{dt}\implies\frac{dV_C}{dt}=\frac{V_C-V_S}{RC}\implies\frac{dV_C}{V_C-V_S}=\frac{dt}{RC}\]
+\[\frac{V_C-V_S}{R}=-C\frac{dV_C}{dt}\implies\frac{dV_C}{dt}=\frac{V_S-V_C}{RC}\implies\frac{dV_C}{V_S-V_C}=\frac{dt}{RC}\]
 
-\[\implies\int_{V_C(0)}^{V_C(t)}\frac{dx}{x-V_S}=\int_0^t\frac{d\tau}{RC}\implies-\ln\left|x-V_S\right|\bigg|_{x=V_C(0)}^{x=V_C(t)}=\frac{125000}{33}\tau\bigg|_{\tau=0}^{\tau=t}\]
+\[\implies\int_{V_C(0)}^{V_C(t)}\frac{dx}{V_S-x}=\int_0^t\frac{d\tau}{RC}\implies-\ln\left|V_S-x\right|\bigg|_{x=V_C(0)}^{x=V_C(t)}=\frac{125000}{33}\tau\bigg|_{\tau=0}^{\tau=t}\]
 
-\[\implies\ln\left(\frac{V_C(t)-V_S}{V_C(0)-V_S}\right)=-\frac{125000t}{33}\implies V_C(t)=V_S+(V_C(0)-V_S)e^{-125000t/33}\]
+\[\implies\ln\left(\frac{V_S-V_C(t)}{V_S-V_C(0)}\right)=-\frac{125000t}{33}\implies V_C(t)=V_S+(V_C(0)-V_S)e^{-125000t/33}\]
 
 The voltage across the resistor is then 
 
@@ -62,15 +62,15 @@ The voltage across the resistor is then
 One problem is that we need to know the value of $V_C(0)$, which is not given in the question. Assume that $V_C(0)=-5$ V. The voltages across the elements are
 
 \[\left.\begin{array}{l}
-V_C(t)=5-10e^{-125000t/3}\text{ V}\\
-V_R(t)=10e^{-125000t/3}\text{ V}
+V_C(t)=5-10e^{-125000t/33}\text{ V}\\
+V_R(t)=10e^{-125000t/33}\text{ V}
 \end{array}\right\}\:0< t< 1.32\text{ ms}\]
 
 For $1.32\text{ ms}<t<2.64\text{ ms}$, the polarity of the source changes. Assume that the final voltages are attained, i.e., the difference in the voltage at $t=1.32$ ms and the final voltage is negligible. Therefore, the equations also change sign.
 
 \[\left.\begin{array}{l}
-V_C(t)=-5+10e^{-125000(t-1.32\text{ ms})/3}\text{ V}\\
-V_R(t)=-10e^{-125000(t-1.32\text{ ms})/3}\text{ V}
+V_C(t)=-5+10e^{-125000(t-1.32\text{ ms})/33}\text{ V}\\
+V_R(t)=-10e^{-125000(t-1.32\text{ ms})/33}\text{ V}
 \end{array}\right\}\:1.32\text{ ms}< t< 2.64\text{ ms}\]
 
 Since $0< t<2.64\text{ ms}$ comprises one square wave, we can sketch the entire graph.
@@ -101,16 +101,16 @@ Since $0< t<2.64\text{ ms}$ comprises one square wave, we can sketch the entire 
 \addlegendentry{$V_R(t)$}
 
 % V_C(t)
-\addplot[blue, thick, domain=0:1.32, forget plot] {5-10*exp(-125*x/3)};
-\addplot[blue, thick, domain=1.32:2.64, forget plot] {-5+10*exp(-125*(x-1.32)/3)};
-\addplot[blue, thick, domain=2.64:3.96, forget plot] {5-10*exp(-125*(x-2.64)/3)};
-\addplot[blue, thick, domain=3.96:5.28, forget plot] {-5+10*exp(-125*(x-3.96)/3)};
+\addplot[blue, thick, domain=0:1.32, forget plot] {5-10*exp(-125*x/33)};
+\addplot[blue, thick, domain=1.32:2.64, forget plot] {-5+10*exp(-125*(x-1.32)/33)};
+\addplot[blue, thick, domain=2.64:3.96, forget plot] {5-10*exp(-125*(x-2.64)/33)};
+\addplot[blue, thick, domain=3.96:5.28, forget plot] {-5+10*exp(-125*(x-3.96)/33)};
 
 % V_R(t) 
-\addplot[red, thick, dashed, domain=0:1.32, forget plot] {10*exp(-125*x/3)};
-\addplot[red, thick, dashed, domain=1.32:2.64, forget plot] {-10*exp(-125*(x-1.32)/3)};
-\addplot[red, thick, dashed, domain=2.64:3.96, forget plot] {10*exp(-125*(x-2.64)/3)};
-\addplot[red, thick, dashed, domain=3.96:5.28, forget plot] {-10*exp(-125*(x-3.96)/3)};
+\addplot[red, thick, dashed, domain=0:1.32, forget plot] {10*exp(-125*x/33)};
+\addplot[red, thick, dashed, domain=1.32:2.64, forget plot] {-10*exp(-125*(x-1.32)/33)};
+\addplot[red, thick, dashed, domain=2.64:3.96, forget plot] {10*exp(-125*(x-2.64)/33)};
+\addplot[red, thick, dashed, domain=3.96:5.28, forget plot] {-10*exp(-125*(x-3.96)/33)};
 
 \node at (1.14,-1) {$1.32$};
 \node at (2.46,-1) {$2.64$};
