@@ -57,7 +57,7 @@ Differentiate each side with respect to $t$.
 
 This is a second-order homogeneous ordinary differential equation with constant coefficients. Therefore, we can extract the characteristic equation.
 
-\[s^2+\frac{1}{RC}s+\frac1{LC}=0\implies s_{1,2}=\frac1{2RC}\pm\sqrt{\frac1{4R^2C^2}-\frac{1}{LC}}=\alpha\pm\sqrt{\alpha^2-\omega_0^2}\]
+\[s^2+\frac{1}{RC}s+\frac1{LC}=0\implies s_{1,2}=-\frac1{2RC}\pm\sqrt{\frac1{4R^2C^2}-\frac{1}{LC}}=-\alpha\pm\sqrt{\alpha^2-\omega_0^2}\]
 
 $\alpha$ is the neper frequency and $\omega_0$ is the resonant frequency.
 
@@ -65,7 +65,7 @@ $\alpha$ is the neper frequency and $\omega_0$ is the resonant frequency.
 
 Then the roots are
 
-\[\boxed{s_{1,2}=8333\pm\sqrt{8333^2-10000^2}=8333\pm j\,5528}.\]
+\[\boxed{s_{1,2}=-8333\pm\sqrt{8333^2-10000^2}=-8333\pm j\,5528}.\]
 
 Since we have two distinct complex roots, the response is $\boxed{\text{underdamped}}$.
 
@@ -96,19 +96,19 @@ For critically damped response, $\boxed{R_{\text{critical}}=250\:\Omega}$.
 
 Differentiate each side with respect to $t$.
 
-\[-280\,\frac{dI}{dt}+25\cdot10^5I+0.1\,\frac{d^2I}{dt^2}=0\implies\frac{d^2I}{dt^2}-2800\,\frac{dI}{dt}+25\cdot10^6\,I=0\]
+\[280\,\frac{dI}{dt}+25\cdot10^5I+0.1\,\frac{d^2I}{dt^2}=0\implies\frac{d^2I}{dt^2}+2800\,\frac{dI}{dt}+25\cdot10^6\,I=0\]
 
 This is a second-order homogeneous ordinary differential equation with constant coefficients. Therefore, we can extract the characteristic equation.
 
-\[s^2-2800s+25\cdot10^6=0\]
+\[s^2+2800s+25\cdot10^6=0\]
 
-\[s^2+\frac{R}{L}s+\frac1{LC}=0\implies s_{1,2}=\frac R{2L}\pm\sqrt{\frac{R^2}{4L^2}-\frac{1}{LC}}=\alpha\pm\sqrt{\alpha^2-\omega_0^2}\]
+\[s^2+\frac{R}{L}s+\frac1{LC}=0\implies s_{1,2}=-\frac R{2L}\pm\sqrt{\frac{R^2}{4L^2}-\frac{1}{LC}}=-\alpha\pm\sqrt{\alpha^2-\omega_0^2}\]
 
-\[\alpha=\frac R{2L}=\frac{280}{2\cdot0.1}=1400\:\frac{\text{rad}}{\text{s}},\quad\omega_0=\frac1{\sqrt{LC}}=\frac1{\sqrt{0.1\cdot0.4\cdot10^{-6}}}=500\:\frac{\text{rad}}{\text{s}}\]
+\[\alpha=\frac R{2L}=\frac{280}{2\cdot0.1}=1400\:\frac{\text{rad}}{\text{s}},\quad\omega_0=\frac1{\sqrt{LC}}=\frac1{\sqrt{0.1\cdot0.4\cdot10^{-6}}}=5000\:\frac{\text{rad}}{\text{s}}\]
 
 Then the roots are
 
-\[s_{1,2}=1400\pm\sqrt{1400^2-5000^2}=1400\pm j\,4800.\]
+\[s_{1,2}=-1400\pm\sqrt{1400^2-5000^2}=-1400\pm j\,4800.\]
 
 Since we have two distinct complex roots, the response is $\boxed{\text{underdamped}}$. The current in the circuit can be expressed as follows.
 
@@ -122,23 +122,19 @@ Therefore,
 
 \[I(0^+)=e^{-1400\cdot0}[c_1\cos(4800\cdot0)+c_2\sin(4800\cdot0)]=c_1=0.\]
 
-We have the relationship between current through and voltage across the inductor
+Solve $(1)$ for $\dfrac{dI}{dt}$.
 
-\[V_L=L\frac{dI}{dt}\implies\frac{dI}{dt}=\frac{V_L}{L}=\frac{-V_S-V_C-V_R}{L},\]
-
-where $V_S$ is the voltage supplied. Solve $(1)$ for $\dfrac{dI}{dt}$.
-
-\[\frac{dI}{dt}=\frac1{0.1}\left[-48-\left(\frac1{0.4\cdot10^{-6}}\int_0^tI(\tau)\,d\tau+V_C(0)\right)-280\,I\right]\]
+\[\frac{dI}{dt}=\frac1{0.1}\left[48-\left(\frac1{0.4\cdot10^{-6}}\int_0^tI(\tau)\,d\tau+V_C(0)\right)-280\,I\right]\]
 
 At $t=0$,
 
-\[\left.\frac{dI}{dt}\right|_{t=0}=-480-0-\underbrace{10V_C(0)}_0-\underbrace{2800\,I(0^+)}_0=-480.\]
+\[\left.\frac{dI}{dt}\right|_{t=0}=480-0-\underbrace{10V_C(0)}_0-\underbrace{2800\,I(0^+)}_0=480.\]
 
 Differentiate (2) with respect to $t$ and evaluate the resulting expression at $t=0$.
 
 \begin{align*}\dfrac{dI}{dt}&=-1400e^{-1400t}[c_1\cos(4800t)+c_2\sin(4800t)]\\&\quad+e^{-1400t}[-4800c_1\sin(4800t)+4800c_2\cos(4800t)]\\\\&=e^{-1400t}[(4800c_2-1400c_1)\cos(4800t)+(-1400c_2-4800c_1)\sin(4800t)]\end{align*}
 
-\begin{align*}\left.\frac{dI}{dt}\right|_{t=0}&=e^{-1400\cdot0}[(4800c_2-1400\cdot0)\cos(4800\cdot0)+(-1400c_2-4800\cdot0)\sin(4800\cdot0)]\\\\&=-4800c_2=-480\implies c_2=\frac1{10}\end{align*}
+\begin{align*}\left.\frac{dI}{dt}\right|_{t=0}&=e^{-1400\cdot0}[(4800c_2-1400\cdot0)\cos(4800\cdot0)+(-1400c_2-4800\cdot0)\sin(4800\cdot0)]\\\\&=4800c_2=480\implies c_2=\frac1{10}\end{align*}
 
 The current in the circuit is
 
