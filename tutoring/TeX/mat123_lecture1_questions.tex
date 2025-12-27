@@ -1,0 +1,176 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween}
+\title{MAT123 24.10.2025}
+
+\begin{document}
+
+\large
+
+\begin{center}
+{\huge MAT123 24.10.2025}
+\end{center}
+
+\hfill
+
+{\Large \textbf{QUESTIONS}}
+
+\hfill
+
+\noindent \textbf{Q1}: Evaluate $\displaystyle\lim_{x\to0}\frac{\sin ax -\tan ax}{x^3}$.
+
+\hfill
+
+\noindent \textbf{Q2}: Does $\displaystyle f(x)= 2x^{75}+5x^{49}+4x^6+1 $ have a real solution on its domain? That is, is there any $x_0$ such that $f(x_0)=0$?
+
+\hfill
+
+\noindent \textbf{Q3}: Find the first derivative of $\tan(e^{2x}\cdot\sin(3x))$.
+
+\hfill
+
+\noindent \textbf{Q4}: Using differentials, approximate $3\sqrt[3]{66} + 2\sqrt{66}$.
+
+\hfill
+
+\hfill
+
+{\Large \textbf{ANSWERS}}
+
+\hfill
+
+\noindent \textbf{Q1}: If we substitute $x=0$, we get $\dfrac{\sin (a\cdot0)-\tan(a\cdot 0)}{0^3}=\dfrac00$, which is an indeterminate form. We will manipulate this expression in a way such that the indeterminate form disappears. Multiply each side by $\cos ax$.
+
+\[L =\lim_{x\to0}\frac{\sin ax-\tan ax}{x^3}=\lim_{x\to0}\frac{\sin ax-\frac{\sin ax}{\cos ax}}{x^3}=\lim_{x\to0}\frac{\sin ax\cdot\cos ax-\sin ax}{x^3\cdot\cos ax}\]
+
+\hfill
+
+\noindent Factor $\sin ax$ in the numerator.
+
+\[L=\lim_{x\to0}\frac{\sin ax\cdot(\cos ax-1)}{x^3 \cos ax}\]
+
+\hfill
+
+\noindent Recall the \textbf{standard limit} $\displaystyle\lim_{u\to0}\frac{\sin u}u=1$. We will rewrite the original limit so that we can use this standard limit. Multiply the limit by $\frac aa$.
+
+\[L=\lim_{x\to0}\frac{\sin ax\cdot(\cos ax-1)}{x^3 \cos ax}\cdot\frac aa\]
+
+\hfill
+
+\noindent By using the \textbf{product rule} and \textbf{constant multiple rule} for limits, we may rewrite this limit as
+
+\[L=\underbrace{\lim_{x\to0}\frac{\sin ax}{ax}}_1\cdot\lim_{x\to0}\frac{a\cdot(\cos ax-1)}{x^2\cos ax}=a\cdot\lim_{x\to0}\frac{\cos ax-1}{x^2\cos ax}\]
+
+\hfill
+
+\noindent If we substitute $x=0$, we get $a\cdot\dfrac{1-\cos(a\cdot0)}{0^2\cdot\cos(a\cdot0)}=\dfrac00$, which is still indeterminate. We now use the trigonometric formula $\cos x=1-2\sin^2(\frac x2)$ for the numerator. Since we have $\cos ax$, then $\cos ax=1 -2\sin^2(\frac{ax}2)$.
+
+\[L=a\cdot\lim_{x\to0}\frac{(1-2\sin^2(\frac{ax}2))-1}{x^2\cos ax}=a\cdot\lim_{x\to0}\frac{-2\sin^2(\frac{ax}2)}{x^2\cos ax}\]
+
+\hfill
+
+\noindent Rewrite the limit to obtain $\displaystyle\lim_{u\to0}\frac{\sin u}{u}=1$. Multiply and divide the numerator by $\frac{a^2}4$.
+
+\[
+\begin{array}{ll}
+L&\displaystyle=a\cdot\lim_{x\to0}\frac{-2\sin^2(\frac{ax}2)}{x^2\cos ax}\cdot \frac{\frac{a^2}4}{\frac{a^2}4}=a\cdot\lim_{x\to0}\frac{-\frac12a^2\sin^2(\frac{ax}2)}{\frac14a^2x^2\cos ax}\\\\&\displaystyle=-\frac{a^3}2\cdot\underbrace{\lim_{x\to0}\frac1{\cos ax}}_{\frac1{\cos 0}=1}\cdot\lim_{x\to0}\frac{\sin^2(\frac{ax}2)}{\frac{a^2x^2}4}=-\frac{a^3}2\cdot\underbrace{\lim_{x\to0}\frac{{\sin(\frac{ax}2)}}{\frac{ax}2}}_{1}\cdot\underbrace{\lim_{x\to0}\frac{\sin(\frac{ax}2)}{\frac{ax}2}}_{1}=\boxed{-\frac{a^3}2}
+\end{array}\]
+
+\hfill
+
+\noindent \textbf{Remark}: The value of the limit $\displaystyle\lim_{x\to 0}\frac{\sin ax}{x}$ is $a$. Similarly, $\displaystyle\lim_{x\to0}\frac{\sin(ax)}{\sin(bx)}=\frac ab$. As a shortcut, you can evaluate such limits by taking the ratio of the coefficients.
+
+\hfill
+
+\noindent \textbf{Q2}: At first glance, it seems to be impossible to find an $x_0$ that satisfies $f(x_0)=0$. If we were able to find \textit{only} one root, then the question would already be answered. For this case, we will use the \textbf{IVT (Intermediate Value Theorem)}.
+
+\hfill
+
+\noindent IVT states that if $f$ is a continuous function on $[a,b]$, then $f$ takes any value on $[f(a), f(b)]$. That is, $f(a) \leq f(x) \leq f(b)$ for $x\in[a,b]$. We will demonstrate why IVT is useful.
+
+\hfill
+
+\noindent We now choose two arbitrary $x$ values. Let $x_0=-1$ and $x_1=0$. The value of $f$ at $x_0$ is $f(-1)=2(-1)^{75}+5(-1)^{49}+4(-1)^6+1=-2.$ The value of $f$ at $x_1$ is $f(0)=1$. $f$ is continuous everywhere (i.e., continuous on $\mathbb{R}$) because it is a polynomial function. By IVT, $f$ takes any value on $I =[f(-1), f(0)]$ for $x\in[-1,0]$. Notice that $0$ is an element of $I$, from which we can infer that at some point $x_2 \in [-1, 0]$, the value of $f(x_2)$ becomes $0$. Therefore, by IVT, there exists at least one point such that $f(x)$ is zero there. That is, we have a root on $[-1, 0]$.
+
+\hfill
+
+\noindent Until now, we cannot conclude that $f$ has different roots. Using IVT, we were able to show that at least one root exists. Since the question asks for one root, then we're done.
+
+\hfill
+
+\noindent \textbf{Q3}: Let $f(x)=\tan x,\:g(x)=e^{2x}\cdot\sin(3x)$, then we have the composite function $f(g(x))$. The \textbf{chain rule} states that $[f(g(x))]'=f'(g(x))\cdot g'(x)$. Recall the derivatives of the following functions.
+
+\[\frac d{dx}(\tan x)=\sec^2x, \quad \frac d{dx}(e^x)=e^x,\quad\frac d{dx} (\sin(x))=\cos x\]
+
+\hfill
+
+\noindent Calculate $f'$ and $g'$. For $g'$, we will use the product rule. Notice that we have $e^{2x}$ and $\sin(3x)$ inside $g$. By the chain rule, we have the following derivatives.
+
+\[\frac d{dx}(e^{2x})=e^{2x}\cdot2,\quad \frac d{dx}(\sin(3x))=\cos(3x)\cdot 3\]
+
+\[f'(x)=\sec^2x,\quad g'(x)=(e^{2x}\cdot 2)\cdot\sin(3x)+e^{2x}\cdot(3\cos(3x))\]
+
+\hfill
+
+\noindent Then $[f(g(x))]'$ is
+
+\[f'(g(x))\cdot g'(x) = \boxed{\sec^2(e^{2x}\cdot\sin(3x))\cdot[(2e^{2x})\cdot\sin(3x)+e^{2x}\cdot(3\cos(3x)]}\]
+
+\newpage
+
+\noindent \textbf{Q4}: If we were to calculate the exact value without using a calculator, we would not be able to find it. If we approximate it as $3\sqrt[3]{64}+2\sqrt{64}$, we obtain $28$, but this is a bit off the result. To approximate this value to decimal digits, we may use an approximation method called \textbf{approximation using differentials}.
+
+\hfill
+
+\noindent Let $y=f(x)$ be a continuous function. Suppose that we want to calculate $f(x+\Delta x)$ for sufficiently small $\Delta x$. By taking $\Delta x=dx$, we can approximate $f(x+\Delta x)$ as
+
+\[f(x+\Delta x)\approx f(x)+dy=f(x)+f'(x)dx,\]
+
+\hfill
+
+\noindent where $dy$ is called the \textbf{differential} of $y$. Since $y$ is a function of $x$, we can rewrite $dy$ as an expression of the independent variable, which is $f'(x)dx$.
+
+\hfill
+
+\noindent First off, calculate $\sqrt[3]{66}$. To approximate this value, rewrite it as $\sqrt[3]{64+2}$. Notice that if we take $x=64$ and $\Delta x=dx=2$, we can easily approximate this value. Let $g(x)=\sqrt[3]x$, then
+
+\[g(64+2)\approx g(64)+g'(64)\Delta x = \sqrt[3]{4^3}+ g'(64)\cdot2=4+2g'(64)\]
+
+\hfill
+
+\noindent Now, compute $g'(x)$ to evaluate $g'(64)$. Using the \textbf{power rule}, we get
+
+\[g'(x)=(\sqrt[3]{x})'=(x^{1/3})'=\frac13x^{-2/3}\implies g'(64)=\frac13(64)^{-2/3}=\frac13(4^3)^{-2/3}=\frac1{48}\]
+
+\[g(66)\approx4+2\cdot\frac1{48}=4+\frac1{24}\]
+
+\hfill
+
+\noindent Do the same for $\sqrt{66}$. Let $h(x) = \sqrt{x}$. Then
+
+\[h(64+2)\approx h(64)+h'(64)\Delta x = \sqrt{8^2}+ h'(64)\cdot2=8+2h'(64)\]
+
+\hfill
+
+\noindent Now, compute $h'(x)$ to evaluate $h'(64)$.
+
+\[h'(x)=(\sqrt{x})'=(x^{1/2})'=\frac12x^{-1/2}\implies h'(64)=\frac12(64)^{-1/2}=\frac12(8^2)^{-1/2}=\frac1{16}\]
+
+\[h(66)\approx8+2\cdot\frac1{16}=8+\frac18\]
+
+\hfill
+
+\noindent Eventually, we can approximate $3\sqrt[3]{66}+2\sqrt{66}$ as
+
+\[3g(66)+2h(66)\approx3\cdot\left(4+\frac1{24}\right)+2\left(8+\frac18\right)=12+\frac18+16+\frac14=\boxed{\frac{227}8=28.375}\]
+
+\hfill
+
+\noindent The calculator gives $3\sqrt[3]{66}+2\sqrt{66}=28.3717...$, which confirms our approximation.
+
+\end{document}
