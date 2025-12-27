@@ -1,0 +1,577 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{parskip}
+\usepackage{cancel}
+
+\begin{document}
+
+\large
+
+\begin{center}
+{\huge MAT123 26.12.2025}
+\end{center}
+
+\vspace{1em}
+
+{\setlength{\parindent}{1em} \Large
+\indent \textbf{QUESTIONS}
+}
+
+\textbf{Q1.} Determine if the following sequences converge or diverge.
+
+{\setlength{\parindent}{1em}
+\indent \textbf{a.} $a_n=\dfrac{1}{\sqrt{n^2-1}-\sqrt{n^2+n}}$ \ \
+\indent \textbf{b.} $b_n=\dfrac{\sin^2n}{2^n}$ \ \
+\indent \textbf{c.} $c_n=\dfrac{n^2}{2n-1}\,\sin\dfrac1n$ \\[1em]
+\indent \textbf{d.} $\displaystyle a_n=\int_1^n\frac1{x^p}\,dx, \quad p>1$ \ \
+\indent \textbf{e.} $b_n=\dfrac{n!}{n^n}$}
+
+\vspace{1em}
+
+\textbf{Q2.} Determine whether each of the following series converges or diverges.
+
+{\setlength{\parindent}{1em}
+\indent \textbf{a.} $\displaystyle\sum_{n=1}^\infty\dfrac{(-2)^{n+1}+3^n}{4^n}$ \
+\indent \textbf{b.} $\displaystyle\sum_{n=1}^\infty\dfrac{n(n+1)}{(n+2)(n+3)}$ \
+\indent \textbf{c.} $\displaystyle\sum_{n=0}^\infty\dfrac{\cos(n\pi)}{5^n}$ \\[1em]
+\indent \textbf{d.} $\displaystyle\sum_{n=1}^\infty\ln\sqrt{\dfrac{n+1}n}$ \
+\indent \textbf{e.} $\displaystyle\sum_{n=3}^\infty\dfrac1{n\,\ln n\,\ln(\ln n)}$ \
+\indent \textbf{f.} $\displaystyle\sum_{n=1}^\infty\sqrt{\frac{n+1}{n^2+2}}$}
+
+\vspace{1em}
+
+\textbf{Q3.} Find the radius, center, and interval of convergence of $\displaystyle\sum_{n=1}^\infty\left(\frac{n}{n+1}\right)^{n^2}x^n$.
+
+\vspace{1em}
+
+\textbf{Q4.} Find the Maclaurin series for the function $\dfrac{x^2}{1+x}$.
+
+\newpage
+
+{\setlength{\parindent}{1em} \Large
+\indent \textbf{ANSWERS}
+}
+
+\textbf{Q1.} To determine whether the sequence converges or diverges, we compute its limit as $n\to\infty$.
+
+\vspace{1em}
+
+\textbf{a.} Rationalize the denominator; i.e., multiply and divide by the conjugate of the denominator.
+
+\[
+a_n=\frac{1}{\sqrt{n^2-1}-\sqrt{n^2+n}}
+\cdot
+\frac{\sqrt{n^2-1}+\sqrt{n^2+n}}{\sqrt{n^2-1}+\sqrt{n^2+n}}
+=\frac{\sqrt{n^2-1}+\sqrt{n^2+n}}{(n^2-1)-(n^2+n)}
+\]
+
+Simplify the denominator.
+
+\[(n^2-1)-(n^2+n)=-n-1\implies a_n=\frac{\sqrt{n^2-1}+\sqrt{n^2+n}}{-n-1}\]
+
+Factor out \(n\) from the square roots.
+
+\[\sqrt{n^2-1}=|n|\sqrt{1-\frac{1}{n^2}}, \quad\sqrt{n^2+n}=|n|\sqrt{1+\frac{1}{n}}\]
+
+$|n|$ simplifies to $n$ because $n>0$. Hence,
+
+\[a_n=\frac{n\left(\sqrt{1-\frac{1}{n^2}}+\sqrt{1+\frac{1}{n}}\right)}{-n-1}\]
+
+Divide numerator and denominator by \(n\):
+
+\[a_n=\frac{\sqrt{1-\frac{1}{n^2}}+\sqrt{1+\frac{1}{n}}}
+{-\left(1+\frac{1}{n}\right)}\]
+
+Take the limit.
+
+\[
+\lim_{n\to\infty} a_n=\frac{1+1}{-1}=-2\qquad\left[\text{because}\lim_{n\to\infty}\frac1{n^2}=\lim_{n\to\infty}\frac1n=0\right]
+\]
+
+Therefore, $\boxed{\lim_{n\to\infty} a_n=-2}$
+
+\vspace{1em}
+
+\textbf{b.} Use bounds on the numerator. For all real numbers \(n\),
+
+\[
+-1\leq \sin n\leq 1\implies0 \le \sin^2 n \le 1.
+\]
+
+Thus,
+
+\[
+0 \le \frac{\sin^2 n}{2^n} \le \frac{1}{2^n}.
+\]
+
+Since $\displaystyle\lim_{n\to\infty}0=\lim_{n\to\infty}\dfrac1{2^n}=0$, by the Squeeze Theorem, the sequence $\dfrac{\sin^2n}{2^n}$ also converges to
+
+\[\boxed{0}\]
+
+\vspace{1em}
+
+\textbf{c.} Rewrite the expression to isolate known limits.
+
+\[
+c_n=\left(\frac{n^2}{2n-1}\right)\sin\frac{1}{n}
+\]
+
+Rewrite the rational factor:
+
+\[
+\frac{n^2}{2n-1}=\frac{n}{2-\frac{1}{n}}\implies
+c_n=\frac{n}{2-\frac{1}{n}}\,\sin\frac{1}{n}
+\]
+
+Use a standard trigonometric limit. Recall that
+
+\[
+\lim_{x\to 0} \frac{\sin x}{x}=1
+\]
+
+Let \(x=\dfrac{1}{n}\). Then
+
+\[
+\sin\frac{1}{n}=\frac{1}{n}\cdot\frac{\sin\frac{1}{n}}{\frac{1}{n}} \implies
+c_n=\frac{n}{2-\frac{1}{n}} \cdot \frac{1}{n}
+\cdot \frac{\sin\frac{1}{n}}{\frac{1}{n}}
+=\frac{1}{2-\frac{1}{n}} \cdot \frac{\sin\frac{1}{n}}{\frac{1}{n}}
+\]
+
+Take the limit.
+
+\[
+\lim_{n\to\infty}\left(\frac1{2-\frac{1}{n}}\right)=\frac12,
+\qquad
+\lim_{n\to\infty}\frac{\sin\frac{1}{n}}{\frac{1}{n}}=1\implies \lim_{n\to\infty}\left[\left(2-\frac{1}{n}\right)\,\frac{\sin\frac{1}{n}}{\frac{1}{n}}\right]=\frac12\cdot1=\boxed{\frac12}
+\]
+
+\vspace{1em}
+
+\textbf{d.} Evaluate the integral.
+
+\[\lim_{n\to\infty}\int_1^n\frac1{x^p}\,dx=\lim_{n\to\infty}\left.\frac{x^{1-p}}{1-p}\right|_1^n=\lim_{n\to\infty}\left(\underbrace{\frac{n^{1-p}}{1-p}}_0-\frac{1^{1-p}}{1-p}\right)=\lim_{n\to\infty}\frac1{p-1}\]
+
+\[\boxed{\text{The limit of the sequence is }\frac1{p-1}.}\]
+\vspace{1em}
+
+\newpage
+
+\textbf{e.} Write the sequence as a product.
+
+\[b_n=\frac{n!}{n^n}=\frac{1\cdot 2\cdot 3\cdots n}{n\cdot n\cdot n\cdots n}\]
+
+Estimate the product. For \(k \le n\), we have \(\frac{k}{n} \le 1\). In particular, for
+\(k=1,2,\dots,n\),
+
+\[
+\frac{k}{n} \le \frac{n}{n}=1.
+\]
+
+Hence,
+
+\[
+b_n=\frac{1\cdot2\cdot3\,\ldots \,n}{n\cdot n\cdot n\,\ldots\, n}\leq\frac1n\cdot1\cdot1\,\ldots\,1 = \frac1n.\implies b_n\leq\frac1n
+\]
+
+$n!$ and $n^n$ are both positive for $n>0$. Therefore,
+
+\[
+0 \le b_n \le \frac{1}{n}.
+\]
+
+Since $\displaystyle\lim_{n\to\infty}0=\lim_{n\to\infty}\dfrac1{n}=0$, by the Squeeze Theorem, the sequence $\dfrac{n!}{n^n}$ also converges to
+
+\[\boxed0\]
+
+\vspace{1em}
+
+\textbf{Q2.} \textbf{a.} Split the series.
+
+\[\sum_{n=1}^\infty \frac{(-2)^{n+1}+3^n}{4^n}=\sum_{n=1}^\infty \frac{(-2)^{n+1}}{4^n}+\sum_{n=1}^\infty \frac{3^n}{4^n}.\]
+
+Simplify each term. For the first series,
+
+\[
+\sum_{n=1}^\infty\frac{(-2)^{n+1}}{4^n}=\sum_{n=1}^\infty\frac{(-2)^n\cdot(-2)}{4^n}=-2\sum_{n=1}^\infty\left(\frac{-1}{2}\right)^n
+\]
+
+For the second series,
+
+\[
+\sum_{n=1}^\infty \frac{3^n}{4^n}
+=
+\sum_{n=1}^\infty \left(\frac{3}{4}\right)^n.
+\]
+
+Both series are geometric with common ratios
+\[
+r_1=-\frac{1}{2}, \qquad r_2=\frac{3}{4}
+\]
+
+and satisfy \(|r_1|<1\) and \(|r_2|<1\). Remember the geometric series formula.
+
+\[\sum_{n=1}^\infty ar^n=\frac r{1-r}\]
+
+First series:
+\[-2\sum_{n=1}^\infty \left(-\frac{1}{2}\right)^n=-2\left(\frac{-\frac12}{1-\left(-\frac{1}{2}\right)}\right)=\frac{2}{3}.
+\]
+
+Second series:
+\[\sum_{n=1}^\infty \left(\frac{3}{4}\right)^n=\frac{\frac34}{1-\frac{3}{4}}=3.\]
+
+Add the results.
+
+\[
+\sum_{n=1}^\infty \frac{(-2)^{n+1}+3^n}{4^n}
+=
+\frac{2}{3}+3
+=
+\frac{11}{3}.
+\]
+
+\[
+\boxed{\text{The series converges and its sum is } \frac{11}{3}.}
+\]
+
+\vspace{1em}
+
+\textbf{b.} Divide the numerator and denominator by \(n^2\):
+
+\[
+a_n
+=
+\frac{1+\frac{1}{n}}{\left(1+\frac{2}{n}\right)\left(1+\frac{3}{n}\right)}.
+\]
+
+As \(n \to \infty\), $\displaystyle\frac{2}{n},\frac{3}{n}\to 0$. So
+
+\[
+\lim_{n\to\infty} a_n
+=
+\frac{1}{(1)(1)}
+=
+1.
+\]
+
+Apply the Divergence Test. Since $\displaystyle\lim_{n\to\infty} a_n =1\neq 0$, the Divergence Test implies that the series
+
+\[
+\sum_{n=1}^\infty \frac{n(n+1)}{(n+2)(n+3)}
+\]
+
+$\boxed{\text{diverges}}$.
+
+\newpage
+
+\textbf{c.} Let $\displaystyle a_n=\frac{\cos(n\pi)}{5^n}$. Apply the Ratio Test:
+\[
+\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|
+=
+\lim_{n\to\infty}\left|\frac{\cos((n+1)\pi)}{5^{n+1}}\cdot\frac{5^n}{\cos(n\pi)}\right|
+=
+\lim_{n\to\infty}\frac{|\cos((n+1)\pi)|}{|\cos(n\pi)|}\cdot\frac{1}{5}
+\]
+
+Since \(\cos(n\pi)=(-1)^n\), we have \(|\cos(n\pi)|=1\) for all \(n\). Therefore,
+\[
+\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\frac{1}{5}<1.
+\]
+
+By the Ratio Test, the series converges absolutely. Therefore, the series $\boxed{\text{converges}}$.
+
+\textbf{d.} First rewrite the general term:
+\[
+\ln\sqrt{\frac{n+1}{n}}
+=
+\frac{1}{2}\ln\left(\frac{n+1}{n}\right)
+=
+\frac{1}{2}\bigl(\ln(n+1)-\ln n\bigr).
+\]
+
+Examine the partial sums. Let
+\[
+S_N=\sum_{n=1}^N \ln\sqrt{\frac{n+1}{n}}
+=
+\frac{1}{2}\sum_{n=1}^N \bigl(\ln(n+1)-\ln n\bigr).
+\]
+
+Take the limit.
+
+\begin{align*}\lim_{N\to\infty}S_N&=\frac12\bigg[(\cancel{\ln2}-\ln1)+\cancel{\ln3}-\cancel{\ln2})+(\cancel{\ln4}-\cancel{\ln3})\\&\quad+\ldots+(\cancel{\ln N}-\cancel{\ln(N-1)})+(\ln(N+1)-\cancel{\ln N})\bigg]=\frac12(\ln(N+1)-\ln1)\end{align*}
+
+\[\lim_{N\to\infty}S_N=\frac12\ln(N+1)=\infty\]
+
+Since the partial sums diverge to infinity, the series
+\[
+\sum_{n=1}^\infty \ln\sqrt{\frac{n+1}{n}}
+\]
+$\boxed{\text{diverges.}}$
+
+\vspace{1em}
+
+\textbf{e.} We determine whether the series converges or diverges using the Integral Test. Verify the conditions of the Integral Test.
+
+For \(x \ge 3\), the function $f(x)=\dfrac{1}{x\,\ln x\,\ln(\ln x)} $ is positive, continuous, and decreasing. Thus, the Integral Test applies.
+
+Evaluate the corresponding improper integral. Consider
+\[
+\int_3^\infty \frac{1}{x\,\ln x\,\ln(\ln x)}\,dx.
+\]
+
+Use the substitution
+\[
+u=\ln(\ln x),
+\quad
+du=\frac{1}{x\ln x}\,dx.
+\]
+
+For $x=3,\:u=\ln\ln3$. For $x\to\infty,\:u\to\infty$.
+
+Then the integral becomes
+\[
+\int_3^\infty \frac{1}{x\,\ln x\,\ln(\ln x)}\,dx=\int_{\ln\ln3}^\infty \frac{1}{u}\,du.
+\]
+
+This is an improper, where we need to take the limit.
+
+\[
+\int_{\ln\ln3}^\infty \frac{1}{u}\,du=\lim_{R\to\infty}\int_{\ln\ln3}^R \frac{1}{u}\,du=\lim_{R\to\infty}\ln|u|\bigg|_{\ln\ln3}^R=\lim_{R\to\infty}(\ln|R|-\ln\ln\ln3)=\infty
+\]
+
+Since the corresponding improper integral diverges, the series
+\[
+\sum_{n=3}^\infty \frac{1}{n\,\ln n\,\ln(\ln n)}
+\]
+also $\boxed{\text{diverges}}$ by the Integral Test.
+
+\vspace{1em}
+
+\textbf{f.} We determine whether the series converges or diverges using the Limit
+Comparison Test. Consider the series
+\[
+\sum_{n=1}^\infty \frac{1}{\sqrt{n}},
+\]
+which is a \(p\)-series with \(p=\tfrac12<1\) and therefore diverges. Let
+\[a_n=\sqrt{\frac{n+1}{n^2+2}},\qquad b_n=\frac{1}{\sqrt{n}}.\]
+
+Then
+\[\frac{a_n}{b_n}=\sqrt{\frac{n+1}{n^2+2}} \cdot \sqrt{n}=\sqrt{\frac{n(n+1)}{n^2+2}}.\]
+
+Divide numerator and denominator inside the square root by \(n^2\):
+
+\[\frac{a_n}{b_n}=\sqrt{\frac{1+\frac{1}{n}}{1+\frac{2}{n^2}}}.\]
+
+Take the limit.
+
+\[
+\lim_{n\to\infty}\frac{1}{n}= 0,
+\qquad\lim_{n\to\infty}\frac{1}{n^2}=0\qquad\implies\qquad\lim_{n\to\infty} \frac{a_n}{b_n}=\sqrt{\frac{1}{1}}=1
+\]
+
+Since $\displaystyle 0 < \lim_{n\to\infty} \frac{a_n}{b_n} < \infty$ and \(\sum b_n\) diverges, the given series also $\boxed{\text{diverges}}$ by the Limit Comparison Test.
+
+\newpage
+
+\textbf{Q3.} The series is of the form
+\[
+\sum_{n=1}^\infty a_n x^n,
+\qquad
+a_n=\left(\frac{n}{n+1}\right)^{n^2}.
+\]
+Hence, the center of the power series is $0$.
+
+Use the Root Test to find the radius of convergence. Consider
+
+\[
+\lim_{n\to\infty} \sqrt[n]{|a_nx^n|}
+=
+\lim_{n\to\infty} \sqrt[n]{\left(\frac n{n+1}\right)^{n^2}}|x|
+=
+\lim_{n\to\infty} \left(\frac{n}{n+1}\right)^n |x|.
+\]
+
+Calculate $\displaystyle\lim_{n\to\infty}\left(\dfrac{n}{n+1}\right)^n$.
+
+\[\lim_{n\to\infty}\left(\dfrac{n}{n+1}\right)^n=\lim_{n\to\infty}\left(\frac{n+1}n\right)^{-n}=\lim_{n\to\infty}\frac1{\left(1+\frac1n\right)^n}=\frac1{\displaystyle\underbrace{\lim_{n\to\infty}\left(1+\frac1n\right)^n}_{\text{standard limit}}}=\frac1e\]
+
+We obtain
+\[
+\lim_{n\to\infty} \sqrt[n]{|a_n x^n|}
+=
+\frac{|x|}{e}.
+\]
+
+By the Root Test, the series converges if
+
+\[\frac{|x|}{e} < 1\implies |x| < e.\]
+
+Thus, the radius of convergence is $R=e$. Test the endpoints.
+
+\textit{Case 1}: \(x=e\). The series becomes
+
+\[
+\sum_{n=1}^\infty \left(\frac{n}{n+1}\right)^{n^2} e^n
+=
+\sum_{n=1}^\infty \left[e\left(\frac{n}{n+1}\right)^n\right]^n.
+\]
+
+Now, we need to compute $\displaystyle\lim_{n\to\infty}\left(\frac{n}{n+1}\right)^{n^2}e^n$ for the Divergence Test. Relate this series to the corresponding function and calculate
+
+\[L=\lim_{x\to\infty}\left(\frac{x}{x+1}\right)^{x^2}e^x.\]
+
+First rewrite the expression using exponentials:
+
+\[
+\left(\frac{x}{x+1}\right)^{x^2} e^x
+=
+e^{\textstyle\left(x^2 \ln\!\left(\frac{x}{x+1}\right)+x\right)}.
+\]
+
+Thus it suffices to compute
+
+\[
+\lim_{x\to\infty} \left[x^2 \ln\!\left(\frac{x}{x+1}\right)+x\right].
+\]
+
+Rewrite.
+
+\[\lim_{x\to\infty}
+\frac{\frac1x+\ln\left(\frac{x}{1+x}\right)}{1/x^2}.
+\]
+
+This limit is of the indeterminate form \(\frac{0}{0}\), so we apply
+L’Hôpital’s Rule. Differentiate the numerator and denominator.
+
+Numerator:
+
+\[
+\frac{d}{dx}\!\left(\frac{1}{x}+\ln\!\left(\frac{x}{x+1}\right)\right)
+=
+-\frac{1}{x^2}
++
+\left(\frac{x+1}{x}\cdot\frac{1\cdot(x+1)-x\cdot(1)}{(x+1)^2}\right).
+\]
+
+Denominator:
+
+\[
+\frac{d}{dx}\!\left(\frac{1}{x^2}\right)
+=
+-\frac{2}{x^3}.
+\]
+
+Thus the limit becomes
+
+\[
+\lim_{x\to\infty}
+\frac{-\frac{1}{x^2}+\frac{x+1}{x}\cdot\frac{1}{(x+1)^2}}{-\frac{2}{x^3}}=\lim_{x\to\infty}
+\frac{-\frac{1}{x^2}+\frac{1}{x}\cdot\frac{1}{x+1}}{-\frac{2}{x^3}}
+\]
+
+Multiply numerator and denominator by \(x^3\):
+
+\[
+\lim_{x\to\infty}
+\frac{-x + \frac{x^2}{x+1}}{-2}=\lim_{x\to\infty}
+\frac{-x + (x-\frac{x}{x+1})}{-2}=\lim_{x\to\infty}
+\frac{x}{2(x+1)}=\frac12.
+\]
+
+Hence,
+
+\[
+\lim_{x\to\infty}
+\left[x^2 \ln\!\left(\frac{x}{x+1}\right)+x\right]
+=
+\frac12.
+\]
+
+Finally,
+
+\[
+\lim_{x\to\infty}
+\left(\frac{x}{x+1}\right)^{x^2} e^x
+=
+\sqrt e.
+\]
+
+Since the limit converges to $\sqrt e$, which is different than $0$, by the Divergence Test, the series at this point diverges.
+
+\textit{Case 2}: \(x=-e\). The series becomes
+
+\[
+\sum_{n=1}^\infty(-1)^n \left(\frac{n}{n+1}\right)^{n^2} e^n
+=
+\sum_{n=1}^\infty(-1)^n \left[e\left(\frac{n}{n+1}\right)^n\right]^n.
+\]
+
+From earlier, we found out that $\displaystyle\lim_{x\to\infty}
+\left(\frac{x}{x+1}\right)^{x^2} e^x
+=
+\sqrt e$. The limit we want to evaluate $\displaystyle\lim_{x\to\infty}
+(-1)^n\left(\frac{x}{x+1}\right)^{x^2} e^x$ does not exist because the function oscillates between $-\sqrt e$ and $\sqrt e$ as $x\to\infty$. Therefore, the series at this point is also divergent.
+
+The series converges for
+\[
+|x|<e
+\]
+and diverges at \(x=\pm e\).
+
+\[
+\boxed{
+\begin{aligned}
+\text{Center:} &\ 0,\\
+\text{Radius of convergence:} &\ R=e,\\
+\text{Interval of convergence:} &\ (-e,e).
+\end{aligned}
+}
+\]
+
+\vspace{1em}
+
+\textbf{Q4.} We begin with the geometric series
+\[
+\frac{1}{1-x}
+=
+\sum_{n=0}^\infty x^n=1+x+x^2+\ldots,
+\qquad |x|<1.
+\]
+
+Replace \(x\) by \(-x\) to obtain
+\[
+\frac{1}{1+x}
+=
+\sum_{n=0}^\infty (-1)^n x^n,
+\qquad |x|<1.
+\]
+
+Now multiply both sides by \(x^2\):
+\[
+\frac{x^2}{1+x}
+=
+x^2 \sum_{n=0}^\infty (-1)^n x^n
+=
+\sum_{n=0}^\infty (-1)^n x^{n+2}.
+\]
+
+Therefore, the Maclaurin series for the function is
+\[
+\boxed{
+\frac{x^2}{1+x}
+=
+\sum_{n=0}^\infty (-1)^n x^{n+2},
+\qquad |x|<1.
+}
+\]
+
+\end{document}

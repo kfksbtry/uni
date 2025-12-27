@@ -1,0 +1,381 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween}
+
+\begin{document}
+
+\large
+
+\begin{center}
+{\huge MAT123 31.10.2025}
+\end{center}
+
+\hfill
+
+{\Large \textbf{QUESTIONS}}
+
+\hfill
+
+\noindent \textbf{Q1}: Let $f$ be the function defined by $\displaystyle f(x)=\left\{\begin{array}{ll}(e-2)\,x^2,&x\leq 0\\[1em]\dfrac{e^x-x-1}x,&x>0\end{array}\right.$.
+
+\begin{itemize}
+    \item (a) Is $f$ a continuous function?
+    \item (b) Is $f$ a differentiable function?
+\end{itemize}
+
+\hfill
+
+\noindent \textbf{Q2}: Evaluate $\displaystyle\lim_{x\to0}\frac{\sin\left(\dfrac1{x^2}\right)}{\dfrac1{x^2}}$.
+
+\hfill
+
+\hfill
+
+\noindent \textbf{Q3}: Evaluate $\displaystyle\lim_{x\to0}\frac{x}{\sqrt{1+\tan(3x)}-1}$ without using L'Hôpital's rule.
+
+\hfill
+
+\hfill
+
+\noindent \textbf{Q4}: Find the equations of the tangent lines to the curve $y = x^3+x$, which pass through the point $(2, 2)$.
+
+\hfill
+
+\hfill
+
+\noindent \textbf{Q5}: Find $\dfrac{dy}{dx}$ from the equation $y\sin\left(\dfrac1y\right)=1-xy$.
+
+\hfill
+
+\hfill
+
+\noindent \textbf{Q6}: If $x^3+y^3=16$,
+\begin{itemize}
+    \item (a) find $\dfrac{dy}{dx}$.
+    \item (b) find the value of $\dfrac{d^2y}{dx^2}$ at the point $(2,2)$.
+\end{itemize}
+
+\hfill
+
+\noindent \textbf{Q7}: The coordinates of a particle in the metric $xy$-plane are differentiable functions of time $t$ with $\dfrac{dx}{dt}=-1$ m/s and $\dfrac{dy}{dt}=-5$ m/s. How fast is the particle's distance from the origin changing as it passes through the point $(5,12)$?
+
+\hfill
+
+\noindent \textbf{Q8}: A spherical iron ball $8$ cm in diameter is coated with a layer of ice of uniform thickness. If the ice melts at the rate of $10$ cm$^3/$min, what is the change rate of the thickness of the ice when it is 2 cm thick? What is the rate of change of the outer surface?
+
+\hfill
+
+\noindent \textbf{Q9}: Let $0<a<b$. Show that $\dfrac{b-a}{1+b^2}<\arctan b-\arctan a<\dfrac{b-a}{1+a^2}$.
+
+\hfill
+
+\noindent \textbf{Q10}: Evaluate $\displaystyle\lim_{x\to1}\frac{x^2-4x+3}{\sqrt x-1}$.
+
+\hfill
+
+\noindent \textbf{Q11}: Evaluate $\displaystyle\lim_{x\to9}\frac{\sqrt x-3}{x^3-82x+9}$.
+
+\newpage
+
+{\Large \textbf{ANSWERS}}
+
+\hfill
+
+\noindent \textbf{Q1}: (a) For $f$ to be a continuous function, $f$ must be continuous on its entire domain. For $x\leq0$, $f(x)=(e-2)\,x^2$ becomes a polynomial expression, which is continuous for $x<0$. For $x>0$, $f(x)=\dfrac{e^x-x-1}x$ becomes an expression comprising an exponential and a polynomial in the numerator and a polynomial in the denominator, which is continuous for $x>0$. The \textit{only} point at which we need to check the continuity is $x=0$.
+
+\hfill
+
+\noindent Check if $f(0)$ is defined.
+
+\[f(0)=(e-2)0^2=0\implies\text{It is defined at }x=0.\]
+
+\hfill
+
+\noindent Check the one-sided limits. Let's first check the limit from the left.
+
+\[\lim_{x\to0^-}f(x)=\lim_{x\to0^-}(e-2)x^2=(e-2)0^2=0\]
+
+\hfill
+
+\noindent Check the limit from the right.
+
+\[\lim_{x\to0^+}f(x)=\lim_{x\to0^-}\frac{e^x-x-1}x\]
+
+\hfill
+
+\noindent Notice that if we put $x=0$, the expression is in the form $\dfrac00$. To eliminate this indeterminate form, we rearrange the limit with the following steps.
+
+\[\lim_{x\to0^+}\frac{e^x-x-1}x=\lim_{x\to0^+}\frac{e^x-1}x-\underbrace{\lim_{x\to0^+}\frac xx}_1=\lim_{x\to0^+}\frac{e^x-1}x-1\]
+
+\hfill
+
+\noindent Recall the definition of the derivative from the right side. Let $g(x)=e^x$, then we may rewrite the resulting limit as
+
+\[\lim_{x\to0^+}\frac{e^x-1}x-1=\lim_{x\to0^+}\frac{e^x-e^0}{x-0}-1=\lim_{x\to0^+}\frac{g(x)-g(0)}{x-0}-1=g'_+(0)-1\]
+
+\hfill
+
+\noindent The first derivative of $e^x$ from the right side is $e^x$. Therefore,
+
+\[g'_+(0)-1=e^0-1=1-1=0\]
+
+\hfill
+
+\noindent Since $\displaystyle\lim_{x\to0}f(x)=f(0)$, the criteria for continuity are satisfied. Therefore, at $x=0$, $f$ is continuous.
+
+\hfill
+
+\noindent (b) $f$ is differentiable for $x\neq0$. If $f$ is differentiable at $x=0$, then $f$ is differentiable on its entire domain. We check whether the following equality holds.
+
+\[\lim_{x\to0}f'(x)= f'(0)\]
+
+\hfill
+
+\noindent Investigate the right- and left-hand derivatives.
+
+\[f'_-(x)=(e-2)\cdot2x\implies f'_-(0)=0\]
+
+\[f'_+(x)=\frac{(e^x-1)x-(e^x-x-1)\cdot1}{x^2}=\frac{xe^x-e^x+1}{x^2}\]
+\[f'_+(0)\overset{\text{L'H.}}{=}\lim_{x\to0^+}\frac{e^x(x-1)+e^x}{2x}=\lim_{x\to0^+}\frac{e^x}{2}=\frac{e^0}2=\frac12\]
+
+\hfill
+
+\noindent Since $f'_+(0)\neq f'_-(0)$, $f$ is not differentiable at $x=0$.
+
+\hfill
+
+\noindent \textbf{Q2}: Rewrite the limit.
+
+\[\lim_{x\to0}\frac{\sin\left(\dfrac1{x^2}\right)}{\dfrac1{x^2}}=\lim_{x\to0}x^2\sin\left(\dfrac1{x^2}\right)\]
+
+\hfill
+
+\noindent We cannot separate this limit into two different limits because the limit $\displaystyle\lim_{x\to0}\sin\left(\dfrac1{x^2}\right)$ does not exist. The inside expression oscillates wildly as $x\to0$. We will solve this limit by applying the squeeze theorem.
+
+\hfill
+
+\noindent We have the inequality below for all $x\in\mathbb R\setminus \{0\}$
+
+\[-1\leq\sin\left(\frac1{x^2}\right)\leq1\]
+
+\hfill
+
+\noindent Multiply each side by $x^2$. The inequality direction stays the same because $x^2\geq0$.
+
+\[-x^2\leq x^2\sin\left(\frac1{x^2}\right)\leq x^2\]
+
+\hfill
+
+\noindent Since $\displaystyle\lim_{x\to0}-x^2=\lim_{x\to0}x^2=0$, by the squeeze theorem, the limit $\displaystyle\lim_{x\to0}x^2\sin\left(\frac1{x^2}\right)$ is also $\boxed0$.
+
+\hfill
+
+\hfill
+
+\noindent \textbf{Q3}: Multiply and divide by the conjugate of the denominator.
+
+\[L=\lim_{x\to0}\frac x{\sqrt{1+\tan(3x)}-1}=\lim_{x\to0}\frac x{\sqrt{1+\tan(3x)}-1}\cdot\frac{\sqrt{1+\tan(3x)}+1}{\sqrt{1+\tan(3x)}+1}\]
+\[L=\lim_{x\to0}\frac{x\sqrt{1+\tan(3x)}+x}{\tan(3x)}=\lim_{x\to0}\frac{x(\sqrt{1+\tan(3x)}+1)}{\tan(3x)}\]
+
+\hfill
+
+\noindent Recall that $\displaystyle\lim_{u\to0}\frac{\sin u}u=1$. Apply the \textbf{quotient rule} and rearrange the limit.
+
+\[L=\lim_{x\to0}\frac{\sqrt{1+\tan(3x)}+1}{\dfrac{\tan(3x)}x}=\lim_{x\to0}\frac{\sqrt{1+\tan(3x)}+1}{\dfrac{\sin(3x)}{x\cos(3x)}\cdot\dfrac33}=\frac{\displaystyle\lim_{x\to0}\left(\sqrt{1+\tan(3x)}+1\right)}{\displaystyle\underbrace{\lim_{x\to0}\dfrac{\sin(3x)}{3x}}_1\cdot\lim_{x\to0}\frac3{\cos(3x)}}\]
+\[L=\frac{\sqrt{1+\tan0}+1}{\dfrac3{\cos(0)}}=\boxed{\frac23}\]
+
+\hfill
+
+\noindent \textbf{Q4}: We have the point of tangency $(a, a^3+a)$ for $x=a$ on the curve. The derivative at this point is
+
+\[f'(a)=\left.\frac{df}{dx}\right|_{x=a}=3a^2+1.\]
+
+\hfill
+
+\noindent Recall the straight line formula $y-y_0=m(x-x_0)$, where $m$ is the slope of the line. Since we have the derivative at $x=a$, $m$ is just $3a^2+1$. We also have the point $(a,a^3+a)$ on the line. So,
+
+\[y-(a^3+a)=(3a^2+1)(x-a)\]
+
+\hfill
+
+\noindent To find the specific values for $a$, try the point $(2,2)$.
+
+\[2-a^3-a=(3a^2+1)(2-a)\implies 2-a^3-a=6a^2-3a^3+2-a\implies 6a^2
+-2a^3=0\]
+\[\implies 2a^2(3-a)=0\implies a_1=0,\quad a_2= 3\]
+
+\hfill
+
+\noindent If $a=0$, we have the tangent line $y=x$. If $a=3$, we have $y-30=28x-84\implies y=28x-54$.
+
+\[\boxed{\text{Tangent lines:}\quad y=x,\quad y=28x-54}\]
+
+\hfill
+
+\noindent \textbf{Q5}: Use \textbf{implicit differentiation}, where $y=f(x)$. Apply \textbf{the product rule} and \textbf{the chain rule}.
+
+\[y\sin\left(\frac1y\right)=1-xy\]
+\[\frac d{dx}\left[y\sin\left(\frac1y\right)\right]=\frac d{dx}\left(1-xy\right)\]
+\[\frac{dy}{dx}\cdot\sin\left(\frac1y\right)+y\cdot\cos\left(\frac1y\right)\cdot\left(-\frac1{y^2}\right)\cdot\frac{dy}{dx}=-1\cdot y-x\frac{dy}{dx}\]
+
+\hfill
+
+\noindent Regroup the terms to solve for $\dfrac{dy}{dx}$.
+
+\[\frac{dy}{dx}\cdot\sin\left(\frac1y\right)+x\frac{dy}{dx}-\frac1y\cdot\cos\left(\frac1y\right)\cdot\frac{dy}{dx}=-y\]
+\[\frac{dy}{dx}\left[\sin\left(\frac1y\right)+x-\frac1y\cdot\cos\left(\frac1y\right)\right]=-y\]
+
+\[\boxed{\frac{dy}{dx}=\frac{-y}{\sin\left(\dfrac1y\right)+x-\dfrac1y\cdot\cos\left(\dfrac1y\right)}}\]
+
+\hfill
+
+\noindent \textbf{Q6}: (a) Apply implicit differentiation, where $y=f(x)$.
+
+\[x^3+y^3=16\]
+\[\frac d{dx}\left(x^3+y^3\right)=\frac d{dx}(16)\]
+\[3x^2+3y^2\cdot\frac{dy}{dx}=0\implies\boxed{\frac{dy}{dx}=-\frac{x^2}{y^2}}\]
+
+\hfill
+
+\noindent (b) Take the second derivative using the result of $(a)$.
+
+\[\frac d{dx}\left(\frac{dy}{dx}\right)=\frac d{dx}\left(-\frac{x^2}{y^2}\right)\]
+\[\frac{d^2y}{dx^2}=-\frac{2x\cdot y^2-x^2\cdot2y\cdot\dfrac{dy}{dx}}{y^4}=\frac{2x\left(-y+x\dfrac{dy}{dx}\right)}{y^3}\]
+
+\hfill
+
+\noindent Substitute $-\dfrac{x^2}{y^2}$ into $\dfrac{dy}{dx}$.
+
+\[\frac{d^2y}{dx^2}=\frac{2x\left(-y-x\cdot\dfrac{x^2}{y^2}\right)}{y^3}=-\frac{2xy+\dfrac{2x^4}{y^2}}{y^3}\]
+
+\hfill
+
+\noindent Find $\left.\dfrac{d^2y}{dx^2}\right|_{(2,2)}$.
+
+\[\left.\frac{d^2y}{dx^2}\right|_{(2,2)}=-\frac{2\cdot2\cdot2+\frac{2\cdot2^4}{2^2}}{2^3}=\boxed{-2}\]
+
+\hfill
+
+\noindent \textbf{Q7}: The distance $D(t)$ from the origin to the particle can be expressed using the Pythagorean theorem below:
+
+\[D^2(t)=x^2(t)+y^2(t),\]
+
+\hfill
+
+\noindent where $x(t)$ and $y(t)$ indicate the $x-$ and $y-$ position of the particle, respectively. Take the derivative of both sides.
+
+\[\frac d{dt}\left(D^2(t)\right)=\frac d{dt}\left(x^2(t)+y^2(t)\right)\]
+\[2D(t)\frac{dD}{dt}=2x(t)\frac{dx}{dt}+2y(t)\frac{dy}{dt}\]
+
+\hfill
+
+\noindent We're asked to find $\dfrac{dD}{dt}$. Therefore, solve for $\dfrac{dD}{dt}$.
+
+\[\frac{dD}{dt}=\frac{x(t)\dfrac{dx}{dt}+y(t)\dfrac{dy}{dt}}{D(t)}\]
+
+\hfill
+
+\noindent Using the info given in the question, the answer is
+
+\[\frac{dD}{dt}=\frac{5(-1)+12(-5)}{\sqrt{5^2+12^2}}=\boxed{-5\:\text{m/s}}\]
+
+\hfill
+
+\noindent \textbf{Q8}: Let $r_1(t)$ be the thickness of the ice layer. Then the radius of the sphere is $r_1(t)+\frac82=r_1(t)+4$ cm. The volume of the ice can be calculated using the formula
+
+\[V=\frac43\pi\left(r_1(t)+3\right)^3-\frac43\pi\cdot8^3=\frac43\pi\left[(r_1(t)+4)^3-8^3\right]\]
+
+\hfill
+
+\noindent Given that the volume decreases at the rate of $10$ cm$^3/$ min, that is, $\dfrac{dV}{dt}=-10$,
+
+\[\frac{dV}{dt}=\frac d{dt}\left\{\frac43\pi\left[(r_1(t)+4)^3-8^3\right]\right\}=4\pi\cdot[r_1(t)+4]^2\cdot\frac{dr_1}{dt}\]
+
+\hfill
+
+\noindent Also given in the question that $r_1(t)=2$ cm, calculate the rate of change of thickness, which is $\dfrac{dr_1}{dt}$. Solve the equation above for $\dfrac{dr_1}{dt}$
+
+\[\frac{dr_1}{dt}=\frac{\dfrac{dV}{dt}}{4\pi\cdot[r_1(t)+4]^2}=\frac{-10}{4\pi\cdot6^2}=\boxed{-\frac5{72\pi} \text{ cm/min}}\]
+
+\hfill
+
+\noindent The formula for the outer surface is
+
+\[S(t)=4\pi\cdot(r_1(t)+4)^2\]
+
+\hfill
+
+\noindent Take the derivative of both sides.
+
+\[\frac{dS}{dt}=8\pi\cdot(r_1(t)+4)\cdot\frac{dr_1}{dt}\]
+
+\hfill
+
+\noindent We can calculate the rate of change easily.
+
+\[\frac{dS}{dt}=8\pi\cdot 6\cdot\left(-\frac5{72\pi}\right)=\boxed{-\frac{10}3 \text{ cm}^2/\text{min}}\]
+
+\hfill
+
+\noindent \textbf{Q9}: We will use the \textbf{Mean Value Theorem (MVT)}. We have $0<a<b$, so we can investigate the interval $a<x<b$.
+
+\hfill
+
+\noindent Let $f(x)=\arctan x$. $f$ is continuous and differentiable on its entire domain. This implies that $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$. Then by MVT, there exists at least one point $c\in(a,b)$ such that
+
+\[f'(c)=\frac{f(b)-f(a)}{b-a}\]
+
+\hfill
+
+\noindent Therefore, we have
+
+\[f'(c)=\frac{\arctan b-\arctan a}{b-a}\]
+
+\hfill
+
+\noindent We also have $f'(x)=\dfrac1{1+x^2}\implies f'(c)=\dfrac{1}{1+c^2}=\dfrac{\arctan b-\arctan a}{b-a}$. From the inequality $a<c<b$,
+
+\[\begin{array}{cl}
+a^2<c^2<b^2&[0<a<c<b]\\[1em]
+a^2+1<c^2+1<b^2+1&\\[1em]
+\dfrac1{1+a^2}>\dfrac1{1+c^2}>\dfrac1{1+b^2}&[\text{The inequality direction is reversed}]
+\end{array}\]
+
+\hfill
+
+\hfill
+
+\noindent Recall $\dfrac1{1+c^2}=\dfrac{\arctan b-\arctan a}{b-a}$. Substitute it into the inequality.
+
+\[\frac1{1+a^2}>\frac{\arctan b-\arctan a}{b-a}>\frac1{1+b^2}\]
+\[\frac{b-a}{1+a^2}>\arctan b-\arctan a>\frac{b-a}{1+b^2}\]
+\[\boxed{\frac{b-a}{1+b^2}<\arctan b-\arctan a<\frac{b-a}{1+a^2}}\]
+
+\hfill
+
+\noindent \textbf{Q10}: Multiply and divide by the conjugate of the denominator.
+
+\[\begin{array}{rl}\displaystyle L&\displaystyle=\lim_{x\to1}\frac{x^2-4x+3}{\sqrt x-1}=\lim_{x\to1}\frac{(x-3)(x-1)}{\sqrt x-1}\cdot\frac{\sqrt x+1}{\sqrt x+1}=\lim_{x\to1}\frac{(x-3)(x-1)(\sqrt x+1)}{x-1}\\\\&\displaystyle=\lim_{x\to1}(x-3)(\sqrt x+1) = -2\cdot 2=\boxed{-4}\end{array}\]
+
+\hfill
+
+\noindent \textbf{Q11}: Rearrange the limit.
+
+\[\begin{array}{rl}L&=\displaystyle\lim_{x\to9}\frac{\sqrt{x}-3}{x^3-82x+9}=\lim_{x\to9}\frac{\sqrt x-3}{x^3-81x-x+9}=\lim_{x\to9}\frac{\sqrt x-3}{x(x^2-81)-(x-9)}\\\\&=\displaystyle\lim_{x\to9}\frac{\sqrt x-3}{(x-9)\cdot x(x+9)-(x-9)\cdot1}=\lim_{x\to9}\frac{\sqrt x-3}{(x-9)\left[x(x+9)-1\right]}\\\\&=\displaystyle\lim_{x\to9}\frac{\sqrt x-3}{(x-9)(x^2+9x-1)}\end{array}\]
+
+\hfill
+
+\noindent Multiply and divide by the conjugate of the numerator.
+
+\[\begin{array}{rl}L&=\displaystyle\lim_{x\to9}\frac{(\sqrt x-3)(\sqrt x+3)}{(x-9)(x^2+9x-1)(\sqrt x+3)}=\lim_{x\to9}\frac{x-9}{(x-9)(x^2+9x-1)(\sqrt x+3)}\\\\&=\displaystyle\lim_{x\to9}\frac{1}{(x^2+9x-1)(\sqrt x+3)}=\frac1{(9^2+9\cdot9-1)(\sqrt9+3)}=\boxed{\frac1{966}}\end{array}\]
+
+\hfill
+
+\noindent \textit{View source code:} https://www.overleaf.com/read/rmtpckjjgqrm\#9a46db
+
+\end{document}

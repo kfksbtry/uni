@@ -1,0 +1,419 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{parskip}
+
+\begin{document}
+
+\large
+
+\begin{center}
+{\huge MAT123 08.12.2025}
+\end{center}
+
+\vspace{1em}
+
+{\setlength{\parindent}{1em} \Large
+\indent \textbf{QUESTIONS}
+}
+
+\textbf{Q1.} Evaluate $\displaystyle\int3y\sqrt{7-3y^2}\,dy$.
+
+\textbf{Q2.} Evaluate $\displaystyle\int\tan^{7}\frac x2\,\sec^2\frac x2\,dx$.
+
+\textbf{Q3.} Evaluate $\displaystyle\int\sqrt{1+\sin^2(x-1)}\sin(x-1)\cos(x-1)\,dx$.
+
+\textbf{Q4.} Evaluate $\displaystyle\int\frac{(2x+3)e^{\sqrt{x^2+3x}}}{\sqrt{x^2+3x}}\,dx$.
+
+\textbf{Q5.} Evaluate $\displaystyle\int\frac{(1-x^2)^{1/2}}{x^4}\,dx$.
+
+\textbf{Q6.} Evaluate $\displaystyle\int\frac{\sqrt{1-(\ln x)^2}}{x\ln x}\,dx$.
+
+\textbf{Q7.} Evaluate $\displaystyle\int(\arcsin x)^2\,dx$.
+
+\textbf{Q8.} Evaluate $\displaystyle\int x^2(\ln x)^2\,dx$.
+
+\textbf{Q9.} Find $f'(1)$ if $\displaystyle\int_1^xf(t)\,dt=x+\ln(f(x))$ for all $x$.
+
+\textbf{Q10.} Evaluate $\displaystyle\int\frac{(1+e^x)^2}{1+e^{2x}}\,dx$.
+
+\textbf{Q11.} Evaluate $\displaystyle\int_0^{\ln3}\frac1{e^x+2}\,dx$.
+
+\newpage
+
+{\setlength{\parindent}{1em} \Large
+\indent \textbf{ANSWERS}
+}
+
+\textbf{Q1.} Let $u=7-3y^2$, so $du=-6y\,dy$ and $3y\,dy=-\tfrac12 du$.
+
+\[\int 3y\sqrt{7-3y^2}\,dy= -\frac12\int u^{1/2}\,du= -\frac13 u^{3/2} + C= \boxed{-\frac13(7-3y^2)^{3/2}+C}\]
+
+\vspace{1em}
+
+\textbf{Q2.} Let $u=\tan\frac x2$, so $du=\tfrac12\sec^2\frac x2\,dx$ and $\sec^2\frac x2\,dx=2\,du$.
+
+\[\int \tan^{7}\frac x2\,\sec^2\frac x2\,dx=2\int u^7\,du=\frac{u^8}{4}+C=\boxed{\frac14\tan^8\frac x2+C}\]
+
+\vspace{1em}
+
+\textbf{Q3.} Let $u=1+\sin^2(x-1)$, so $du=2\sin(x-1)\cos(x-1)\,dx$.
+\begin{align*}\int\sqrt{1+\sin^2(x-1)}\sin(x-1)\cos(x-1)\,dx&=\frac12\int\sqrt{u}\,du=\frac13u^{3/2}+C\\&=\boxed{\frac13\bigl(1+\sin^2(x-1)\bigr)^{3/2}+C}\end{align*}
+
+\vspace{1em}
+
+\textbf{Q4.} Let $u=\sqrt{x^2+3x}$, so $u^2=x^2+3x$ and $2u\,du=(2x+3)\,dx$.
+
+\[\int\frac{(2x+3)e^{\sqrt{x^2+3x}}}{\sqrt{x^2+3x}}\,dx=\int\frac{2u\,e^{u}}{u}\,du=\int 2e^{u}\,du=2e^u+C=\boxed{2e^{\sqrt{x^2+3x}}+C}\]
+
+\vspace{1em}
+
+\textbf{Q5.} First let $x=\sin y$. Then
+
+\[
+dx=\cos y\,dy,\qquad 
+\sqrt{1-x^2}=\cos y,\qquad 
+x^4=\sin^4 y.
+\]
+
+So the integral becomes
+
+\[
+\int \frac{\sqrt{1-x^2}}{x^4}\,dx
+=\int \frac{\cos y}{\sin^4 y}\,\cos y\,dy
+=\int \frac{\cos^2 y}{\sin^4 y}\,dy
+=\int \cot^2 y\,\csc^2 y\,dy.
+\]
+
+Now set
+
+\[
+u=\cot y,\qquad du=-\csc^2 y\,dy.
+\]
+
+Then
+
+\[
+\int \cot^2 y\,\csc^2 y\,dy
+= -\int u^2\,du.
+\]
+
+Integrate:
+
+\[
+-\int u^2\,du
+=-\frac{u^3}{3}+C.
+\]
+
+Back-substitute \(u=\cot y\). Since \(x=\sin y\), we have
+
+\[
+\cot y = \frac{\cos y}{\sin y}
+= \frac{\sqrt{1-x^2}}{x}.
+\]
+
+Thus the final answer is
+\[
+\boxed{
+-\frac13\left(\frac{\sqrt{1-x^2}}{x}\right)^3 + C
+}
+\]
+
+\vspace{1em}
+
+\textbf{Q6.} Let 
+
+\[
+u = \ln x \implies du = \frac{dx}{x}.
+\]
+
+Then the integral becomes
+
+\[
+\int \frac{\sqrt{1 - u^2}}{u} \, du.
+\]
+
+Let
+
+\[
+u = \sin y \implies du = \cos y \, dy, \quad \sqrt{1-u^2} = \cos y.
+\]
+
+Then the integral becomes
+
+\[
+\int \frac{\cos y}{\sin y} \cdot \cos y \, dy = \int \frac{\cos^2 y}{\sin y} \, dy.
+\]
+
+\[
+\int \frac{\cos^2 y}{\sin y} \, dy = \int \frac{1 - \sin^2 y}{\sin y} \, dy = \int \left( \frac{1}{\sin y} - \sin y \right) dy = \int (\csc y - \sin y) \, dy.
+\]
+
+\[
+\int \csc y \, dy = \ln \left| \csc y - \cot y \right|, \quad \int \sin y \, dy = -\cos y.
+\]
+
+So the integral becomes
+
+\[
+\int \frac{\sqrt{1-(\ln x)^2}}{x \ln x} \, dx = \ln \left| \csc y - \cot y \right| + \cos y + C.
+\]
+
+Since \(u = \sin y = \ln x\), we have
+
+\[
+\cos y = \sqrt{1 - \sin^2 y} = \sqrt{1 - (\ln x)^2},
+\]
+
+and
+
+\[
+\csc y - \cot y = \frac{1}{\sin y} - \frac{\cos y}{\sin y} = \frac{1 - \sqrt{1-(\ln x)^2}}{\ln x}.
+\]
+
+Thus, the final answer is
+\[
+\boxed{\int \frac{\sqrt{1-(\ln x)^2}}{x \ln x} \, dx = \ln \left| \frac{1 - \sqrt{1-(\ln x)^2}}{\ln x} \right| + \sqrt{1-(\ln x)^2} + C}.
+\]
+
+\vspace{1em}
+
+\textbf{Q7.} Use integration by parts:
+
+\[
+u = (\arcsin x)^2,\qquad dv = dx.
+\]
+
+Then
+
+\[
+du = 2\arcsin x\cdot\frac{1}{\sqrt{1-x^2}}\,dx,\qquad v = x.
+\]
+
+Thus
+
+\[
+\int(\arcsin x)^2\,dx
+= x(\arcsin x)^2 - 2\int \frac{x\arcsin x}{\sqrt{1-x^2}}\,dx.
+\]
+
+Let
+
+\[
+I = \int \frac{x\arcsin x}{\sqrt{1-x^2}}\,dx.
+\]
+
+Apply the second integration by parts.
+
+\[
+u=\arcsin x,\qquad dv=\frac{x}{\sqrt{1-x^2}}\,dx.
+\]
+
+Differentiate and integrate:
+
+\[
+du=\frac{1}{\sqrt{1-x^2}}\,dx,\qquad
+v = -\sqrt{1-x^2}
+\]
+Then
+\[
+I = uv - \int v\,du
+= -\arcsin x\sqrt{1-x^2} - \int\left(-\sqrt{1-x^2}\right)\frac{1}{\sqrt{1-x^2}}\,dx
+\]
+
+Simplify the integrand.
+
+\[
+I = -\arcsin x\sqrt{1-x^2} + \int 1\,dx
+= -\arcsin x\sqrt{1-x^2} + x
+\]
+
+Substitute back into the main integral.
+
+\[\int(\arcsin x)^2\,dx= x(\arcsin x)^2 - 2\left[-\arcsin x\sqrt{1-x^2} + x\right] + C\]
+
+Simplify.
+\[\boxed{x(\arcsin x)^2 + 2\arcsin x\sqrt{1-x^2} - 2x + C}\]
+
+\vspace{1em}
+
+\textbf{Q8.} Use integration by parts.
+
+\[
+u = (\ln x)^2 \implies du = \frac{2\ln x}{x}\,dx, \qquad
+dv = x^2\,dx \implies v = \frac{x^3}{3}
+\]
+
+Then
+
+\[
+\int x^2 (\ln x)^2\,dx
+= \frac{x^3}{3}(\ln x)^2 - \int \frac{x^3}{3} \cdot \frac{2\ln x}{x}\,dx
+= \frac{x^3}{3}(\ln x)^2 - \frac{2}{3} \int x^2 \ln x\,dx.
+\]
+
+Apply integration by parts again on $\int x^2 \ln x\,dx$ with
+
+\[
+u = \ln x \implies du = \frac{1}{x}\,dx, \qquad
+dv = x^2\,dx \implies v = \frac{x^3}{3}.
+\]
+
+Substitute directly.
+
+\begin{align*}
+\int x^2 (\ln x)^2\,dx
+&= \frac{x^3}{3}(\ln x)^2 - \frac{2}{3} \left( \frac{x^3}{3}\ln x - \int \frac{x^3}{3}\cdot \frac{1}{x}\,dx \right)
+\\\\&= \frac{x^3}{3}(\ln x)^2 - \frac{2}{3} \left( \frac{x^3}{3}\ln x - \frac{1}{3} \int x^2\,dx \right)
+\\\\&= \frac{x^3}{3}(\ln x)^2 - \frac{2x^3}{9}\ln x + \frac{2}{3} \cdot \frac{x^3}{9}+C
+\end{align*}
+
+\[
+\boxed{\int x^2 (\ln x)^2\,dx = \frac{x^3}{3}(\ln x)^2 - \frac{2x^3}{9}\ln x + \frac{2x^3}{27} + C}
+\]
+
+\vspace{1em}
+
+\textbf{Q9.} Find $f'(1)$ if $\displaystyle\int_1^x f(t)\,dt=x+\ln(f(x))$.
+
+Differentiate both sides. By the Fundamental Theorem of Calculus (Part I):
+
+\[f(x)=1+\frac{f'(x)}{f(x)}\]
+So
+\[f'(x)=f(x)(f(x)-1)\]
+
+Evaluate original equation at $x=1$:
+
+\[
+0=1+\ln(f(1)) \Rightarrow f(1)=e^{-1}
+\]
+Thus
+\[
+f'(1)=f(1)(f(1)-1)=e^{-1}(e^{-1}-1)=\boxed{\frac1{e^2}-\frac1e}.
+\]
+
+\vspace{1em}
+
+\textbf{Q10.} Expand numerator.
+
+\[
+\int\frac{1+2e^x+e^{2x}}{1+e^{2x}}\,dx
+=\int\left(\frac{1+e^{2x}}{1+e^{2x}}+\frac{2e^x}{1+e^{2x}}\right)\,dx
+=\int\,dx+\int\frac{2e^x}{1+e^{2x}}\,dx
+\]
+
+Let $u=e^x$, $du=e^x\,dx$ for the right-hand integral.
+
+\[\int\frac{2}{1+u^2}\,du=2\arctan u +C=2\arctan(e^x)+C\]
+
+Thus
+
+\[
+\int\frac{(1+e^x)^2}{1+e^{2x}}\,dx=\boxed{x+2\arctan(e^x)+C}.
+\]
+
+\vspace{1em}
+
+\textbf{Q11.} Add and subtract $\frac{1}{2} e^x$ in the numerator.
+
+\[
+\frac{1}{e^x + 2} = \frac{\frac{1}{2} e^x + 1 - \frac{1}{2} e^x}{e^x + 2} 
+= \frac{\frac{1}{2} e^x + 1}{e^x + 2} - \frac{\frac{1}{2} e^x}{e^x + 2}
+\]
+
+So the integral becomes
+
+\[
+\int_0^{\ln 3} \frac{1}{e^x + 2} \, dx 
+= \int_0^{\ln 3} \frac{\frac{1}{2} e^x + 1}{e^x + 2} \, dx - \int_0^{\ln 3} \frac{\frac{1}{2} e^x}{e^x + 2} \, dx.
+\]
+
+Simplify each term. First integral:
+
+\[
+\frac{\frac{1}{2} e^x + 1}{e^x + 2} = \frac{1}{2} \cdot \frac{e^x + 2}{e^x + 2} = \frac{1}{2}
+\]
+\[
+\int_0^{\ln 3} \frac{\frac{1}{2} e^x + 1}{e^x + 2} \, dx = \int_0^{\ln 3} \frac{1}{2} \, dx = \frac{x}{2} \Big|_0^{\ln 3} = \frac{\ln 3}{2}
+\]
+
+Second integral:
+
+\[
+\int_0^{\ln 3} \frac{\frac{1}{2} e^x}{e^x + 2} \, dx = \frac{1}{2} \int_0^{\ln 3} \frac{e^x}{e^x + 2} \, dx
+\]
+
+Let $u=e^x+2\implies du=e^x\,dx$. Then
+
+\[
+\frac{1}{2} \int_0^{\ln 3} \frac{e^x}{e^x + 2} \, dx = \frac{1}{2} \int_{3}^{5} \frac{du}{u} = \frac{1}{2} \ln \frac{5}{3}.
+\]
+
+Combine results.
+
+\[
+\int_0^{\ln 3} \frac{1}{e^x + 2} \, dx = \frac{\ln 3}{2} - \frac{1}{2} \ln \frac{5}{3} = \boxed{\frac{1}{2} \ln \frac{9}{5}=\ln3-\frac12\ln5}
+\]
+
+\begin{comment}
+\textbf{Definition of Integral}
+
+Integration is the reverse process of differentiation.
+
+An integral is the continuous sum of infinitesimal pieces over an interval.
+
+\begin{itemize}
+    \item Area under a curve
+    \item Surface area of a shape
+    \item Volume of a three-dimensional object
+\end{itemize}
+
+\begin{itemize}
+    \item Calculating the total charge of an object with charge density
+    \item Determining the total current with current density
+\end{itemize}
+
+\[Q=\int_V\rho\,dV\]
+
+\[I=\int_S\vec{J}\cdot d\vec{A}\]
+
+\[A\approx\sum_{k=1}^nf(x_k)\Delta x\]
+
+\[A=\lim_{n\to\infty}\sum_{k=1}^nf(x_k)\Delta x=\int_a^bf(x)\,dx\]
+
+\[\int_a^bf(x)\,dx\]
+
+Integrals where the lower and upper limits are not specified.
+
+An arbitrary constant $C$ appears in the solution.
+
+\[\int f(x)\,dx=F(x)+C\]
+
+If \( f(x) \) is continuous on \([a,b]\), define
+\[
+F(x) = \int_a^x f(t)\, dt.
+\]
+Then \( F(x) \) is differentiable and
+\[
+F'(x) = f(x).
+\]
+
+If \( F(x) \) is any antiderivative of \( f(x) \) (i.e., \( F'(x) = f(x) \)), then
+\[
+\int_a^b f(x)\, dx = F(b) - F(a).
+\]
+
+Apply $\displaystyle\int u\,dv=uv-\int v\,du$.
+
+\[\int\frac{9x^2+4}{x(4x^2+9)}\,dx\]
+\end{comment}
+
+\end{document}
